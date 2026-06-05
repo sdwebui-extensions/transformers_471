@@ -699,7 +699,7 @@ class TvltModel(TvltPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import TvltProcessor, TvltModel
+        >>> from transformers_471 import TvltProcessor, TvltModel
         >>> import numpy as np
         >>> import torch
 
@@ -1031,7 +1031,7 @@ class TvltForPreTraining(TvltPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import TvltProcessor, TvltForPreTraining
+        >>> from transformers_471 import TvltProcessor, TvltForPreTraining
         >>> import numpy as np
         >>> import torch
 
@@ -1222,7 +1222,7 @@ class TvltForAudioVisualClassification(TvltPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import TvltProcessor, TvltForAudioVisualClassification
+        >>> from transformers_471 import TvltProcessor, TvltForAudioVisualClassification
         >>> import numpy as np
         >>> import torch
 

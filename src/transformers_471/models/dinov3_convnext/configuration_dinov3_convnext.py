@@ -56,7 +56,7 @@ class DINOv3ConvNextConfig(PretrainedConfig):
 
     Example:
     ```python
-    >>> from transformers import DINOv3ConvNextConfig, DINOv3ConvNextModel
+    >>> from transformers_471 import DINOv3ConvNextConfig, DINOv3ConvNextModel
 
     >>> # Initializing a DINOv3ConvNext (tiny variant) style configuration
     >>> config = DINOv3ConvNextConfig()

@@ -115,7 +115,7 @@ class Gemma2Config(PretrainedConfig):
             scaling factor when applying tanh softcapping on the attention scores.
 
     ```python
-    >>> from transformers import Gemma2Model, Gemma2Config
+    >>> from transformers_471 import Gemma2Model, Gemma2Config
     >>> # Initializing a Gemma2 gemma2-7b style configuration
     >>> configuration = Gemma2Config()
     >>> # Initializing a model from the gemma2-7b style configuration
@@ -515,7 +515,7 @@ class Gemma2ForCausalLM(GemmaForCausalLM):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, Gemma2ForCausalLM
+        >>> from transformers_471 import AutoTokenizer, Gemma2ForCausalLM
 
         >>> model = Gemma2ForCausalLM.from_pretrained("google/gemma-2-9b")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/gemma-2-9b")

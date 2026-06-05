@@ -21,7 +21,7 @@ from typing import Optional, Union
 import torch
 import torch.nn as nn
 
-from transformers.utils.generic import torch_int
+from transformers_471.utils.generic import torch_int
 
 from ...modeling_outputs import DepthEstimatorOutput
 from ...modeling_utils import PreTrainedModel
@@ -404,7 +404,7 @@ class PromptDepthAnythingForDepthEstimation(PromptDepthAnythingPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoModelForDepthEstimation
+        >>> from transformers_471 import AutoImageProcessor, AutoModelForDepthEstimation
         >>> import torch
         >>> import numpy as np
         >>> from PIL import Image

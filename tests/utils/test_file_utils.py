@@ -20,13 +20,13 @@ import unittest
 import transformers
 
 # Try to import everything from transformers to ensure every object can be loaded.
-from transformers import *  # noqa F406
-from transformers.testing_utils import DUMMY_UNKNOWN_IDENTIFIER, require_torch
-from transformers.utils import ContextManagers, find_labels, is_torch_available
+from transformers_471 import *  # noqa F406
+from transformers_471.testing_utils import DUMMY_UNKNOWN_IDENTIFIER, require_torch
+from transformers_471.utils import ContextManagers, find_labels, is_torch_available
 
 
 if is_torch_available():
-    from transformers import BertForPreTraining, BertForQuestionAnswering, BertForSequenceClassification
+    from transformers_471 import BertForPreTraining, BertForQuestionAnswering, BertForSequenceClassification
 
 
 MODEL_ID = DUMMY_UNKNOWN_IDENTIFIER

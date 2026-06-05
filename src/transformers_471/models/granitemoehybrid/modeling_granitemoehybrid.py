@@ -25,7 +25,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from transformers.activations import ACT2FN
+from transformers_471.activations import ACT2FN
 
 from ...cache_utils import Cache
 from ...generation import GenerationMixin
@@ -135,7 +135,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# copied from transformers.models.granite.modeling_granite.GraniteAttention with Granite->GraniteMoeHybrid
+# copied from transformers_471.models.granite.modeling_granite.GraniteAttention with Granite->GraniteMoeHybrid
 # no longer copied after attention refactors
 class GraniteMoeHybridAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
@@ -385,7 +385,7 @@ def apply_mask_to_padding_states(hidden_states, attention_mask):
     return hidden_states
 
 
-# Adapted from transformers.models.mamba2.modeling_mamba2.Mamba2Mixer
+# Adapted from transformers_471.models.mamba2.modeling_mamba2.Mamba2Mixer
 class GraniteMoeHybridMambaLayer(nn.Module):
     """
     Compute ∆, A, B, C, and D the state space parameters and compute the `contextualized_states`.
@@ -1691,7 +1691,7 @@ class GraniteMoeHybridForCausalLM(GraniteMoeHybridPreTrainedModel, GenerationMix
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GraniteMoeHybridForCausalLM
+        >>> from transformers_471 import AutoTokenizer, GraniteMoeHybridForCausalLM
 
         >>> model = GraniteMoeHybridForCausalLM.from_pretrained("ibm/PowerMoE-3b")
         >>> tokenizer = AutoTokenizer.from_pretrained("ibm/PowerMoE-3b")

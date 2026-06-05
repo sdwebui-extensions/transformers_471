@@ -124,7 +124,7 @@ class AutomaticSpeechRecognitionPipeline(ChunkPipeline):
     Example:
 
     ```python
-    >>> from transformers import pipeline
+    >>> from transformers_471 import pipeline
 
     >>> transcriber = pipeline(model="openai/whisper-base")
     >>> transcriber("https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/1.flac")

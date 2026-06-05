@@ -90,7 +90,7 @@ class XPathEmbeddings(nn.Module):
         return xpath_embeddings
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols
@@ -134,7 +134,7 @@ class MarkupLMEmbeddings(nn.Module):
             config.max_position_embeddings, config.hidden_size, padding_idx=self.padding_idx
         )
 
-    # Copied from transformers.models.roberta.modeling_roberta.RobertaEmbeddings.create_position_ids_from_inputs_embeds
+    # Copied from transformers_471.models.roberta.modeling_roberta.RobertaEmbeddings.create_position_ids_from_inputs_embeds
     def create_position_ids_from_inputs_embeds(self, inputs_embeds):
         """
         We are provided embeddings directly. We cannot infer which are padded so just generate sequential position ids.
@@ -205,7 +205,7 @@ class MarkupLMEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->MarkupLM
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->MarkupLM
 class MarkupLMSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -220,7 +220,7 @@ class MarkupLMSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class MarkupLMIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -236,7 +236,7 @@ class MarkupLMIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->MarkupLM
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->MarkupLM
 class MarkupLMOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -251,7 +251,7 @@ class MarkupLMOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class MarkupLMPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -267,7 +267,7 @@ class MarkupLMPooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->MarkupLM
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->MarkupLM
 class MarkupLMPredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -285,7 +285,7 @@ class MarkupLMPredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->MarkupLM
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->MarkupLM
 class MarkupLMLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -309,7 +309,7 @@ class MarkupLMLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->MarkupLM
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->MarkupLM
 class MarkupLMOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -320,7 +320,7 @@ class MarkupLMOnlyMLMHead(nn.Module):
         return prediction_scores
 
 
-# Copied from transformers.models.align.modeling_align.eager_attention_forward
+# Copied from transformers_471.models.align.modeling_align.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -348,7 +348,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextSelfAttention with AlignText->MarkupLM
+# Copied from transformers_471.models.align.modeling_align.AlignTextSelfAttention with AlignText->MarkupLM
 class MarkupLMSelfAttention(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -407,7 +407,7 @@ class MarkupLMSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextAttention with AlignText->MarkupLM
+# Copied from transformers_471.models.align.modeling_align.AlignTextAttention with AlignText->MarkupLM
 class MarkupLMAttention(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -453,7 +453,7 @@ class MarkupLMAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextLayer with AlignText->MarkupLM
+# Copied from transformers_471.models.align.modeling_align.AlignTextLayer with AlignText->MarkupLM
 class MarkupLMLayer(GradientCheckpointingLayer):
     def __init__(self, config):
         super().__init__()
@@ -494,7 +494,7 @@ class MarkupLMLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextEncoder with AlignText->MarkupLM
+# Copied from transformers_471.models.align.modeling_align.AlignTextEncoder with AlignText->MarkupLM
 class MarkupLMEncoder(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -549,7 +549,7 @@ class MarkupLMPreTrainedModel(PreTrainedModel):
     config: MarkupLMConfig
     base_model_prefix = "markuplm"
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with Bert->MarkupLM
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with Bert->MarkupLM
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):
@@ -575,7 +575,7 @@ class MarkupLMPreTrainedModel(PreTrainedModel):
 
 @auto_docstring
 class MarkupLMModel(MarkupLMPreTrainedModel):
-    # Copied from transformers.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->MarkupLM
+    # Copied from transformers_471.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->MarkupLM
     def __init__(self, config, add_pooling_layer=True):
         r"""
         add_pooling_layer (bool, *optional*, defaults to `True`):
@@ -631,7 +631,7 @@ class MarkupLMModel(MarkupLMPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, MarkupLMModel
+        >>> from transformers_471 import AutoProcessor, MarkupLMModel
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/markuplm-base")
         >>> model = MarkupLMModel.from_pretrained("microsoft/markuplm-base")
@@ -712,7 +712,7 @@ class MarkupLMModel(MarkupLMPreTrainedModel):
 
 @auto_docstring
 class MarkupLMForQuestionAnswering(MarkupLMPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with bert->markuplm, Bert->MarkupLM
+    # Copied from transformers_471.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with bert->markuplm, Bert->MarkupLM
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -750,7 +750,7 @@ class MarkupLMForQuestionAnswering(MarkupLMPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, MarkupLMForQuestionAnswering
+        >>> from transformers_471 import AutoProcessor, MarkupLMForQuestionAnswering
         >>> import torch
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/markuplm-base-finetuned-websrc")
@@ -826,7 +826,7 @@ class MarkupLMForQuestionAnswering(MarkupLMPreTrainedModel):
     """
 )
 class MarkupLMForTokenClassification(MarkupLMPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForTokenClassification.__init__ with bert->markuplm, Bert->MarkupLM
+    # Copied from transformers_471.models.bert.modeling_bert.BertForTokenClassification.__init__ with bert->markuplm, Bert->MarkupLM
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -869,7 +869,7 @@ class MarkupLMForTokenClassification(MarkupLMPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, AutoModelForTokenClassification
+        >>> from transformers_471 import AutoProcessor, AutoModelForTokenClassification
         >>> import torch
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/markuplm-base")
@@ -929,7 +929,7 @@ class MarkupLMForTokenClassification(MarkupLMPreTrainedModel):
     """
 )
 class MarkupLMForSequenceClassification(MarkupLMPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForSequenceClassification.__init__ with bert->markuplm, Bert->MarkupLM
+    # Copied from transformers_471.models.bert.modeling_bert.BertForSequenceClassification.__init__ with bert->markuplm, Bert->MarkupLM
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -975,7 +975,7 @@ class MarkupLMForSequenceClassification(MarkupLMPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, AutoModelForSequenceClassification
+        >>> from transformers_471 import AutoProcessor, AutoModelForSequenceClassification
         >>> import torch
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/markuplm-base")

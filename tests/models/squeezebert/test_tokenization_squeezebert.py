@@ -13,8 +13,8 @@
 # limitations under the License.
 
 
-from transformers import SqueezeBertTokenizer, SqueezeBertTokenizerFast
-from transformers.testing_utils import require_tokenizers, slow
+from transformers_471 import SqueezeBertTokenizer, SqueezeBertTokenizerFast
+from transformers_471.testing_utils import require_tokenizers, slow
 
 # Avoid import `BertTokenizationTest` directly as it will run as `test_tokenization_squeezebert.py::BertTokenizationTest`
 # together with `test_tokenization_bert.py::BertTokenizationTest`.

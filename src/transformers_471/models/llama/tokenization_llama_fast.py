@@ -50,7 +50,7 @@ class LlamaTokenizerFast(PreTrainedTokenizerFast):
     This uses notably ByteFallback and no normalization.
 
     ```python
-    >>> from transformers import LlamaTokenizerFast
+    >>> from transformers_471 import LlamaTokenizerFast
 
     >>> tokenizer = LlamaTokenizerFast.from_pretrained("hf-internal-testing/llama-tokenizer")
     >>> tokenizer.encode("Hello this is a test")
@@ -97,7 +97,7 @@ class LlamaTokenizerFast(PreTrainedTokenizerFast):
 
             - `legacy=True`:
             ```python
-            >>> from transformers import LlamaTokenizerFast
+            >>> from transformers_471 import LlamaTokenizerFast
 
             >>> tokenizer = LlamaTokenizerFast.from_pretrained("huggyllama/llama-7b", legacy=True, from_slow=True)
             >>> tokenizer.encode("Hello <s>.") # 869 is '▁.'
@@ -105,7 +105,7 @@ class LlamaTokenizerFast(PreTrainedTokenizerFast):
             ```
             - `legacy=False`:
             ```python
-            >>> from transformers import LlamaTokenizerFast
+            >>> from transformers_471 import LlamaTokenizerFast
 
             >>> tokenizer = LlamaTokenizerFast.from_pretrained("huggyllama/llama-7b", legacy=False, from_slow=True)
             >>> tokenizer.encode("Hello <s>.")  # 29889 is '.'
@@ -235,7 +235,7 @@ class LlamaTokenizerFast(PreTrainedTokenizerFast):
         return (out_vocab_file,)
 
     # TODO ArthurZ let's rely on the template processor instead, refactor all fast tokenizers
-    # Copied from transformers.models.llama.tokenization_llama.LlamaTokenizer.build_inputs_with_special_tokens
+    # Copied from transformers_471.models.llama.tokenization_llama.LlamaTokenizer.build_inputs_with_special_tokens
     def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
         bos_token_id = [self.bos_token_id] if self.add_bos_token else []
         eos_token_id = [self.eos_token_id] if self.add_eos_token else []

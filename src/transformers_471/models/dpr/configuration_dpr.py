@@ -77,7 +77,7 @@ class DPRConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import DPRConfig, DPRContextEncoder
+    >>> from transformers_471 import DPRConfig, DPRContextEncoder
 
     >>> # Initializing a DPR facebook/dpr-ctx_encoder-single-nq-base style configuration
     >>> configuration = DPRConfig()

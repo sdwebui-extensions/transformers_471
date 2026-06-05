@@ -2394,7 +2394,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -2586,7 +2586,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies:
                 (`dict[str, str], `optional`): A dictionary of proxy servers to use by protocol or endpoint, e.g.,
                 `{'http': 'foo.bar:3128', 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -2640,7 +2640,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
         Examples:
 
         ```python
-        >>> from transformers import BertConfig, TFBertModel
+        >>> from transformers_471 import BertConfig, TFBertModel
 
         >>> # Download model and configuration from huggingface.co and cache.
         >>> model = TFBertModel.from_pretrained("google-bert/bert-base-uncased")
@@ -2672,7 +2672,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -3153,7 +3153,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
         Examples:
 
         ```python
-        from transformers import TFAutoModel
+        from transformers_471 import TFAutoModel
 
         model = TFAutoModel.from_pretrained("google-bert/bert-base-cased")
 
@@ -3166,7 +3166,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
         """
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -3177,7 +3177,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
 
         if "repo_path_or_name" in base_model_card_args:
             warnings.warn(
-                "The `repo_path_or_name` argument is deprecated and will be removed in v5 of Transformers. Use "
+                "The `repo_path_or_name` argument is deprecated and Will be removed in v5 of Transformers Use "
                 "`repo_id` instead."
             )
             repo_id = base_model_card_args.pop("repo_path_or_name")
@@ -3236,7 +3236,7 @@ class TFPreTrainedModel(keras.Model, TFModelUtilsMixin, TFGenerationMixin, PushT
         if not isinstance(auto_class, str):
             auto_class = auto_class.__name__
 
-        import transformers.models.auto as auto_module
+        import transformers_471.models.auto as auto_module
 
         if not hasattr(auto_module, auto_class):
             raise ValueError(f"{auto_class} is not a valid auto class.")

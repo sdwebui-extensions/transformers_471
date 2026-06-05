@@ -17,8 +17,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     cleanup,
     require_flash_attn,
     require_torch,
@@ -33,7 +33,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         Qwen2MoeForCausalLM,
         Qwen2MoeForQuestionAnswering,
         Qwen2MoeForSequenceClassification,

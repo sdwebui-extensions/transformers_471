@@ -82,7 +82,7 @@ class MLCDVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MLCDVisionConfig, MLCDVisionModel
+    >>> from transformers_471 import MLCDVisionConfig, MLCDVisionModel
 
     >>> # Initializing a MLCDVisionConfig with DeepGlint-AI/mlcd-vit-bigG-patch14-336 style configuration
     >>> configuration = MLCDVisionConfig()
@@ -492,7 +492,7 @@ class MLCDVisionModel(CLIPVisionModel):
         ```python
         >>> import requests
         >>> from PIL import Image
-        >>> from transformers import AutoProcessor, MLCDVisionModel
+        >>> from transformers_471 import AutoProcessor, MLCDVisionModel
         >>> model = MLCDVisionModel.from_pretrained("DeepGlint-AI/mlcd-vit-bigG-patch14-448")
         >>> processor = AutoProcessor.from_pretrained("DeepGlint-AI/mlcd-vit-bigG-patch14-448")
 

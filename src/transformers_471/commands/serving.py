@@ -37,12 +37,12 @@ from huggingface_hub import model_info
 from huggingface_hub.constants import HF_HUB_OFFLINE
 from tokenizers.decoders import DecodeStream
 
-import transformers
-from transformers.models.auto.modeling_auto import (
+import transformers_471
+from transformers_471.models.auto.modeling_auto import (
     MODEL_FOR_CAUSAL_LM_MAPPING_NAMES,
     MODEL_FOR_IMAGE_TEXT_TO_TEXT_MAPPING_NAMES,
 )
-from transformers.utils.import_utils import (
+from transformers_471.utils.import_utils import (
     is_fastapi_available,
     is_librosa_available,
     is_openai_available,
@@ -65,7 +65,7 @@ from . import BaseTransformersCLICommand
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AutoProcessor,
         BitsAndBytesConfig,
         GenerationConfig,
@@ -511,7 +511,7 @@ class ServeCommand(BaseTransformersCLICommand):
         transformers_logger = logging.get_logger("transformers")
         transformers_logger.setLevel(logging.log_levels[self.args.log_level.lower()])
 
-        cb_logger = logging.get_logger("transformers.generation.continuous_batching")
+        cb_logger = logging.get_logger("transformers_471.generation.continuous_batching")
         cb_logger.setLevel(logging.log_levels[self.args.log_level.lower()])
 
         # Internal state:

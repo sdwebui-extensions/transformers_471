@@ -65,7 +65,7 @@ class PLBartPreTrainedModel(PreTrainedModel):
     _supports_sdpa = True
     _supports_flex_attn = True
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -88,7 +88,7 @@ class PLBartPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Optional[Union[torch.Tensor, "BlockMask"]],
@@ -166,7 +166,7 @@ class PLBartPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -221,7 +221,7 @@ class PLBartPreTrainedModel(PreTrainedModel):
 
         return causal_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -506,7 +506,7 @@ class PLBartForConditionalGeneration(PLBartPreTrainedModel, GenerationMixin):
         Example Mask-filling:
 
         ```python
-        >>> from transformers import AutoTokenizer, PLBartForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, PLBartForConditionalGeneration
 
         >>> model = PLBartForConditionalGeneration.from_pretrained("uclanlp/plbart-base")
         >>> tokenizer = AutoTokenizer.from_pretrained("uclanlp/plbart-base")
@@ -634,7 +634,7 @@ class PLBartForCausalLM(BartForCausalLM):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, PLBartForCausalLM
+        >>> from transformers_471 import AutoTokenizer, PLBartForCausalLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("uclanlp/plbart-base")
         >>> model = PLBartForCausalLM.from_pretrained("uclanlp/plbart-base", add_cross_attention=False)

@@ -592,7 +592,7 @@ class GPTJModel(GPTJPreTrainedModel):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.model_parallel = False
@@ -912,7 +912,7 @@ class GPTJForCausalLM(GPTJPreTrainedModel, GenerationMixin):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.transformer.deparallelize()

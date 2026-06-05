@@ -25,9 +25,9 @@ import torch.nn.functional as F
 from torch import nn
 from torch.nn import Parameter
 
-from transformers.models.llama.modeling_llama import rotate_half
-from transformers.models.qwen2_5_vl.configuration_qwen2_5_vl import Qwen2_5_VLVisionConfig
-from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
+from transformers_471.models.llama.modeling_llama import rotate_half
+from transformers_471.models.qwen2_5_vl.configuration_qwen2_5_vl import Qwen2_5_VLVisionConfig
+from transformers_471.models.qwen2_5_vl.modeling_qwen2_5_vl import (
     Qwen2_5_VisionTransformerPretrainedModel,
     Qwen2_5_VLAttention,
     Qwen2_5_VLMLP,
@@ -36,9 +36,9 @@ from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
     Qwen2_5_VLVisionBlock,
     eager_attention_forward,
 )
-from transformers.models.qwen2_audio.configuration_qwen2_audio import Qwen2AudioEncoderConfig
-from transformers.models.qwen2_audio.modeling_qwen2_audio import Qwen2AudioEncoderLayer
-from transformers.models.qwen2_vl.modeling_qwen2_vl import Qwen2VLRotaryEmbedding
+from transformers_471.models.qwen2_audio.configuration_qwen2_audio import Qwen2AudioEncoderConfig
+from transformers_471.models.qwen2_audio.modeling_qwen2_audio import Qwen2AudioEncoderLayer
+from transformers_471.models.qwen2_vl.modeling_qwen2_vl import Qwen2VLRotaryEmbedding
 
 from ...cache_utils import Cache
 from ...configuration_utils import PretrainedConfig, layer_type_validation
@@ -94,7 +94,7 @@ class Qwen2_5OmniVisionEncoderConfig(Qwen2_5_VLVisionConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniVisionEncoderConfig, Qwen2_5OmniVisionEncoder
+    >>> from transformers_471 import Qwen2_5OmniVisionEncoderConfig, Qwen2_5OmniVisionEncoder
 
     >>> # Initializing a Qwen2_5OmniVisionEncoderConfig
     >>> configuration = Qwen2_5OmniVisionEncoderConfig()
@@ -191,7 +191,7 @@ class Qwen2_5OmniAudioEncoderConfig(Qwen2AudioEncoderConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniAudioEncoder
+    >>> from transformers_471 import Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniAudioEncoder
 
     >>> # Initializing a Qwen2_5OmniAudioEncoderConfig
     >>> configuration = Qwen2_5OmniAudioEncoderConfig()
@@ -338,7 +338,7 @@ class Qwen2_5OmniTextConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniThinkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
+    >>> from transformers_471 import Qwen2_5OmniThinkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
 
     >>> # Initializing a Qwen2_5OmniAudioEncoder config
     >>> audio_config = Qwen2_5OmniAudioEncoderConfig()
@@ -484,7 +484,7 @@ class Qwen2_5OmniThinkerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniThinkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
+    >>> from transformers_471 import Qwen2_5OmniThinkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
 
     >>> # Initializing a Qwen2_5OmniAudioEncoder config
     >>> audio_config = Qwen2_5OmniAudioEncoderConfig()
@@ -699,7 +699,7 @@ class Qwen2_5OmniTalkerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniTalkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
+    >>> from transformers_471 import Qwen2_5OmniTalkerForConditionalGeneration, Qwen2_5OmniThinkerConfig, Qwen2_5OmniAudioEncoderConfig, Qwen2_5OmniVisionEncoderConfig
 
     >>> # Initializing a Qwen2_5OmniAudioEncoder config
     >>> audio_config = Qwen2_5OmniAudioEncoderConfig()
@@ -983,7 +983,7 @@ class Qwen2_5OmniToken2WavConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen2_5OmniToken2WavModel, DiT_Args, BigVGAN_Args
+    >>> from transformers_471 import Qwen2_5OmniToken2WavModel, DiT_Args, BigVGAN_Args
 
     >>> # Initialize DiT configuration
     >>> dit_config = DiT_Args(
@@ -1046,7 +1046,7 @@ class Qwen2_5OmniConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     Qwen2_5OmniThinkerConfig,
     ...     Qwen2_5OmniTalkerConfig,
     ...     Qwen2_5OmniToken2WavConfig,
@@ -2307,7 +2307,7 @@ class Qwen2_5OmniThinkerForConditionalGeneration(Qwen2_5OmniPreTrainedModelForCo
         >>> from urllib.request import urlopen
         >>> import librosa
         >>> from qwen_vl_utils import process_vision_info
-        >>> from transformers import Qwen2_5OmniProcessor, Qwen2_5OmniThinkerForConditionalGeneration
+        >>> from transformers_471 import Qwen2_5OmniProcessor, Qwen2_5OmniThinkerForConditionalGeneration
 
         >>> thinker = Qwen2_5OmniThinkerForConditionalGeneration.from_pretrained("Qwen/Qwen2.5-Omni-7B")
         >>> processor = Qwen2_5OmniProcessor.from_pretrained("Qwen/Qwen2.5-Omni-7B")
@@ -2610,7 +2610,7 @@ class Qwen2_5OmniTalkerForConditionalGeneration(Qwen2_5OmniPreTrainedModelForCon
         >>> from io import BytesIO
         >>> from urllib.request import urlopen
         >>> import librosa
-        >>> from transformers import AutoProcessor, Qwen2_5OmniTalkerForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Qwen2_5OmniTalkerForConditionalGeneration
 
         >>> model = Qwen2_5OmniTalkerForConditionalGeneration.from_pretrained("Qwen/Qwen2-Audio-7B")
         >>> processor = AutoProcessor.from_pretrained("Qwen/Qwen2-Audio-7B")

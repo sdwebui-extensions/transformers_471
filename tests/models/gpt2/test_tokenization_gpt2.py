@@ -17,9 +17,9 @@ import json
 import os
 import unittest
 
-from transformers import AutoTokenizer, GPT2Tokenizer, GPT2TokenizerFast
-from transformers.models.gpt2.tokenization_gpt2 import VOCAB_FILES_NAMES
-from transformers.testing_utils import require_jinja, require_tiktoken, require_tokenizers
+from transformers_471 import AutoTokenizer, GPT2Tokenizer, GPT2TokenizerFast
+from transformers_471.models.gpt2.tokenization_gpt2 import VOCAB_FILES_NAMES
+from transformers_471.testing_utils import require_jinja, require_tiktoken, require_tokenizers
 
 from ...test_tokenization_common import TokenizerTesterMixin
 
@@ -307,7 +307,7 @@ class GPT2TokenizationTest(TokenizerTesterMixin, unittest.TestCase):
     def test_tokenization_tiktoken(self):
         from tiktoken import encoding_name_for_model
 
-        from transformers.integrations.tiktoken import convert_tiktoken_to_fast
+        from transformers_471.integrations.tiktoken import convert_tiktoken_to_fast
 
         encoding = encoding_name_for_model("gpt2")
         convert_tiktoken_to_fast(encoding, self.tmpdirname)

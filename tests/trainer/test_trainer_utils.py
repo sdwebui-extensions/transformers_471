@@ -18,11 +18,11 @@ import warnings
 
 import numpy as np
 
-from transformers import Trainer, TrainingArguments
-from transformers.data.data_collator import default_data_collator
-from transformers.testing_utils import require_accelerate, require_torch
-from transformers.trainer_utils import RemoveColumnsCollator, find_executable_batch_size
-from transformers.utils import is_torch_available
+from transformers_471 import Trainer, TrainingArguments
+from transformers_471.data.data_collator import default_data_collator
+from transformers_471.testing_utils import require_accelerate, require_torch
+from transformers_471.trainer_utils import RemoveColumnsCollator, find_executable_batch_size
+from transformers_471.utils import is_torch_available
 
 
 if is_torch_available():
@@ -30,9 +30,9 @@ if is_torch_available():
     from torch import nn
     from torch.utils.data import IterableDataset
 
-    from transformers.modeling_outputs import SequenceClassifierOutput
-    from transformers.tokenization_utils_base import BatchEncoding
-    from transformers.trainer_pt_utils import (
+    from transformers_471.modeling_outputs import SequenceClassifierOutput
+    from transformers_471.tokenization_utils_base import BatchEncoding
+    from transformers_471.trainer_pt_utils import (
         DistributedLengthGroupedSampler,
         DistributedSamplerWithLoop,
         DistributedTensorGatherer,

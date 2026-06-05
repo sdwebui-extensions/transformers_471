@@ -97,7 +97,7 @@ class XmodConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import XmodConfig, XmodModel
+    >>> from transformers_471 import XmodConfig, XmodModel
 
     >>> # Initializing an X-MOD facebook/xmod-base style configuration
     >>> configuration = XmodConfig()
@@ -166,7 +166,7 @@ class XmodConfig(PretrainedConfig):
         self.default_language = default_language
 
 
-# Copied from transformers.models.roberta.configuration_roberta.RobertaOnnxConfig with Roberta->Xmod
+# Copied from transformers_471.models.roberta.configuration_roberta.RobertaOnnxConfig with Roberta->Xmod
 class XmodOnnxConfig(OnnxConfig):
     @property
     def inputs(self) -> Mapping[str, Mapping[int, str]]:

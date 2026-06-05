@@ -16,8 +16,8 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import AutoProcessor, ParakeetProcessor
-from transformers.testing_utils import require_torch, require_torchaudio
+from transformers_471 import AutoProcessor, ParakeetProcessor
+from transformers_471.testing_utils import require_torch, require_torchaudio
 
 from ...test_processing_common import ProcessorTesterMixin
 

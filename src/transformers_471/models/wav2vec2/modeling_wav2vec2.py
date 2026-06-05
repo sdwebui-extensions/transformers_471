@@ -454,7 +454,7 @@ class Wav2Vec2FeatureProjection(nn.Module):
         return hidden_states, norm_hidden_states
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -749,7 +749,7 @@ class Wav2Vec2Encoder(nn.Module):
             attentions=all_self_attentions,
         )
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -847,7 +847,7 @@ class Wav2Vec2EncoderStableLayerNorm(nn.Module):
             attentions=all_self_attentions,
         )
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -1160,7 +1160,7 @@ class Wav2Vec2PreTrainedModel(PreTrainedModel):
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -1195,7 +1195,7 @@ class Wav2Vec2PreTrainedModel(PreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import Wav2Vec2ForCTC, AutoProcessor
+        >>> from transformers_471 import Wav2Vec2ForCTC, AutoProcessor
 
         >>> ckpt = "facebook/mms-1b-all"
         >>> processor = AutoProcessor.from_pretrained(ckpt)
@@ -1224,7 +1224,7 @@ class Wav2Vec2PreTrainedModel(PreTrainedModel):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -1571,8 +1571,8 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, Wav2Vec2ForPreTraining
-        >>> from transformers.models.wav2vec2.modeling_wav2vec2 import _compute_mask_indices, _sample_negative_indices
+        >>> from transformers_471 import AutoFeatureExtractor, Wav2Vec2ForPreTraining
+        >>> from transformers_471.models.wav2vec2.modeling_wav2vec2 import _compute_mask_indices, _sample_negative_indices
         >>> from datasets import load_dataset
 
         >>> feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base")

@@ -5,7 +5,7 @@ from typing import Callable
 
 import pytest
 
-from transformers.utils.import_utils import (
+from transformers_471.utils.import_utils import (
     Backend,
     VersionComparison,
     define_import_structure,

@@ -19,8 +19,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, JambaConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, JambaConfig, is_torch_available
+from transformers_471.testing_utils import (
     DeviceProperties,
     Expectations,
     get_device_properties,
@@ -42,12 +42,12 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         JambaForCausalLM,
         JambaForSequenceClassification,
         JambaModel,
     )
-    from transformers.models.jamba.modeling_jamba import (
+    from transformers_471.models.jamba.modeling_jamba import (
         HybridMambaAttentionDynamicCache,
     )
 

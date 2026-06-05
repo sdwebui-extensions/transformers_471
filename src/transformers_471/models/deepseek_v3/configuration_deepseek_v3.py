@@ -121,7 +121,7 @@ class DeepseekV3Config(PretrainedConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import DeepseekV3Model, DeepseekV3Config
+    >>> from transformers_471 import DeepseekV3Model, DeepseekV3Config
 
     >>> # Initializing a Deepseek-V3 style configuration
     >>> configuration = DeepseekV3Config()

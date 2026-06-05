@@ -342,7 +342,7 @@ class PerceptionLMForConditionalGeneration(LlavaForConditionalGeneration):
         Example:
 
         ```python
-        from transformers import AutoProcessor, AutoModelForImageTextToText
+        from transformers_471 import AutoProcessor, AutoModelForImageTextToText
         from huggingface_hub import hf_hub_download
 
         MODEL_PATH = "facebook/Perception-LM-1B"

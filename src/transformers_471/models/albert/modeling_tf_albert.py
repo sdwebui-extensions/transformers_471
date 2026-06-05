@@ -160,7 +160,7 @@ class TFAlbertEmbeddings(keras.layers.Layer):
             with tf.name_scope(self.LayerNorm.name):
                 self.LayerNorm.build([None, None, self.config.embedding_size])
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertEmbeddings.call
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertEmbeddings.call
     def call(
         self,
         input_ids: tf.Tensor | None = None,
@@ -955,7 +955,7 @@ class TFAlbertForPreTraining(TFAlbertPreTrainedModel, TFAlbertPreTrainingLoss):
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, TFAlbertForPreTraining
+        >>> from transformers_471 import AutoTokenizer, TFAlbertForPreTraining
 
         >>> tokenizer = AutoTokenizer.from_pretrained("albert/albert-base-v2")
         >>> model = TFAlbertForPreTraining.from_pretrained("albert/albert-base-v2")
@@ -1087,7 +1087,7 @@ class TFAlbertForMaskedLM(TFAlbertPreTrainedModel, TFMaskedLanguageModelingLoss)
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, TFAlbertForMaskedLM
+        >>> from transformers_471 import AutoTokenizer, TFAlbertForMaskedLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("albert/albert-base-v2")
         >>> model = TFAlbertForMaskedLM.from_pretrained("albert/albert-base-v2")

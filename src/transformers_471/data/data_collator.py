@@ -1419,7 +1419,7 @@ class DataCollatorForWholeWordMask(DataCollatorForLanguageModeling):
         """
         Get 0/1 labels for masked tokens with whole word mask proxy
         """
-        from transformers import BertTokenizer, BertTokenizerFast
+        from transformers_471 import BertTokenizer, BertTokenizerFast
 
         if not isinstance(self.tokenizer, (BertTokenizer, BertTokenizerFast)):
             warnings.warn(

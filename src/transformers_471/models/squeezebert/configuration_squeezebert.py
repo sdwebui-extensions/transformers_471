@@ -85,7 +85,7 @@ class SqueezeBertConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import SqueezeBertConfig, SqueezeBertModel
+    >>> from transformers_471 import SqueezeBertConfig, SqueezeBertModel
 
     >>> # Initializing a SqueezeBERT configuration
     >>> configuration = SqueezeBertConfig()
@@ -147,7 +147,7 @@ class SqueezeBertConfig(PretrainedConfig):
         self.output_groups = output_groups
 
 
-# # Copied from transformers.models.bert.configuration_bert.BertOnxxConfig with Bert->SqueezeBert
+# # Copied from transformers_471.models.bert.configuration_bert.BertOnxxConfig with Bert->SqueezeBert
 class SqueezeBertOnnxConfig(OnnxConfig):
     @property
     def inputs(self) -> Mapping[str, Mapping[int, str]]:

@@ -32,7 +32,7 @@ from packaging import version
 from parameterized import parameterized
 from pytest import mark
 
-from transformers import (
+from transformers_471 import (
     AutoModel,
     AutoModelForSequenceClassification,
     PretrainedConfig,
@@ -41,15 +41,15 @@ from transformers import (
     logging,
     set_seed,
 )
-from transformers.integrations import HfDeepSpeedConfig
-from transformers.integrations.deepspeed import (
+from transformers_471.integrations import HfDeepSpeedConfig
+from transformers_471.integrations.deepspeed import (
     is_deepspeed_available,
     is_deepspeed_zero3_enabled,
     unset_hf_deepspeed_config,
 )
-from transformers.modeling_utils import _get_tied_weight_keys
-from transformers.models.auto import get_values
-from transformers.models.auto.modeling_auto import (
+from transformers_471.modeling_utils import _get_tied_weight_keys
+from transformers_471.models.auto import get_values
+from transformers_471.models.auto.modeling_auto import (
     MODEL_FOR_AUDIO_CLASSIFICATION_MAPPING_NAMES,
     MODEL_FOR_AUDIO_XVECTOR_MAPPING_NAMES,
     MODEL_FOR_BACKBONE_MAPPING_NAMES,
@@ -73,7 +73,7 @@ from transformers.models.auto.modeling_auto import (
     MODEL_FOR_VISION_2_SEQ_MAPPING_NAMES,
     MODEL_MAPPING_NAMES,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     CaptureLogger,
     backend_device_count,
     backend_empty_cache,
@@ -103,7 +103,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import (
+from transformers_471.utils import (
     CONFIG_NAME,
     GENERATION_CONFIG_NAME,
     SAFE_WEIGHTS_NAME,
@@ -125,12 +125,12 @@ if is_torch_available():
     from safetensors.torch import save_file as safe_save_file
     from torch import nn
 
-    from transformers import MODEL_MAPPING
-    from transformers.cache_utils import Cache, DynamicCache
-    from transformers.modeling_utils import load_state_dict
-    from transformers.pytorch_utils import id_tensor_storage
+    from transformers_471 import MODEL_MAPPING
+    from transformers_471.cache_utils import Cache, DynamicCache
+    from transformers_471.modeling_utils import load_state_dict
+    from transformers_471.pytorch_utils import id_tensor_storage
 
-from transformers.utils.fx import _FX_SUPPORTED_MODELS_WITH_KV_CACHE, symbolic_trace
+from transformers_471.utils.fx import _FX_SUPPORTED_MODELS_WITH_KV_CACHE, symbolic_trace
 
 
 if is_deepspeed_available():

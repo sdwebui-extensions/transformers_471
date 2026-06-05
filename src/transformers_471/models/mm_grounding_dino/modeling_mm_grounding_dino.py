@@ -1970,7 +1970,7 @@ class MMGroundingDinoModel(MMGroundingDinoPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, AutoModel
+        >>> from transformers_471 import AutoProcessor, AutoModel
         >>> from PIL import Image
         >>> import requests
 
@@ -2458,7 +2458,7 @@ class MMGroundingDinoForObjectDetection(MMGroundingDinoPreTrainedModel):
 
         >>> import torch
         >>> from PIL import Image
-        >>> from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection
+        >>> from transformers_471 import AutoProcessor, AutoModelForZeroShotObjectDetection
 
         >>> model_id = "IDEA-Research/grounding-dino-tiny"
         >>> device = "cuda"

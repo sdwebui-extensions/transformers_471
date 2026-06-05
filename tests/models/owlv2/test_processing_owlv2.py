@@ -2,8 +2,8 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import Owlv2Processor
-from transformers.testing_utils import require_scipy
+from transformers_471 import Owlv2Processor
+from transformers_471.testing_utils import require_scipy
 
 from ...test_processing_common import ProcessorTesterMixin
 

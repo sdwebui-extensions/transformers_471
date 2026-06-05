@@ -198,7 +198,7 @@ class AlbertEmbeddings(nn.Module):
             "token_type_ids", torch.zeros(self.position_ids.size(), dtype=torch.long), persistent=False
         )
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.forward
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.forward
     def forward(
         self,
         input_ids: Optional[torch.LongTensor] = None,
@@ -789,7 +789,7 @@ class AlbertForPreTraining(AlbertPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, AlbertForPreTraining
+        >>> from transformers_471 import AutoTokenizer, AlbertForPreTraining
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("albert/albert-base-v2")
@@ -931,7 +931,7 @@ class AlbertForMaskedLM(AlbertPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, AlbertForMaskedLM
+        >>> from transformers_471 import AutoTokenizer, AlbertForMaskedLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("albert/albert-base-v2")
         >>> model = AlbertForMaskedLM.from_pretrained("albert/albert-base-v2")

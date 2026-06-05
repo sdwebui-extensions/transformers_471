@@ -19,7 +19,7 @@ import unittest
 
 import requests
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     Qwen2_5_VLConfig,
     Qwen2_5_VLForConditionalGeneration,
@@ -27,8 +27,8 @@ from transformers import (
     is_torch_available,
     is_vision_available,
 )
-from transformers.image_utils import load_image
-from transformers.testing_utils import (
+from transformers_471.image_utils import load_image
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_cv2,
@@ -38,7 +38,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import is_cv2_available
+from transformers_471.utils import is_cv2_available
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester

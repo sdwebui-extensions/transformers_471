@@ -15,15 +15,15 @@
 import tempfile
 import unittest
 
-from transformers import DeepseekVLHybridProcessor, LlamaTokenizer
-from transformers.testing_utils import get_tests_dir
-from transformers.utils import is_vision_available
+from transformers_471 import DeepseekVLHybridProcessor, LlamaTokenizer
+from transformers_471.testing_utils import get_tests_dir
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import DeepseekVLHybridImageProcessor
+    from transformers_471 import DeepseekVLHybridImageProcessor
 
 
 SAMPLE_VOCAB = get_tests_dir("fixtures/test_sentencepiece.model")

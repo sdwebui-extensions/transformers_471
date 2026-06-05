@@ -29,7 +29,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
 
-from transformers.utils.generic import OutputRecorder
+from transformers_471.utils.generic import OutputRecorder
 
 from ...activations import ACT2FN
 from ...modeling_layers import GradientCheckpointingLayer
@@ -1461,7 +1461,7 @@ class Sam2Model(Sam2PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoModel, AutoProcessor
+        >>> from transformers_471 import AutoModel, AutoProcessor
 
         >>> model = AutoModel.from_pretrained("danelcsb/sam2.1_hiera_tiny")
         >>> processor = AutoProcessor.from_pretrained("danelcsb/sam2.1_hiera_tiny")

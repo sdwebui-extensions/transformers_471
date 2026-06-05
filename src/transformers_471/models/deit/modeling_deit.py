@@ -161,7 +161,7 @@ class DeiTPatchEmbeddings(nn.Module):
         return x
 
 
-# Copied from transformers.models.vit.modeling_vit.eager_attention_forward
+# Copied from transformers_471.models.vit.modeling_vit.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -192,7 +192,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfAttention with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfAttention with ViT->DeiT
 class DeiTSelfAttention(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -245,7 +245,7 @@ class DeiTSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfOutput with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfOutput with ViT->DeiT
 class DeiTSelfOutput(nn.Module):
     """
     The residual connection is defined in DeiTLayer instead of here (as is the case with other models), due to the
@@ -263,7 +263,7 @@ class DeiTSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTAttention with ViT->DeiT
 class DeiTAttention(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -295,7 +295,7 @@ class DeiTAttention(nn.Module):
         return output
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTIntermediate with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTIntermediate with ViT->DeiT
 class DeiTIntermediate(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -311,7 +311,7 @@ class DeiTIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTOutput with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTOutput with ViT->DeiT
 class DeiTOutput(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -325,7 +325,7 @@ class DeiTOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTLayer with ViT->DeiT,VIT->DEIT
+# Copied from transformers_471.models.vit.modeling_vit.ViTLayer with ViT->DeiT,VIT->DEIT
 class DeiTLayer(GradientCheckpointingLayer):
     """This corresponds to the Block class in the timm implementation."""
 
@@ -356,7 +356,7 @@ class DeiTLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTEncoder with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTEncoder with ViT->DeiT
 class DeiTEncoder(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -486,7 +486,7 @@ class DeiTModel(DeiTPreTrainedModel):
         )
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTPooler with ViT->DeiT
+# Copied from transformers_471.models.vit.modeling_vit.ViTPooler with ViT->DeiT
 class DeiTPooler(nn.Module):
     def __init__(self, config: DeiTConfig):
         super().__init__()
@@ -548,7 +548,7 @@ class DeiTForMaskedImageModeling(DeiTPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, DeiTForMaskedImageModeling
+        >>> from transformers_471 import AutoImageProcessor, DeiTForMaskedImageModeling
         >>> import torch
         >>> from PIL import Image
         >>> import requests
@@ -648,7 +648,7 @@ class DeiTForImageClassification(DeiTPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, DeiTForImageClassification
+        >>> from transformers_471 import AutoImageProcessor, DeiTForImageClassification
         >>> import torch
         >>> from PIL import Image
         >>> import requests

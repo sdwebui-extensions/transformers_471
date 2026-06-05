@@ -39,7 +39,7 @@ from .configuration_trocr import TrOCRConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartLearnedPositionalEmbedding with Bart->TrOCR
+# Copied from transformers_471.models.bart.modeling_bart.BartLearnedPositionalEmbedding with Bart->TrOCR
 class TrOCRLearnedPositionalEmbedding(nn.Embedding):
     """
     This module learns positional embeddings up to a fixed maximum size.
@@ -67,7 +67,7 @@ class TrOCRLearnedPositionalEmbedding(nn.Embedding):
         return super().forward(position_ids + self.offset)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->TrOCR
+# Copied from transformers_471.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->TrOCR
 class TrOCRScaledWordEmbedding(nn.Embedding):
     """
     This module overrides nn.Embeddings' forward by multiplying with embeddings scale.
@@ -773,7 +773,7 @@ class TrOCRForCausalLM(TrOCRPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import (
+        >>> from transformers_471 import (
         ...     TrOCRConfig,
         ...     TrOCRProcessor,
         ...     TrOCRForCausalLM,

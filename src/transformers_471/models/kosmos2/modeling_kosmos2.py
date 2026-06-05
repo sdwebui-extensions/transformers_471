@@ -73,7 +73,7 @@ def _make_causal_mask(
     return mask[None, None, :, :].expand(bsz, 1, tgt_len, tgt_len + past_key_values_length)
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols
@@ -177,7 +177,7 @@ class Kosmos2ForConditionalGenerationModelOutput(ModelOutput):
         )
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPVisionEmbeddings with CLIP->Kosmos2
+# Copied from transformers_471.models.clip.modeling_clip.CLIPVisionEmbeddings with CLIP->Kosmos2
 class Kosmos2VisionEmbeddings(nn.Module):
     def __init__(self, config: Kosmos2VisionConfig):
         super().__init__()
@@ -261,7 +261,7 @@ class Kosmos2VisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Adapted from transformers.models.siglip.modeling_siglip.eager_attention_forward -> Kosmos2 doesn't cast attn weights to fp32
+# Adapted from transformers_471.models.siglip.modeling_siglip.eager_attention_forward -> Kosmos2 doesn't cast attn weights to fp32
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -357,7 +357,7 @@ class Kosmos2VisionAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPMLP with CLIP->Kosmos2Vision
+# Copied from transformers_471.models.clip.modeling_clip.CLIPMLP with CLIP->Kosmos2Vision
 class Kosmos2VisionMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -373,7 +373,7 @@ class Kosmos2VisionMLP(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->Kosmos2Vision
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->Kosmos2Vision
 class Kosmos2VisionEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: Kosmos2VisionConfig):
         super().__init__()
@@ -424,7 +424,7 @@ class Kosmos2VisionEncoderLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->Kosmos2Vision
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->Kosmos2Vision
 class Kosmos2VisionEncoder(nn.Module):
     """
     Transformer encoder consisting of `config.num_hidden_layers` self attention layers. Each layer is a
@@ -514,7 +514,7 @@ class Kosmos2VisionEncoder(nn.Module):
 
 # Similar to `transformers.models.clip.modeling_clip.CLIPVisionTransformer` but without docstring for `forward`
 class Kosmos2VisionTransformer(nn.Module):
-    # Copied from transformers.models.altclip.modeling_altclip.AltCLIPVisionTransformer.__init__ with AltCLIPVision->Kosmos2Vision,ALTCLIP_VISION->KOSMOS2_VISION,AltCLIP->Kosmos2Vision
+    # Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPVisionTransformer.__init__ with AltCLIPVision->Kosmos2Vision,ALTCLIP_VISION->KOSMOS2_VISION,AltCLIP->Kosmos2Vision
     def __init__(self, config: Kosmos2VisionConfig):
         super().__init__()
         self.config = config
@@ -571,7 +571,7 @@ class Kosmos2VisionTransformer(nn.Module):
 class Kosmos2TextSinusoidalPositionalEmbedding(nn.Module):
     """This module produces sinusoidal positional embeddings of any length."""
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.__init__
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.__init__
     def __init__(self, num_positions: int, embedding_dim: int, padding_idx: Optional[int] = None):
         super().__init__()
         self.offset = 2
@@ -579,7 +579,7 @@ class Kosmos2TextSinusoidalPositionalEmbedding(nn.Module):
         self.padding_idx = padding_idx
         self.make_weights(num_positions + self.offset, embedding_dim, padding_idx)
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.make_weights
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.make_weights
     def make_weights(self, num_embeddings: int, embedding_dim: int, padding_idx: Optional[int] = None):
         emb_weights = self.get_embedding(num_embeddings, embedding_dim, padding_idx)
         if hasattr(self, "weights"):
@@ -589,7 +589,7 @@ class Kosmos2TextSinusoidalPositionalEmbedding(nn.Module):
         self.register_buffer("weights", emb_weights, persistent=False)
 
     @staticmethod
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.get_embedding
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.get_embedding
     def get_embedding(num_embeddings: int, embedding_dim: int, padding_idx: Optional[int] = None):
         """
         Build sinusoidal embeddings.
@@ -637,7 +637,7 @@ class Kosmos2TextSinusoidalPositionalEmbedding(nn.Module):
 
         return self.weights.index_select(0, position_ids.view(-1)).view(bsz, seq_len, self.weights.shape[-1]).detach()
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.create_position_ids_from_inputs_embeds
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.create_position_ids_from_inputs_embeds
     def create_position_ids_from_inputs_embeds(self, inputs_embeds, past_key_values_length):
         """
         We are provided embeddings directly. We cannot infer which are padded so just generate sequential position ids.
@@ -1199,14 +1199,14 @@ class Kosmos2VisionModel(Kosmos2PreTrainedModel):
     config: Kosmos2VisionConfig
     main_input_name = "pixel_values"
 
-    # Copied from transformers.models.clip.modeling_clip.CLIPVisionModel.__init__ with CLIP_VISION->KOSMOS2_VISION,CLIP->Kosmos2,self.vision_model->self.model
+    # Copied from transformers_471.models.clip.modeling_clip.CLIPVisionModel.__init__ with CLIP_VISION->KOSMOS2_VISION,CLIP->Kosmos2,self.vision_model->self.model
     def __init__(self, config: Kosmos2VisionConfig):
         super().__init__(config)
         self.model = Kosmos2VisionTransformer(config)
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.clip.modeling_clip.CLIPVisionModel.get_input_embeddings with CLIP_VISION->KOSMOS2_VISION,CLIP->Kosmos2,self.vision_model->self.model
+    # Copied from transformers_471.models.clip.modeling_clip.CLIPVisionModel.get_input_embeddings with CLIP_VISION->KOSMOS2_VISION,CLIP->Kosmos2,self.vision_model->self.model
     def get_input_embeddings(self) -> nn.Module:
         return self.model.embeddings.patch_embedding
 
@@ -1580,7 +1580,7 @@ class Kosmos2Model(Kosmos2PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Kosmos2Model
+        >>> from transformers_471 import AutoProcessor, Kosmos2Model
 
         >>> model = Kosmos2Model.from_pretrained("microsoft/kosmos-2-patch14-224")
         >>> processor = AutoProcessor.from_pretrained("microsoft/kosmos-2-patch14-224")
@@ -1719,7 +1719,7 @@ class Kosmos2ForConditionalGeneration(Kosmos2PreTrainedModel, GenerationMixin):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Kosmos2ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Kosmos2ForConditionalGeneration
 
         >>> model = Kosmos2ForConditionalGeneration.from_pretrained("microsoft/kosmos-2-patch14-224")
         >>> processor = AutoProcessor.from_pretrained("microsoft/kosmos-2-patch14-224")

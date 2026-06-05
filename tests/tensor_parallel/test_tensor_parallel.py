@@ -18,9 +18,9 @@ import os
 import tempfile
 import textwrap
 
-from transformers import is_torch_available
-from transformers.integrations.tensor_parallel import get_packed_weights, repack_weights
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available
+from transformers_471.integrations.tensor_parallel import get_packed_weights, repack_weights
+from transformers_471.testing_utils import (
     TestCasePlus,
     backend_device_count,
     require_huggingface_hub_greater_or_equal,
@@ -71,7 +71,7 @@ class TestTensorParallel(TestCasePlus):
             """
             import torch
             import os
-            from transformers import AutoModelForCausalLM, AutoTokenizer
+            from transformers_471 import AutoModelForCausalLM, AutoTokenizer
 
             model_id = "JackFram/llama-68m"
 
@@ -111,7 +111,7 @@ class TestTensorParallel(TestCasePlus):
             """
             import torch
             import os
-            from transformers import AutoModelForCausalLM
+            from transformers_471 import AutoModelForCausalLM
             from torch import nn
 
             model_id = "JackFram/llama-68m"
@@ -137,7 +137,7 @@ class TestTensorParallel(TestCasePlus):
             """
             import torch
             import os
-            from transformers import AutoModelForCausalLM, AutoTokenizer
+            from transformers_471 import AutoModelForCausalLM, AutoTokenizer
 
             model_id = "JackFram/llama-68m"
 
@@ -182,7 +182,7 @@ class TestTensorParallel(TestCasePlus):
                     f"""
                     import torch
                     import os
-                    from transformers import AutoModelForCausalLM
+                    from transformers_471 import AutoModelForCausalLM
 
                     model_id = "JackFram/llama-68m"
                     kwargs = dict()
@@ -218,7 +218,7 @@ class TestTensorParallel(TestCasePlus):
 class TestTensorParallelProperties(TestCasePlus):
     def test_tp_plan_property_setter_getter(self):
         """Test that tp_plan property can be set and retrieved correctly."""
-        from transformers import AutoModelForCausalLM
+        from transformers_471 import AutoModelForCausalLM
 
         model_id = "JackFram/llama-68m"
         model = AutoModelForCausalLM.from_pretrained(model_id, dtype="auto")
@@ -247,7 +247,7 @@ class TestTensorParallelProperties(TestCasePlus):
 
     def test_tp_plan_validation_invalid_style(self):
         """Test that invalid parallel styles are rejected."""
-        from transformers import AutoModelForCausalLM
+        from transformers_471 import AutoModelForCausalLM
 
         model_id = "JackFram/llama-68m"
         model = AutoModelForCausalLM.from_pretrained(model_id, dtype="auto")
@@ -263,7 +263,7 @@ class TestTensorParallelProperties(TestCasePlus):
         """Test that warnings are issued for non-existent layer patterns."""
         import warnings
 
-        from transformers import AutoModelForCausalLM
+        from transformers_471 import AutoModelForCausalLM
 
         model_id = "JackFram/llama-68m"
         model = AutoModelForCausalLM.from_pretrained(model_id, dtype="auto")
@@ -282,7 +282,7 @@ class TestTensorParallelProperties(TestCasePlus):
         """Test that valid layer patterns are accepted without warnings."""
         import warnings
 
-        from transformers import AutoModelForCausalLM
+        from transformers_471 import AutoModelForCausalLM
 
         model_id = "JackFram/llama-68m"
         model = AutoModelForCausalLM.from_pretrained(model_id, dtype="auto")
@@ -319,7 +319,7 @@ class TestTensorParallelProperties(TestCasePlus):
 
     def test_tp_plan_none_handling(self):
         """Test that None values are handled correctly."""
-        from transformers import AutoModelForCausalLM
+        from transformers_471 import AutoModelForCausalLM
 
         model_id = "JackFram/llama-68m"
         model = AutoModelForCausalLM.from_pretrained(model_id, dtype="auto")

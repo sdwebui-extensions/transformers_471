@@ -71,7 +71,7 @@ logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
 SUPPORTED_ANNOTATION_FORMATS = (AnnotationFormat.COCO_DETECTION,)
 
 
-# Copied from transformers.models.detr.image_processing_detr.get_size_with_aspect_ratio
+# Copied from transformers_471.models.detr.image_processing_detr.get_size_with_aspect_ratio
 def get_size_with_aspect_ratio(image_size, size, max_size=None) -> tuple[int, int]:
     """
     Computes the output image size given the input image size and the desired output size.
@@ -111,7 +111,7 @@ def get_size_with_aspect_ratio(image_size, size, max_size=None) -> tuple[int, in
     return (oh, ow)
 
 
-# Copied from transformers.models.detr.image_processing_detr.get_resize_output_image_size
+# Copied from transformers_471.models.detr.image_processing_detr.get_resize_output_image_size
 def get_resize_output_image_size(
     input_image: np.ndarray,
     size: Union[int, tuple[int, int], list[int]],
@@ -140,7 +140,7 @@ def get_resize_output_image_size(
     return get_size_with_aspect_ratio(image_size, size, max_size)
 
 
-# Copied from transformers.models.detr.image_processing_detr.get_image_size_for_max_height_width
+# Copied from transformers_471.models.detr.image_processing_detr.get_image_size_for_max_height_width
 def get_image_size_for_max_height_width(
     input_image: np.ndarray,
     max_height: int,
@@ -174,7 +174,7 @@ def get_image_size_for_max_height_width(
     return new_height, new_width
 
 
-# Copied from transformers.models.detr.image_processing_detr.get_numpy_to_framework_fn
+# Copied from transformers_471.models.detr.image_processing_detr.get_numpy_to_framework_fn
 def get_numpy_to_framework_fn(arr) -> Callable:
     """
     Returns a function that converts a numpy array to the framework of the input array.
@@ -199,7 +199,7 @@ def get_numpy_to_framework_fn(arr) -> Callable:
     raise ValueError(f"Cannot convert arrays of type {type(arr)}")
 
 
-# Copied from transformers.models.detr.image_processing_detr.safe_squeeze
+# Copied from transformers_471.models.detr.image_processing_detr.safe_squeeze
 def safe_squeeze(arr: np.ndarray, axis: Optional[int] = None) -> np.ndarray:
     """
     Squeezes an array, but only if the axis specified has dim 1.
@@ -213,7 +213,7 @@ def safe_squeeze(arr: np.ndarray, axis: Optional[int] = None) -> np.ndarray:
         return arr
 
 
-# Copied from transformers.models.detr.image_processing_detr.normalize_annotation
+# Copied from transformers_471.models.detr.image_processing_detr.normalize_annotation
 def normalize_annotation(annotation: dict, image_size: tuple[int, int]) -> dict:
     image_height, image_width = image_size
     norm_annotation = {}
@@ -228,7 +228,7 @@ def normalize_annotation(annotation: dict, image_size: tuple[int, int]) -> dict:
     return norm_annotation
 
 
-# Copied from transformers.models.detr.image_processing_detr.max_across_indices
+# Copied from transformers_471.models.detr.image_processing_detr.max_across_indices
 def max_across_indices(values: Iterable[Any]) -> list[Any]:
     """
     Return the maximum value across all indices of an iterable of values.
@@ -236,7 +236,7 @@ def max_across_indices(values: Iterable[Any]) -> list[Any]:
     return [max(values_i) for values_i in zip(*values)]
 
 
-# Copied from transformers.models.detr.image_processing_detr.get_max_height_width
+# Copied from transformers_471.models.detr.image_processing_detr.get_max_height_width
 def get_max_height_width(
     images: list[np.ndarray], input_data_format: Optional[Union[str, ChannelDimension]] = None
 ) -> list[int]:
@@ -255,7 +255,7 @@ def get_max_height_width(
     return (max_height, max_width)
 
 
-# Copied from transformers.models.detr.image_processing_detr.make_pixel_mask
+# Copied from transformers_471.models.detr.image_processing_detr.make_pixel_mask
 def make_pixel_mask(
     image: np.ndarray, output_size: tuple[int, int], input_data_format: Optional[Union[str, ChannelDimension]] = None
 ) -> np.ndarray:
@@ -329,7 +329,7 @@ def prepare_coco_detection_annotation(
     return new_target
 
 
-# Copied from transformers.models.detr.image_processing_detr.resize_annotation
+# Copied from transformers_471.models.detr.image_processing_detr.resize_annotation
 def resize_annotation(
     annotation: dict[str, Any],
     orig_size: tuple[int, int],
@@ -496,7 +496,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
             raise ValueError(f"Format {format} is not supported.")
         return target
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.resize
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.resize
     def resize(
         self,
         image: np.ndarray,
@@ -565,7 +565,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
         )
         return image
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.resize_annotation
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.resize_annotation
     def resize_annotation(
         self,
         annotation,
@@ -579,7 +579,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
         """
         return resize_annotation(annotation, orig_size=orig_size, target_size=size, resample=resample)
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.rescale
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.rescale
     def rescale(
         self,
         image: np.ndarray,
@@ -608,7 +608,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
         """
         return rescale(image, rescale_factor, data_format=data_format, input_data_format=input_data_format)
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.normalize_annotation
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.normalize_annotation
     def normalize_annotation(self, annotation: dict, image_size: tuple[int, int]) -> dict:
         """
         Normalize the boxes in the annotation from `[top_left_x, top_left_y, bottom_right_x, bottom_right_y]` to
@@ -616,7 +616,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
         """
         return normalize_annotation(annotation, image_size=image_size)
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor._update_annotation_for_padded_image
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor._update_annotation_for_padded_image
     def _update_annotation_for_padded_image(
         self,
         annotation: dict,
@@ -660,7 +660,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
                 new_annotation[key] = value
         return new_annotation
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor._pad_image
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor._pad_image
     def _pad_image(
         self,
         image: np.ndarray,
@@ -694,7 +694,7 @@ class RTDetrImageProcessor(BaseImageProcessor):
             )
         return padded_image, annotation
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.pad
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.pad
     def pad(
         self,
         images: list[np.ndarray],

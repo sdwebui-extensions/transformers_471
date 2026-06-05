@@ -20,8 +20,8 @@ from functools import cached_property
 
 import timeout_decorator  # noqa
 
-from transformers import BartConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import BartConfig, is_torch_available
+from transformers_471.testing_utils import (
     require_sentencepiece,
     require_tokenizers,
     require_torch,
@@ -39,7 +39,7 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AutoModelForSequenceClassification,
         BartForCausalLM,
         BartForConditionalGeneration,
@@ -49,7 +49,7 @@ if is_torch_available():
         BartTokenizer,
         pipeline,
     )
-    from transformers.models.bart.modeling_bart import BartDecoder, BartEncoder, shift_tokens_right
+    from transformers_471.models.bart.modeling_bart import BartDecoder, BartEncoder, shift_tokens_right
 
 
 def prepare_bart_inputs_dict(

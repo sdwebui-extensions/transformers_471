@@ -124,7 +124,7 @@ class ErnieEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfAttention with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfAttention with Bert->Ernie
 class ErnieSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -258,7 +258,7 @@ class ErnieSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->Ernie
 class ErnieSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -278,7 +278,7 @@ ERNIE_SELF_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.bert.modeling_bert.BertAttention with Bert->Ernie,BERT->ERNIE
+# Copied from transformers_471.models.bert.modeling_bert.BertAttention with Bert->Ernie,BERT->ERNIE
 class ErnieAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -333,7 +333,7 @@ class ErnieAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->Ernie
 class ErnieIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -349,7 +349,7 @@ class ErnieIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->Ernie
 class ErnieOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -364,7 +364,7 @@ class ErnieOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLayer with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertLayer with Bert->Ernie
 class ErnieLayer(GradientCheckpointingLayer):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -435,7 +435,7 @@ class ErnieLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertEncoder with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertEncoder with Bert->Ernie
 class ErnieEncoder(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -526,7 +526,7 @@ class ErnieEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler with Bert->Ernie
 class ErniePooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -542,7 +542,7 @@ class ErniePooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->Ernie
 class ErniePredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -560,7 +560,7 @@ class ErniePredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->Ernie
 class ErnieLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -584,7 +584,7 @@ class ErnieLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Ernie
 class ErnieOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -595,7 +595,7 @@ class ErnieOnlyMLMHead(nn.Module):
         return prediction_scores
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyNSPHead with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyNSPHead with Bert->Ernie
 class ErnieOnlyNSPHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -606,7 +606,7 @@ class ErnieOnlyNSPHead(nn.Module):
         return seq_relationship_score
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPreTrainingHeads with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertPreTrainingHeads with Bert->Ernie
 class ErniePreTrainingHeads(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -648,7 +648,7 @@ class ErniePreTrainedModel(PreTrainedModel):
     Output type of [`ErnieForPreTraining`].
     """
 )
-# Copied from transformers.models.bert.modeling_bert.BertForPreTrainingOutput with Bert->Ernie
+# Copied from transformers_471.models.bert.modeling_bert.BertForPreTrainingOutput with Bert->Ernie
 class ErnieForPreTrainingOutput(ModelOutput):
     r"""
     loss (*optional*, returned when `labels` is provided, `torch.FloatTensor` of shape `(1,)`):
@@ -680,7 +680,7 @@ class ErnieForPreTrainingOutput(ModelOutput):
     """
 )
 class ErnieModel(ErniePreTrainedModel):
-    # Copied from transformers.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->Ernie
+    # Copied from transformers_471.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->Ernie
     def __init__(self, config, add_pooling_layer=True):
         r"""
         add_pooling_layer (bool, *optional*, defaults to `True`):
@@ -697,15 +697,15 @@ class ErnieModel(ErniePreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel.get_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel.get_input_embeddings
     def get_input_embeddings(self):
         return self.embeddings.word_embeddings
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel.set_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel.set_input_embeddings
     def set_input_embeddings(self, value):
         self.embeddings.word_embeddings = value
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel._prune_heads
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel._prune_heads
     def _prune_heads(self, heads_to_prune):
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base
@@ -849,7 +849,7 @@ class ErnieModel(ErniePreTrainedModel):
 class ErnieForPreTraining(ErniePreTrainedModel):
     _tied_weights_keys = ["cls.predictions.decoder.bias", "cls.predictions.decoder.weight"]
 
-    # Copied from transformers.models.bert.modeling_bert.BertForPreTraining.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForPreTraining.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
 
@@ -859,11 +859,11 @@ class ErnieForPreTraining(ErniePreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertForPreTraining.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForPreTraining.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertForPreTraining.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForPreTraining.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -904,7 +904,7 @@ class ErnieForPreTraining(ErniePreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ErnieForPreTraining
+        >>> from transformers_471 import AutoTokenizer, ErnieForPreTraining
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("nghuyong/ernie-1.0-base-zh")
@@ -963,7 +963,7 @@ class ErnieForPreTraining(ErniePreTrainedModel):
 class ErnieForCausalLM(ErniePreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["cls.predictions.decoder.bias", "cls.predictions.decoder.weight"]
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.__init__ with BertLMHeadModel->ErnieForCausalLM,Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.__init__ with BertLMHeadModel->ErnieForCausalLM,Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
 
@@ -976,11 +976,11 @@ class ErnieForCausalLM(ErniePreTrainedModel, GenerationMixin):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -1067,7 +1067,7 @@ class ErnieForCausalLM(ErniePreTrainedModel, GenerationMixin):
 class ErnieForMaskedLM(ErniePreTrainedModel):
     _tied_weights_keys = ["cls.predictions.decoder.bias", "cls.predictions.decoder.weight"]
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
 
@@ -1083,11 +1083,11 @@ class ErnieForMaskedLM(ErniePreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -1157,7 +1157,7 @@ class ErnieForMaskedLM(ErniePreTrainedModel):
             attentions=outputs.attentions,
         )
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.prepare_inputs_for_generation
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.prepare_inputs_for_generation
     def prepare_inputs_for_generation(self, input_ids, attention_mask=None, **model_kwargs):
         input_shape = input_ids.shape
         effective_batch_size = input_shape[0]
@@ -1189,7 +1189,7 @@ class ErnieForMaskedLM(ErniePreTrainedModel):
     """
 )
 class ErnieForNextSentencePrediction(ErniePreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForNextSentencePrediction.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForNextSentencePrediction.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
 
@@ -1231,7 +1231,7 @@ class ErnieForNextSentencePrediction(ErniePreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ErnieForNextSentencePrediction
+        >>> from transformers_471 import AutoTokenizer, ErnieForNextSentencePrediction
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("nghuyong/ernie-1.0-base-zh")
@@ -1298,7 +1298,7 @@ class ErnieForNextSentencePrediction(ErniePreTrainedModel):
     """
 )
 class ErnieForSequenceClassification(ErniePreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForSequenceClassification.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForSequenceClassification.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -1396,7 +1396,7 @@ class ErnieForSequenceClassification(ErniePreTrainedModel):
 
 @auto_docstring
 class ErnieForMultipleChoice(ErniePreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForMultipleChoice.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMultipleChoice.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
 
@@ -1511,7 +1511,7 @@ class ErnieForMultipleChoice(ErniePreTrainedModel):
 
 @auto_docstring
 class ErnieForTokenClassification(ErniePreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForTokenClassification.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForTokenClassification.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -1589,7 +1589,7 @@ class ErnieForTokenClassification(ErniePreTrainedModel):
 
 @auto_docstring
 class ErnieForQuestionAnswering(ErniePreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with Bert->Ernie,bert->ernie
+    # Copied from transformers_471.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with Bert->Ernie,bert->ernie
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels

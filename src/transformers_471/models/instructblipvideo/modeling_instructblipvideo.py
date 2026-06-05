@@ -165,7 +165,7 @@ class InstructBlipVideoPreTrainedModel(PreTrainedModel):
             module.query_tokens.data.zero_()
 
 
-# Adapted from transformers.models.siglip.modeling_siglip.eager_attention_forward -> InstructBlipVideo doesn't cast attn weights to fp32
+# Adapted from transformers_471.models.siglip.modeling_siglip.eager_attention_forward -> InstructBlipVideo doesn't cast attn weights to fp32
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -1348,7 +1348,7 @@ class InstructBlipVideoForConditionalGeneration(InstructBlipVideoPreTrainedModel
         Examples:
 
         ```python
-        >>> from transformers import InstructBlipVideoProcessor, InstructBlipVideoForConditionalGeneration
+        >>> from transformers_471 import InstructBlipVideoProcessor, InstructBlipVideoForConditionalGeneration
         >>> import torch
         >>> from huggingface_hub import hf_hub_download
         >>> import av

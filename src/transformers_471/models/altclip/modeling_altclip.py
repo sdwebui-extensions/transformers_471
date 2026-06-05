@@ -52,7 +52,7 @@ def clip_loss(similarity: torch.Tensor) -> torch.Tensor:
 
 @dataclass
 @auto_docstring
-# Copied from transformers.models.clip.modeling_clip.CLIPOutput with CLIP->AltCLIP
+# Copied from transformers_471.models.clip.modeling_clip.CLIPOutput with CLIP->AltCLIP
 class AltCLIPOutput(ModelOutput):
     r"""
     loss (`torch.FloatTensor` of shape `(1,)`, *optional*, returned when `return_loss` is `True`):
@@ -88,13 +88,13 @@ class AltCLIPOutput(ModelOutput):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->AltRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->AltRoberta
 class AltRobertaEmbeddings(nn.Module):
     """
     Same as BertEmbeddings with a tiny tweak for positional embeddings indexing.
     """
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.__init__
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.__init__
     def __init__(self, config):
         super().__init__()
         self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)
@@ -264,7 +264,7 @@ class AltRobertaSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaSelfOutput
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaSelfOutput
 class AltRobertaSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -329,7 +329,7 @@ class AltRobertaAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaIntermediate with Roberta->AltRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaIntermediate with Roberta->AltRoberta
 class AltRobertaIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -345,7 +345,7 @@ class AltRobertaIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaOutput
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaOutput
 class AltRobertaOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -360,7 +360,7 @@ class AltRobertaOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextLayer with AlignText->AltRoberta
+# Copied from transformers_471.models.align.modeling_align.AlignTextLayer with AlignText->AltRoberta
 class AltRobertaLayer(GradientCheckpointingLayer):
     def __init__(self, config):
         super().__init__()
@@ -401,7 +401,7 @@ class AltRobertaLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextEncoder with AlignText->AltRoberta
+# Copied from transformers_471.models.align.modeling_align.AlignTextEncoder with AlignText->AltRoberta
 class AltRobertaEncoder(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -451,7 +451,7 @@ class AltRobertaEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaPooler
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaPooler
 class AltRobertaPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -467,7 +467,7 @@ class AltRobertaPooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.siglip.modeling_siglip.eager_attention_forward
+# Copied from transformers_471.models.siglip.modeling_siglip.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -564,7 +564,7 @@ class AltCLIPAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPMLP with CLIP->AltCLIP
+# Copied from transformers_471.models.clip.modeling_clip.CLIPMLP with CLIP->AltCLIP
 class AltCLIPMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -717,7 +717,7 @@ class AltCLIPEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPVisionEmbeddings with CLIP->AltCLIP
+# Copied from transformers_471.models.clip.modeling_clip.CLIPVisionEmbeddings with CLIP->AltCLIP
 class AltCLIPVisionEmbeddings(nn.Module):
     def __init__(self, config: AltCLIPVisionConfig):
         super().__init__()
@@ -934,7 +934,7 @@ class AltCLIPVisionModel(AltCLIPPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, AltCLIPVisionModel
+        >>> from transformers_471 import AutoProcessor, AltCLIPVisionModel
 
         >>> model = AltCLIPVisionModel.from_pretrained("BAAI/AltCLIP")
         >>> processor = AutoProcessor.from_pretrained("BAAI/AltCLIP")
@@ -971,7 +971,7 @@ class AltCLIPVisionModel(AltCLIPPreTrainedModel):
 class AltRobertaModel(AltCLIPPreTrainedModel):
     config: AltCLIPTextConfig
 
-    # Copied from transformers.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->AltRoberta
+    # Copied from transformers_471.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->AltRoberta
     def __init__(self, config, add_pooling_layer=True):
         r"""
         add_pooling_layer (bool, *optional*, defaults to `True`):
@@ -1003,7 +1003,7 @@ class AltRobertaModel(AltCLIPPreTrainedModel):
             self.encoder.layer[layer].attention.prune_heads(heads)
 
     @auto_docstring
-    # Copied from transformers.models.clap.modeling_clap.ClapTextModel.forward
+    # Copied from transformers_471.models.clap.modeling_clap.ClapTextModel.forward
     def forward(
         self,
         input_ids: Optional[torch.Tensor] = None,
@@ -1115,7 +1115,7 @@ class AltCLIPTextModel(AltCLIPPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, AltCLIPTextModel
+        >>> from transformers_471 import AutoProcessor, AltCLIPTextModel
 
         >>> model = AltCLIPTextModel.from_pretrained("BAAI/AltCLIP")
         >>> processor = AutoProcessor.from_pretrained("BAAI/AltCLIP")
@@ -1215,7 +1215,7 @@ class AltCLIPModel(AltCLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, AltCLIPModel
+        >>> from transformers_471 import AutoProcessor, AltCLIPModel
 
         >>> model = AltCLIPModel.from_pretrained("BAAI/AltCLIP")
         >>> processor = AutoProcessor.from_pretrained("BAAI/AltCLIP")
@@ -1251,8 +1251,8 @@ class AltCLIPModel(AltCLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, AltCLIPModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AltCLIPModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = AltCLIPModel.from_pretrained("BAAI/AltCLIP")
         >>> processor = AutoProcessor.from_pretrained("BAAI/AltCLIP")
@@ -1296,7 +1296,7 @@ class AltCLIPModel(AltCLIPPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, AltCLIPModel
+        >>> from transformers_471 import AutoProcessor, AltCLIPModel
 
         >>> model = AltCLIPModel.from_pretrained("BAAI/AltCLIP")
         >>> processor = AutoProcessor.from_pretrained("BAAI/AltCLIP")
@@ -1368,7 +1368,7 @@ class AltCLIPModel(AltCLIPPreTrainedModel):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols

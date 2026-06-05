@@ -136,7 +136,7 @@ if is_accelerate_available():
     from accelerate.utils import reduce
 
 if is_vision_available():
-    from transformers.image_transforms import center_to_corners_format
+    from transformers_471.image_transforms import center_to_corners_format
 
 if is_torchvision_available():
     from torchvision.ops.boxes import batched_nms
@@ -1598,7 +1598,7 @@ class DetaModel(DetaPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, DetaModel
+        >>> from transformers_471 import AutoImageProcessor, DetaModel
         >>> from PIL import Image
         >>> import requests
 
@@ -1921,7 +1921,7 @@ class DetaForObjectDetection(DetaPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, DetaForObjectDetection
+        >>> from transformers_471 import AutoImageProcessor, DetaForObjectDetection
         >>> from PIL import Image
         >>> import requests
 

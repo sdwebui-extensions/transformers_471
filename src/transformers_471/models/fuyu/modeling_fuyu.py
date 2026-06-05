@@ -310,7 +310,7 @@ class FuyuForCausalLM(FuyuPreTrainedModel, GenerationMixin):
         Examples:
 
         ```python
-        >>> from transformers import FuyuProcessor, FuyuForCausalLM
+        >>> from transformers_471 import FuyuProcessor, FuyuForCausalLM
         >>> from PIL import Image
         >>> import requests
 

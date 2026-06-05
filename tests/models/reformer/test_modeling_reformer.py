@@ -14,8 +14,8 @@
 
 import unittest
 
-from transformers import ReformerConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import ReformerConfig, is_torch_available
+from transformers_471.testing_utils import (
     require_sentencepiece,
     require_tokenizers,
     require_torch,
@@ -35,7 +35,7 @@ if is_torch_available():
     import torch
     from torch import nn
 
-    from transformers import (
+    from transformers_471 import (
         ReformerForMaskedLM,
         ReformerForQuestionAnswering,
         ReformerForSequenceClassification,
@@ -43,7 +43,7 @@ if is_torch_available():
         ReformerModelWithLMHead,
         ReformerTokenizer,
     )
-    from transformers.models.reformer.modeling_reformer import ReformerLayer
+    from transformers_471.models.reformer.modeling_reformer import ReformerLayer
 
 
 class ReformerModelTester:

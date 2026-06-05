@@ -20,15 +20,15 @@ import unittest
 import numpy as np
 import pytest
 
-from transformers import AutoProcessor, Qwen2TokenizerFast
-from transformers.testing_utils import require_av, require_torch, require_torchvision, require_vision
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import AutoProcessor, Qwen2TokenizerFast
+from transformers_471.testing_utils import require_av, require_torch, require_torchvision, require_vision
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin, url_to_local_path
 
 
 if is_vision_available():
-    from transformers import Qwen2_5_VLProcessor, Qwen2VLImageProcessorFast
+    from transformers_471 import Qwen2_5_VLProcessor, Qwen2VLImageProcessorFast
 
 if is_torch_available():
     import torch

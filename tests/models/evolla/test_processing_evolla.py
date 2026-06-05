@@ -17,12 +17,12 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     EvollaProcessor,
 )
-from transformers.testing_utils import require_torch
-from transformers.utils import is_torch_available
+from transformers_471.testing_utils import require_torch
+from transformers_471.utils import is_torch_available
 
 from ...test_processing_common import ProcessorTesterMixin
 

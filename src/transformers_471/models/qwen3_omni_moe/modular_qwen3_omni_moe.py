@@ -252,7 +252,7 @@ class Qwen3OmniMoeThinkerConfig(Qwen2_5OmniThinkerConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen3OmniMoeThinkerModel, Qwen3OmniMoeThinkerConfig
+    >>> from transformers_471 import Qwen3OmniMoeThinkerModel, Qwen3OmniMoeThinkerConfig
 
     >>> # Initializing a default Qwen3OmniMoeThinkerConfig
     >>> configuration = Qwen3OmniMoeThinkerConfig()
@@ -481,7 +481,7 @@ class Qwen3OmniMoeTalkerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen3OmniMoeTalkerConfig, Qwen3OmniMoeTalker
+    >>> from transformers_471 import Qwen3OmniMoeTalkerConfig, Qwen3OmniMoeTalker
 
     >>> # Initialize a Qwen3OmniMoeTalkerConfig with default sub-configurations
     >>> config = Qwen3OmniMoeTalkerConfig(
@@ -614,7 +614,7 @@ class Qwen3OmniMoeCode2WavConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Qwen3OmniMoeCode2WavConfig, Qwen3OmniMoeCode2WavModel
+    >>> from transformers_471 import Qwen3OmniMoeCode2WavConfig, Qwen3OmniMoeCode2WavModel
 
     >>> # Initializing a default Qwen3OmniMoeCode2WavConfig
     >>> config = Qwen3OmniMoeCode2WavConfig()
@@ -696,7 +696,7 @@ class Qwen3OmniMoeConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     Qwen3OmniMoeThinkerConfig,
     ...     Qwen3OmniMoeTalkerConfig,
     ...     Qwen3OmniMoeCode2WavConfig,

@@ -568,7 +568,7 @@ class EsmEncoder(nn.Module):
         return BaseModelOutputWithCrossAttentions(last_hidden_state=hidden_states)
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class EsmPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -605,7 +605,7 @@ class EsmPreTrainedModel(PreTrainedModel):
         ],
     }
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->EsmLMHead
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->EsmLMHead
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):

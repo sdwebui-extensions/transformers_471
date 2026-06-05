@@ -709,7 +709,7 @@ class Lfm2ForCausalLM(Lfm2PreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, Lfm2ForCausalLM
+        >>> from transformers_471 import AutoTokenizer, Lfm2ForCausalLM
 
         >>> model = Lfm2ForCausalLM.from_pretrained("meta-lfm2/Lfm2-2-7b-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("meta-lfm2/Lfm2-2-7b-hf")

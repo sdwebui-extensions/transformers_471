@@ -41,7 +41,7 @@ class MvpTokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import MvpTokenizerFast
+    >>> from transformers_471 import MvpTokenizerFast
 
     >>> tokenizer = MvpTokenizerFast.from_pretrained("RUCAIBox/mvp")
     >>> tokenizer("Hello world")["input_ids"]

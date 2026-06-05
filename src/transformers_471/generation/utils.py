@@ -1417,7 +1417,7 @@ class GenerationMixin(ContinuousMixin):
         Examples:
 
         ```python
-        >>> from transformers import GPT2Tokenizer, AutoModelForCausalLM
+        >>> from transformers_471 import GPT2Tokenizer, AutoModelForCausalLM
         >>> import numpy as np
 
         >>> tokenizer = GPT2Tokenizer.from_pretrained("gpt2")

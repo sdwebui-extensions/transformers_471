@@ -744,7 +744,7 @@ class ProcessorMixin(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:
@@ -1379,7 +1379,7 @@ class ProcessorMixin(PushToHubMixin):
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -1410,7 +1410,7 @@ class ProcessorMixin(PushToHubMixin):
         if not isinstance(auto_class, str):
             auto_class = auto_class.__name__
 
-        import transformers.models.auto as auto_module
+        import transformers_471.models.auto as auto_module
 
         if not hasattr(auto_module, auto_class):
             raise ValueError(f"{auto_class} is not a valid auto class.")

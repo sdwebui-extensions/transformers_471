@@ -1570,7 +1570,7 @@ class ModuleUtilsMixin:
     def create_extended_attention_mask_for_decoder(input_shape, attention_mask, device=None):
         if device is not None:
             warnings.warn(
-                "The `device` argument is deprecated and will be removed in v5 of Transformers.", FutureWarning
+                "The `device` argument is deprecated and Will be removed in v5 of Transformers", FutureWarning
             )
         else:
             device = attention_mask.device
@@ -1619,7 +1619,7 @@ class ModuleUtilsMixin:
             # show warning only if it won't be shown in `create_extended_attention_mask_for_decoder`
             if device is not None:
                 warnings.warn(
-                    "The `device` argument is deprecated and will be removed in v5 of Transformers.", FutureWarning
+                    "The `device` argument is deprecated and Will be removed in v5 of Transformers", FutureWarning
                 )
         # We can provide a self-attention mask of dimensions [batch_size, from_seq_length, to_seq_length]
         # ourselves in which case we just need to make it broadcastable to all heads.
@@ -2246,7 +2246,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
         Examples:
 
         ```python
-        from transformers import AutoModel
+        from transformers_471 import AutoModel
 
         model = AutoModel.from_pretrained("google-bert/bert-base-cased")
 
@@ -3836,7 +3836,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -3865,7 +3865,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
 
         if "save_config" in kwargs:
             warnings.warn(
-                "`save_config` is deprecated and will be removed in v5 of Transformers. Use `is_main_process` instead."
+                "`save_config` is deprecated and Will be removed in v5 of Transformers Use `is_main_process` instead."
             )
             is_main_process = kwargs.pop("save_config")
 
@@ -4601,7 +4601,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
         Examples:
 
         ```python
-        >>> from transformers import BertConfig, BertModel
+        >>> from transformers_471 import BertConfig, BertModel
 
         >>> # Download model and configuration from huggingface.co and cache.
         >>> model = BertModel.from_pretrained("google-bert/bert-base-uncased")
@@ -4713,7 +4713,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -5629,7 +5629,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
         if not isinstance(auto_class, str):
             auto_class = auto_class.__name__
 
-        import transformers.models.auto as auto_module
+        import transformers_471.models.auto as auto_module
 
         if not hasattr(auto_module, auto_class):
             raise ValueError(f"{auto_class} is not a valid auto class.")

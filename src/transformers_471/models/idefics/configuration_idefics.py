@@ -220,7 +220,7 @@ class IdeficsConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import IdeficsModel, IdeficsConfig
+    >>> from transformers_471 import IdeficsModel, IdeficsConfig
 
     >>> # Initializing a Idefics idefics-9b style configuration
     >>> configuration = IdeficsConfig()

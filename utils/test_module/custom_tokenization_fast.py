@@ -1,4 +1,4 @@
-from transformers import BertTokenizerFast
+from transformers_471 import BertTokenizerFast
 
 from .custom_tokenization import CustomTokenizer
 

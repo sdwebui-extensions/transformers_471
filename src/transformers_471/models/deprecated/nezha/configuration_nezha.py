@@ -47,7 +47,7 @@ class NezhaConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import NezhaConfig, NezhaModel
+    >>> from transformers_471 import NezhaConfig, NezhaModel
 
     >>> # Initializing an Nezha configuration
     >>> configuration = NezhaConfig()

@@ -90,7 +90,7 @@ class FalconMambaConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import FalconMambaConfig, FalconMambaModel
+    >>> from transformers_471 import FalconMambaConfig, FalconMambaModel
 
     >>> # Initializing a FalconMamba configuration
     >>> configuration = FalconMambaConfig()

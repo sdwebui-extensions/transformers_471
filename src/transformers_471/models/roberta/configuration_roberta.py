@@ -82,7 +82,7 @@ class RobertaConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import RobertaConfig, RobertaModel
+    >>> from transformers_471 import RobertaConfig, RobertaModel
 
     >>> # Initializing a RoBERTa configuration
     >>> configuration = RobertaConfig()

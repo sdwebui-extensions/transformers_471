@@ -617,7 +617,7 @@ class MraSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class MraSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -664,7 +664,7 @@ class MraAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class MraIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -680,7 +680,7 @@ class MraIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class MraOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -760,7 +760,7 @@ class MraEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform
 class MraPredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -778,7 +778,7 @@ class MraPredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->Mra
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->Mra
 class MraLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -802,7 +802,7 @@ class MraLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Mra
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Mra
 class MraOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -814,7 +814,7 @@ class MraOnlyMLMHead(nn.Module):
 
 
 @auto_docstring
-# Copied from transformers.models.yoso.modeling_yoso.YosoPreTrainedModel with Yoso->Mra,yoso->mra
+# Copied from transformers_471.models.yoso.modeling_yoso.YosoPreTrainedModel with Yoso->Mra,yoso->mra
 class MraPreTrainedModel(PreTrainedModel):
     config: MraConfig
     base_model_prefix = "mra"
@@ -1016,7 +1016,7 @@ class MraForMaskedLM(MraPreTrainedModel):
         )
 
 
-# Copied from transformers.models.yoso.modeling_yoso.YosoClassificationHead with Yoso->Mra
+# Copied from transformers_471.models.yoso.modeling_yoso.YosoClassificationHead with Yoso->Mra
 class MraClassificationHead(nn.Module):
     """Head for sentence-level classification tasks."""
 

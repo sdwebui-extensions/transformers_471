@@ -19,8 +19,8 @@ import pytest
 from packaging import version
 from parameterized import parameterized
 
-from transformers import AutoTokenizer, DeepseekV3Config, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, DeepseekV3Config, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     cleanup,
     require_read_token,
     require_torch,
@@ -39,13 +39,13 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         DeepseekV3ForCausalLM,
         DeepseekV3ForSequenceClassification,
         DeepseekV3ForTokenClassification,
         DeepseekV3Model,
     )
-    from transformers.models.deepseek_v3.modeling_deepseek_v3 import (
+    from transformers_471.models.deepseek_v3.modeling_deepseek_v3 import (
         DeepseekV3RotaryEmbedding,
     )
 

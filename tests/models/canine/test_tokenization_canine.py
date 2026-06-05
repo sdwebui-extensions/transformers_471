@@ -19,9 +19,9 @@ import tempfile
 import unittest
 from functools import cached_property
 
-from transformers import BatchEncoding, CanineTokenizer
-from transformers.testing_utils import require_tokenizers, require_torch
-from transformers.tokenization_utils import AddedToken
+from transformers_471 import BatchEncoding, CanineTokenizer
+from transformers_471.testing_utils import require_tokenizers, require_torch
+from transformers_471.tokenization_utils import AddedToken
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

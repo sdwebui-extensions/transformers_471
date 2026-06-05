@@ -14,15 +14,15 @@
 
 import unittest
 
-from transformers import (
+from transformers_471 import (
     MODEL_FOR_SEQ_TO_SEQ_CAUSAL_LM_MAPPING,
     TF_MODEL_FOR_SEQ_TO_SEQ_CAUSAL_LM_MAPPING,
     SummarizationPipeline,
     TFPreTrainedModel,
     pipeline,
 )
-from transformers.testing_utils import is_pipeline_test, require_torch, slow, torch_device
-from transformers.tokenization_utils import TruncationStrategy
+from transformers_471.testing_utils import is_pipeline_test, require_torch, slow, torch_device
+from transformers_471.tokenization_utils import TruncationStrategy
 
 from .test_pipelines_common import ANY
 

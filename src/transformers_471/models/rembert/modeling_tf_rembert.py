@@ -143,7 +143,7 @@ class TFRemBertEmbeddings(keras.layers.Layer):
         return final_embeddings
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->RemBert
 class TFRemBertSelfAttention(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -276,7 +276,7 @@ class TFRemBertSelfAttention(keras.layers.Layer):
                 self.value.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->RemBert
 class TFRemBertSelfOutput(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -307,7 +307,7 @@ class TFRemBertSelfOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertAttention with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertAttention with Bert->RemBert
 class TFRemBertAttention(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -359,7 +359,7 @@ class TFRemBertAttention(keras.layers.Layer):
                 self.dense_output.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->RemBert
 class TFRemBertIntermediate(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -389,7 +389,7 @@ class TFRemBertIntermediate(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertOutput with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertOutput with Bert->RemBert
 class TFRemBertOutput(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -420,7 +420,7 @@ class TFRemBertOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertLayer with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLayer with Bert->RemBert
 class TFRemBertLayer(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -612,7 +612,7 @@ class TFRemBertEncoder(keras.layers.Layer):
                     layer.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPooler with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPooler with Bert->RemBert
 class TFRemBertPooler(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, **kwargs):
         super().__init__(**kwargs)
@@ -704,7 +704,7 @@ class TFRemBertLMPredictionHead(keras.layers.Layer):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertMLMHead with Bert->RemBert
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMLMHead with Bert->RemBert
 class TFRemBertMLMHead(keras.layers.Layer):
     def __init__(self, config: RemBertConfig, input_embeddings: keras.layers.Layer, **kwargs):
         super().__init__(**kwargs)
@@ -754,7 +754,7 @@ class TFRemBertMainLayer(keras.layers.Layer):
         raise NotImplementedError
 
     @unpack_inputs
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer.call
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer.call
     def call(
         self,
         input_ids: TFModelInputType | None = None,
@@ -1216,7 +1216,7 @@ class TFRemBertForCausalLM(TFRemBertPreTrainedModel, TFCausalLanguageModelingLos
     def get_lm_head(self) -> keras.layers.Layer:
         return self.mlm.predictions
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertLMHeadModel.prepare_inputs_for_generation
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLMHeadModel.prepare_inputs_for_generation
     def prepare_inputs_for_generation(self, input_ids, past_key_values=None, attention_mask=None, **model_kwargs):
         input_shape = input_ids.shape
         # if model is used as a decoder in encoder-decoder model, the decoder attention mask is created on the fly

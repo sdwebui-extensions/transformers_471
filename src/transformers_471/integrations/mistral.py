@@ -1,8 +1,8 @@
 from tokenizers import Regex, Tokenizer, decoders, pre_tokenizers, processors
 from tokenizers.models import BPE
 
-from transformers import LlamaTokenizerFast
-from transformers.convert_slow_tokenizer import bytes_to_unicode
+from transformers_471 import LlamaTokenizerFast
+from transformers_471.convert_slow_tokenizer import bytes_to_unicode
 
 
 class MistralConverter:

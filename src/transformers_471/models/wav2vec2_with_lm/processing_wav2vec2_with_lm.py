@@ -536,7 +536,7 @@ class Wav2Vec2ProcessorWithLM(ProcessorMixin):
 
         ```python
         >>> # Let's see how to retrieve time steps for a model
-        >>> from transformers import AutoTokenizer, AutoProcessor, AutoModelForCTC
+        >>> from transformers_471 import AutoTokenizer, AutoProcessor, AutoModelForCTC
         >>> from datasets import load_dataset
         >>> import datasets
         >>> import torch
@@ -645,7 +645,7 @@ class Wav2Vec2ProcessorWithLM(ProcessorMixin):
         Wav2Vec2.
         """
         warnings.warn(
-            "`as_target_processor` is deprecated and will be removed in v5 of Transformers. You can process your "
+            "`as_target_processor` is deprecated and Will be removed in v5 of Transformers You can process your "
             "labels by using the argument `text` of the regular `__call__` method (either in the same call as "
             "your audio inputs, or in a separate call."
         )

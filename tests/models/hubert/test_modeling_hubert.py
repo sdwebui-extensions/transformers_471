@@ -21,8 +21,8 @@ import unittest
 
 import pytest
 
-from transformers import HubertConfig, is_torch_available
-from transformers.testing_utils import require_torch, require_torchcodec, slow, torch_device
+from transformers_471 import HubertConfig, is_torch_available
+from transformers_471.testing_utils import require_torch, require_torchcodec, slow, torch_device
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import (
@@ -38,16 +38,16 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         HubertForCTC,
         HubertForSequenceClassification,
         HubertModel,
         Wav2Vec2FeatureExtractor,
         Wav2Vec2Processor,
     )
-    from transformers.models.hubert.modeling_hubert import _compute_mask_indices
+    from transformers_471.models.hubert.modeling_hubert import _compute_mask_indices
 
-from transformers.utils.fx import symbolic_trace
+from transformers_471.utils.fx import symbolic_trace
 
 
 class HubertModelTester:

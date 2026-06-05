@@ -234,7 +234,7 @@ def weighted_average(input_tensor: torch.Tensor, weights: Optional[torch.Tensor]
         return input_tensor.mean(dim=dim)
 
 
-# Copied from transformers.models.marian.modeling_marian.MarianSinusoidalPositionalEmbedding with Marian->TimeSeries
+# Copied from transformers_471.models.marian.modeling_marian.MarianSinusoidalPositionalEmbedding with Marian->TimeSeries
 class TimeSeriesSinusoidalPositionalEmbedding(nn.Embedding):
     """This module produces sinusoidal positional embeddings of any length."""
 
@@ -278,7 +278,7 @@ class TimeSeriesValueEmbedding(nn.Module):
         return self.value_projection(x)
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -309,7 +309,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartAttention with Bart->TimeSeriesTransformer
+# Copied from transformers_471.models.bart.modeling_bart.BartAttention with Bart->TimeSeriesTransformer
 class TimeSeriesTransformerAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -438,7 +438,7 @@ class TimeSeriesTransformerAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartEncoderLayer with Bart->TimeSeriesTransformer, BART->TIME_SERIES_TRANSFORMER
+# Copied from transformers_471.models.bart.modeling_bart.BartEncoderLayer with Bart->TimeSeriesTransformer, BART->TIME_SERIES_TRANSFORMER
 class TimeSeriesTransformerEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: TimeSeriesTransformerConfig, layer_idx: Optional[int] = None):
         super().__init__()
@@ -510,7 +510,7 @@ class TimeSeriesTransformerEncoderLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Copied from transformers.models.bart.modeling_bart.BartDecoderLayer with Bart->TimeSeriesTransformer, with BART->TIME_SERIES_TRANSFORMER
+# Copied from transformers_471.models.bart.modeling_bart.BartDecoderLayer with Bart->TimeSeriesTransformer, with BART->TIME_SERIES_TRANSFORMER
 class TimeSeriesTransformerDecoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: TimeSeriesTransformerConfig, layer_idx: Optional[int] = None):
         super().__init__()
@@ -653,7 +653,7 @@ class TimeSeriesTransformerPreTrainedModel(PreTrainedModel):
             if module.padding_idx is not None:
                 module.weight.data[module.padding_idx].zero_()
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -676,7 +676,7 @@ class TimeSeriesTransformerPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -716,7 +716,7 @@ class TimeSeriesTransformerPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1358,7 +1358,7 @@ class TimeSeriesTransformerModel(TimeSeriesTransformerPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import TimeSeriesTransformerModel
+        >>> from transformers_471 import TimeSeriesTransformerModel
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/tourism-monthly-batch", filename="train-batch.pt", repo_type="dataset"
@@ -1628,7 +1628,7 @@ class TimeSeriesTransformerForPrediction(TimeSeriesTransformerPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import TimeSeriesTransformerForPrediction
+        >>> from transformers_471 import TimeSeriesTransformerForPrediction
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/tourism-monthly-batch", filename="train-batch.pt", repo_type="dataset"

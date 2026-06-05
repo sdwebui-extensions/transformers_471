@@ -18,8 +18,8 @@ import tempfile
 import unittest
 from functools import cached_property
 
-from transformers import SPIECE_UNDERLINE, XLMRobertaTokenizer, XLMRobertaTokenizerFast
-from transformers.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
+from transformers_471 import SPIECE_UNDERLINE, XLMRobertaTokenizer, XLMRobertaTokenizerFast
+from transformers_471.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

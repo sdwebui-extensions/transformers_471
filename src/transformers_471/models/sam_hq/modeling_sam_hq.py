@@ -28,8 +28,8 @@ import torch
 import torch.nn.functional as F
 from torch import Tensor, nn
 
-from transformers.modeling_outputs import ModelOutput
-from transformers.utils.generic import OutputRecorder, TransformersKwargs, check_model_inputs
+from transformers_471.modeling_outputs import ModelOutput
+from transformers_471.utils.generic import OutputRecorder, TransformersKwargs, check_model_inputs
 
 from ...activations import ACT2FN
 from ...modeling_layers import GradientCheckpointingLayer
@@ -1402,7 +1402,7 @@ class SamHQModel(SamHQPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoModel, AutoProcessor
+        >>> from transformers_471 import AutoModel, AutoProcessor
 
         >>> model = AutoModel.from_pretrained("sushmanth/sam_hq_vit_b")
         >>> processor = AutoProcessor.from_pretrained("sushmanth/sam_hq_vit_b")

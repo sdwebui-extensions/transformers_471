@@ -314,7 +314,7 @@ class MPNetTokenizer(PreTrainedTokenizer):
         return (vocab_file,)
 
 
-# Copied from transformers.models.bert.tokenization_bert.BasicTokenizer
+# Copied from transformers_471.models.bert.tokenization_bert.BasicTokenizer
 class BasicTokenizer:
     """
     Constructs a BasicTokenizer that will run basic tokenization (punctuation splitting, lower casing, etc.).
@@ -476,7 +476,7 @@ class BasicTokenizer:
         return "".join(output)
 
 
-# Copied from transformers.models.bert.tokenization_bert.WordpieceTokenizer
+# Copied from transformers_471.models.bert.tokenization_bert.WordpieceTokenizer
 class WordpieceTokenizer:
     """Runs WordPiece tokenization."""
 

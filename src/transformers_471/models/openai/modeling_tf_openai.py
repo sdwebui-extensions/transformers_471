@@ -723,7 +723,7 @@ class TFOpenAIGPTDoubleHeadsModel(TFOpenAIGPTPreTrainedModel):
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, TFOpenAIGPTDoubleHeadsModel
+        >>> from transformers_471 import AutoTokenizer, TFOpenAIGPTDoubleHeadsModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("openai-community/openai-gpt")
         >>> model = TFOpenAIGPTDoubleHeadsModel.from_pretrained("openai-community/openai-gpt")

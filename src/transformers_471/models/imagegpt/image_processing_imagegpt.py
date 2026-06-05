@@ -105,7 +105,7 @@ class ImageGPTImageProcessor(BaseImageProcessor):
         self.do_normalize = do_normalize
         self.do_color_quantize = do_color_quantize
 
-    # Copied from transformers.models.vit.image_processing_vit.ViTImageProcessor.resize
+    # Copied from transformers_471.models.vit.image_processing_vit.ViTImageProcessor.resize
     def resize(
         self,
         image: np.ndarray,

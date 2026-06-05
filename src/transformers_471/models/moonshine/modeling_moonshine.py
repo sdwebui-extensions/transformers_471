@@ -24,7 +24,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from transformers.utils.generic import OutputRecorder, check_model_inputs
+from transformers_471.utils.generic import OutputRecorder, check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache, EncoderDecoderCache
@@ -916,7 +916,7 @@ class MoonshineModel(MoonshinePreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, MoonshineModel
+        >>> from transformers_471 import AutoFeatureExtractor, MoonshineModel
         >>> from datasets import load_dataset
 
         >>> model = MoonshineModel.from_pretrained("UsefulSensors/moonshine-tiny")
@@ -1038,7 +1038,7 @@ class MoonshineForConditionalGeneration(MoonshinePreTrainedModel, GenerationMixi
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, MoonshineForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, MoonshineForConditionalGeneration
         >>> from datasets import load_dataset
 
         >>> processor = AutoProcessor.from_pretrained("UsefulSensors/moonshine-tiny")

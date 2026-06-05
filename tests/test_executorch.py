@@ -16,15 +16,15 @@ import unittest
 
 import torch
 
-from transformers import AutoModelForCausalLM, set_seed
-from transformers.generation.configuration_utils import GenerationConfig
-from transformers.integrations.executorch import (
+from transformers_471 import AutoModelForCausalLM, set_seed
+from transformers_471.generation.configuration_utils import GenerationConfig
+from transformers_471.integrations.executorch import (
     TorchExportableModuleForDecoderOnlyLM,
     TorchExportableModuleWithHybridCache,
     TorchExportableModuleWithStaticCache,
 )
-from transformers.pytorch_utils import is_torch_greater_or_equal_than_2_3
-from transformers.testing_utils import require_torch
+from transformers_471.pytorch_utils import is_torch_greater_or_equal_than_2_3
+from transformers_471.testing_utils import require_torch
 
 
 @require_torch

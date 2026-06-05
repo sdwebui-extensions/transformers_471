@@ -17,9 +17,9 @@ import unittest
 
 import requests
 
-from transformers import AutoImageProcessor, EomtConfig, EomtForUniversalSegmentation, pipeline
-from transformers.testing_utils import require_torch, require_torch_accelerator, require_torch_fp16, slow, torch_device
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import AutoImageProcessor, EomtConfig, EomtForUniversalSegmentation, pipeline
+from transformers_471.testing_utils import require_torch, require_torch_accelerator, require_torch_fp16, slow, torch_device
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import ModelTesterMixin, floats_tensor

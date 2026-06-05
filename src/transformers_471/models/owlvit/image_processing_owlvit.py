@@ -272,7 +272,7 @@ class OwlViTImageProcessor(BaseImageProcessor):
             **kwargs,
         )
 
-    # Copied from transformers.models.detr.image_processing_detr.DetrImageProcessor.rescale
+    # Copied from transformers_471.models.detr.image_processing_detr.DetrImageProcessor.rescale
     def rescale(
         self,
         image: np.ndarray,

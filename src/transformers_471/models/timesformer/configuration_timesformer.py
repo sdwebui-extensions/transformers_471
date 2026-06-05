@@ -70,7 +70,7 @@ class TimesformerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import TimesformerConfig, TimesformerModel
+    >>> from transformers_471 import TimesformerConfig, TimesformerModel
 
     >>> # Initializing a TimeSformer timesformer-base style configuration
     >>> configuration = TimesformerConfig()

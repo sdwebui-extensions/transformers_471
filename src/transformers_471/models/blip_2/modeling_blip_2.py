@@ -132,7 +132,7 @@ class Blip2ImageTextMatchingModelOutput(ModelOutput):
     Base class for text model's outputs that also contains a pooling of the last hidden states.
     """
 )
-# Copied from transformers.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Blip2
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Blip2
 class Blip2TextModelOutput(ModelOutput):
     r"""
     text_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):
@@ -151,7 +151,7 @@ class Blip2TextModelOutput(ModelOutput):
     Base class for vision model's outputs that also contains image embeddings of the pooling of the last hidden states.
     """
 )
-# Copied from transformers.models.clip.modeling_clip.CLIPVisionModelOutput with CLIP->Blip2
+# Copied from transformers_471.models.clip.modeling_clip.CLIPVisionModelOutput with CLIP->Blip2
 class Blip2VisionModelOutput(ModelOutput):
     r"""
     image_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):
@@ -164,7 +164,7 @@ class Blip2VisionModelOutput(ModelOutput):
     attentions: Optional[tuple[torch.FloatTensor, ...]] = None
 
 
-# Copied from transformers.models.blip.modeling_blip.BlipVisionEmbeddings with Blip->Blip2
+# Copied from transformers_471.models.blip.modeling_blip.BlipVisionEmbeddings with Blip->Blip2
 class Blip2VisionEmbeddings(nn.Module):
     def __init__(self, config: Blip2VisionConfig):
         super().__init__()
@@ -239,7 +239,7 @@ class Blip2VisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Adapted from transformers.models.siglip.modeling_siglip.eager_attention_forward -> BLIP doesn't cast attn weights to fp32
+# Adapted from transformers_471.models.siglip.modeling_siglip.eager_attention_forward -> BLIP doesn't cast attn weights to fp32
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -339,7 +339,7 @@ class Blip2Attention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.blip.modeling_blip.BlipMLP
+# Copied from transformers_471.models.blip.modeling_blip.BlipMLP
 class Blip2MLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -355,7 +355,7 @@ class Blip2MLP(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.blip.modeling_blip.BlipEncoderLayer with Blip->Blip2
+# Copied from transformers_471.models.blip.modeling_blip.BlipEncoderLayer with Blip->Blip2
 class Blip2EncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: Blip2Config):
         super().__init__()
@@ -439,7 +439,7 @@ class Blip2PreTrainedModel(PreTrainedModel):
             module.query_tokens.data.zero_()
 
 
-# Copied from transformers.models.blip.modeling_blip.BlipEncoder with Blip->Blip2
+# Copied from transformers_471.models.blip.modeling_blip.BlipEncoder with Blip->Blip2
 class Blip2Encoder(nn.Module):
     """
     Transformer encoder consisting of `config.num_hidden_layers` self attention layers. Each layer is a
@@ -475,7 +475,7 @@ class Blip2Encoder(nn.Module):
 
 
 @auto_docstring
-# Copied from transformers.models.blip.modeling_blip.BlipVisionModel with Blip->Blip2, BLIP->BLIP_2
+# Copied from transformers_471.models.blip.modeling_blip.BlipVisionModel with Blip->Blip2, BLIP->BLIP_2
 class Blip2VisionModel(Blip2PreTrainedModel):
     main_input_name = "pixel_values"
     config: Blip2VisionConfig
@@ -652,7 +652,7 @@ class Blip2QFormerMultiHeadAttention(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->Blip2QFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->Blip2QFormer
 class Blip2QFormerSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -713,7 +713,7 @@ class Blip2QFormerAttention(nn.Module):
         return attention_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->Blip2QFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->Blip2QFormer
 class Blip2QFormerIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -729,7 +729,7 @@ class Blip2QFormerIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->Blip2QFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->Blip2QFormer
 class Blip2QFormerOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1191,7 +1191,7 @@ class Blip2Model(Blip2PreTrainedModel):
         Examples:
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, Blip2Model
+        >>> from transformers_471 import AutoTokenizer, Blip2Model
 
         >>> model = Blip2Model.from_pretrained("Salesforce/blip2-opt-2.7b")
         >>> tokenizer = AutoTokenizer.from_pretrained("Salesforce/blip2-opt-2.7b")
@@ -1246,8 +1246,8 @@ class Blip2Model(Blip2PreTrainedModel):
         Examples:
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, Blip2Model
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, Blip2Model
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = Blip2Model.from_pretrained("Salesforce/blip2-opt-2.7b")
 
@@ -1294,8 +1294,8 @@ class Blip2Model(Blip2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, Blip2Model
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, Blip2Model
+        >>> from transformers_471.image_utils import load_image
 
         >>> processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
         >>> model = Blip2Model.from_pretrained("Salesforce/blip2-opt-2.7b")
@@ -1376,7 +1376,7 @@ class Blip2Model(Blip2PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import Blip2Processor, Blip2Model
+        >>> from transformers_471 import Blip2Processor, Blip2Model
         >>> import torch
 
         >>> device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -1514,7 +1514,7 @@ class Blip2TextModelWithProjection(Blip2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, Blip2TextModelWithProjection
+        >>> from transformers_471 import AutoProcessor, Blip2TextModelWithProjection
 
         >>> device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -1595,8 +1595,8 @@ class Blip2VisionModelWithProjection(Blip2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, Blip2VisionModelWithProjection
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, Blip2VisionModelWithProjection
+        >>> from transformers_471.image_utils import load_image
 
         >>> device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -1829,7 +1829,7 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel, GenerationMixin):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import Blip2Processor, Blip2ForConditionalGeneration
+        >>> from transformers_471 import Blip2Processor, Blip2ForConditionalGeneration
         >>> import torch
 
         >>> device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -2093,7 +2093,7 @@ class Blip2ForImageTextRetrieval(Blip2PreTrainedModel):
         >>> import torch
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Blip2ForImageTextRetrieval
+        >>> from transformers_471 import AutoProcessor, Blip2ForImageTextRetrieval
 
         >>> device = "cuda" if torch.cuda.is_available() else "cpu"
 

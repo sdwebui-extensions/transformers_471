@@ -18,9 +18,9 @@ import torch
 from torch import nn
 from torch.utils.data import DistributedSampler, RandomSampler
 
-from transformers import PreTrainedModel, Trainer, logging
-from transformers.models.fsmt.configuration_fsmt import FSMTConfig
-from transformers.optimization import (
+from transformers_471 import PreTrainedModel, Trainer, logging
+from transformers_471.models.fsmt.configuration_fsmt import FSMTConfig
+from transformers_471.optimization import (
     Adafactor,
     get_constant_schedule,
     get_constant_schedule_with_warmup,
@@ -29,9 +29,9 @@ from transformers.optimization import (
     get_linear_schedule_with_warmup,
     get_polynomial_decay_schedule_with_warmup,
 )
-from transformers.trainer_pt_utils import get_tpu_sampler
-from transformers.training_args import ParallelMode
-from transformers.utils import is_torch_xla_available
+from transformers_471.trainer_pt_utils import get_tpu_sampler
+from transformers_471.training_args import ParallelMode
+from transformers_471.utils import is_torch_xla_available
 
 
 logger = logging.get_logger(__name__)

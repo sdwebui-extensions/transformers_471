@@ -15,8 +15,8 @@
 
 import unittest
 
-from transformers.models.mluke.tokenization_mluke import MLukeTokenizer
-from transformers.testing_utils import get_tests_dir, require_torch, slow
+from transformers_471.models.mluke.tokenization_mluke import MLukeTokenizer
+from transformers_471.testing_utils import get_tests_dir, require_torch, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

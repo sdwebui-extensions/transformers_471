@@ -19,7 +19,7 @@ import unittest
 import requests
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     VipLlavaConfig,
     VipLlavaForConditionalGeneration,
@@ -27,7 +27,7 @@ from transformers import (
     is_torch_available,
     is_vision_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_bitsandbytes,
     require_torch,
@@ -47,7 +47,7 @@ if is_vision_available():
     from PIL import Image
 
 
-# Copied from transformers.tests.models.llava.test_modeling_llava.LlavaVisionText2TextModelTester with Llava->VipLlava
+# Copied from transformers_471.tests.models.llava.test_modeling_llava.LlavaVisionText2TextModelTester with Llava->VipLlava
 class VipLlavaVisionText2TextModelTester:
     # Ignore copy
     def __init__(
@@ -161,7 +161,7 @@ class VipLlavaVisionText2TextModelTester:
 
 
 @require_torch
-# Copied from transformers.tests.models.llava.test_modeling_llava.LlavaForConditionalGenerationModelTest with Llava->VipLlava
+# Copied from transformers_471.tests.models.llava.test_modeling_llava.LlavaForConditionalGenerationModelTest with Llava->VipLlava
 class VipLlavaForConditionalGenerationModelTest(ModelTesterMixin, GenerationTesterMixin, unittest.TestCase):
     """
     Model tester for `VipLlavaForConditionalGeneration`.

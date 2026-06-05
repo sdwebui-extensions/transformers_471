@@ -36,7 +36,7 @@ class GPTNeoXTokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import GPTNeoXTokenizerFast
+    >>> from transformers_471 import GPTNeoXTokenizerFast
 
     >>> tokenizer = GPTNeoXTokenizerFast.from_pretrained("openai-community/gpt2")
     >>> tokenizer("Hello world")["input_ids"]
@@ -139,7 +139,7 @@ class GPTNeoXTokenizerFast(PreTrainedTokenizerFast):
         self._add_bos_token = value
         self.update_post_processor()
 
-    # Copied from transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast.update_post_processor
+    # Copied from transformers_471.models.llama.tokenization_llama_fast.LlamaTokenizerFast.update_post_processor
     def update_post_processor(self):
         """
         Updates the underlying post processor with the current `bos_token` and `eos_token`.
@@ -166,7 +166,7 @@ class GPTNeoXTokenizerFast(PreTrainedTokenizerFast):
             single=single, pair=pair, special_tokens=special_tokens
         )
 
-    # Copied from transformers.models.llama.tokenization_llama.LlamaTokenizer.get_special_tokens_mask
+    # Copied from transformers_471.models.llama.tokenization_llama.LlamaTokenizer.get_special_tokens_mask
     def get_special_tokens_mask(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None, already_has_special_tokens: bool = False
     ) -> list[int]:
@@ -204,7 +204,7 @@ class GPTNeoXTokenizerFast(PreTrainedTokenizerFast):
             + eos_token_id
         )
 
-    # Copied from transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast.build_inputs_with_special_tokens
+    # Copied from transformers_471.models.llama.tokenization_llama_fast.LlamaTokenizerFast.build_inputs_with_special_tokens
     def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None):
         bos_token_id = [self.bos_token_id] if self.add_bos_token else []
         eos_token_id = [self.eos_token_id] if self.add_eos_token else []

@@ -20,13 +20,13 @@ import unittest
 import pytest
 from pytest import mark
 
-from transformers import (
+from transformers_471 import (
     AutoTokenizer,
     BambaConfig,
     DataCollatorWithFlattening,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     DeviceProperties,
     Expectations,
     get_device_properties,
@@ -48,11 +48,11 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         BambaForCausalLM,
         BambaModel,
     )
-    from transformers.models.bamba.modeling_bamba import (
+    from transformers_471.models.bamba.modeling_bamba import (
         HybridMambaAttentionDynamicCache,
     )
 

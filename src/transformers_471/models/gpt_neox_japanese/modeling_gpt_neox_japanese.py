@@ -217,7 +217,7 @@ class GPTNeoXJapaneseAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.gpt_neox.modeling_gpt_neox.GPTNeoXRotaryEmbedding with GPTNeoX->GPTNeoXJapanese
+# Copied from transformers_471.models.gpt_neox.modeling_gpt_neox.GPTNeoXRotaryEmbedding with GPTNeoX->GPTNeoXJapanese
 class GPTNeoXJapaneseRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -261,7 +261,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -424,7 +424,7 @@ class GPTNeoXJapaneseModel(GPTNeoXJapanesePreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GPTNeoXJapaneseModel
+        >>> from transformers_471 import AutoTokenizer, GPTNeoXJapaneseModel
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("abeja/gpt-neox-japanese-2.7b")
@@ -513,7 +513,7 @@ class GPTNeoXJapaneseModel(GPTNeoXJapanesePreTrainedModel):
             attentions=all_attentions,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -583,7 +583,7 @@ class GPTNeoXJapaneseModel(GPTNeoXJapanesePreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -689,7 +689,7 @@ class GPTNeoXJapaneseForCausalLM(GPTNeoXJapanesePreTrainedModel, GenerationMixin
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GPTNeoXJapaneseForCausalLM, GPTNeoXJapaneseConfig
+        >>> from transformers_471 import AutoTokenizer, GPTNeoXJapaneseForCausalLM, GPTNeoXJapaneseConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("abeja/gpt-neox-japanese-2.7b")

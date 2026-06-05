@@ -16,8 +16,8 @@
 
 from typing import Optional, Union
 
-from transformers.processing_utils import ImagesKwargs, ProcessingKwargs, ProcessorMixin, Unpack
-from transformers.tokenization_utils_base import PreTokenizedInput, TextInput
+from transformers_471.processing_utils import ImagesKwargs, ProcessingKwargs, ProcessorMixin, Unpack
+from transformers_471.tokenization_utils_base import PreTokenizedInput, TextInput
 
 from ...image_processing_utils import BatchFeature
 from ...image_utils import ImageInput, make_flat_list_of_images

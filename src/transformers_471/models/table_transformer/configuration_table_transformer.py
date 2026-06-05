@@ -120,7 +120,7 @@ class TableTransformerConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import TableTransformerModel, TableTransformerConfig
+    >>> from transformers_471 import TableTransformerModel, TableTransformerConfig
 
     >>> # Initializing a Table Transformer microsoft/table-transformer-detection style configuration
     >>> configuration = TableTransformerConfig()
@@ -139,7 +139,7 @@ class TableTransformerConfig(PretrainedConfig):
         "num_attention_heads": "encoder_attention_heads",
     }
 
-    # Copied from transformers.models.detr.configuration_detr.DetrConfig.__init__
+    # Copied from transformers_471.models.detr.configuration_detr.DetrConfig.__init__
     def __init__(
         self,
         use_timm_backbone=True,
@@ -262,7 +262,7 @@ class TableTransformerConfig(PretrainedConfig):
         )
 
 
-# Copied from transformers.models.detr.configuration_detr.DetrOnnxConfig
+# Copied from transformers_471.models.detr.configuration_detr.DetrOnnxConfig
 class TableTransformerOnnxConfig(OnnxConfig):
     torch_onnx_minimum_version = version.parse("1.11")
 

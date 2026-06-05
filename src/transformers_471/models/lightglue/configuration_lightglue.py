@@ -70,7 +70,7 @@ class LightGlueConfig(PretrainedConfig):
 
     Examples:
         ```python
-        >>> from transformers import LightGlueConfig, LightGlueForKeypointMatching
+        >>> from transformers_471 import LightGlueConfig, LightGlueForKeypointMatching
 
         >>> # Initializing a LightGlue style configuration
         >>> configuration = LightGlueConfig()

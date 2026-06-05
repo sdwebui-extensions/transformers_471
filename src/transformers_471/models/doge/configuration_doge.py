@@ -125,7 +125,7 @@ class DogeConfig(PretrainedConfig):
             The aux loss factor for the total loss.
 
     ```python
-    >>> from transformers import DogeConfig, DogeModel
+    >>> from transformers_471 import DogeConfig, DogeModel
 
     >>> # Initializing a Doge-320M style configuration
     >>> configuration = DogeConfig()

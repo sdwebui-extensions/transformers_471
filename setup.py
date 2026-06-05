@@ -55,8 +55,8 @@ To create the package for pypi.
    pip install -i https://test.pypi.org/simple/ transformers
 
    Check you can run the following commands:
-   python -c "from transformers import pipeline; classifier = pipeline('text-classification'); print(classifier('What a nice release'))"
-   python -c "from transformers import *"
+   python -c "from transformers_471 import pipeline; classifier = pipeline('text-classification'); print(classifier('What a nice release'))"
+   python -c "from transformers_471 import *"
    python utils/check_build.py --check_lib
 
    If making a patch release, double check the bug you are patching is indeed resolved.
@@ -76,7 +76,7 @@ from setuptools import Command, find_packages, setup
 
 
 # Remove stale transformers.egg-info directory to avoid https://github.com/pypa/pip/issues/5466
-stale_egg_info = Path(__file__).parent / "transformers.egg-info"
+stale_egg_info = Path(__file__).parent / "transformers_471.egg-info"
 if stale_egg_info.exists():
     print(
         f"Warning: {stale_egg_info} exists.\n\n"
@@ -215,7 +215,7 @@ deps = {b: a for a, b in (re.findall(r"^(([^!=<>~ ]+)(?:[!=<>~ ].*)?$)", x)[0] f
 # since we save this data in src/transformers/dependency_versions_table.py it can be easily accessed from
 # anywhere. If you need to quickly access the data from this table in a shell, you can do so easily with:
 #
-# python -c 'import sys; from transformers.dependency_versions_table import deps; \
+# python -c 'import sys; from transformers_471.dependency_versions_table import deps; \
 # print(" ".join([ deps[x] for x in sys.argv[1:]]))' tokenizers datasets
 #
 # Just pass the desired package names to that script as it's shown with 2 packages above.
@@ -224,7 +224,7 @@ deps = {b: a for a, b in (re.findall(r"^(([^!=<>~ ]+)(?:[!=<>~ ].*)?$)", x)[0] f
 #
 # You can then feed this for example to `pip`:
 #
-# pip install -U $(python -c 'import sys; from transformers.dependency_versions_table import deps; \
+# pip install -U $(python -c 'import sys; from transformers_471.dependency_versions_table import deps; \
 # print(" ".join([deps[x] for x in sys.argv[1:]]))' tokenizers datasets)
 #
 
@@ -242,7 +242,7 @@ class DepsTableUpdateCommand(Command):
     description = "build runtime dependency table"
     user_options = [
         # format: (long option, short option, description).
-        ("dep-table-update", None, "updates src/transformers/dependency_versions_table.py"),
+        ("dep-table-update", None, "updates src/transformers_471/dependency_versions_table.py"),
     ]
 
     def initialize_options(self):
@@ -262,7 +262,7 @@ class DepsTableUpdateCommand(Command):
             "}",
             "",
         ]
-        target = "src/transformers/dependency_versions_table.py"
+        target = "src/transformers_471/dependency_versions_table.py"
         print(f"updating {target}")
         with open(target, "w", encoding="utf-8", newline="\n") as f:
             f.write("\n".join(content))
@@ -478,8 +478,8 @@ setup(
     extras_require=extras,
     entry_points={
         "console_scripts": [
-            "transformers=transformers.commands.transformers_cli:main",
-            "transformers-cli=transformers.commands.transformers_cli:main_cli",
+            "transformers=transformers_471.commands.transformers_cli:main",
+            "transformers-cli=transformers_471.commands.transformers_cli:main_cli",
         ]
     },
     python_requires=">=3.9.0",

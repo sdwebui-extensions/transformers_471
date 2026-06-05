@@ -178,7 +178,7 @@ class VideoMAEPatchEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.vit.modeling_vit.eager_attention_forward
+# Copied from transformers_471.models.vit.modeling_vit.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -269,7 +269,7 @@ class VideoMAESelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfOutput with ViT->VideoMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfOutput with ViT->VideoMAE
 class VideoMAESelfOutput(nn.Module):
     """
     The residual connection is defined in VideoMAELayer instead of here (as is the case with other models), due to the
@@ -287,7 +287,7 @@ class VideoMAESelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->VideoMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTAttention with ViT->VideoMAE
 class VideoMAEAttention(nn.Module):
     def __init__(self, config: VideoMAEConfig):
         super().__init__()
@@ -319,7 +319,7 @@ class VideoMAEAttention(nn.Module):
         return output
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTIntermediate ViT->VideoMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTIntermediate ViT->VideoMAE
 class VideoMAEIntermediate(nn.Module):
     def __init__(self, config: VideoMAEConfig):
         super().__init__()
@@ -335,7 +335,7 @@ class VideoMAEIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTOutput ViT->VideoMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTOutput ViT->VideoMAE
 class VideoMAEOutput(nn.Module):
     def __init__(self, config: VideoMAEConfig):
         super().__init__()
@@ -349,7 +349,7 @@ class VideoMAEOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTLayer with ViT->VideoMAE,VIT->VIDEOMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTLayer with ViT->VideoMAE,VIT->VIDEOMAE
 class VideoMAELayer(GradientCheckpointingLayer):
     """This corresponds to the Block class in the timm implementation."""
 
@@ -380,7 +380,7 @@ class VideoMAELayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTEncoder with ViT->VideoMAE
+# Copied from transformers_471.models.vit.modeling_vit.ViTEncoder with ViT->VideoMAE
 class VideoMAEEncoder(nn.Module):
     def __init__(self, config: VideoMAEConfig):
         super().__init__()
@@ -474,7 +474,7 @@ class VideoMAEModel(VideoMAEPreTrainedModel):
         >>> import av
         >>> import numpy as np
 
-        >>> from transformers import AutoImageProcessor, VideoMAEModel
+        >>> from transformers_471 import AutoImageProcessor, VideoMAEModel
         >>> from huggingface_hub import hf_hub_download
 
         >>> np.random.seed(0)
@@ -637,7 +637,7 @@ class VideoMAEForPreTraining(VideoMAEPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, VideoMAEForPreTraining
+        >>> from transformers_471 import AutoImageProcessor, VideoMAEForPreTraining
         >>> import numpy as np
         >>> import torch
 
@@ -810,7 +810,7 @@ class VideoMAEForVideoClassification(VideoMAEPreTrainedModel):
         >>> import torch
         >>> import numpy as np
 
-        >>> from transformers import AutoImageProcessor, VideoMAEForVideoClassification
+        >>> from transformers_471 import AutoImageProcessor, VideoMAEForVideoClassification
         >>> from huggingface_hub import hf_hub_download
 
         >>> np.random.seed(0)

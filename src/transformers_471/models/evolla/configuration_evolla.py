@@ -176,7 +176,7 @@ class EvollaConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import EvollaModel, EvollaConfig
+    >>> from transformers_471 import EvollaModel, EvollaConfig
 
     >>> # Initializing a Evolla evolla-10b style configuration
     >>> configuration = EvollaConfig()

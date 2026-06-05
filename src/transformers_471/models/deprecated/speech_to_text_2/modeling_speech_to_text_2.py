@@ -787,7 +787,7 @@ class Speech2Text2ForCausalLM(Speech2Text2PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import (
+        >>> from transformers_471 import (
         ...     SpeechEncoderDecoderModel,
         ...     Speech2Text2ForCausalLM,
         ...     Wav2Vec2Model,

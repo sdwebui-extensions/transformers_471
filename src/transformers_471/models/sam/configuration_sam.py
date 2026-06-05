@@ -187,7 +187,7 @@ class SamVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     SamVisionConfig,
     ...     SamVisionModel,
     ... )
@@ -275,7 +275,7 @@ class SamConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     SamVisionConfig,
     ...     SamPromptEncoderConfig,
     ...     SamMaskDecoderConfig,

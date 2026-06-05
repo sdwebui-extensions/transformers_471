@@ -22,7 +22,7 @@ from huggingface_hub import hf_hub_download
 from huggingface_hub.errors import LocalEntryNotFoundError, OfflineModeIsEnabled
 from requests.exceptions import HTTPError
 
-from transformers.utils import (
+from transformers_471.utils import (
     CONFIG_NAME,
     FLAX_WEIGHTS_NAME,
     TF2_WEIGHTS_NAME,

@@ -18,8 +18,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, is_torch_available
+from transformers_471.testing_utils import (
     backend_empty_cache,
     require_flash_attn,
     require_torch,
@@ -34,7 +34,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         JetMoeForCausalLM,
         JetMoeForSequenceClassification,
         JetMoeModel,

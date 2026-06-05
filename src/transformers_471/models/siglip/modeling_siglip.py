@@ -143,7 +143,7 @@ def default_flax_embed_init(tensor):
     Base class for vision model's outputs that also contains image embeddings of the pooling of the last hidden states.
     """
 )
-# Copied from transformers.models.clip.modeling_clip.CLIPVisionModelOutput with CLIP->Siglip
+# Copied from transformers_471.models.clip.modeling_clip.CLIPVisionModelOutput with CLIP->Siglip
 class SiglipVisionModelOutput(ModelOutput):
     r"""
     image_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):
@@ -162,7 +162,7 @@ class SiglipVisionModelOutput(ModelOutput):
     Base class for text model's outputs that also contains a pooling of the last hidden states.
     """
 )
-# Copied from transformers.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Siglip
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Siglip
 class SiglipTextModelOutput(ModelOutput):
     r"""
     text_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):
@@ -177,7 +177,7 @@ class SiglipTextModelOutput(ModelOutput):
 
 @dataclass
 @auto_docstring
-# Copied from transformers.models.clip.modeling_clip.CLIPOutput with CLIP->Siglip
+# Copied from transformers_471.models.clip.modeling_clip.CLIPOutput with CLIP->Siglip
 class SiglipOutput(ModelOutput):
     r"""
     loss (`torch.FloatTensor` of shape `(1,)`, *optional*, returned when `return_loss` is `True`):
@@ -285,7 +285,7 @@ class SiglipVisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->Siglip
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->Siglip
 class SiglipTextEmbeddings(nn.Module):
     def __init__(self, config: SiglipTextConfig):
         super().__init__()
@@ -411,7 +411,7 @@ class SiglipAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPMLP with CLIP->Siglip
+# Copied from transformers_471.models.clip.modeling_clip.CLIPMLP with CLIP->Siglip
 class SiglipMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -530,7 +530,7 @@ class SiglipPreTrainedModel(PreTrainedModel):
             module.weight.data.fill_(1.0)
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->Siglip
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->Siglip
 class SiglipEncoder(nn.Module):
     """
     Transformer encoder consisting of `config.num_hidden_layers` self attention layers. Each layer is a
@@ -654,7 +654,7 @@ class SiglipTextModel(SiglipPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, SiglipTextModel
+        >>> from transformers_471 import AutoTokenizer, SiglipTextModel
 
         >>> model = SiglipTextModel.from_pretrained("google/siglip-base-patch16-224")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/siglip-base-patch16-224")
@@ -772,7 +772,7 @@ class SiglipVisionModel(SiglipPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, SiglipVisionModel
+        >>> from transformers_471 import AutoProcessor, SiglipVisionModel
 
         >>> model = SiglipVisionModel.from_pretrained("google/siglip-base-patch16-224")
         >>> processor = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
@@ -846,7 +846,7 @@ class SiglipModel(SiglipPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, AutoModel
+        >>> from transformers_471 import AutoTokenizer, AutoModel
         >>> import torch
 
         >>> model = AutoModel.from_pretrained("google/siglip-base-patch16-224")
@@ -883,8 +883,8 @@ class SiglipModel(SiglipPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, AutoModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AutoModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = AutoModel.from_pretrained("google/siglip-base-patch16-224")
         >>> processor = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
@@ -928,7 +928,7 @@ class SiglipModel(SiglipPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, AutoModel
+        >>> from transformers_471 import AutoProcessor, AutoModel
         >>> import torch
 
         >>> model = AutoModel.from_pretrained("google/siglip-base-patch16-224")
@@ -1042,7 +1042,7 @@ class SiglipForImageClassification(SiglipPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, SiglipForImageClassification
+        >>> from transformers_471 import AutoImageProcessor, SiglipForImageClassification
         >>> import torch
         >>> from PIL import Image
         >>> import requests

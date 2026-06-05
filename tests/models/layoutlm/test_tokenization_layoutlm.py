@@ -16,9 +16,9 @@
 import os
 import unittest
 
-from transformers import LayoutLMTokenizer, LayoutLMTokenizerFast
-from transformers.models.layoutlm.tokenization_layoutlm import VOCAB_FILES_NAMES
-from transformers.testing_utils import require_tokenizers
+from transformers_471 import LayoutLMTokenizer, LayoutLMTokenizerFast
+from transformers_471.models.layoutlm.tokenization_layoutlm import VOCAB_FILES_NAMES
+from transformers_471.testing_utils import require_tokenizers
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

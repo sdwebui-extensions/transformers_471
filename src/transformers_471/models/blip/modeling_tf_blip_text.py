@@ -366,7 +366,7 @@ class TFBlipTextAttention(keras.layers.Layer):
                 self.self_output.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->BlipText
 class TFBlipTextIntermediate(keras.layers.Layer):
     def __init__(self, config: BlipTextConfig, **kwargs):
         super().__init__(**kwargs)
@@ -592,7 +592,7 @@ class TFBlipTextEncoder(keras.layers.Layer):
                     layer.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPooler with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPooler with Bert->BlipText
 class TFBlipTextPooler(keras.layers.Layer):
     def __init__(self, config: BlipTextConfig, **kwargs):
         super().__init__(**kwargs)
@@ -622,7 +622,7 @@ class TFBlipTextPooler(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPredictionHeadTransform with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPredictionHeadTransform with Bert->BlipText
 class TFBlipTextPredictionHeadTransform(keras.layers.Layer):
     def __init__(self, config: BlipTextConfig, **kwargs):
         super().__init__(**kwargs)

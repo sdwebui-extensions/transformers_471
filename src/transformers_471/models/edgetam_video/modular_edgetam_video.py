@@ -21,11 +21,11 @@ import torch.nn as nn
 import torch.utils.checkpoint
 from torch import Tensor
 
-from transformers.models.sam2.modeling_sam2 import (
+from transformers_471.models.sam2.modeling_sam2 import (
     eager_attention_forward,
     window_partition,
 )
-from transformers.utils.generic import OutputRecorder
+from transformers_471.utils.generic import OutputRecorder
 
 from ...activations import ACT2FN
 from ...configuration_utils import PretrainedConfig
@@ -183,7 +183,7 @@ class EdgeTamVideoConfig(Sam2VideoConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     EdgeTamVisionConfig,
     ...     EdgeTamVideoPromptEncoderConfig,
     ...     EdgeTamVideoMaskDecoderConfig,

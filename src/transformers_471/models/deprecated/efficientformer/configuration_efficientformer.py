@@ -89,7 +89,7 @@ class EfficientFormerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import EfficientFormerConfig, EfficientFormerModel
+    >>> from transformers_471 import EfficientFormerConfig, EfficientFormerModel
 
     >>> # Initializing a EfficientFormer efficientformer-l1 style configuration
     >>> configuration = EfficientFormerConfig()

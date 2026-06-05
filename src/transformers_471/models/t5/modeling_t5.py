@@ -933,7 +933,7 @@ class T5Stack(T5PreTrainedModel):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.model_parallel = False
@@ -1160,7 +1160,7 @@ class T5Stack(T5PreTrainedModel):
             cross_attentions=all_cross_attentions,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1230,7 +1230,7 @@ class T5Stack(T5PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1347,7 +1347,7 @@ class T5Model(T5PreTrainedModel):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.encoder.deparallelize()
@@ -1445,7 +1445,7 @@ class T5Model(T5PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, T5Model
+        >>> from transformers_471 import AutoTokenizer, T5Model
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google-t5/t5-small")
         >>> model = T5Model.from_pretrained("google-t5/t5-small")
@@ -1596,7 +1596,7 @@ class T5ForConditionalGeneration(T5PreTrainedModel, GenerationMixin):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.encoder.deparallelize()
@@ -1692,7 +1692,7 @@ class T5ForConditionalGeneration(T5PreTrainedModel, GenerationMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, T5ForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, T5ForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google-t5/t5-small")
         >>> model = T5ForConditionalGeneration.from_pretrained("google-t5/t5-small")
@@ -1862,7 +1862,7 @@ class T5EncoderModel(T5PreTrainedModel):
     @add_start_docstrings(DEPARALLELIZE_DOCSTRING)
     def deparallelize(self):
         warnings.warn(
-            "Like `parallelize`, `deparallelize` is deprecated and will be removed in v5 of Transformers.",
+            "Like `parallelize`, `deparallelize` is deprecated and Will be removed in v5 of Transformers",
             FutureWarning,
         )
         self.encoder.deparallelize()
@@ -1917,7 +1917,7 @@ class T5EncoderModel(T5PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, T5EncoderModel
+        >>> from transformers_471 import AutoTokenizer, T5EncoderModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google-t5/t5-small")
         >>> model = T5EncoderModel.from_pretrained("google-t5/t5-small")

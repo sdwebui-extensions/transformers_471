@@ -20,10 +20,10 @@ import unittest
 
 import requests
 
-from transformers import ChineseCLIPConfig, ChineseCLIPTextConfig, ChineseCLIPVisionConfig
-from transformers.models.auto import get_values
-from transformers.testing_utils import require_torch, require_vision, slow, torch_device
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import ChineseCLIPConfig, ChineseCLIPTextConfig, ChineseCLIPVisionConfig
+from transformers_471.models.auto import get_values
+from transformers_471.testing_utils import require_torch, require_vision, slow, torch_device
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import (
@@ -40,7 +40,7 @@ if is_torch_available():
     import torch
     from torch import nn
 
-    from transformers import (
+    from transformers_471 import (
         MODEL_FOR_PRETRAINING_MAPPING,
         ChineseCLIPModel,
         ChineseCLIPTextModel,
@@ -51,7 +51,7 @@ if is_torch_available():
 if is_vision_available():
     from PIL import Image
 
-    from transformers import ChineseCLIPProcessor
+    from transformers_471 import ChineseCLIPProcessor
 
 
 class ChineseCLIPTextModelTester:

@@ -17,8 +17,8 @@ import unittest
 
 from parameterized import parameterized
 
-from transformers import is_torch_available
-from transformers.testing_utils import require_torch, slow
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import require_torch, slow
 
 from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 
@@ -26,7 +26,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import DbrxForCausalLM, DbrxModel
+    from transformers_471 import DbrxForCausalLM, DbrxModel
 
 
 class DbrxModelTester(CausalLMModelTester):

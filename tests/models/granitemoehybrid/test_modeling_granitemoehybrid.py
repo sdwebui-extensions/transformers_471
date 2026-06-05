@@ -18,12 +18,12 @@ import unittest
 
 import pytest
 
-from transformers import (
+from transformers_471 import (
     AutoTokenizer,
     GraniteMoeHybridConfig,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     require_torch,
     require_torch_gpu,
     slow,
@@ -37,7 +37,7 @@ from ...models.bamba.test_modeling_bamba import BambaModelTest, BambaModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         GraniteMoeHybridForCausalLM,
         GraniteMoeHybridModel,
     )

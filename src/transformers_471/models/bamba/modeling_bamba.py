@@ -29,7 +29,7 @@ from typing import Any, Callable, Optional, TypedDict, Union
 import torch
 from torch import nn
 
-from transformers.activations import ACT2FN
+from transformers_471.activations import ACT2FN
 
 from ...cache_utils import Cache
 from ...generation import GenerationMixin
@@ -260,7 +260,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Adapted from transformers.models.glm.modular_glm.apply_rotary_pos_emb
+# Adapted from transformers_471.models.glm.modular_glm.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -458,7 +458,7 @@ def apply_mask_to_padding_states(hidden_states, attention_mask):
     return hidden_states
 
 
-# Adapted from transformers.models.mamba2.modeling_mamba2.Mamba2Mixer
+# Adapted from transformers_471.models.mamba2.modeling_mamba2.Mamba2Mixer
 class BambaMixer(nn.Module):
     """
     Compute ∆, A, B, C, and D the state space parameters and compute the `contextualized_states`.
@@ -1383,7 +1383,7 @@ class BambaForCausalLM(BambaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BambaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, BambaForCausalLM
 
         >>> model = BambaForCausalLM.from_pretrained("...")
         >>> tokenizer = AutoTokenizer.from_pretrained("...")

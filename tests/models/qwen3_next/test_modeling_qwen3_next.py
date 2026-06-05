@@ -19,21 +19,21 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import is_torch_available
-from transformers.testing_utils import require_torch, require_torch_multi_gpu, slow, torch_device
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import require_torch, require_torch_multi_gpu, slow, torch_device
 
 
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         Qwen3NextForCausalLM,
         Qwen3NextForQuestionAnswering,
         Qwen3NextForSequenceClassification,
         Qwen3NextForTokenClassification,
         Qwen3NextModel,
     )
-    from transformers.models.qwen3_next.modeling_qwen3_next import Qwen3NextDynamicCache
+    from transformers_471.models.qwen3_next.modeling_qwen3_next import Qwen3NextDynamicCache
 
 from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 from ...generation.test_utils import has_similar_generate_outputs

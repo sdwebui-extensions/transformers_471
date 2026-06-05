@@ -28,7 +28,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from transformers.utils.generic import check_model_inputs
+from transformers_471.utils.generic import check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache
@@ -741,7 +741,7 @@ class GotOcr2ForConditionalGeneration(GotOcr2PreTrainedModel, GenerationMixin):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, GotOcr2ForConditionalGeneration, TextStreamer
+        >>> from transformers_471 import AutoProcessor, GotOcr2ForConditionalGeneration, TextStreamer
 
         >>> model = GotOcr2ForConditionalGeneration.from_pretrained("stepfun-ai/GOT-OCR-2.0-hf").to("cuda")
         >>> processor = AutoProcessor.from_pretrained("stepfun-ai/GOT-OCR-2.0-hf")

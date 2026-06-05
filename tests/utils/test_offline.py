@@ -16,8 +16,8 @@ import subprocess
 import sys
 import unittest
 
-from transformers import BertConfig, BertModel, BertTokenizer, pipeline
-from transformers.testing_utils import TestCasePlus, require_torch
+from transformers_471 import BertConfig, BertModel, BertTokenizer, pipeline
+from transformers_471.testing_utils import TestCasePlus, require_torch
 
 
 class OfflineTests(TestCasePlus):
@@ -32,7 +32,7 @@ class OfflineTests(TestCasePlus):
 
         # this must be loaded before socket.socket is monkey-patched
         load = """
-from transformers import BertConfig, BertModel, BertTokenizer, pipeline
+from transformers_471 import BertConfig, BertModel, BertTokenizer, pipeline
         """
 
         run = """
@@ -67,7 +67,7 @@ socket.socket = offline_socket
         # python one-liner segments
         # this must be loaded before socket.socket is monkey-patched
         load = """
-from transformers import BertConfig, BertModel, BertTokenizer, pipeline
+from transformers_471 import BertConfig, BertModel, BertTokenizer, pipeline
         """
 
         run = """
@@ -107,7 +107,7 @@ socket.socket = offline_socket
 
         # this must be loaded before socket.socket is monkey-patched
         load = """
-from transformers import BertConfig, BertModel, BertTokenizer
+from transformers_471 import BertConfig, BertModel, BertTokenizer
         """
 
         run = """
@@ -139,7 +139,7 @@ socket.socket = offline_socket
     @require_torch
     def test_offline_mode_pipeline_exception(self):
         load = """
-from transformers import pipeline
+from transformers_471 import pipeline
         """
         run = """
 mname = "hf-internal-testing/tiny-random-bert"
@@ -161,7 +161,7 @@ socket.socket = offline_socket
     @require_torch
     def test_offline_model_dynamic_model(self):
         load = """
-from transformers import AutoModel
+from transformers_471 import AutoModel
         """
         run = """
 mname = "hf-internal-testing/test_dynamic_model"
@@ -182,7 +182,7 @@ print("success")
         """
         Test `_is_offline_mode` helper (should respect both HF_HUB_OFFLINE and legacy TRANSFORMERS_OFFLINE env vars)
         """
-        load = "from transformers.utils import is_offline_mode"
+        load = "from transformers_471.utils import is_offline_mode"
         run = "print(is_offline_mode())"
 
         stdout, _ = self._execute_with_env(load, run)

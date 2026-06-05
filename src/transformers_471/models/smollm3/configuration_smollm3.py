@@ -127,7 +127,7 @@ class SmolLM3Config(PretrainedConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import SmolLM3Model, SmolLM3Config
+    >>> from transformers_471 import SmolLM3Model, SmolLM3Config
 
     >>> # Initializing a SmolLM3 style configuration
     >>> configuration = SmolLM3Config()

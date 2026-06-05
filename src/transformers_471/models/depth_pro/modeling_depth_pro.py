@@ -660,7 +660,7 @@ class DepthProModel(DepthProPreTrainedModel):
         >>> import torch
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, DepthProModel
+        >>> from transformers_471 import AutoProcessor, DepthProModel
 
         >>> url = "https://www.ilankelman.org/stopsigns/australia.jpg"
         >>> image = Image.open(requests.get(url, stream=True).raw)
@@ -705,7 +705,7 @@ class DepthProModel(DepthProPreTrainedModel):
         )
 
 
-# Copied from transformers.models.dpt.modeling_dpt.DPTPreActResidualLayer DPT->DepthPro
+# Copied from transformers_471.models.dpt.modeling_dpt.DPTPreActResidualLayer DPT->DepthPro
 class DepthProPreActResidualLayer(nn.Module):
     """
     ResidualConvUnit, pre-activate residual unit.
@@ -767,7 +767,7 @@ class DepthProPreActResidualLayer(nn.Module):
         return hidden_state + residual
 
 
-# Modified from transformers.models.dpt.modeling_dpt.DPTFeatureFusionLayer
+# Modified from transformers_471.models.dpt.modeling_dpt.DPTFeatureFusionLayer
 # except it uses deconv and skip_add and needs no interpolation
 class DepthProFeatureFusionLayer(nn.Module):
     def __init__(self, config: DepthProConfig, use_deconv: bool = True):
@@ -803,7 +803,7 @@ class DepthProFeatureFusionLayer(nn.Module):
         return hidden_state
 
 
-# Modified from transformers.models.dpt.modeling_dpt.DPTFeatureFusionStage with DPT->DepthPro
+# Modified from transformers_471.models.dpt.modeling_dpt.DPTFeatureFusionStage with DPT->DepthPro
 # with deconv and reversed layers
 class DepthProFeatureFusionStage(nn.Module):
     def __init__(self, config):
@@ -1047,7 +1047,7 @@ class DepthProForDepthEstimation(DepthProPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, DepthProForDepthEstimation
+        >>> from transformers_471 import AutoImageProcessor, DepthProForDepthEstimation
         >>> import torch
         >>> from PIL import Image
         >>> import requests

@@ -18,8 +18,8 @@ from unittest.util import safe_repr
 
 import pytest
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, FalconMambaConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, FalconMambaConfig, is_torch_available
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_bitsandbytes,
@@ -40,14 +40,14 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         FalconMambaCache,
         FalconMambaForCausalLM,
         FalconMambaModel,
     )
 
 
-# Copied from transformers.tests.models.mamba.MambaModelTester with Mamba->FalconMamba,mamba->falcon_mamba
+# Copied from transformers_471.tests.models.mamba.MambaModelTester with Mamba->FalconMamba,mamba->falcon_mamba
 class FalconMambaModelTester:
     def __init__(
         self,
@@ -265,7 +265,7 @@ class FalconMambaModelTester:
 
 
 @require_torch
-# Copied from transformers.tests.models.mamba.MambaModelTest with Mamba->Falcon,mamba->falcon_mamba,FalconMambaCache->MambaCache
+# Copied from transformers_471.tests.models.mamba.MambaModelTest with Mamba->Falcon,mamba->falcon_mamba,FalconMambaCache->MambaCache
 class FalconMambaModelTest(ModelTesterMixin, GenerationTesterMixin, PipelineTesterMixin, unittest.TestCase):
     all_model_classes = (FalconMambaModel, FalconMambaForCausalLM) if is_torch_available() else ()
     has_attentions = False  # FalconMamba does not support attentions

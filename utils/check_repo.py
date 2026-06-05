@@ -41,15 +41,15 @@ from difflib import get_close_matches
 from importlib.machinery import ModuleSpec
 from pathlib import Path
 
-from transformers import is_flax_available, is_tf_available, is_torch_available
-from transformers.models.auto.auto_factory import get_values
-from transformers.models.auto.configuration_auto import CONFIG_MAPPING_NAMES
-from transformers.models.auto.feature_extraction_auto import FEATURE_EXTRACTOR_MAPPING_NAMES
-from transformers.models.auto.image_processing_auto import IMAGE_PROCESSOR_MAPPING_NAMES
-from transformers.models.auto.processing_auto import PROCESSOR_MAPPING_NAMES
-from transformers.models.auto.tokenization_auto import TOKENIZER_MAPPING_NAMES
-from transformers.testing_utils import _COMMON_MODEL_NAMES_MAP
-from transformers.utils import ENV_VARS_TRUE_VALUES, direct_transformers_import
+from transformers_471 import is_flax_available, is_tf_available, is_torch_available
+from transformers_471.models.auto.auto_factory import get_values
+from transformers_471.models.auto.configuration_auto import CONFIG_MAPPING_NAMES
+from transformers_471.models.auto.feature_extraction_auto import FEATURE_EXTRACTOR_MAPPING_NAMES
+from transformers_471.models.auto.image_processing_auto import IMAGE_PROCESSOR_MAPPING_NAMES
+from transformers_471.models.auto.processing_auto import PROCESSOR_MAPPING_NAMES
+from transformers_471.models.auto.tokenization_auto import TOKENIZER_MAPPING_NAMES
+from transformers_471.testing_utils import _COMMON_MODEL_NAMES_MAP
+from transformers_471.utils import ENV_VARS_TRUE_VALUES, direct_transformers_import
 
 
 # All paths are set with the intent you should run this script from the root of the repo with the command

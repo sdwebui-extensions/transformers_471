@@ -14,14 +14,14 @@
 
 import unittest
 
-from transformers import (
+from transformers_471 import (
     MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING,
     TF_MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING,
     Pipeline,
     ZeroShotClassificationPipeline,
     pipeline,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     is_pipeline_test,
     is_torch_available,
     nested_simplify,

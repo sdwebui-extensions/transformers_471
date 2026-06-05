@@ -97,7 +97,7 @@ def window_reverse(windows, window_size, height, width):
     return windows
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols
@@ -127,7 +127,7 @@ def contrastive_loss(logits: torch.Tensor) -> torch.Tensor:
     Base class for text model's outputs that also contains a pooling of the last hidden states.
     """
 )
-# Copied from transformers.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Clap
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextModelOutput with CLIP->Clap
 class ClapTextModelOutput(ModelOutput):
     r"""
     text_embeds (`torch.FloatTensor` of shape `(batch_size, output_dim)` *optional* returned when model is initialized with `with_projection=True`):
@@ -160,7 +160,7 @@ class ClapAudioModelOutput(ModelOutput):
 
 @dataclass
 @auto_docstring
-# Copied from transformers.models.clip.modeling_clip.CLIPOutput with CLIP->Clap, vision->audio, Vision->Audio, image->audio
+# Copied from transformers_471.models.clip.modeling_clip.CLIPOutput with CLIP->Clap, vision->audio, Vision->Audio, image->audio
 class ClapOutput(ModelOutput):
     r"""
     loss (`torch.FloatTensor` of shape `(1,)`, *optional*, returned when `return_loss` is `True`):
@@ -196,7 +196,7 @@ class ClapOutput(ModelOutput):
         )
 
 
-# Adapted from transformers.models.swin.modeling_swin.SwinDropPath
+# Adapted from transformers_471.models.swin.modeling_swin.SwinDropPath
 class ClapDropPath(nn.Module):
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks). This is a slightly
@@ -360,7 +360,7 @@ class ClapAudioPatchEmbed(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinSelfAttention with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinSelfAttention with Swin->ClapAudio
 class ClapAudioSelfAttention(nn.Module):
     def __init__(self, config, dim, num_heads, window_size):
         super().__init__()
@@ -456,7 +456,7 @@ class ClapAudioSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinSelfOutput with Swin->ClapAudio
 class ClapAudioSelfOutput(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -470,7 +470,7 @@ class ClapAudioSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinAttention with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinAttention with Swin->ClapAudio
 class ClapAudioAttention(nn.Module):
     def __init__(self, config, dim, num_heads, window_size):
         super().__init__()
@@ -509,7 +509,7 @@ class ClapAudioAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinIntermediate with Swin->ClapAudio
 class ClapAudioIntermediate(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -525,7 +525,7 @@ class ClapAudioIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinOutput with Swin->ClapAudio
 class ClapAudioOutput(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -538,7 +538,7 @@ class ClapAudioOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinLayer with SwinDropPath->ClapDropPath, Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinLayer with SwinDropPath->ClapDropPath, Swin->ClapAudio
 class ClapAudioLayer(nn.Module):
     def __init__(self, config, dim, input_resolution, num_heads, drop_path_rate=0.0, shift_size=0):
         super().__init__()
@@ -664,7 +664,7 @@ class ClapAudioLayer(nn.Module):
         return layer_outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinStage with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinStage with Swin->ClapAudio
 class ClapAudioStage(GradientCheckpointingLayer):
     def __init__(self, config, dim, input_resolution, depth, num_heads, drop_path, downsample):
         super().__init__()
@@ -725,7 +725,7 @@ class ClapAudioStage(GradientCheckpointingLayer):
         return stage_outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinPatchMerging with Swin->ClapAudio
+# Copied from transformers_471.models.swin.modeling_swin.SwinPatchMerging with Swin->ClapAudio
 class ClapAudioPatchMerging(nn.Module):
     """
     Patch Merging Layer.
@@ -995,13 +995,13 @@ class ClapProjectionLayer(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->ClapText, persistent=False->persistent=True
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->ClapText, persistent=False->persistent=True
 class ClapTextEmbeddings(nn.Module):
     """
     Same as BertEmbeddings with a tiny tweak for positional embeddings indexing.
     """
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.__init__
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.__init__
     def __init__(self, config):
         super().__init__()
         self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)
@@ -1085,7 +1085,7 @@ class ClapTextEmbeddings(nn.Module):
         return position_ids.unsqueeze(0).expand(input_shape)
 
 
-# Copied from transformers.models.align.modeling_align.eager_attention_forward
+# Copied from transformers_471.models.align.modeling_align.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -1113,7 +1113,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextSelfAttention with Align->Clap
+# Copied from transformers_471.models.align.modeling_align.AlignTextSelfAttention with Align->Clap
 class ClapTextSelfAttention(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1172,7 +1172,7 @@ class ClapTextSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class ClapTextSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1187,7 +1187,7 @@ class ClapTextSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextAttention with Align->Clap
+# Copied from transformers_471.models.align.modeling_align.AlignTextAttention with Align->Clap
 class ClapTextAttention(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1233,7 +1233,7 @@ class ClapTextAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class ClapTextIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1249,7 +1249,7 @@ class ClapTextIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class ClapTextOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1264,7 +1264,7 @@ class ClapTextOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextLayer with Align->Clap
+# Copied from transformers_471.models.align.modeling_align.AlignTextLayer with Align->Clap
 class ClapTextLayer(GradientCheckpointingLayer):
     def __init__(self, config):
         super().__init__()
@@ -1305,7 +1305,7 @@ class ClapTextLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.align.modeling_align.AlignTextEncoder with Align->Clap
+# Copied from transformers_471.models.align.modeling_align.AlignTextEncoder with Align->Clap
 class ClapTextEncoder(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1355,7 +1355,7 @@ class ClapTextEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class ClapTextPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1432,7 +1432,7 @@ class ClapAudioModel(ClapPreTrainedModel):
 
         ```python
         >>> from datasets import load_dataset
-        >>> from transformers import AutoProcessor, ClapAudioModel
+        >>> from transformers_471 import AutoProcessor, ClapAudioModel
 
         >>> dataset = load_dataset("hf-internal-testing/ashraq-esc50-1-dog-example")
         >>> audio_sample = dataset["train"]["audio"][0]["array"]
@@ -1628,7 +1628,7 @@ class ClapModel(ClapPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, ClapModel
+        >>> from transformers_471 import AutoTokenizer, ClapModel
 
         >>> model = ClapModel.from_pretrained("laion/clap-htsat-unfused")
         >>> tokenizer = AutoTokenizer.from_pretrained("laion/clap-htsat-unfused")
@@ -1666,7 +1666,7 @@ class ClapModel(ClapPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, ClapModel
+        >>> from transformers_471 import AutoFeatureExtractor, ClapModel
 
         >>> model = ClapModel.from_pretrained("laion/clap-htsat-unfused")
         >>> feature_extractor = AutoFeatureExtractor.from_pretrained("laion/clap-htsat-unfused")
@@ -1709,7 +1709,7 @@ class ClapModel(ClapPreTrainedModel):
 
         ```python
         >>> from datasets import load_dataset
-        >>> from transformers import AutoProcessor, ClapModel
+        >>> from transformers_471 import AutoProcessor, ClapModel
 
         >>> dataset = load_dataset("hf-internal-testing/ashraq-esc50-1-dog-example")
         >>> audio_sample = dataset["train"]["audio"][0]["array"]
@@ -1814,7 +1814,7 @@ class ClapTextModelWithProjection(ClapPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, ClapTextModelWithProjection
+        >>> from transformers_471 import AutoTokenizer, ClapTextModelWithProjection
 
         >>> model = ClapTextModelWithProjection.from_pretrained("laion/clap-htsat-unfused")
         >>> tokenizer = AutoTokenizer.from_pretrained("laion/clap-htsat-unfused")
@@ -1881,7 +1881,7 @@ class ClapAudioModelWithProjection(ClapPreTrainedModel):
 
         ```python
         >>> from datasets import load_dataset
-        >>> from transformers import ClapAudioModelWithProjection, ClapProcessor
+        >>> from transformers_471 import ClapAudioModelWithProjection, ClapProcessor
 
         >>> model = ClapAudioModelWithProjection.from_pretrained("laion/clap-htsat-fused")
         >>> processor = ClapProcessor.from_pretrained("laion/clap-htsat-fused")

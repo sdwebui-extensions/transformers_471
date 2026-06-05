@@ -464,7 +464,7 @@ def get_task(model: str, token: Optional[str] = None, **deprecated_kwargs) -> st
     use_auth_token = deprecated_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -810,7 +810,7 @@ def pipeline(
     Examples:
 
     ```python
-    >>> from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer
+    >>> from transformers_471 import pipeline, AutoModelForTokenClassification, AutoTokenizer
 
     >>> # Sentiment analysis pipeline
     >>> analyzer = pipeline("sentiment-analysis")
@@ -832,7 +832,7 @@ def pipeline(
     use_auth_token = model_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:

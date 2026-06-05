@@ -19,7 +19,7 @@ import unittest
 import pytest
 from packaging import version
 
-from transformers import (
+from transformers_471 import (
     AutoConfig,
     AutoModel,
     AutoModelForCausalLM,
@@ -30,8 +30,8 @@ from transformers import (
     pipeline,
     set_seed,
 )
-from transformers.models.opt.modeling_opt import OPTAttention
-from transformers.testing_utils import (
+from transformers_471.models.opt.modeling_opt import OPTAttention
+from transformers_471.testing_utils import (
     apply_skip_if_not_implemented,
     backend_empty_cache,
     backend_torch_accelerator_module,
@@ -193,7 +193,7 @@ class Bnb4BitTest(Base4bitTest):
         A simple test to check if the model conversion has been done correctly by checking on the
         memory footprint of the converted model and the class type of the linear layers of the converted models
         """
-        from transformers import T5PreTrainedModel
+        from transformers_471 import T5PreTrainedModel
 
         self.model_fp16.get_memory_footprint()
         self.model_4bit.get_memory_footprint()
@@ -414,7 +414,7 @@ class Bnb4BitT5Test(unittest.TestCase):
         `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
         both cases.
         """
-        from transformers import T5ForConditionalGeneration
+        from transformers_471 import T5ForConditionalGeneration
 
         modules = T5ForConditionalGeneration._keep_in_fp32_modules
         T5ForConditionalGeneration._keep_in_fp32_modules = None
@@ -438,7 +438,7 @@ class Bnb4BitT5Test(unittest.TestCase):
         `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
         both cases.
         """
-        from transformers import T5ForConditionalGeneration
+        from transformers_471 import T5ForConditionalGeneration
 
         # test with `google-t5/t5-small`
         model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
@@ -525,7 +525,7 @@ class Pipeline4BitTest(Base4bitTest):
 
     def test_pipeline(self):
         r"""
-        The aim of this test is to verify that the mixed 4bit is compatible with `pipeline` from transformers. Since
+        The aim of this test is to verify that the mixed 4bit is compatible with `pipeline` from transformers_471. Since
         we used pipeline for inference speed benchmarking we want to make sure that this feature does not break anything
         on pipeline.
         """

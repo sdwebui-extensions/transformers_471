@@ -461,7 +461,7 @@ class DebertaAttention(nn.Module):
             return (attention_output, None)
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->Deberta
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->Deberta
 class DebertaIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -786,7 +786,7 @@ class LegacyDebertaLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->LegacyDeberta
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->LegacyDeberta
 class LegacyDebertaOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()

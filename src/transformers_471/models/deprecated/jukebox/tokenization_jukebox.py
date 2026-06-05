@@ -52,7 +52,7 @@ class JukeboxTokenizer(PreTrainedTokenizer):
 
     Depending on the number of genres on which the model should be conditioned (`n_genres`).
     ```python
-    >>> from transformers import JukeboxTokenizer
+    >>> from transformers_471 import JukeboxTokenizer
 
     >>> tokenizer = JukeboxTokenizer.from_pretrained("openai/jukebox-1b-lyrics")
     >>> tokenizer("Alan Jackson", "Country Rock", "old town road")["input_ids"]

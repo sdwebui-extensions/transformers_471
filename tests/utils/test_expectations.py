@@ -1,6 +1,6 @@
 import unittest
 
-from transformers.testing_utils import Expectations
+from transformers_471.testing_utils import Expectations
 
 
 class ExpectationsTest(unittest.TestCase):

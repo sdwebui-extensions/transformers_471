@@ -75,7 +75,7 @@ FROM_CONFIG_DOCSTRING = """
         Examples:
 
         ```python
-        >>> from transformers import AutoConfig, BaseAutoModelClass
+        >>> from transformers_471 import AutoConfig, BaseAutoModelClass
 
         >>> # Download configuration from huggingface.co and cache.
         >>> config = AutoConfig.from_pretrained("checkpoint_placeholder")
@@ -135,7 +135,7 @@ FROM_PRETRAINED_TORCH_DOCSTRING = """
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -173,7 +173,7 @@ FROM_PRETRAINED_TORCH_DOCSTRING = """
         Examples:
 
         ```python
-        >>> from transformers import AutoConfig, BaseAutoModelClass
+        >>> from transformers_471 import AutoConfig, BaseAutoModelClass
 
         >>> # Download model and configuration from huggingface.co and cache.
         >>> model = BaseAutoModelClass.from_pretrained("checkpoint_placeholder")
@@ -234,7 +234,7 @@ FROM_PRETRAINED_TF_DOCSTRING = """
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -272,7 +272,7 @@ FROM_PRETRAINED_TF_DOCSTRING = """
         Examples:
 
         ```python
-        >>> from transformers import AutoConfig, BaseAutoModelClass
+        >>> from transformers_471 import AutoConfig, BaseAutoModelClass
 
         >>> # Download model and configuration from huggingface.co and cache.
         >>> model = BaseAutoModelClass.from_pretrained("checkpoint_placeholder")
@@ -333,7 +333,7 @@ FROM_PRETRAINED_FLAX_DOCSTRING = """
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -371,7 +371,7 @@ FROM_PRETRAINED_FLAX_DOCSTRING = """
         Examples:
 
         ```python
-        >>> from transformers import AutoConfig, BaseAutoModelClass
+        >>> from transformers_471 import AutoConfig, BaseAutoModelClass
 
         >>> # Download model and configuration from huggingface.co and cache.
         >>> model = BaseAutoModelClass.from_pretrained("checkpoint_placeholder")
@@ -490,7 +490,7 @@ class _BaseAutoModelClass:
         use_auth_token = hub_kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -817,7 +817,7 @@ class _LazyAutoMapping(OrderedDict[type[PretrainedConfig], _LazyAutoMappingValue
     def _load_attr_from_module(self, model_type, attr):
         module_name = model_type_to_module_name(model_type)
         if module_name not in self._modules:
-            self._modules[module_name] = importlib.import_module(f".{module_name}", "transformers.models")
+            self._modules[module_name] = importlib.import_module(f".{module_name}", "transformers_471.models")
         return getattribute_from_module(self._modules[module_name], attr)
 
     def keys(self) -> list[type[PretrainedConfig]]:

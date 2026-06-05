@@ -20,8 +20,8 @@ from datetime import date
 from pathlib import Path
 
 import transformers.commands.add_new_model_like
-from transformers.commands.add_new_model_like import ModelInfos, create_new_model_like
-from transformers.testing_utils import require_torch
+from transformers_471.commands.add_new_model_like import ModelInfos, create_new_model_like
+from transformers_471.testing_utils import require_torch
 
 
 REPO_PATH = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

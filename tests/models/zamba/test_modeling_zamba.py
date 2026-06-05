@@ -19,8 +19,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, ZambaConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, ZambaConfig, is_torch_available
+from transformers_471.testing_utils import (
     require_bitsandbytes,
     require_flash_attn,
     require_torch,
@@ -38,12 +38,12 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         ZambaForCausalLM,
         ZambaForSequenceClassification,
         ZambaModel,
     )
-    from transformers.models.zamba.modeling_zamba import (
+    from transformers_471.models.zamba.modeling_zamba import (
         ZambaHybridDynamicCache,
     )
 

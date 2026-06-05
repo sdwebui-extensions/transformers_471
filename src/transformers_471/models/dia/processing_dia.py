@@ -363,7 +363,7 @@ class DiaProcessor(ProcessorMixin):
             )
         return decoder_attention_mask.shape[1] - max(delay_pattern)
 
-    # Copied from transformers.models.csm.processing_csm.CsmProcessor.save_audio with Csm->Dia
+    # Copied from transformers_471.models.csm.processing_csm.CsmProcessor.save_audio with Csm->Dia
     def save_audio(
         self,
         audio: AudioInput,

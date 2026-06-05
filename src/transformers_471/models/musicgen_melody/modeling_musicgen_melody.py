@@ -93,7 +93,7 @@ class MusicgenMelodyOutputWithPast(ModelOutput):
     encoder_hidden_states: Optional[torch.FloatTensor] = None
 
 
-# Copied from transformers.models.musicgen.modeling_musicgen.shift_tokens_right
+# Copied from transformers_471.models.musicgen.modeling_musicgen.shift_tokens_right
 def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start_token_id: int):
     """
     Shift input ids one token to the right.
@@ -114,7 +114,7 @@ def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start
     return shifted_input_ids
 
 
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenSinusoidalPositionalEmbedding with Musicgen->MusicgenMelody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenSinusoidalPositionalEmbedding with Musicgen->MusicgenMelody
 class MusicgenMelodySinusoidalPositionalEmbedding(nn.Module):
     """This module produces sinusoidal positional embeddings of any length."""
 
@@ -159,7 +159,7 @@ class MusicgenMelodySinusoidalPositionalEmbedding(nn.Module):
         return self.weights.index_select(0, position_ids.view(-1)).detach()
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -190,7 +190,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenAttention with Musicgen->MusicgenMelody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenAttention with Musicgen->MusicgenMelody
 class MusicgenMelodyAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -385,7 +385,7 @@ class MusicgenMelodyDecoderLayer(GradientCheckpointingLayer):
 
 
 @auto_docstring
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenPreTrainedModel with Musicgen->MusicgenMelody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenPreTrainedModel with Musicgen->MusicgenMelody
 class MusicgenMelodyPreTrainedModel(PreTrainedModel):
     config: MusicgenMelodyDecoderConfig
     base_model_prefix = "model"
@@ -410,7 +410,7 @@ class MusicgenMelodyPreTrainedModel(PreTrainedModel):
                 module.weight.data[module.padding_idx].zero_()
 
 
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody
 class MusicgenMelodyDecoder(MusicgenMelodyPreTrainedModel):
     """
     Transformer decoder consisting of *config.num_hidden_layers* layers. Each layer is a [`MusicgenMelodyDecoderLayer`]
@@ -665,7 +665,7 @@ class MusicgenMelodyDecoder(MusicgenMelodyPreTrainedModel):
 
 
 @auto_docstring
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenModel with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenModel with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody
 class MusicgenMelodyModel(MusicgenMelodyPreTrainedModel):
     def __init__(self, config: MusicgenMelodyDecoderConfig):
         super().__init__(config)
@@ -766,7 +766,7 @@ class MusicgenMelodyModel(MusicgenMelodyPreTrainedModel):
     The Musicgen Melody decoder model with a language modelling head on top.
     """
 )
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenForCausalLM with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody,MusicGen->Musicgen Melody
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenForCausalLM with MUSICGEN->MUSICGEN_MELODY,Musicgen->MusicgenMelody,MusicGen->Musicgen Melody
 class MusicgenMelodyForCausalLM(MusicgenMelodyPreTrainedModel, GenerationMixin):
     def __init__(self, config: MusicgenMelodyDecoderConfig):
         super().__init__(config)
@@ -1377,7 +1377,7 @@ class MusicgenMelodyForConditionalGeneration(PreTrainedModel, GenerationMixin):
         return self.decoder.set_output_embeddings(new_embeddings)
 
     @classmethod
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration.from_sub_models_pretrained with Musicgen->MusicgenMelody, musicgen-small->musicgen-melody
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration.from_sub_models_pretrained with Musicgen->MusicgenMelody, musicgen-small->musicgen-melody
     def from_sub_models_pretrained(
         cls,
         text_encoder_pretrained_model_name_or_path: Optional[str] = None,
@@ -1435,7 +1435,7 @@ class MusicgenMelodyForConditionalGeneration(PreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import MusicgenMelodyForConditionalGeneration
+        >>> from transformers_471 import MusicgenMelodyForConditionalGeneration
 
         >>> # initialize a musicgen model from a t5 text encoder, encodec audio encoder, and musicgen decoder
         >>> model = MusicgenMelodyForConditionalGeneration.from_sub_models_pretrained(
@@ -1627,7 +1627,7 @@ class MusicgenMelodyForConditionalGeneration(PreTrainedModel, GenerationMixin):
 
         Examples:
         ```python
-        >>> from transformers import AutoProcessor, MusicgenMelodyForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, MusicgenMelodyForConditionalGeneration
         >>> import torch
 
         >>> processor = AutoProcessor.from_pretrained("facebook/musicgen-melody")
@@ -1806,7 +1806,7 @@ class MusicgenMelodyForConditionalGeneration(PreTrainedModel, GenerationMixin):
             "use_cache": use_cache,
         }
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration._prepare_decoder_input_ids_for_generation
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration._prepare_decoder_input_ids_for_generation
     def _prepare_decoder_input_ids_for_generation(
         self,
         batch_size: int,
@@ -2002,7 +2002,7 @@ class MusicgenMelodyForConditionalGeneration(PreTrainedModel, GenerationMixin):
             param.requires_grad = False
         self.text_encoder._requires_grad = False
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration._get_decoder_start_token_id
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenForConditionalGeneration._get_decoder_start_token_id
     def _get_decoder_start_token_id(
         self, decoder_start_token_id: Optional[Union[int, list[int]]] = None, bos_token_id: Optional[int] = None
     ) -> int:

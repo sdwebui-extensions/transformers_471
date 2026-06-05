@@ -365,7 +365,7 @@ class SequentialLlama4TextExperts(ModuleList):
     """
 
     def __init__(self, config):
-        from transformers.models.llama4.modeling_llama4 import Llama4TextMLP
+        from transformers_471.models.llama4.modeling_llama4 import Llama4TextMLP
 
         super().__init__([Llama4TextMLP(config) for _ in range(config.num_local_experts)])
         self.num_experts = config.num_local_experts

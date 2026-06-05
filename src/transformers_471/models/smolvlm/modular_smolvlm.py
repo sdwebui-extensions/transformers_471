@@ -77,8 +77,8 @@ class SmolVLMVisionConfig(Idefics3VisionConfig):
     Example:
 
     ```python
-    >>> from transformers.models.smolvlm.modeling_smolvlm import SmolVLMVisionTransformer
-    >>> from transformers.models.smolvlm.configuration_smolvlm import SmolVLMVisionConfig
+    >>> from transformers_471.models.smolvlm.modeling_smolvlm import SmolVLMVisionTransformer
+    >>> from transformers_471.models.smolvlm.configuration_smolvlm import SmolVLMVisionConfig
 
     >>> # Initializing a SmolVLMVisionConfig with google/siglip-so400m-patch14-384 style configuration
     >>> configuration = SmolVLMVisionConfig()
@@ -131,7 +131,7 @@ class SmolVLMConfig(Idefics3Config):
 
     Example:
     ```python
-    >>> from transformers import SmolVLMModel, SmolVLMConfig
+    >>> from transformers_471 import SmolVLMModel, SmolVLMConfig
     >>> # Initializing configuration
     >>> configuration = SmolVLMConfig()
     >>> # Initializing a model from the configuration
@@ -366,8 +366,8 @@ class SmolVLMForConditionalGeneration(Idefics3ForConditionalGeneration):
         >>> from PIL import Image
         >>> from io import BytesIO
 
-        >>> from transformers import AutoProcessor, AutoModelForImageTextToText
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AutoModelForImageTextToText
+        >>> from transformers_471.image_utils import load_image
 
         >>> # Note that passing the image urls (instead of the actual pil images) to the processor is also possible
         >>> image1 = load_image("https://cdn.britannica.com/61/93061-050-99147DCE/Statue-of-Liberty-Island-New-York-Bay.jpg")

@@ -35,7 +35,7 @@ from .configuration_xglm import XGLMConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->XGLM
+# Copied from transformers_471.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->XGLM
 class XGLMScaledWordEmbedding(nn.Embedding):
     """
     This module overrides nn.Embeddings' forward by multiplying with embeddings scale.
@@ -294,7 +294,7 @@ class XGLMDecoderLayer(GradientCheckpointingLayer):
         self.final_layer_norm = nn.LayerNorm(self.embed_dim)
 
     @deprecate_kwarg("past_key_value", new_name="past_key_values", version="4.58")
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoderLayer.forward
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoderLayer.forward
     def forward(
         self,
         hidden_states: torch.Tensor,

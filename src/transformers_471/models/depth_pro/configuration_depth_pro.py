@@ -74,7 +74,7 @@ class DepthProConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import DepthProConfig, DepthProModel
+    >>> from transformers_471 import DepthProConfig, DepthProModel
 
     >>> # Initializing a DepthPro apple/DepthPro style configuration
     >>> configuration = DepthProConfig()

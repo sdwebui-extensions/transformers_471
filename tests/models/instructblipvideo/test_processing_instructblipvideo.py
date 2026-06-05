@@ -17,14 +17,14 @@ import unittest
 
 import pytest
 
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torchvision_available, is_vision_available
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torchvision_available, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import (
+    from transformers_471 import (
         AutoProcessor,
         BertTokenizerFast,
         GPT2Tokenizer,
@@ -33,7 +33,7 @@ if is_vision_available():
     )
 
     if is_torchvision_available():
-        from transformers import InstructBlipVideoVideoProcessor
+        from transformers_471 import InstructBlipVideoVideoProcessor
 
 
 @require_vision

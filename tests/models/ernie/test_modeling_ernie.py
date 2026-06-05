@@ -13,9 +13,9 @@
 # limitations under the License.
 import unittest
 
-from transformers import ErnieConfig, is_torch_available
-from transformers.models.auto import get_values
-from transformers.testing_utils import require_torch, slow, torch_device
+from transformers_471 import ErnieConfig, is_torch_available
+from transformers_471.models.auto import get_values
+from transformers_471.testing_utils import require_torch, slow, torch_device
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -26,7 +26,7 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         MODEL_FOR_PRETRAINING_MAPPING,
         ErnieForCausalLM,
         ErnieForMaskedLM,

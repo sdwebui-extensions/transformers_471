@@ -18,9 +18,9 @@ import unittest
 import numpy as np
 from datasets import load_dataset
 
-from transformers.image_utils import load_image
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_torchvision_available, is_vision_available
+from transformers_471.image_utils import load_image
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_torchvision_available, is_vision_available
 
 from ...test_image_processing_common import ImageProcessingTestMixin, prepare_image_inputs
 from ...test_processing_common import url_to_local_path
@@ -32,11 +32,11 @@ if is_torch_available():
 if is_vision_available():
     from PIL import Image
 
-    from transformers import EomtImageProcessor
+    from transformers_471 import EomtImageProcessor
 
     if is_torchvision_available():
-        from transformers import EomtImageProcessorFast
-    from transformers.models.eomt.modeling_eomt import EomtForUniversalSegmentationOutput
+        from transformers_471 import EomtImageProcessorFast
+    from transformers_471.models.eomt.modeling_eomt import EomtForUniversalSegmentationOutput
 
 
 class EomtImageProcessingTester:

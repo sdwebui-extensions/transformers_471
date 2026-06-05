@@ -71,7 +71,7 @@ class DimensionInfo:
     #       a multiple of block size at the start of the encoder layers, so T=P always.
 
 
-# Copied from transformers.models.bart.modeling_bart.shift_tokens_right
+# Copied from transformers_471.models.bart.modeling_bart.shift_tokens_right
 def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start_token_id: int):
     """
     Shift input ids one token to the right.
@@ -88,7 +88,7 @@ def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start
     return shifted_input_ids
 
 
-# Copied from transformers.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->PegasusX
+# Copied from transformers_471.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->PegasusX
 class PegasusXScaledWordEmbedding(nn.Embedding):
     """
     This module overrides nn.Embeddings' forward by multiplying with embeddings scale.
@@ -132,7 +132,7 @@ class PegasusXSinusoidalPositionalEmbedding(nn.Module):
         return pe[None].expand(batch_size, -1, -1)
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -163,7 +163,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartAttention with Bart->PegasusX
+# Copied from transformers_471.models.bart.modeling_bart.BartAttention with Bart->PegasusX
 class PegasusXAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -775,7 +775,7 @@ class PegasusXPreTrainedModel(PreTrainedModel):
             module.weight.data.fill_(1.0)
             module.bias.data.zero_()
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -798,7 +798,7 @@ class PegasusXPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Optional[Union[torch.Tensor, "BlockMask"]],
@@ -876,7 +876,7 @@ class PegasusXPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -931,7 +931,7 @@ class PegasusXPreTrainedModel(PreTrainedModel):
 
         return causal_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1494,7 +1494,7 @@ class PegasusXModel(PegasusXPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, PegasusModel
+        >>> from transformers_471 import AutoTokenizer, PegasusModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/pegasus-x-large")
         >>> model = PegasusModel.from_pretrained("google/pegasus-x-large")
@@ -1699,7 +1699,7 @@ class PegasusXForConditionalGeneration(PegasusXPreTrainedModel, GenerationMixin)
         return shift_tokens_right(labels, self.config.pad_token_id, self.config.decoder_start_token_id)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartDecoderWrapper with Bart->PegasusX
+# Copied from transformers_471.models.bart.modeling_bart.BartDecoderWrapper with Bart->PegasusX
 class PegasusXDecoderWrapper(PegasusXPreTrainedModel):
     """
     This wrapper class is a helper class to correctly load pretrained checkpoints when the causal language model is

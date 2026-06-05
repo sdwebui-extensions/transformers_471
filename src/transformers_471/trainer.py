@@ -1933,7 +1933,7 @@ class Trainer:
             # Rebuild the deepspeed config to reflect the updated training parameters
             from accelerate.utils import DeepSpeedPlugin
 
-            from transformers.integrations.deepspeed import HfTrainerDeepSpeedConfig
+            from transformers_471.integrations.deepspeed import HfTrainerDeepSpeedConfig
 
             self.args.hf_deepspeed_config = HfTrainerDeepSpeedConfig(self.args.deepspeed)
             self.args.hf_deepspeed_config.trainer_config_process(self.args)
@@ -5566,7 +5566,7 @@ class Trainer:
         """
         Sets values in the deepspeed plugin based on the Trainer args
         """
-        from transformers.integrations.deepspeed import HfTrainerDeepSpeedConfig
+        from transformers_471.integrations.deepspeed import HfTrainerDeepSpeedConfig
 
         ds_plugin = self.accelerator.state.deepspeed_plugin
 

@@ -728,7 +728,7 @@ class GenerationConfig(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. "
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers "
                 "Please use `token` instead.",
                 FutureWarning,
             )
@@ -798,7 +798,7 @@ class GenerationConfig(PushToHubMixin):
                 they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -836,7 +836,7 @@ class GenerationConfig(PushToHubMixin):
         Examples:
 
         ```python
-        >>> from transformers import GenerationConfig
+        >>> from transformers_471 import GenerationConfig
 
         >>> # Download configuration from huggingface.co and cache.
         >>> generation_config = GenerationConfig.from_pretrained("openai-community/gpt2")
@@ -872,7 +872,7 @@ class GenerationConfig(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -1361,7 +1361,7 @@ class SynthIDTextWatermarkingConfig(BaseWatermarkingConfig):
 
     Examples:
     ```python
-    >>> from transformers import AutoModelForCausalLM, AutoTokenizer, SynthIDTextWatermarkingConfig
+    >>> from transformers_471 import AutoModelForCausalLM, AutoTokenizer, SynthIDTextWatermarkingConfig
 
     >>> tokenizer = AutoTokenizer.from_pretrained('google/gemma-2-2b', padding_side="left")
     >>> model = AutoModelForCausalLM.from_pretrained('google/gemma-2-2b')
@@ -1448,7 +1448,7 @@ class CompileConfig:
 
     Examples:
     ```python
-    >>> from transformers import AutoModelForCausalLM, AutoTokenizer, CompileConfig
+    >>> from transformers_471 import AutoModelForCausalLM, AutoTokenizer, CompileConfig
 
     >>> tokenizer = AutoTokenizer.from_pretrained('google/gemma-2-2b')
     >>> model = AutoModelForCausalLM.from_pretrained('google/gemma-2-2b').cuda()

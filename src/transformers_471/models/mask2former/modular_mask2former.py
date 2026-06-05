@@ -17,7 +17,7 @@ from typing import Optional
 import torch
 from torch import nn
 
-from transformers.models.maskformer.image_processing_maskformer_fast import MaskFormerImageProcessorFast
+from transformers_471.models.maskformer.image_processing_maskformer_fast import MaskFormerImageProcessorFast
 
 from ...utils import (
     TensorType,

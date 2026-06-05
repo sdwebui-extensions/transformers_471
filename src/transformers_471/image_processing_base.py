@@ -121,7 +121,7 @@ class ImageProcessingMixin(PushToHubMixin):
                 they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -186,7 +186,7 @@ class ImageProcessingMixin(PushToHubMixin):
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -221,7 +221,7 @@ class ImageProcessingMixin(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:
@@ -299,7 +299,7 @@ class ImageProcessingMixin(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -512,7 +512,7 @@ class ImageProcessingMixin(PushToHubMixin):
         if not isinstance(auto_class, str):
             auto_class = auto_class.__name__
 
-        import transformers.models.auto as auto_module
+        import transformers_471.models.auto as auto_module
 
         if not hasattr(auto_module, auto_class):
             raise ValueError(f"{auto_class} is not a valid auto class.")

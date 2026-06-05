@@ -388,8 +388,8 @@ class UniSpeechSatForPreTraining(UniSpeechSatPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, UniSpeechSatForPreTraining
-        >>> from transformers.models.unispeech_sat.modeling_unispeech_sat import _compute_mask_indices
+        >>> from transformers_471 import AutoFeatureExtractor, UniSpeechSatForPreTraining
+        >>> from transformers_471.models.unispeech_sat.modeling_unispeech_sat import _compute_mask_indices
 
         >>> feature_extractor = AutoFeatureExtractor.from_pretrained("microsoft/unispeech-sat-base")
         >>> model = UniSpeechSatForPreTraining.from_pretrained("microsoft/unispeech-sat-base")

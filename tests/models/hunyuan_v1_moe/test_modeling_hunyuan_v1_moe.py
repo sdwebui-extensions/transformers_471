@@ -18,8 +18,8 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import (
     cleanup,
     require_torch,
     slow,
@@ -28,7 +28,7 @@ from transformers.testing_utils import (
 
 
 if is_torch_available():
-    from transformers import (
+    from transformers_471 import (
         AutoModelForCausalLM,
         AutoTokenizer,
         HunYuanMoEV1ForCausalLM,

@@ -90,7 +90,7 @@ class DINOv3ViTConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import DINOv3ViTConfig, DINOv3ViTModel
+    >>> from transformers_471 import DINOv3ViTConfig, DINOv3ViTModel
 
     >>> # Initializing a DINOv3 ViT-small style configuration
     >>> config = DINOv3ViTConfig()

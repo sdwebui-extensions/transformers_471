@@ -16,8 +16,8 @@ import gc
 import tempfile
 import unittest
 
-from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, FineGrainedFP8Config, OPTForCausalLM
-from transformers.testing_utils import (
+from transformers_471 import AutoConfig, AutoModelForCausalLM, AutoTokenizer, FineGrainedFP8Config, OPTForCausalLM
+from transformers_471.testing_utils import (
     backend_empty_cache,
     get_device_properties,
     require_accelerate,
@@ -27,7 +27,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import is_accelerate_available, is_torch_available
+from transformers_471.utils import is_accelerate_available, is_torch_available
 
 
 if is_torch_available():
@@ -114,7 +114,7 @@ class FP8QuantizerTest(unittest.TestCase):
         Simple test that checks if the quantized model has been converted properly
         """
 
-        from transformers.integrations import FP8Linear, replace_with_fp8_linear
+        from transformers_471.integrations import FP8Linear, replace_with_fp8_linear
 
         model_id = "facebook/opt-350m"
         config = AutoConfig.from_pretrained(model_id, revision="cb32f77e905cccbca1d970436fb0f5e6b58ee3c5")
@@ -262,7 +262,7 @@ class FP8LinearTest(unittest.TestCase):
         """
         Test that FP8Linear preserves shape when in_features == out_features.
         """
-        from transformers.integrations import FP8Linear
+        from transformers_471.integrations import FP8Linear
 
         linear = FP8Linear(256, 256, block_size=(128, 128), device=self.device)
         x = torch.rand((1, 5, 256)).to(self.device)
@@ -278,7 +278,7 @@ class FP8LinearTest(unittest.TestCase):
         """
         Test that FP8Linear generates the correct shape when in_features != out_features.
         """
-        from transformers.integrations import FP8Linear
+        from transformers_471.integrations import FP8Linear
 
         linear = FP8Linear(128, 256, block_size=(128, 128), device=self.device)
         x = torch.rand((1, 5, 128)).to(self.device)

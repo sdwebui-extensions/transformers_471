@@ -18,8 +18,8 @@ from typing import Union
 import numpy as np
 from parameterized import parameterized
 
-from transformers import is_torch_available
-from transformers.testing_utils import require_torch, torch_device
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import require_torch, torch_device
 
 from ..test_modeling_common import ids_tensor
 
@@ -28,7 +28,7 @@ if is_torch_available():
     import torch
     from torch import nn
 
-    from transformers.generation import (
+    from transformers_471.generation import (
         EncoderNoRepeatNGramLogitsProcessor,
         EncoderRepetitionPenaltyLogitsProcessor,
         EpsilonLogitsWarper,
@@ -55,7 +55,7 @@ if is_torch_available():
         UnbatchedClassifierFreeGuidanceLogitsProcessor,
         WatermarkLogitsProcessor,
     )
-    from transformers.generation.logits_process import (
+    from transformers_471.generation.logits_process import (
         BarkEosPrioritizerLogitsProcessor,
         DiaClassifierFreeGuidanceLogitsProcessor,
         DiaEOSChannelFilterLogitsProcessor,

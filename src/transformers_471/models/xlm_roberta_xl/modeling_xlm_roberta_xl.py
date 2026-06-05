@@ -115,7 +115,7 @@ class XLMRobertaXLEmbeddings(nn.Module):
         embeddings = self.dropout(embeddings)
         return embeddings
 
-    # Copied from transformers.models.roberta.modeling_roberta.RobertaEmbeddings.create_position_ids_from_inputs_embeds
+    # Copied from transformers_471.models.roberta.modeling_roberta.RobertaEmbeddings.create_position_ids_from_inputs_embeds
     def create_position_ids_from_inputs_embeds(self, inputs_embeds):
         """
         We are provided embeddings directly. We cannot infer which are padded so just generate sequential position ids.
@@ -134,7 +134,7 @@ class XLMRobertaXLEmbeddings(nn.Module):
         return position_ids.unsqueeze(0).expand(input_shape)
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfAttention with Bert->XLMRobertaXL
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfAttention with Bert->XLMRobertaXL
 class XLMRobertaXLSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -268,7 +268,7 @@ class XLMRobertaXLSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSdpaSelfAttention with Bert->XLMRobertaXL
+# Copied from transformers_471.models.bert.modeling_bert.BertSdpaSelfAttention with Bert->XLMRobertaXL
 class XLMRobertaXLSdpaSelfAttention(XLMRobertaXLSelfAttention):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__(config, position_embedding_type=position_embedding_type, layer_idx=layer_idx)
@@ -448,7 +448,7 @@ class XLMRobertaXLAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class XLMRobertaXLIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -639,7 +639,7 @@ class XLMRobertaXLEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class XLMRobertaXLPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -662,7 +662,7 @@ class XLMRobertaXLPreTrainedModel(PreTrainedModel):
     _no_split_modules = ["XLMRobertaXLEmbeddings", "XLMRobertaXLLayer"]
     _supports_sdpa = True
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->XLMRobertaXLLMHead
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->XLMRobertaXLLMHead
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):
@@ -683,7 +683,7 @@ class XLMRobertaXLPreTrainedModel(PreTrainedModel):
 
 
 @auto_docstring
-# Copied from transformers.models.bert.modeling_bert.BertModel with Bert->XLMRobertaXL, BERT->XLM_ROBERTA_XL
+# Copied from transformers_471.models.bert.modeling_bert.BertModel with Bert->XLMRobertaXL, BERT->XLM_ROBERTA_XL
 class XLMRobertaXLModel(XLMRobertaXLPreTrainedModel):
     _no_split_modules = ["XLMRobertaXLEmbeddings", "XLMRobertaXLLayer"]
 
@@ -925,7 +925,7 @@ class XLMRobertaXLForCausalLM(XLMRobertaXLPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RobertaForCausalLM, RobertaConfig
+        >>> from transformers_471 import AutoTokenizer, RobertaForCausalLM, RobertaConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
@@ -1504,7 +1504,7 @@ class XLMRobertaXLForQuestionAnswering(XLMRobertaXLPreTrainedModel):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols

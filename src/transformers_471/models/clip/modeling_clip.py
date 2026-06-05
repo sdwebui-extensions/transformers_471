@@ -691,7 +691,7 @@ class CLIPTextModel(CLIPPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, CLIPTextModel
+        >>> from transformers_471 import AutoTokenizer, CLIPTextModel
 
         >>> model = CLIPTextModel.from_pretrained("openai/clip-vit-base-patch32")
         >>> tokenizer = AutoTokenizer.from_pretrained("openai/clip-vit-base-patch32")
@@ -794,7 +794,7 @@ class CLIPVisionModel(CLIPPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, CLIPVisionModel
+        >>> from transformers_471 import AutoProcessor, CLIPVisionModel
 
         >>> model = CLIPVisionModel.from_pretrained("openai/clip-vit-base-patch32")
         >>> processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
@@ -875,7 +875,7 @@ class CLIPModel(CLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, CLIPModel
+        >>> from transformers_471 import AutoTokenizer, CLIPModel
 
         >>> model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
         >>> tokenizer = AutoTokenizer.from_pretrained("openai/clip-vit-base-patch32")
@@ -911,8 +911,8 @@ class CLIPModel(CLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
         >>> processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
@@ -955,8 +955,8 @@ class CLIPModel(CLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
         >>> processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
@@ -1064,7 +1064,7 @@ class CLIPTextModelWithProjection(CLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, CLIPTextModelWithProjection
+        >>> from transformers_471 import AutoTokenizer, CLIPTextModelWithProjection
 
         >>> model = CLIPTextModelWithProjection.from_pretrained("openai/clip-vit-base-patch32")
         >>> tokenizer = AutoTokenizer.from_pretrained("openai/clip-vit-base-patch32")
@@ -1127,8 +1127,8 @@ class CLIPVisionModelWithProjection(CLIPPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPVisionModelWithProjection
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPVisionModelWithProjection
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = CLIPVisionModelWithProjection.from_pretrained("openai/clip-vit-base-patch32")
         >>> processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")

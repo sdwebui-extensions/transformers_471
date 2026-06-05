@@ -19,10 +19,10 @@ from typing import Optional
 
 import numpy as np
 
-from transformers import SmolVLMProcessor
-from transformers.image_utils import load_image
-from transformers.models.auto.processing_auto import AutoProcessor
-from transformers.testing_utils import require_av, require_torch, require_vision
+from transformers_471 import SmolVLMProcessor
+from transformers_471.image_utils import load_image
+from transformers_471.models.auto.processing_auto import AutoProcessor
+from transformers_471.testing_utils import require_av, require_torch, require_vision
 
 from ...test_processing_common import ProcessorTesterMixin, url_to_local_path
 

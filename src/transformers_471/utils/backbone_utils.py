@@ -313,7 +313,7 @@ def load_backbone(config):
     If the config is from the parent model of the backbone model itself, then we load the pretrained backbone weights
     if specified.
     """
-    from transformers import AutoBackbone, AutoConfig
+    from transformers_471 import AutoBackbone, AutoConfig
 
     backbone_config = getattr(config, "backbone_config", None)
     use_timm_backbone = getattr(config, "use_timm_backbone", None)

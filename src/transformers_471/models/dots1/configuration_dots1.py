@@ -93,7 +93,7 @@ class Dots1Config(PretrainedConfig):
 
     Examples:
         ```python
-        >>> from transformers import Dots1Model, Dots1Config
+        >>> from transformers_471 import Dots1Model, Dots1Config
 
         >>> # Initializing a Dots1 style configuration
         >>> configuration = Dots1Config()

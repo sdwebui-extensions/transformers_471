@@ -19,18 +19,18 @@ import unittest
 
 import torch
 
-from transformers import AutoProcessor, LlamaTokenizerFast, LlavaNextVideoProcessor
-from transformers.testing_utils import require_vision
-from transformers.utils import is_torchvision_available, is_vision_available
+from transformers_471 import AutoProcessor, LlamaTokenizerFast, LlavaNextVideoProcessor
+from transformers_471.testing_utils import require_vision
+from transformers_471.utils import is_torchvision_available, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import LlavaNextImageProcessor
+    from transformers_471 import LlavaNextImageProcessor
 
     if is_torchvision_available():
-        from transformers import LlavaNextVideoVideoProcessor
+        from transformers_471 import LlavaNextVideoVideoProcessor
 
 
 @require_vision

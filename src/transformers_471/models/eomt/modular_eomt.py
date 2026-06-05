@@ -116,7 +116,7 @@ class EomtConfig(ViTConfig):
     Example:
 
     ```python
-    >>> from transformers import EomtConfig, EomtForUniversalSegmentation
+    >>> from transformers_471 import EomtConfig, EomtForUniversalSegmentation
 
     >>> # Initialize configuration
     >>> config = EomtConfig()

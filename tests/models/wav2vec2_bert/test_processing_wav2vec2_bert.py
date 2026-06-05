@@ -18,11 +18,11 @@ import shutil
 import tempfile
 import unittest
 
-from transformers.models.seamless_m4t import SeamlessM4TFeatureExtractor
-from transformers.models.wav2vec2 import Wav2Vec2CTCTokenizer
-from transformers.models.wav2vec2.tokenization_wav2vec2 import VOCAB_FILES_NAMES
-from transformers.models.wav2vec2_bert import Wav2Vec2BertProcessor
-from transformers.utils import FEATURE_EXTRACTOR_NAME
+from transformers_471.models.seamless_m4t import SeamlessM4TFeatureExtractor
+from transformers_471.models.wav2vec2 import Wav2Vec2CTCTokenizer
+from transformers_471.models.wav2vec2.tokenization_wav2vec2 import VOCAB_FILES_NAMES
+from transformers_471.models.wav2vec2_bert import Wav2Vec2BertProcessor
+from transformers_471.utils import FEATURE_EXTRACTOR_NAME
 
 from ...test_processing_common import ProcessorTesterMixin
 from ..wav2vec2.test_feature_extraction_wav2vec2 import floats_list

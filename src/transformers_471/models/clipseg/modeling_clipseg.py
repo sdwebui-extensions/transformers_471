@@ -40,7 +40,7 @@ def contrastive_loss(logits: torch.Tensor) -> torch.Tensor:
     return nn.functional.cross_entropy(logits, torch.arange(len(logits), device=logits.device))
 
 
-# Copied from transformers.models.clip.modeling_clip.clip_loss with clip->clipseg
+# Copied from transformers_471.models.clip.modeling_clip.clip_loss with clip->clipseg
 def clipseg_loss(similarity: torch.Tensor) -> torch.Tensor:
     caption_loss = contrastive_loss(similarity)
     image_loss = contrastive_loss(similarity.t())
@@ -49,7 +49,7 @@ def clipseg_loss(similarity: torch.Tensor) -> torch.Tensor:
 
 @dataclass
 @auto_docstring
-# Copied from transformers.models.clip.modeling_clip.CLIPOutput with CLIP->CLIPSeg
+# Copied from transformers_471.models.clip.modeling_clip.CLIPOutput with CLIP->CLIPSeg
 class CLIPSegOutput(ModelOutput):
     r"""
     loss (`torch.FloatTensor` of shape `(1,)`, *optional*, returned when `return_loss` is `True`):
@@ -131,7 +131,7 @@ class CLIPSegImageSegmentationOutput(ModelOutput):
 
 
 class CLIPSegVisionEmbeddings(nn.Module):
-    # Copied from transformers.models.clip.modeling_clip.CLIPVisionEmbeddings.__init__ with CLIP->CLIPSeg
+    # Copied from transformers_471.models.clip.modeling_clip.CLIPVisionEmbeddings.__init__ with CLIP->CLIPSeg
     def __init__(self, config: CLIPSegVisionConfig):
         super().__init__()
         self.config = config
@@ -213,7 +213,7 @@ class CLIPSegVisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->CLIPSeg
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->CLIPSeg
 class CLIPSegTextEmbeddings(nn.Module):
     def __init__(self, config: CLIPSegTextConfig):
         super().__init__()
@@ -254,7 +254,7 @@ class CLIPSegTextEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.siglip.modeling_siglip.eager_attention_forward
+# Copied from transformers_471.models.siglip.modeling_siglip.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -352,7 +352,7 @@ class CLIPSegAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPMLP with CLIP->CLIPSeg
+# Copied from transformers_471.models.clip.modeling_clip.CLIPMLP with CLIP->CLIPSeg
 class CLIPSegMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -368,7 +368,7 @@ class CLIPSegMLP(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->CLIPSeg
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->CLIPSeg
 class CLIPSegEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: CLIPSegConfig):
         super().__init__()
@@ -467,7 +467,7 @@ class CLIPSegPreTrainedModel(PreTrainedModel):
             module.bias.data.zero_()
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->CLIPSeg
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoder with AltCLIP->CLIPSeg
 class CLIPSegEncoder(nn.Module):
     """
     Transformer encoder consisting of `config.num_hidden_layers` self attention layers. Each layer is a
@@ -676,7 +676,7 @@ class CLIPSegTextModel(CLIPSegPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, CLIPSegTextModel
+        >>> from transformers_471 import AutoTokenizer, CLIPSegTextModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegTextModel.from_pretrained("CIDAS/clipseg-rd64-refined")
@@ -698,7 +698,7 @@ class CLIPSegTextModel(CLIPSegPreTrainedModel):
 
 
 class CLIPSegVisionTransformer(nn.Module):
-    # Copied from transformers.models.altclip.modeling_altclip.AltCLIPVisionTransformer.__init__ with AltCLIP->CLIPSeg
+    # Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPVisionTransformer.__init__ with AltCLIP->CLIPSeg
     def __init__(self, config: CLIPSegVisionConfig):
         super().__init__()
         self.config = config
@@ -777,7 +777,7 @@ class CLIPSegVisionModel(CLIPSegPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, CLIPSegVisionModel
+        >>> from transformers_471 import AutoProcessor, CLIPSegVisionModel
 
         >>> processor = AutoProcessor.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegVisionModel.from_pretrained("CIDAS/clipseg-rd64-refined")
@@ -857,7 +857,7 @@ class CLIPSegModel(CLIPSegPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, CLIPSegModel
+        >>> from transformers_471 import AutoTokenizer, CLIPSegModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegModel.from_pretrained("CIDAS/clipseg-rd64-refined")
@@ -892,8 +892,8 @@ class CLIPSegModel(CLIPSegPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPSegModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPSegModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> processor = AutoProcessor.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegModel.from_pretrained("CIDAS/clipseg-rd64-refined")
@@ -936,8 +936,8 @@ class CLIPSegModel(CLIPSegPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPSegModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPSegModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> processor = AutoProcessor.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegModel.from_pretrained("CIDAS/clipseg-rd64-refined")
@@ -1018,7 +1018,7 @@ class CLIPSegDecoderLayer(nn.Module):
     self-attention/MLP, rather than before.
     """
 
-    # Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoderLayer.__init__ with AltCLIP->CLIPSeg
+    # Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoderLayer.__init__ with AltCLIP->CLIPSeg
     def __init__(self, config: CLIPSegConfig):
         super().__init__()
         self.embed_dim = config.hidden_size
@@ -1249,8 +1249,8 @@ class CLIPSegForImageSegmentation(CLIPSegPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, CLIPSegForImageSegmentation
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, CLIPSegForImageSegmentation
+        >>> from transformers_471.image_utils import load_image
 
         >>> processor = AutoProcessor.from_pretrained("CIDAS/clipseg-rd64-refined")
         >>> model = CLIPSegForImageSegmentation.from_pretrained("CIDAS/clipseg-rd64-refined")

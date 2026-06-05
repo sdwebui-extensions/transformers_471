@@ -47,13 +47,13 @@ from .configuration_xlm_roberta import XLMRobertaConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaEmbeddings with Roberta->XLMRoberta
 class XLMRobertaEmbeddings(nn.Module):
     """
     Same as BertEmbeddings with a tiny tweak for positional embeddings indexing.
     """
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.__init__
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.__init__
     def __init__(self, config):
         super().__init__()
         self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)
@@ -137,7 +137,7 @@ class XLMRobertaEmbeddings(nn.Module):
         return position_ids.unsqueeze(0).expand(input_shape)
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaSelfAttention with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaSelfAttention with Roberta->XLMRoberta
 class XLMRobertaSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -271,7 +271,7 @@ class XLMRobertaSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaSdpaSelfAttention with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaSdpaSelfAttention with Roberta->XLMRoberta
 class XLMRobertaSdpaSelfAttention(XLMRobertaSelfAttention):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__(config, position_embedding_type=position_embedding_type, layer_idx=layer_idx)
@@ -376,7 +376,7 @@ class XLMRobertaSdpaSelfAttention(XLMRobertaSelfAttention):
         return attn_output, None
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaSelfOutput with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaSelfOutput with Roberta->XLMRoberta
 class XLMRobertaSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -397,7 +397,7 @@ XLM_ROBERTA_SELF_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaAttention with Roberta->XLMRoberta,ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaAttention with Roberta->XLMRoberta,ROBERTA->XLM_ROBERTA
 class XLMRobertaAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -452,7 +452,7 @@ class XLMRobertaAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaIntermediate with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaIntermediate with Roberta->XLMRoberta
 class XLMRobertaIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -468,7 +468,7 @@ class XLMRobertaIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaOutput with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaOutput with Roberta->XLMRoberta
 class XLMRobertaOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -483,7 +483,7 @@ class XLMRobertaOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaLayer with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaLayer with Roberta->XLMRoberta
 class XLMRobertaLayer(GradientCheckpointingLayer):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -554,7 +554,7 @@ class XLMRobertaLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaEncoder with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaEncoder with Roberta->XLMRoberta
 class XLMRobertaEncoder(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -645,7 +645,7 @@ class XLMRobertaEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaPooler with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaPooler with Roberta->XLMRoberta
 class XLMRobertaPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -662,7 +662,7 @@ class XLMRobertaPooler(nn.Module):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaPreTrainedModel with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaPreTrainedModel with Roberta->XLMRoberta
 class XLMRobertaPreTrainedModel(PreTrainedModel):
     config: XLMRobertaConfig
     base_model_prefix = "roberta"
@@ -670,7 +670,7 @@ class XLMRobertaPreTrainedModel(PreTrainedModel):
     _no_split_modules = ["XLMRobertaEmbeddings", "XLMRobertaSelfAttention", "XLMRobertaSdpaSelfAttention"]
     _supports_sdpa = True
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->XLMRobertaLMHead
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->XLMRobertaLMHead
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):
@@ -691,7 +691,7 @@ class XLMRobertaPreTrainedModel(PreTrainedModel):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaModel with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaModel with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaModel(XLMRobertaPreTrainedModel):
     _no_split_modules = ["XLMRobertaEmbeddings", "XLMRobertaLayer"]
 
@@ -884,7 +884,7 @@ class XLMRobertaModel(XLMRobertaPreTrainedModel):
     XLM-RoBERTa Model with a `language modeling` head on top for CLM fine-tuning.
     """
 )
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForCausalLM with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForCausalLM with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForCausalLM(XLMRobertaPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["lm_head.decoder.weight", "lm_head.decoder.bias"]
 
@@ -943,7 +943,7 @@ class XLMRobertaForCausalLM(XLMRobertaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, XLMRobertaForCausalLM, AutoConfig
+        >>> from transformers_471 import AutoTokenizer, XLMRobertaForCausalLM, AutoConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")
@@ -1005,7 +1005,7 @@ class XLMRobertaForCausalLM(XLMRobertaPreTrainedModel, GenerationMixin):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForMaskedLM with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForMaskedLM with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForMaskedLM(XLMRobertaPreTrainedModel):
     _tied_weights_keys = ["lm_head.decoder.weight", "lm_head.decoder.bias"]
 
@@ -1098,7 +1098,7 @@ class XLMRobertaForMaskedLM(XLMRobertaPreTrainedModel):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaLMHead
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaLMHead
 class XLMRobertaLMHead(nn.Module):
     """Roberta Head for masked language modeling."""
 
@@ -1136,7 +1136,7 @@ class XLMRobertaLMHead(nn.Module):
     pooled output) e.g. for GLUE tasks.
     """
 )
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForSequenceClassification with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForSequenceClassification with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForSequenceClassification(XLMRobertaPreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
@@ -1232,7 +1232,7 @@ class XLMRobertaForSequenceClassification(XLMRobertaPreTrainedModel):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForMultipleChoice with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForMultipleChoice with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForMultipleChoice(XLMRobertaPreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
@@ -1339,7 +1339,7 @@ class XLMRobertaForMultipleChoice(XLMRobertaPreTrainedModel):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForTokenClassification with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForTokenClassification with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForTokenClassification(XLMRobertaPreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
@@ -1420,7 +1420,7 @@ class XLMRobertaForTokenClassification(XLMRobertaPreTrainedModel):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaClassificationHead with Roberta->XLMRoberta
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaClassificationHead with Roberta->XLMRoberta
 class XLMRobertaClassificationHead(nn.Module):
     """Head for sentence-level classification tasks."""
 
@@ -1444,7 +1444,7 @@ class XLMRobertaClassificationHead(nn.Module):
 
 
 @auto_docstring
-# Copied from transformers.models.roberta.modeling_roberta.RobertaForQuestionAnswering with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaForQuestionAnswering with Roberta->XLMRoberta, ROBERTA->XLM_ROBERTA
 class XLMRobertaForQuestionAnswering(XLMRobertaPreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
@@ -1533,7 +1533,7 @@ class XLMRobertaForQuestionAnswering(XLMRobertaPreTrainedModel):
         )
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols

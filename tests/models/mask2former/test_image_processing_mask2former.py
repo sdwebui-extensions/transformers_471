@@ -19,9 +19,9 @@ import numpy as np
 from datasets import load_dataset
 from huggingface_hub import hf_hub_download
 
-from transformers.image_utils import ChannelDimension
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_torchvision_available, is_vision_available
+from transformers_471.image_utils import ChannelDimension
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_torchvision_available, is_vision_available
 
 from ...test_image_processing_common import ImageProcessingTestMixin, prepare_image_inputs
 
@@ -30,12 +30,12 @@ if is_torch_available():
     import torch
 
     if is_vision_available():
-        from transformers import Mask2FormerImageProcessor
-        from transformers.models.mask2former.image_processing_mask2former import binary_mask_to_rle
-        from transformers.models.mask2former.modeling_mask2former import Mask2FormerForUniversalSegmentationOutput
+        from transformers_471 import Mask2FormerImageProcessor
+        from transformers_471.models.mask2former.image_processing_mask2former import binary_mask_to_rle
+        from transformers_471.models.mask2former.modeling_mask2former import Mask2FormerForUniversalSegmentationOutput
 
         if is_torchvision_available():
-            from transformers import Mask2FormerImageProcessorFast
+            from transformers_471 import Mask2FormerImageProcessorFast
 
 if is_vision_available():
     from PIL import Image
@@ -151,14 +151,14 @@ class Mask2FormerImageProcessingTester:
         )
 
 
-# Copied from transformers.tests.models.beit.test_image_processing_beit.prepare_semantic_single_inputs
+# Copied from transformers_471.tests.models.beit.test_image_processing_beit.prepare_semantic_single_inputs
 def prepare_semantic_single_inputs():
     ds = load_dataset("hf-internal-testing/fixtures_ade20k", split="test")
     example = ds[0]
     return example["image"], example["map"]
 
 
-# Copied from transformers.tests.models.beit.test_image_processing_beit.prepare_semantic_batch_inputs
+# Copied from transformers_471.tests.models.beit.test_image_processing_beit.prepare_semantic_batch_inputs
 def prepare_semantic_batch_inputs():
     ds = load_dataset("hf-internal-testing/fixtures_ade20k", split="test")
     return list(ds["image"][:2]), list(ds["map"][:2])

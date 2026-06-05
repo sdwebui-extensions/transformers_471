@@ -20,8 +20,8 @@ import unittest
 from parameterized import parameterized
 from pytest import mark
 
-from transformers import LongcatFlashConfig, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import LongcatFlashConfig, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     require_bitsandbytes,
     require_flash_attn,
     require_large_cpu_ram,
@@ -38,7 +38,7 @@ from ...test_modeling_common import ids_tensor
 if is_torch_available():
     import torch
 
-    from transformers import AutoTokenizer, LongcatFlashForCausalLM, LongcatFlashModel
+    from transformers_471 import AutoTokenizer, LongcatFlashForCausalLM, LongcatFlashModel
 
 
 class LongcatFlashModelTester(CausalLMModelTester):
@@ -247,7 +247,7 @@ class LongcatFlashModelTest(CausalLMModelTest, unittest.TestCase):
         super().test_past_key_values_format(custom_all_cache_shapes=all_cache_shapes)
 
     def _check_past_key_values_for_generate(self, batch_size, decoder_past_key_values, cache_length, config):
-        from transformers.cache_utils import Cache
+        from transformers_471.cache_utils import Cache
 
         self.assertIsInstance(decoder_past_key_values, (tuple, Cache))
 

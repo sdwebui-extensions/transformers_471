@@ -49,7 +49,7 @@ class DeepseekVLConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import DeepseekVLConfig, DeepseekVLModel
+    >>> from transformers_471 import DeepseekVLConfig, DeepseekVLModel
 
     >>> # Initializing a DeepseekVL deepseek-community/deepseek-vl-1.3b-chat style configuration
     >>> configuration = DeepseekVLConfig()

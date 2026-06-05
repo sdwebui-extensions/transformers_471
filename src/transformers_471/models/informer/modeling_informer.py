@@ -262,7 +262,7 @@ class InformerPreTrainedModel(PreTrainedModel):
         if isinstance(module, InformerSinusoidalPositionalEmbedding):
             module._init_weight()
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -285,7 +285,7 @@ class InformerPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -325,7 +325,7 @@ class InformerPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1582,7 +1582,7 @@ class InformerModel(InformerPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import InformerModel
+        >>> from transformers_471 import InformerModel
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/tourism-monthly-batch", filename="train-batch.pt", repo_type="dataset"
@@ -1884,7 +1884,7 @@ class InformerForPrediction(InformerPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import InformerForPrediction
+        >>> from transformers_471 import InformerForPrediction
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/tourism-monthly-batch", filename="train-batch.pt", repo_type="dataset"

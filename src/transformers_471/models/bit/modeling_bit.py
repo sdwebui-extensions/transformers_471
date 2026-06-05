@@ -275,7 +275,7 @@ class BitEmbeddings(nn.Module):
         return embedding
 
 
-# Copied from transformers.models.convnext.modeling_convnext.drop_path
+# Copied from transformers_471.models.convnext.modeling_convnext.drop_path
 def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = False) -> torch.Tensor:
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -296,7 +296,7 @@ def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = Fals
     return output
 
 
-# Copied from transformers.models.beit.modeling_beit.BeitDropPath with Beit->Bit
+# Copied from transformers_471.models.beit.modeling_beit.BeitDropPath with Beit->Bit
 class BitDropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
 
@@ -777,7 +777,7 @@ class BitBackbone(BitPreTrainedModel, BackboneMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoBackbone
+        >>> from transformers_471 import AutoImageProcessor, AutoBackbone
         >>> import torch
         >>> from PIL import Image
         >>> import requests

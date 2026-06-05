@@ -81,7 +81,7 @@ class LongformerConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import LongformerConfig, LongformerModel
+    >>> from transformers_471 import LongformerConfig, LongformerModel
 
     >>> # Initializing a Longformer configuration
     >>> configuration = LongformerConfig()

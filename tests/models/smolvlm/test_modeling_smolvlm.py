@@ -21,12 +21,12 @@ import pytest
 import requests
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     is_torch_available,
     is_vision_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     is_flaky,
@@ -43,7 +43,7 @@ from ...test_modeling_common import ModelTesterMixin, floats_tensor, ids_tensor
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         GenerationConfig,
         SmolVLMConfig,
         SmolVLMForConditionalGeneration,
@@ -590,8 +590,8 @@ class SmolVLMForConditionalGenerationIntegrationTest(unittest.TestCase):
 
     @slow
     def test_export_smolvlm_vision_encoder(self):
-        from transformers import AutoConfig
-        from transformers.integrations.executorch import TorchExportableModuleForVLM
+        from transformers_471 import AutoConfig
+        from transformers_471.integrations.executorch import TorchExportableModuleForVLM
 
         model_id = "HuggingFaceTB/SmolVLM2-256M-Video-Instruct"
 
@@ -613,8 +613,8 @@ class SmolVLMForConditionalGenerationIntegrationTest(unittest.TestCase):
 
     @slow
     def test_export_smolvlm_connector(self):
-        from transformers import AutoConfig
-        from transformers.integrations.executorch import TorchExportableModuleForVLM
+        from transformers_471 import AutoConfig
+        from transformers_471.integrations.executorch import TorchExportableModuleForVLM
 
         model_id = "HuggingFaceTB/SmolVLM2-256M-Video-Instruct"
 
@@ -639,8 +639,8 @@ class SmolVLMForConditionalGenerationIntegrationTest(unittest.TestCase):
 
     @slow
     def test_export_smolvlm_text_decoder(self):
-        from transformers import AutoConfig
-        from transformers.integrations.executorch import TorchExportableModuleForVLM
+        from transformers_471 import AutoConfig
+        from transformers_471.integrations.executorch import TorchExportableModuleForVLM
 
         model_id = "HuggingFaceTB/SmolVLM2-256M-Video-Instruct"
 

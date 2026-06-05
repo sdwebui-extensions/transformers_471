@@ -138,7 +138,7 @@ class Glm4vMoeTextConfig(Glm4MoeConfig):
             Whether to normalize the topk probabilities.
 
     ```python
-    >>> from transformers import Glm4vMoeTextModel, Glm4vMoeConfig
+    >>> from transformers_471 import Glm4vMoeTextModel, Glm4vMoeConfig
 
     >>> # Initializing a GLM-4.5V style configuration
     >>> configuration = Glm4vMoeConfig()
@@ -264,7 +264,7 @@ class Glm4vMoeConfig(Glm4vConfig):
             The video end token index to encode the end of video.
 
     ```python
-    >>> from transformers import Glm4vMoeForConditionalGeneration, Glm4vMoeConfig
+    >>> from transformers_471 import Glm4vMoeForConditionalGeneration, Glm4vMoeConfig
 
     >>> # Initializing a GLM-4.5V style configuration
     >>> configuration = Glm4vMoeConfig()

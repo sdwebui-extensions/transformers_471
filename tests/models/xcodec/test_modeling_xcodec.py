@@ -27,8 +27,8 @@ from parameterized import parameterized
 
 from tests.test_configuration_common import ConfigTester
 from tests.test_modeling_common import ModelTesterMixin, _config_zero_init, floats_tensor, ids_tensor
-from transformers import AutoFeatureExtractor, XcodecConfig
-from transformers.testing_utils import (
+from transformers_471 import AutoFeatureExtractor, XcodecConfig
+from transformers_471.testing_utils import (
     is_torch_available,
     require_torch,
     slow,
@@ -39,7 +39,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import DacConfig, HubertConfig, XcodecModel
+    from transformers_471 import DacConfig, HubertConfig, XcodecModel
 
 
 @require_torch
@@ -182,7 +182,7 @@ class XcodecModelTest(ModelTesterMixin, unittest.TestCase):
     def test_torchscript_output_hidden_state(self):
         pass
 
-    # Copied from transformers.tests.encodec.test_modeling_encodec.XcodecModelTest._create_and_check_torchscript
+    # Copied from transformers_471.tests.encodec.test_modeling_encodec.XcodecModelTest._create_and_check_torchscript
     def _create_and_check_torchscript(self, config, inputs_dict):
         if not self.test_torchscript:
             self.skipTest(reason="test_torchscript is set to False")
@@ -281,7 +281,7 @@ class XcodecModelTest(ModelTesterMixin, unittest.TestCase):
     def test_hidden_states_output(self):
         pass
 
-    # Copied from transformers.tests.encodec.test_modeling_encodecEncodecModelTest.test_determinism
+    # Copied from transformers_471.tests.encodec.test_modeling_encodecEncodecModelTest.test_determinism
     def test_determinism(self):
         config, inputs_dict = self.model_tester.prepare_config_and_inputs_for_common()
 
@@ -308,7 +308,7 @@ class XcodecModelTest(ModelTesterMixin, unittest.TestCase):
             else:
                 check_determinism(first, second)
 
-    # Copied from transformers.tests.encodec.test_modeling_encodecEncodecModelTest.test_model_outputs_equivalence
+    # Copied from transformers_471.tests.encodec.test_modeling_encodecEncodecModelTest.test_model_outputs_equivalence
     def test_model_outputs_equivalence(self):
         config, inputs_dict = self.model_tester.prepare_config_and_inputs_for_common()
 
@@ -351,14 +351,14 @@ class XcodecModelTest(ModelTesterMixin, unittest.TestCase):
         pass
 
 
-# Copied from transformers.tests.encodec.test_modeling_encodec.normalize
+# Copied from transformers_471.tests.encodec.test_modeling_encodec.normalize
 def normalize(arr):
     norm = np.linalg.norm(arr)
     normalized_arr = arr / norm
     return normalized_arr
 
 
-# Copied from transformers.tests.encodec.test_modeling_encodec.compute_rmse
+# Copied from transformers_471.tests.encodec.test_modeling_encodec.compute_rmse
 def compute_rmse(arr1, arr2):
     arr1_np = arr1.cpu().numpy().squeeze()
     arr2_np = arr2.cpu().numpy().squeeze()

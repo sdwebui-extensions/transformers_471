@@ -15,10 +15,10 @@
 
 import unittest
 
-from transformers import SPIECE_UNDERLINE
-from transformers.models.speecht5 import SpeechT5Tokenizer
-from transformers.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
-from transformers.tokenization_utils import AddedToken
+from transformers_471 import SPIECE_UNDERLINE
+from transformers_471.models.speecht5 import SpeechT5Tokenizer
+from transformers_471.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
+from transformers_471.tokenization_utils import AddedToken
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

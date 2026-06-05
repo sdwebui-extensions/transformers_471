@@ -97,7 +97,7 @@ class VivitEmbeddings(nn.Module):
         self.patch_size = config.tubelet_size[1:]
         self.config = config
 
-    # Adapted from transformers.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
+    # Adapted from transformers_471.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
     def interpolate_pos_encoding(self, embeddings: torch.Tensor, height: int, width: int) -> torch.Tensor:
         """
         This method allows to interpolate the pre-trained position encodings, to be able to use the model on higher resolution
@@ -156,7 +156,7 @@ class VivitEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.vit.modeling_vit.eager_attention_forward
+# Copied from transformers_471.models.vit.modeling_vit.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -187,7 +187,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfAttention with ViT->Vivit
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfAttention with ViT->Vivit
 class VivitSelfAttention(nn.Module):
     def __init__(self, config: VivitConfig):
         super().__init__()
@@ -240,7 +240,7 @@ class VivitSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfOutput with ViT->Vivit
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfOutput with ViT->Vivit
 class VivitSelfOutput(nn.Module):
     """
     The residual connection is defined in VivitLayer instead of here (as is the case with other models), due to the
@@ -258,7 +258,7 @@ class VivitSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Vivit
+# Copied from transformers_471.models.vit.modeling_vit.ViTAttention with ViT->Vivit
 class VivitAttention(nn.Module):
     def __init__(self, config: VivitConfig):
         super().__init__()
@@ -466,7 +466,7 @@ class VivitModel(VivitPreTrainedModel):
         >>> import av
         >>> import numpy as np
 
-        >>> from transformers import VivitImageProcessor, VivitModel
+        >>> from transformers_471 import VivitImageProcessor, VivitModel
         >>> from huggingface_hub import hf_hub_download
 
         >>> np.random.seed(0)
@@ -598,7 +598,7 @@ class VivitForVideoClassification(VivitPreTrainedModel):
         >>> import numpy as np
         >>> import torch
 
-        >>> from transformers import VivitImageProcessor, VivitForVideoClassification
+        >>> from transformers_471 import VivitImageProcessor, VivitForVideoClassification
         >>> from huggingface_hub import hf_hub_download
 
         >>> np.random.seed(0)

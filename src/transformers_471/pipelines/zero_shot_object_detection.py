@@ -12,7 +12,7 @@ if is_vision_available():
 if is_torch_available():
     import torch
 
-    from transformers.modeling_outputs import BaseModelOutput
+    from transformers_471.modeling_outputs import BaseModelOutput
 
     from ..models.auto.modeling_auto import MODEL_FOR_ZERO_SHOT_OBJECT_DETECTION_MAPPING_NAMES
 
@@ -28,7 +28,7 @@ class ZeroShotObjectDetectionPipeline(ChunkPipeline):
     Example:
 
     ```python
-    >>> from transformers import pipeline
+    >>> from transformers_471 import pipeline
 
     >>> detector = pipeline(model="google/owlvit-base-patch32", task="zero-shot-object-detection")
     >>> detector(
@@ -95,7 +95,7 @@ class ZeroShotObjectDetectionPipeline(ChunkPipeline):
                 You can use this parameter to send directly a list of images, or a dataset or a generator like so:
 
                 ```python
-                >>> from transformers import pipeline
+                >>> from transformers_471 import pipeline
 
                 >>> detector = pipeline(model="google/owlvit-base-patch32", task="zero-shot-object-detection")
                 >>> detector(

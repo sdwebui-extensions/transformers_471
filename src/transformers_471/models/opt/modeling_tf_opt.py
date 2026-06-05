@@ -75,7 +75,7 @@ def _make_causal_mask(input_ids_shape: tf.TensorShape, past_key_values_length: i
     return tf.tile(mask[None, None, :, :], (bsz, 1, 1, 1))
 
 
-# Copied from transformers.models.bart.modeling_tf_bart._expand_mask
+# Copied from transformers_471.models.bart.modeling_tf_bart._expand_mask
 def _expand_mask(mask: tf.Tensor, tgt_len: int | None = None):
     """
     Expands attention_mask from `[bsz, seq_len]` to `[bsz, 1, tgt_seq_len, src_seq_len]`.
@@ -113,7 +113,7 @@ class TFOPTLearnedPositionalEmbedding(keras.layers.Embedding):
         return super().call(positions + self.offset)
 
 
-# Copied from transformers.models.bart.modeling_tf_bart.TFBartAttention with Bart->OPT
+# Copied from transformers_471.models.bart.modeling_tf_bart.TFBartAttention with Bart->OPT
 class TFOPTAttention(keras.layers.Layer):
     """Multi-headed attention from "Attention Is All You Need"""
 
@@ -439,7 +439,7 @@ OPT_START_DOCSTRING = r"""
 )
 class TFOPTPreTrainedModel(TFPreTrainedModel):
     """
-    TFOPT Pretrained Model that inheritates from transformers.TFPreTrainedModel
+    TFOPT Pretrained Model that inheritates from transformers_471.TFPreTrainedModel
 
     Args:
         config: OPTConfig

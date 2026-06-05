@@ -78,7 +78,7 @@ class MaskFormerSwinBaseModelOutput(ModelOutput):
     attentions: Optional[tuple[torch.FloatTensor]] = None
 
 
-# Copied from transformers.models.swin.modeling_swin.window_partition
+# Copied from transformers_471.models.swin.modeling_swin.window_partition
 def window_partition(input_feature, window_size):
     """
     Partitions the given input into windows.
@@ -91,7 +91,7 @@ def window_partition(input_feature, window_size):
     return windows
 
 
-# Copied from transformers.models.swin.modeling_swin.window_reverse
+# Copied from transformers_471.models.swin.modeling_swin.window_reverse
 def window_reverse(windows, window_size, height, width):
     """
     Merges windows to produce higher resolution features.
@@ -102,7 +102,7 @@ def window_reverse(windows, window_size, height, width):
     return windows
 
 
-# Copied from transformers.models.swin.modeling_swin.drop_path
+# Copied from transformers_471.models.swin.modeling_swin.drop_path
 def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = False) -> torch.Tensor:
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -144,7 +144,7 @@ class MaskFormerSwinEmbeddings(nn.Module):
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.patch_size = config.patch_size
 
-    # Copied from transformers.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
+    # Copied from transformers_471.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
     def interpolate_pos_encoding(self, embeddings: torch.Tensor, height: int, width: int) -> torch.Tensor:
         """
         This method allows to interpolate the pre-trained position encodings, to be able to use the model on higher resolution
@@ -201,7 +201,7 @@ class MaskFormerSwinEmbeddings(nn.Module):
         return embeddings, output_dimensions
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinPatchEmbeddings with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinPatchEmbeddings with Swin->MaskFormerSwin
 class MaskFormerSwinPatchEmbeddings(nn.Module):
     """
     This class turns `pixel_values` of shape `(batch_size, num_channels, height, width)` into the initial
@@ -245,7 +245,7 @@ class MaskFormerSwinPatchEmbeddings(nn.Module):
         return embeddings, output_dimensions
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinPatchMerging
+# Copied from transformers_471.models.swin.modeling_swin.SwinPatchMerging
 class MaskFormerSwinPatchMerging(nn.Module):
     """
     Patch Merging Layer.
@@ -300,7 +300,7 @@ class MaskFormerSwinPatchMerging(nn.Module):
         return input_feature
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinDropPath with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinDropPath with Swin->MaskFormerSwin
 class MaskFormerSwinDropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
 
@@ -315,7 +315,7 @@ class MaskFormerSwinDropPath(nn.Module):
         return f"p={self.drop_prob}"
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinSelfAttention with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinSelfAttention with Swin->MaskFormerSwin
 class MaskFormerSwinSelfAttention(nn.Module):
     def __init__(self, config, dim, num_heads, window_size):
         super().__init__()
@@ -411,7 +411,7 @@ class MaskFormerSwinSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinSelfOutput with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinSelfOutput with Swin->MaskFormerSwin
 class MaskFormerSwinSelfOutput(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -425,7 +425,7 @@ class MaskFormerSwinSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinAttention with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinAttention with Swin->MaskFormerSwin
 class MaskFormerSwinAttention(nn.Module):
     def __init__(self, config, dim, num_heads, window_size):
         super().__init__()
@@ -464,7 +464,7 @@ class MaskFormerSwinAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinIntermediate with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinIntermediate with Swin->MaskFormerSwin
 class MaskFormerSwinIntermediate(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -480,7 +480,7 @@ class MaskFormerSwinIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.swin.modeling_swin.SwinOutput with Swin->MaskFormerSwin
+# Copied from transformers_471.models.swin.modeling_swin.SwinOutput with Swin->MaskFormerSwin
 class MaskFormerSwinOutput(nn.Module):
     def __init__(self, config, dim):
         super().__init__()
@@ -604,7 +604,7 @@ class MaskFormerSwinLayer(nn.Module):
 
 
 class MaskFormerSwinStage(GradientCheckpointingLayer):
-    # Copied from transformers.models.swin.modeling_swin.SwinStage.__init__ with Swin->MaskFormerSwin
+    # Copied from transformers_471.models.swin.modeling_swin.SwinStage.__init__ with Swin->MaskFormerSwin
     def __init__(self, config, dim, input_resolution, depth, num_heads, drop_path, downsample):
         super().__init__()
         self.config = config
@@ -661,7 +661,7 @@ class MaskFormerSwinStage(GradientCheckpointingLayer):
 
 
 class MaskFormerSwinEncoder(nn.Module):
-    # Copied from transformers.models.swin.modeling_swin.SwinEncoder.__init__ with Swin->MaskFormerSwin
+    # Copied from transformers_471.models.swin.modeling_swin.SwinEncoder.__init__ with Swin->MaskFormerSwin
     def __init__(self, config, grid_size):
         super().__init__()
         self.num_layers = len(config.depths)

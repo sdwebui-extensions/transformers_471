@@ -21,15 +21,15 @@ import numpy as np
 import torch
 from torch import nn
 
-from transformers.models.arcee.modeling_arcee import ArceeMLP
-from transformers.models.dinov2.modeling_dinov2 import (
+from transformers_471.models.arcee.modeling_arcee import ArceeMLP
+from transformers_471.models.dinov2.modeling_dinov2 import (
     Dinov2DropPath,
     Dinov2LayerScale,
     Dinov2PreTrainedModel,
     eager_attention_forward,
 )
-from transformers.models.llama.modeling_llama import LlamaMLP
-from transformers.models.pixtral.modeling_pixtral import PixtralAttention, rotate_half
+from transformers_471.models.llama.modeling_llama import LlamaMLP
+from transformers_471.models.pixtral.modeling_pixtral import PixtralAttention, rotate_half
 
 from ...modeling_layers import GradientCheckpointingLayer
 from ...modeling_outputs import BaseModelOutputWithPooling

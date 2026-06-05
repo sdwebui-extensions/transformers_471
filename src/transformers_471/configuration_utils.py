@@ -66,11 +66,11 @@ class PretrainedConfig(PushToHubMixin):
     Class attributes (overridden by derived classes):
 
     - **model_type** (`str`) -- An identifier for the model type, serialized into the JSON file, and used to recreate
-      the correct object in [`~transformers.AutoConfig`].
+      the correct object in [`~transformers_471.AutoConfig`].
     - **has_no_defaults_at_init** (`bool`) -- Whether the config class can be initialized without providing input arguments.
       Some configurations requires inputs to be defined at init and have no default values, usually these are composite configs,
-      (but not necessarily) such as [`~transformers.EncoderDecoderConfig`] or [`~RagConfig`]. They have to be initialized from
-      two or more configs of type [`~transformers.PretrainedConfig`].
+      (but not necessarily) such as [`~transformers_471.EncoderDecoderConfig`] or [`~RagConfig`]. They have to be initialized from
+      two or more configs of type [`~transformers_471.PretrainedConfig`].
     - **keys_to_ignore_at_inference** (`list[str]`) -- A list of keys to ignore by default when looking at dictionary
       outputs of the model during inference.
     - **attribute_map** (`dict[str, str]`) -- A dict that maps model specific attribute names to the standardized
@@ -514,7 +514,7 @@ class PretrainedConfig(PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -557,7 +557,7 @@ class PretrainedConfig(PushToHubMixin):
                 they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.

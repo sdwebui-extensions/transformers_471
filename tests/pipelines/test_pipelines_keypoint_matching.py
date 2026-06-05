@@ -15,9 +15,9 @@ import unittest
 
 import datasets
 
-from transformers.models.auto.modeling_auto import MODEL_FOR_KEYPOINT_MATCHING_MAPPING
-from transformers.pipelines import KeypointMatchingPipeline, pipeline
-from transformers.testing_utils import (
+from transformers_471.models.auto.modeling_auto import MODEL_FOR_KEYPOINT_MATCHING_MAPPING
+from transformers_471.pipelines import KeypointMatchingPipeline, pipeline
+from transformers_471.testing_utils import (
     is_pipeline_test,
     is_vision_available,
     require_torch,

@@ -24,7 +24,7 @@ from typing import Callable, Optional, Union
 import torch
 from torch import nn
 
-from transformers.utils.generic import check_model_inputs
+from transformers_471.utils.generic import check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache

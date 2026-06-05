@@ -57,7 +57,7 @@ logger = logging.get_logger(__name__)
 
 
 if TYPE_CHECKING:
-    from transformers import MaskFormerForInstanceSegmentationOutput
+    from transformers_471 import MaskFormerForInstanceSegmentationOutput
 
 
 def convert_segmentation_map_to_binary_masks_fast(
@@ -423,7 +423,7 @@ class MaskFormerImageProcessorFast(BaseImageProcessorFast):
 
         return encoded_inputs
 
-    # Copied from transformers.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_segmentation
+    # Copied from transformers_471.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_segmentation
     def post_process_segmentation(
         self, outputs: "MaskFormerForInstanceSegmentationOutput", target_size: Optional[tuple[int, int]] = None
     ) -> "torch.Tensor":
@@ -472,7 +472,7 @@ class MaskFormerImageProcessorFast(BaseImageProcessorFast):
 
         return segmentation
 
-    # Copied from transformers.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_semantic_segmentation
+    # Copied from transformers_471.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_semantic_segmentation
     def post_process_semantic_segmentation(
         self, outputs, target_sizes: Optional[list[tuple[int, int]]] = None
     ) -> "torch.Tensor":
@@ -523,7 +523,7 @@ class MaskFormerImageProcessorFast(BaseImageProcessorFast):
 
         return semantic_segmentation
 
-    # Copied from transformers.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_instance_segmentation
+    # Copied from transformers_471.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_instance_segmentation
     def post_process_instance_segmentation(
         self,
         outputs,
@@ -640,7 +640,7 @@ class MaskFormerImageProcessorFast(BaseImageProcessorFast):
             results.append({"segmentation": segmentation, "segments_info": segments})
         return results
 
-    # Copied from transformers.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_panoptic_segmentation
+    # Copied from transformers_471.models.maskformer.image_processing_maskformer.MaskFormerImageProcessor.post_process_panoptic_segmentation
     def post_process_panoptic_segmentation(
         self,
         outputs,

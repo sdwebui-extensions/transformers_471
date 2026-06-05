@@ -21,10 +21,10 @@ from functools import cached_property
 import numpy as np
 from huggingface_hub import hf_hub_download
 
-from transformers import VivitConfig
-from transformers.models.auto import get_values
-from transformers.testing_utils import Expectations, require_torch, require_vision, slow, torch_device
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import VivitConfig
+from transformers_471.models.auto import get_values
+from transformers_471.testing_utils import Expectations, require_torch, require_vision, slow, torch_device
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import ModelTesterMixin, floats_tensor, ids_tensor
@@ -35,11 +35,11 @@ if is_torch_available():
     import torch
     from torch import nn
 
-    from transformers import MODEL_FOR_VIDEO_CLASSIFICATION_MAPPING, VivitForVideoClassification, VivitModel
+    from transformers_471 import MODEL_FOR_VIDEO_CLASSIFICATION_MAPPING, VivitForVideoClassification, VivitModel
 
 
 if is_vision_available():
-    from transformers import VivitImageProcessor
+    from transformers_471 import VivitImageProcessor
 
 
 class VivitModelTester:

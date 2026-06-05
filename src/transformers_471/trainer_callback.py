@@ -177,7 +177,7 @@ class TrainerState:
             self.trial_name = trainer.hp_name(trainer._trial)
         self.trial_params = None
         if trial is not None:
-            from transformers.integrations import hp_params
+            from transformers_471.integrations import hp_params
 
             assignments = trial.assignments if trainer.hp_search_backend == HPSearchBackend.SIGOPT else trial
             self.trial_params = hp_params(assignments)

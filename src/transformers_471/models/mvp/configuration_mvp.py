@@ -90,7 +90,7 @@ class MvpConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MvpConfig, MvpModel
+    >>> from transformers_471 import MvpConfig, MvpModel
 
     >>> # Initializing a MVP RUCAIBox/mvp style configuration
     >>> configuration = MvpConfig()

@@ -18,8 +18,8 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import AutoTokenizer, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     cleanup,
     require_read_token,
     require_torch,
@@ -40,8 +40,8 @@ from ...test_modeling_common import (
 if is_torch_available():
     import torch
 
-    from transformers import BltConfig, BltForCausalLM, BltModel
-from transformers.models.blt.modeling_blt import BltRotaryEmbedding
+    from transformers_471 import BltConfig, BltForCausalLM, BltModel
+from transformers_471.models.blt.modeling_blt import BltRotaryEmbedding
 
 
 class BltModelTester(CausalLMModelTester):

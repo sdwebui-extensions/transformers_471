@@ -18,7 +18,7 @@ import unittest
 
 import requests
 
-from transformers import (
+from transformers_471 import (
     PaliGemmaConfig,
     PaliGemmaForConditionalGeneration,
     PaliGemmaModel,
@@ -26,7 +26,7 @@ from transformers import (
     is_torch_available,
     is_vision_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_read_token,

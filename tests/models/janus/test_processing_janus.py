@@ -19,7 +19,7 @@ import unittest
 
 import numpy as np
 
-from transformers import AutoProcessor, AutoTokenizer, JanusProcessor
+from transformers_471 import AutoProcessor, AutoTokenizer, JanusProcessor
 
 from ...test_processing_common import ProcessorTesterMixin, url_to_local_path
 

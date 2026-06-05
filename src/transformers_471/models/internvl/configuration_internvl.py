@@ -72,7 +72,7 @@ class InternVLVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import InternVLVisionConfig, InternVLVisionModel
+    >>> from transformers_471 import InternVLVisionConfig, InternVLVisionModel
 
     >>> # Initializing a InternVLVisionModel OpenGVLab/InternVL3-1B-hf style configuration
     >>> configuration = InternVLVisionConfig()
@@ -170,7 +170,7 @@ class InternVLConfig(PretrainedConfig):
             Can be one of `"default"` or `"full"`.
 
     ```python
-    >>> from transformers import InternVLForConditionalGeneration, InternVLConfig
+    >>> from transformers_471 import InternVLForConditionalGeneration, InternVLConfig
 
     >>> # Initializing a InternVL style configuration
     >>> configuration = InternVLConfig()

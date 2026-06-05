@@ -484,7 +484,7 @@ class FlaxSpeechEncoderDecoderModel(FlaxPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import FlaxSpeechEncoderDecoderModel
+        >>> from transformers_471 import FlaxSpeechEncoderDecoderModel
 
         >>> # initialize a wav2vec2-2-bart from pretrained wav2vec2 and bart models. Note that the cross-attention layers will be randomly initialized
         >>> model = FlaxSpeechEncoderDecoderModel.from_encoder_decoder_pretrained(
@@ -557,7 +557,7 @@ class FlaxSpeechEncoderDecoderModel(FlaxPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import FlaxSpeechEncoderDecoderModel
+        >>> from transformers_471 import FlaxSpeechEncoderDecoderModel
         >>> import jax.numpy as jnp
 
         >>> # initialize a wav2vec2-2-bart from pretrained wav2vec2 and bart models. Note that the cross-attention layers will be randomly initialized
@@ -681,7 +681,7 @@ class FlaxSpeechEncoderDecoderModel(FlaxPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import FlaxSpeechEncoderDecoderModel, AutoTokenizer
+        >>> from transformers_471 import FlaxSpeechEncoderDecoderModel, AutoTokenizer
 
         >>> # load a fine-tuned wav2vec2-2-bart model
         >>> model = FlaxSpeechEncoderDecoderModel.from_pretrained("patrickvonplaten/wav2vec2-2-bart-large")
@@ -823,7 +823,7 @@ class FlaxSpeechEncoderDecoderModel(FlaxPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import FlaxSpeechEncoderDecoderModel
+        >>> from transformers_471 import FlaxSpeechEncoderDecoderModel
 
         >>> # initialize a wav2vec2-2-bart from pretrained wav2vec2 and bart models. Note that the cross-attention layers will be randomly initialized
         >>> model = FlaxSpeechEncoderDecoderModel.from_encoder_decoder_pretrained(

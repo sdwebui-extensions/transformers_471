@@ -16,15 +16,15 @@ import unittest
 
 from huggingface_hub import QuestionAnsweringOutputElement
 
-from transformers import (
+from transformers_471 import (
     MODEL_FOR_QUESTION_ANSWERING_MAPPING,
     TF_MODEL_FOR_QUESTION_ANSWERING_MAPPING,
     LxmertConfig,
     QuestionAnsweringPipeline,
 )
-from transformers.data.processors.squad import SquadExample
-from transformers.pipelines import QuestionAnsweringArgumentHandler, pipeline
-from transformers.testing_utils import (
+from transformers_471.data.processors.squad import SquadExample
+from transformers_471.pipelines import QuestionAnsweringArgumentHandler, pipeline
+from transformers_471.testing_utils import (
     compare_pipeline_output_to_hub_spec,
     is_pipeline_test,
     is_torch_available,

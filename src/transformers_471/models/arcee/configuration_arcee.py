@@ -109,7 +109,7 @@ class ArceeConfig(PretrainedConfig):
             The attention head dimension. If None, it will default to hidden_size // num_attention_heads
 
     ```python
-    >>> from transformers import ArceeModel, ArceeConfig
+    >>> from transformers_471 import ArceeModel, ArceeConfig
 
     >>> # Initializing an Arcee AFM-4.5B-Base style configuration
     >>> configuration = ArceeConfig()

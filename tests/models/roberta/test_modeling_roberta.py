@@ -17,8 +17,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, RobertaConfig, is_torch_available
-from transformers.testing_utils import TestCasePlus, require_torch, slow, torch_device
+from transformers_471 import AutoTokenizer, RobertaConfig, is_torch_available
+from transformers_471.testing_utils import TestCasePlus, require_torch, slow, torch_device
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -29,7 +29,7 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         RobertaForCausalLM,
         RobertaForMaskedLM,
         RobertaForMultipleChoice,
@@ -38,11 +38,11 @@ if is_torch_available():
         RobertaForTokenClassification,
         RobertaModel,
     )
-    from transformers.models.roberta.modeling_roberta import (
+    from transformers_471.models.roberta.modeling_roberta import (
         RobertaEmbeddings,
         create_position_ids_from_input_ids,
     )
-    from transformers.pytorch_utils import is_torch_greater_or_equal_than_2_4
+    from transformers_471.pytorch_utils import is_torch_greater_or_equal_than_2_4
 
 ROBERTA_TINY = "sshleifer/tiny-distilroberta-base"
 

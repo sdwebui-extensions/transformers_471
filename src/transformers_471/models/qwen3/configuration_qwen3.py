@@ -121,7 +121,7 @@ class Qwen3Config(PretrainedConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import Qwen3Model, Qwen3Config
+    >>> from transformers_471 import Qwen3Model, Qwen3Config
 
     >>> # Initializing a Qwen3 style configuration
     >>> configuration = Qwen3Config()

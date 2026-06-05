@@ -230,7 +230,7 @@ class VitPoseForPoseEstimation(VitPosePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, VitPoseForPoseEstimation
+        >>> from transformers_471 import AutoImageProcessor, VitPoseForPoseEstimation
         >>> import torch
         >>> from PIL import Image
         >>> import requests

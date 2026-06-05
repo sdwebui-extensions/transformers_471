@@ -175,7 +175,7 @@ class ChameleonConfig(PretrainedConfig):
 
 
     ```python
-    >>> from transformers import ChameleonModel, ChameleonConfig
+    >>> from transformers_471 import ChameleonModel, ChameleonConfig
 
     >>> # Initializing a chameleon chameleon-7b style configuration
     >>> configuration = ChameleonConfig()

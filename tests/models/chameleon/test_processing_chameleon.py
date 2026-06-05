@@ -16,15 +16,15 @@
 import tempfile
 import unittest
 
-from transformers import ChameleonProcessor, LlamaTokenizer
-from transformers.testing_utils import get_tests_dir
-from transformers.utils import is_vision_available
+from transformers_471 import ChameleonProcessor, LlamaTokenizer
+from transformers_471.testing_utils import get_tests_dir
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import ChameleonImageProcessor
+    from transformers_471 import ChameleonImageProcessor
 
 
 SAMPLE_VOCAB = get_tests_dir("fixtures/test_sentencepiece.model")

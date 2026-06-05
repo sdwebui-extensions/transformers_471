@@ -56,7 +56,7 @@ if is_torch_flex_attn_available():
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bart.modeling_bart.shift_tokens_right
+# Copied from transformers_471.models.bart.modeling_bart.shift_tokens_right
 def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start_token_id: int):
     """
     Shift input ids one token to the right.
@@ -176,7 +176,7 @@ class Speech2TextSinusoidalPositionalEmbedding(nn.Module):
         return incremental_indices.long() + padding_idx
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -207,7 +207,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.musicgen.modeling_musicgen.MusicgenAttention with Musicgen->Speech2Text
+# Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenAttention with Musicgen->Speech2Text
 class Speech2TextAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -328,7 +328,7 @@ class Speech2TextAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.mbart.modeling_mbart.MBartEncoderLayer with MBart->Speech2Text, MBART->SPEECH_TO_TEXT
+# Copied from transformers_471.models.mbart.modeling_mbart.MBartEncoderLayer with MBart->Speech2Text, MBART->SPEECH_TO_TEXT
 class Speech2TextEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: Speech2TextConfig):
         super().__init__()
@@ -392,7 +392,7 @@ class Speech2TextEncoderLayer(GradientCheckpointingLayer):
         return hidden_states, attn_weights
 
 
-# copied from transformers.models.mbart.modeling_mbart.MBartDecoderLayer with MBart->Speech2Text, MBART->SPEECH_TO_TEXT
+# copied from transformers_471.models.mbart.modeling_mbart.MBartDecoderLayer with MBart->Speech2Text, MBART->SPEECH_TO_TEXT
 # TODO: change copy when applying cache class
 class Speech2TextDecoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: Speech2TextConfig, layer_idx=None):
@@ -427,7 +427,7 @@ class Speech2TextDecoderLayer(GradientCheckpointingLayer):
         self.final_layer_norm = nn.LayerNorm(self.embed_dim)
 
     @deprecate_kwarg("past_key_value", new_name="past_key_values", version="4.58")
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoderLayer.forward
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoderLayer.forward
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -706,7 +706,7 @@ class Speech2TextEncoder(Speech2TextPreTrainedModel):
             last_hidden_state=hidden_states, hidden_states=encoder_states, attentions=all_attentions
         )
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -962,7 +962,7 @@ class Speech2TextDecoder(Speech2TextPreTrainedModel):
             cross_attentions=all_cross_attentions,
         )
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -1002,7 +1002,7 @@ class Speech2TextDecoder(Speech2TextPreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenDecoder._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1107,7 +1107,7 @@ class Speech2TextModel(Speech2TextPreTrainedModel):
 
          ```python
          >>> import torch
-         >>> from transformers import Speech2TextModel, AutoFeatureExtractor
+         >>> from transformers_471 import Speech2TextModel, AutoFeatureExtractor
          >>> from datasets import load_dataset
 
          >>> model = Speech2TextModel.from_pretrained("facebook/s2t-small-librispeech-asr")
@@ -1263,7 +1263,7 @@ class Speech2TextForConditionalGeneration(Speech2TextPreTrainedModel, Generation
 
         ```python
         >>> import torch
-        >>> from transformers import Speech2TextProcessor, Speech2TextForConditionalGeneration
+        >>> from transformers_471 import Speech2TextProcessor, Speech2TextForConditionalGeneration
         >>> from datasets import load_dataset
 
         >>> model = Speech2TextForConditionalGeneration.from_pretrained("facebook/s2t-small-librispeech-asr")

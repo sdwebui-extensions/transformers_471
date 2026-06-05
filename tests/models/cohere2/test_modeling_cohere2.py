@@ -20,9 +20,9 @@ from packaging import version
 from parameterized import parameterized
 from pytest import mark
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, Cohere2Config, is_torch_available, pipeline
-from transformers.generation.configuration_utils import GenerationConfig
-from transformers.testing_utils import (
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer, Cohere2Config, is_torch_available, pipeline
+from transformers_471.generation.configuration_utils import GenerationConfig
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     is_flash_attn_2_available,
@@ -41,7 +41,7 @@ from ...test_configuration_common import ConfigTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         Cohere2ForCausalLM,
         Cohere2Model,
     )
@@ -171,7 +171,7 @@ class Cohere2IntegrationTest(unittest.TestCase):
         if version.parse(torch.__version__) < version.parse("2.5.0"):
             self.skipTest(reason="This test requires torch >= 2.5 to run.")
 
-        from transformers.integrations.executorch import (
+        from transformers_471.integrations.executorch import (
             TorchExportableModuleWithStaticCache,
             convert_and_export_with_cache,
         )

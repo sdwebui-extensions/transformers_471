@@ -106,7 +106,7 @@ class LlamaTokenizer(PreTrainedTokenizer):
 
             - `legacy=True`:
             ```python
-            >>> from transformers import LlamaTokenizerFast
+            >>> from transformers_471 import LlamaTokenizerFast
 
             >>> tokenizer = LlamaTokenizerFast.from_pretrained("huggyllama/llama-7b", legacy=True, from_slow=True)
             >>> tokenizer.encode("Hello <s>.") # 869 is '▁.'
@@ -114,7 +114,7 @@ class LlamaTokenizer(PreTrainedTokenizer):
             ```
             - `legacy=False`:
             ```python
-            >>> from transformers import LlamaTokenizerFast
+            >>> from transformers_471 import LlamaTokenizerFast
 
             >>> tokenizer = LlamaTokenizerFast.from_pretrained("huggyllama/llama-7b", legacy=False, from_slow=True)
             >>> tokenizer.encode("Hello <s>.")  # 29889 is '.'
@@ -191,7 +191,7 @@ class LlamaTokenizer(PreTrainedTokenizer):
     def unk_token_length(self):
         return len(self.sp_model.encode(str(self.unk_token)))
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer.get_spm_processor
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer.get_spm_processor
     def get_spm_processor(self, from_slow=False):
         tokenizer = spm.SentencePieceProcessor(**self.sp_model_kwargs)
         if self.legacy or from_slow:  # no dependency on protobuf
@@ -231,7 +231,7 @@ class LlamaTokenizer(PreTrainedTokenizer):
         vocab.update(self.added_tokens_encoder)
         return vocab
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer.tokenize
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer.tokenize
     def tokenize(self, text: "TextInput", **kwargs) -> list[str]:
         """
         Converts a string to a list of tokens. If `self.legacy` is set to `False`, a prefix token is added unless the
@@ -250,7 +250,7 @@ class LlamaTokenizer(PreTrainedTokenizer):
             tokens = tokens[1:]
         return tokens
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer._tokenize
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer._tokenize
     def _tokenize(self, text, **kwargs):
         """
         Returns a tokenized string.

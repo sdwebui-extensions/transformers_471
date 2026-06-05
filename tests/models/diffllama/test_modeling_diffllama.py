@@ -21,8 +21,8 @@ import pytest
 from packaging import version
 from parameterized import parameterized
 
-from transformers import AutoTokenizer, DiffLlamaConfig, StaticCache, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, DiffLlamaConfig, StaticCache, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     backend_empty_cache,
     cleanup,
     require_bitsandbytes,
@@ -44,14 +44,14 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         DiffLlamaForCausalLM,
         DiffLlamaForQuestionAnswering,
         DiffLlamaForSequenceClassification,
         DiffLlamaForTokenClassification,
         DiffLlamaModel,
     )
-    from transformers.models.diffllama.modeling_diffllama import (
+    from transformers_471.models.diffllama.modeling_diffllama import (
         DiffLlamaRotaryEmbedding,
     )
 

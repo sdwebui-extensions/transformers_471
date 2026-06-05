@@ -16,14 +16,14 @@
 import copy
 import unittest
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     Glm4vConfig,
     Glm4vForConditionalGeneration,
     Glm4vModel,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_flash_attn,
     require_torch,

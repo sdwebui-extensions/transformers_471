@@ -16,7 +16,7 @@
 import argparse
 import os
 
-import transformers
+import transformers_471
 
 from .convert_slow_tokenizer import SLOW_TO_FAST_CONVERTERS
 from .utils import logging
@@ -29,7 +29,7 @@ logger = logging.get_logger(__name__)
 
 TOKENIZER_CLASSES = {
     # Phi3 uses Llama tokenizer
-    name: getattr(transformers, "LlamaTokenizerFast" if name == "Phi3Tokenizer" else name + "Fast")
+    name: getattr(transformers_471, "LlamaTokenizerFast" if name == "Phi3Tokenizer" else name + "Fast")
     for name in SLOW_TO_FAST_CONVERTERS
 }
 
@@ -41,7 +41,7 @@ def convert_slow_checkpoint_to_fast(tokenizer_name, checkpoint_name, dump_path, 
     if tokenizer_name is None:
         tokenizer_names = TOKENIZER_CLASSES
     else:
-        tokenizer_names = {tokenizer_name: getattr(transformers, tokenizer_name + "Fast")}
+        tokenizer_names = {tokenizer_name: getattr(transformers_471, tokenizer_name + "Fast")}
 
     logger.info(f"Loading tokenizer classes: {tokenizer_names}")
 

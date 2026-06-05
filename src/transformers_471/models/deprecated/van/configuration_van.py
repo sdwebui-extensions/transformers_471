@@ -62,7 +62,7 @@ class VanConfig(PretrainedConfig):
 
     Example:
     ```python
-    >>> from transformers import VanModel, VanConfig
+    >>> from transformers_471 import VanModel, VanConfig
 
     >>> # Initializing a VAN van-base style configuration
     >>> configuration = VanConfig()

@@ -66,7 +66,7 @@ is_fast_path_available = all(
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func with gate->router
+# Copied from transformers_471.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func with gate->router
 def load_balancing_loss_func(
     router_logits: Union[torch.Tensor, tuple[torch.Tensor], None],
     num_experts: Optional[int] = None,
@@ -155,7 +155,7 @@ def load_balancing_loss_func(
     return overall_loss * num_experts
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRMSNorm with Llama->Jamba
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRMSNorm with Llama->Jamba
 class JambaRMSNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -176,7 +176,7 @@ class JambaRMSNorm(nn.Module):
         return f"{tuple(self.weight.shape)}, eps={self.variance_epsilon}"
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -270,7 +270,7 @@ class HybridMambaAttentionDynamicCache:
         return self.key_cache[layer_idx].shape[-2]
 
 
-# Adapted from transformers.models.mistral.modeling_mistral.MistralAttention with Mistral->Jamba
+# Adapted from transformers_471.models.mistral.modeling_mistral.MistralAttention with Mistral->Jamba
 class JambaAttention(nn.Module):
     """
     Multi-headed attention from 'Attention Is All You Need' paper. Modified to use sliding window attention: Longformer
@@ -362,7 +362,7 @@ class JambaAttention(nn.Module):
         return attn_output, attn_weights, past_key_values
 
 
-# Adapted from transformers.models.mistral.modeling_mistral.MistralFlashAttention2 with Mistral->Jamba
+# Adapted from transformers_471.models.mistral.modeling_mistral.MistralFlashAttention2 with Mistral->Jamba
 class JambaFlashAttention2(JambaAttention):
     """
     Jamba flash attention module. This module inherits from `JambaAttention` as the weights of the module stays
@@ -463,7 +463,7 @@ class JambaFlashAttention2(JambaAttention):
         return attn_output, attn_weights, past_key_values
 
 
-# Adapted from transformers.models.mistral.modeling_mistral.MistralSdpaAttention with Mistral->Jamba
+# Adapted from transformers_471.models.mistral.modeling_mistral.MistralSdpaAttention with Mistral->Jamba
 class JambaSdpaAttention(JambaAttention):
     """
     Jamba attention module using torch.nn.functional.scaled_dot_product_attention. This module inherits from
@@ -554,7 +554,7 @@ JAMBA_ATTENTION_CLASSES = {
 }
 
 
-# Adapted from transformers.models.mamba.modeling_mamba.MambaMixer
+# Adapted from transformers_471.models.mamba.modeling_mamba.MambaMixer
 class JambaMambaMixer(nn.Module):
     """
     Compute ∆, A, B, C, and D the state space parameters and compute the `contextualized_states`.
@@ -822,7 +822,7 @@ class JambaMambaMixer(nn.Module):
         return self.slow_forward(hidden_states, cache_params, attention_mask)
 
 
-# Copied from transformers.models.mistral.modeling_mistral.MistralMLP with Mistral->Jamba
+# Copied from transformers_471.models.mistral.modeling_mistral.MistralMLP with Mistral->Jamba
 class JambaMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -839,7 +839,7 @@ class JambaMLP(nn.Module):
         return down_proj
 
 
-# Adapted from transformers.models.mixtral.modeling_mixtral.MixtralSparseMoeBlock with Mistral->Jamba
+# Adapted from transformers_471.models.mixtral.modeling_mixtral.MixtralSparseMoeBlock with Mistral->Jamba
 class JambaSparseMoeBlock(nn.Module):
     """
     This implementation is
@@ -1100,7 +1100,7 @@ class JambaPreTrainedModel(PreTrainedModel):
 ALL_DECODER_LAYER_TYPES = {"attention": JambaAttentionDecoderLayer, "mamba": JambaMambaDecoderLayer}
 
 
-# Adapted from transformers.models.mistral.modeling_mistral.MistralModel with MISTRAL->JAMBA, Mistral->Jamba
+# Adapted from transformers_471.models.mistral.modeling_mistral.MistralModel with MISTRAL->JAMBA, Mistral->Jamba
 @auto_docstring
 class JambaModel(JambaPreTrainedModel):
     """
@@ -1281,7 +1281,7 @@ class JambaModel(JambaPreTrainedModel):
         return mamba_mask
 
 
-# Adapted from transformers.models.mixtral.modeling_mixtral.MixtralForCausalLM with MIXTRAL->JAMBA, Mixtral->Jamba
+# Adapted from transformers_471.models.mixtral.modeling_mixtral.MixtralForCausalLM with MIXTRAL->JAMBA, Mixtral->Jamba
 class JambaForCausalLM(JambaPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["lm_head.weight"]
 
@@ -1323,7 +1323,7 @@ class JambaForCausalLM(JambaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, JambaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, JambaForCausalLM
 
         >>> model = JambaForCausalLM.from_pretrained("ai21labs/Jamba-v0.1")
         >>> tokenizer = AutoTokenizer.from_pretrained("ai21labs/Jamba-v0.1")

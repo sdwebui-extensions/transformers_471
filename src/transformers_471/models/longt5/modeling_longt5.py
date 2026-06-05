@@ -221,7 +221,7 @@ def _create_global_aggregates(
     return torch.einsum("...nd,...ng->...gd", hidden_states, one_hot_block_ids.type(hidden_states.dtype))
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerNorm with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerNorm with T5->LongT5
 class LongT5LayerNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -261,7 +261,7 @@ except Exception:
     pass
 
 
-# Copied from transformers.models.t5.modeling_t5.T5DenseActDense with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5DenseActDense with T5->LongT5
 class LongT5DenseActDense(nn.Module):
     def __init__(self, config: LongT5Config):
         super().__init__()
@@ -302,7 +302,7 @@ class LongT5DenseGatedActDense(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerFF with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerFF with T5->LongT5
 class LongT5LayerFF(nn.Module):
     def __init__(self, config: LongT5Config):
         super().__init__()
@@ -321,7 +321,7 @@ class LongT5LayerFF(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.t5.modeling_t5.T5Attention with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5Attention with T5->LongT5
 class LongT5Attention(nn.Module):
     def __init__(
         self,
@@ -581,7 +581,7 @@ class LongT5LocalAttention(nn.Module):
         self.pruned_heads = set()
         self.gradient_checkpointing = False
 
-    # Copied from transformers.models.t5.modeling_t5.T5Attention.prune_heads
+    # Copied from transformers_471.models.t5.modeling_t5.T5Attention.prune_heads
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -599,7 +599,7 @@ class LongT5LocalAttention(nn.Module):
         self.pruned_heads = self.pruned_heads.union(heads)
 
     @staticmethod
-    # Copied from transformers.models.t5.modeling_t5.T5Attention._relative_position_bucket
+    # Copied from transformers_471.models.t5.modeling_t5.T5Attention._relative_position_bucket
     def _relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
         """
         Adapted from Mesh Tensorflow:
@@ -780,7 +780,7 @@ class LongT5TransientGlobalAttention(nn.Module):
             self.global_relative_attention_bias = nn.Embedding(self.relative_attention_num_buckets, self.n_heads)
         self.global_input_layer_norm = LongT5LayerNorm(config.d_model, eps=config.layer_norm_epsilon)
 
-    # Copied from transformers.models.t5.modeling_t5.T5Attention.prune_heads
+    # Copied from transformers_471.models.t5.modeling_t5.T5Attention.prune_heads
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -798,7 +798,7 @@ class LongT5TransientGlobalAttention(nn.Module):
         self.pruned_heads = self.pruned_heads.union(heads)
 
     @staticmethod
-    # Copied from transformers.models.t5.modeling_t5.T5Attention._relative_position_bucket
+    # Copied from transformers_471.models.t5.modeling_t5.T5Attention._relative_position_bucket
     def _relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
         """
         Adapted from Mesh Tensorflow:
@@ -1011,7 +1011,7 @@ class LongT5TransientGlobalAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerSelfAttention with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerSelfAttention with T5->LongT5
 class LongT5LayerSelfAttention(nn.Module):
     def __init__(self, config, has_relative_attention_bias=False, layer_idx: Optional[int] = None):
         super().__init__()
@@ -1113,7 +1113,7 @@ class LongT5LayerTransientGlobalSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerCrossAttention with T5->LongT5
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerCrossAttention with T5->LongT5
 class LongT5LayerCrossAttention(nn.Module):
     def __init__(self, config, layer_idx: Optional[int] = None):
         super().__init__()
@@ -1259,7 +1259,7 @@ class LongT5PreTrainedModel(PreTrainedModel):
     _can_compile_fullgraph = False  # TODO: @raushan more involved due to local/global attn
 
     @property
-    # Copied from transformers.models.t5.modeling_t5.T5PreTrainedModel.dummy_inputs
+    # Copied from transformers_471.models.t5.modeling_t5.T5PreTrainedModel.dummy_inputs
     def dummy_inputs(self):
         input_ids = torch.tensor(DUMMY_INPUTS)
         input_mask = torch.tensor(DUMMY_MASK)
@@ -1347,7 +1347,7 @@ class LongT5PreTrainedModel(PreTrainedModel):
                         mean=0.0, std=factor * ((d_model) ** -0.5)
                     )
 
-    # Copied from transformers.models.t5.modeling_t5.T5PreTrainedModel._shift_right with T5->LongT5
+    # Copied from transformers_471.models.t5.modeling_t5.T5PreTrainedModel._shift_right with T5->LongT5
     def _shift_right(self, input_ids):
         decoder_start_token_id = self.config.decoder_start_token_id
         pad_token_id = self.config.pad_token_id
@@ -1402,7 +1402,7 @@ class LongT5Stack(LongT5PreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.t5.modeling_t5.T5Stack.set_input_embeddings
+    # Copied from transformers_471.models.t5.modeling_t5.T5Stack.set_input_embeddings
     def set_input_embeddings(self, new_embeddings):
         self.embed_tokens = new_embeddings
 
@@ -1585,7 +1585,7 @@ class LongT5Stack(LongT5PreTrainedModel):
             cross_attentions=all_cross_attentions,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1655,7 +1655,7 @@ class LongT5Stack(LongT5PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1835,7 +1835,7 @@ class LongT5Model(LongT5PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, LongT5Model
+        >>> from transformers_471 import AutoTokenizer, LongT5Model
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/long-t5-local-base")
         >>> model = LongT5Model.from_pretrained("google/long-t5-local-base")
@@ -2032,7 +2032,7 @@ class LongT5ForConditionalGeneration(LongT5PreTrainedModel, GenerationMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, LongT5ForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, LongT5ForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("Stancld/longt5-tglobal-large-16384-pubmed-3k_steps")
         >>> model = LongT5ForConditionalGeneration.from_pretrained(
@@ -2199,7 +2199,7 @@ class LongT5EncoderModel(LongT5PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, LongT5ForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, LongT5ForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/long-t5-local-base")
         >>> model = LongT5EncoderModel.from_pretrained("google/long-t5-local-base")

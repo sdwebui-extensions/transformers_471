@@ -1054,7 +1054,7 @@ class QDQBertLMHeadModel(QDQBertPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, QDQBertLMHeadModel, QDQBertConfig
+        >>> from transformers_471 import AutoTokenizer, QDQBertLMHeadModel, QDQBertConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
@@ -1298,7 +1298,7 @@ class QDQBertForNextSentencePrediction(QDQBertPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, QDQBertForNextSentencePrediction
+        >>> from transformers_471 import AutoTokenizer, QDQBertForNextSentencePrediction
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-uncased")

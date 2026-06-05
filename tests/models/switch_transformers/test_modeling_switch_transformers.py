@@ -17,8 +17,8 @@ import copy
 import tempfile
 import unittest
 
-from transformers import SwitchTransformersConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import SwitchTransformersConfig, is_torch_available
+from transformers_471.testing_utils import (
     Expectations,
     require_tokenizers,
     require_torch,
@@ -38,7 +38,7 @@ if is_torch_available():
     import torch
     import torch.nn.functional as F
 
-    from transformers import (
+    from transformers_471 import (
         AutoTokenizer,
         SwitchTransformersEncoderModel,
         SwitchTransformersForConditionalGeneration,
@@ -46,7 +46,7 @@ if is_torch_available():
         SwitchTransformersSparseMLP,
         SwitchTransformersTop1Router,
     )
-    from transformers.models.switch_transformers.modeling_switch_transformers import (
+    from transformers_471.models.switch_transformers.modeling_switch_transformers import (
         load_balancing_loss_func,
         router_z_loss_func,
     )

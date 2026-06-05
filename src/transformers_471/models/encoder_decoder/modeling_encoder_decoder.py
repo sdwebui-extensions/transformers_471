@@ -210,14 +210,14 @@ class EncoderDecoderModel(PreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import EncoderDecoderModel
+        >>> from transformers_471 import EncoderDecoderModel
 
         >>> model = EncoderDecoderModel.from_pretrained("patrickvonplaten/bert2bert-cnn_dailymail-fp16")
         ```"""
 
         from_tf = kwargs.pop("from_tf", False)
         if from_tf:
-            from transformers import TFEncoderDecoderModel
+            from transformers_471 import TFEncoderDecoderModel
 
             # a workaround to load from tensorflow checkpoint
             # Using `_tf_model` won't work, because the weight names in the encoder/decoder of `_tf_model` get
@@ -352,7 +352,7 @@ class EncoderDecoderModel(PreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import EncoderDecoderModel
+        >>> from transformers_471 import EncoderDecoderModel
 
         >>> # initialize a bert2bert from two pretrained BERT models. Note that the cross-attention layers will be randomly initialized
         >>> model = EncoderDecoderModel.from_encoder_decoder_pretrained("google-bert/bert-base-uncased", "google-bert/bert-base-uncased")
@@ -490,7 +490,7 @@ class EncoderDecoderModel(PreTrainedModel, GenerationMixin):
         Examples:
 
         ```python
-        >>> from transformers import EncoderDecoderModel, BertTokenizer
+        >>> from transformers_471 import EncoderDecoderModel, BertTokenizer
         >>> import torch
 
         >>> tokenizer = BertTokenizer.from_pretrained("google-bert/bert-base-uncased")

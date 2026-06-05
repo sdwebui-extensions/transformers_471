@@ -453,7 +453,7 @@ class GlmForCausalLM(GlmPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GlmForCausalLM
+        >>> from transformers_471 import AutoTokenizer, GlmForCausalLM
 
         >>> model = GlmForCausalLM.from_pretrained("meta-glm/Glm-2-7b-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("meta-glm/Glm-2-7b-hf")

@@ -738,7 +738,7 @@ class ModelBenchmark(AbstractModelBenchmark):
         """Setup static cache for compiled models. Override if needed."""
         if hasattr(self, "inputs") and self.inputs is not None:
             try:
-                from transformers import StaticCache
+                from transformers_471 import StaticCache
 
                 seq_length = self.inputs["input_ids"].shape[1]
 
@@ -782,7 +782,7 @@ class ModelBenchmark(AbstractModelBenchmark):
     def _load_model_and_tokenizer(self, config: BenchmarkConfig):
         """Load the model and tokenizer. Override in subclasses for custom loading."""
 
-        from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
+        from transformers_471 import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 
         # Load tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(config.model_id)
@@ -916,7 +916,7 @@ class ModelBenchmark(AbstractModelBenchmark):
         # Handle static cache for compiled models
         if self.past_key_values is not None and config.variant == "compiled":
             try:
-                from transformers import StaticCache
+                from transformers_471 import StaticCache
 
                 # Reset cache for each measurement
                 seq_length = self.inputs["input_ids"].shape[1]

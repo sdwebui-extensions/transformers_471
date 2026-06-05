@@ -1211,7 +1211,7 @@ class DistilBertForMultipleChoice(DistilBertPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, DistilBertForMultipleChoice
+        >>> from transformers_471 import AutoTokenizer, DistilBertForMultipleChoice
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("distilbert-base-cased")

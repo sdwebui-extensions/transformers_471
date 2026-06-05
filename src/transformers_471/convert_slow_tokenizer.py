@@ -41,9 +41,9 @@ def import_protobuf(error_message=""):
         import google.protobuf
 
         if version.parse(google.protobuf.__version__) < version.parse("4.0.0"):
-            from transformers.utils import sentencepiece_model_pb2
+            from transformers_471.utils import sentencepiece_model_pb2
         else:
-            from transformers.utils import sentencepiece_model_pb2_new as sentencepiece_model_pb2
+            from transformers_471.utils import sentencepiece_model_pb2_new as sentencepiece_model_pb2
         return sentencepiece_model_pb2
     else:
         raise ImportError(PROTOBUF_IMPORT_ERROR.format(error_message))
@@ -1588,7 +1588,7 @@ class ParakeetConverter(SpmConverter):
         return tokenizer
 
 
-# Copied from transformers.models.gpt2.tokenization_gpt2.bytes_to_unicode
+# Copied from transformers_471.models.gpt2.tokenization_gpt2.bytes_to_unicode
 def bytes_to_unicode():
     """
     Returns list of utf-8 byte and a mapping to unicode strings. We specifically avoids mapping to whitespace/control

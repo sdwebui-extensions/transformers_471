@@ -19,8 +19,8 @@ from typing import Callable, Optional
 import torch
 from torch import nn
 
-from transformers.cache_utils import Cache
-from transformers.utils import (
+from transformers_471.cache_utils import Cache
+from transformers_471.utils import (
     logging,
 )
 

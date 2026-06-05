@@ -46,7 +46,7 @@ from .configuration_roformer import RoFormerConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.marian.modeling_marian.MarianSinusoidalPositionalEmbedding with Marian->RoFormer
+# Copied from transformers_471.models.marian.modeling_marian.MarianSinusoidalPositionalEmbedding with Marian->RoFormer
 class RoFormerSinusoidalPositionalEmbedding(nn.Embedding):
     """This module produces sinusoidal positional embeddings of any length."""
 
@@ -339,7 +339,7 @@ class RoFormerSelfAttention(nn.Module):
         return query_layer, key_layer
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->RoFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->RoFormer
 class RoFormerSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -361,7 +361,7 @@ class RoFormerAttention(nn.Module):
         self.output = RoFormerSelfOutput(config)
         self.pruned_heads = set()
 
-    # Copied from transformers.models.bert.modeling_bert.BertAttention.prune_heads
+    # Copied from transformers_471.models.bert.modeling_bert.BertAttention.prune_heads
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -407,7 +407,7 @@ class RoFormerAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->RoFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->RoFormer
 class RoFormerIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -423,7 +423,7 @@ class RoFormerIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->RoFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->RoFormer
 class RoFormerOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -607,7 +607,7 @@ class RoFormerEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.xlm.modeling_xlm.XLMSequenceSummary with XLM->RoFormer
+# Copied from transformers_471.models.xlm.modeling_xlm.XLMSequenceSummary with XLM->RoFormer
 class RoFormerSequenceSummary(nn.Module):
     r"""
     Compute a single vector summary of a sequence hidden states.
@@ -747,7 +747,7 @@ class RoFormerLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->RoFormer
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->RoFormer
 class RoFormerOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1088,7 +1088,7 @@ class RoFormerForCausalLM(RoFormerPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RoFormerForCausalLM, RoFormerConfig
+        >>> from transformers_471 import AutoTokenizer, RoFormerForCausalLM, RoFormerConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("junnyu/roformer_chinese_base")

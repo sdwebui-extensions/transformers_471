@@ -20,8 +20,8 @@ import unittest
 from packaging import version
 from parameterized import parameterized
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, TorchAoConfig
-from transformers.testing_utils import (
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer, TorchAoConfig
+from transformers_471.testing_utils import (
     Expectations,
     backend_empty_cache,
     get_device_properties,
@@ -31,7 +31,7 @@ from transformers.testing_utils import (
     require_torchao_version_greater_or_equal,
     torch_device,
 )
-from transformers.utils import is_torch_available, is_torchao_available
+from transformers_471.utils import is_torch_available, is_torchao_available
 
 
 if is_torch_available():

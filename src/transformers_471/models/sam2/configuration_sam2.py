@@ -383,7 +383,7 @@ class Sam2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     Sam2VisionConfig,
     ...     Sam2PromptEncoderConfig,
     ...     Sam2MaskDecoderConfig,

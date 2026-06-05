@@ -34,7 +34,7 @@ from parameterized import parameterized
 from pytest import mark
 from requests.exceptions import HTTPError
 
-from transformers import (
+from transformers_471 import (
     AutoConfig,
     AutoModel,
     AutoModelForImageClassification,
@@ -58,9 +58,9 @@ from transformers import (
     is_torch_available,
     logging,
 )
-from transformers.modeling_flash_attention_utils import is_flash_attn_available
-from transformers.models.mistral.modeling_mistral import MistralModel
-from transformers.testing_utils import (
+from transformers_471.modeling_flash_attention_utils import is_flash_attn_available
+from transformers_471.models.mistral.modeling_mistral import MistralModel
+from transformers_471.testing_utils import (
     TOKEN,
     CaptureLogger,
     LoggingLevel,
@@ -77,14 +77,14 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import (
+from transformers_471.utils import (
     SAFE_WEIGHTS_INDEX_NAME,
     SAFE_WEIGHTS_NAME,
     WEIGHTS_INDEX_NAME,
     WEIGHTS_NAME,
     check_torch_load_is_safe,
 )
-from transformers.utils.import_utils import (
+from transformers_471.utils.import_utils import (
     is_flash_attn_2_available,
     is_flash_attn_3_available,
     is_kernels_available,
@@ -103,7 +103,7 @@ if is_torch_available():
     from test_module.custom_modeling import CustomModel
     from torch import nn
 
-    from transformers import (
+    from transformers_471 import (
         AutoModelForCausalLM,
         AutoTokenizer,
         BertConfig,
@@ -114,17 +114,17 @@ if is_torch_available():
         T5Config,
         T5ForConditionalGeneration,
     )
-    from transformers.modeling_attn_mask_utils import (
+    from transformers_471.modeling_attn_mask_utils import (
         AttentionMaskConverter,
         _create_4d_causal_attention_mask,
         _prepare_4d_attention_mask,
         _prepare_4d_causal_attention_mask,
     )
-    from transformers.modeling_utils import (
+    from transformers_471.modeling_utils import (
         _find_disjoint,
         _find_identical,
     )
-    from transformers.pytorch_utils import isin_mps_friendly
+    from transformers_471.pytorch_utils import isin_mps_friendly
 
     # Fake pretrained models for tests
     class BaseModel(PreTrainedModel):
@@ -277,7 +277,7 @@ if is_torch_available():
             # Ugly setup with monkeypatches, amending env vars here is too late as libs have already been imported
             from huggingface_hub import constants
 
-            from transformers.utils import hub
+            from transformers_471.utils import hub
 
             offlfine_env = hub._is_offline_mode
             hub_cache_env = constants.HF_HUB_CACHE
@@ -325,7 +325,7 @@ if is_torch_available():
             # Ugly setup with monkeypatches, amending env vars here is too late as libs have already been imported
             from huggingface_hub import constants
 
-            from transformers.utils import hub
+            from transformers_471.utils import hub
 
             hub_cache_env = constants.HF_HUB_CACHE
             hub_cache_env1 = constants.HUGGINGFACE_HUB_CACHE
@@ -1898,8 +1898,8 @@ class ModelUtilsTest(TestCasePlus):
             import torch
             import time
             import argparse
-            from transformers import AutoModelForCausalLM
-            from transformers.utils import is_torch_accelerator_available
+            from transformers_471 import AutoModelForCausalLM
+            from transformers_471.utils import is_torch_accelerator_available
 
             parser = argparse.ArgumentParser()
             parser.add_argument("model_id", type=str)

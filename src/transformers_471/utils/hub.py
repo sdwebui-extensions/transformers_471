@@ -108,7 +108,7 @@ SESSION_ID = uuid4().hex
 for key in ("PYTORCH_PRETRAINED_BERT_CACHE", "PYTORCH_TRANSFORMERS_CACHE", "TRANSFORMERS_CACHE"):
     if os.getenv(key) is not None:
         warnings.warn(
-            f"Using `{key}` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.",
+            f"Using `{key}` is deprecated and Will be removed in v5 of Transformers Use `HF_HOME` instead.",
             FutureWarning,
         )
 
@@ -284,7 +284,7 @@ def cached_file(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -361,7 +361,7 @@ def cached_files(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -410,7 +410,7 @@ def cached_files(
     use_auth_token = deprecated_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -647,7 +647,7 @@ def has_file(
     use_auth_token = deprecated_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -739,7 +739,7 @@ class PushToHubMixin:
         """
         if repo_url is not None:
             warnings.warn(
-                "The `repo_url` argument is deprecated and will be removed in v5 of Transformers. Use `repo_id` "
+                "The `repo_url` argument is deprecated and Will be removed in v5 of Transformers Use `repo_id` "
                 "instead."
             )
             if repo_id is not None:
@@ -749,7 +749,7 @@ class PushToHubMixin:
             repo_id = repo_url.replace(f"{HUGGINGFACE_CO_RESOLVE_ENDPOINT}/", "")
         if organization is not None:
             warnings.warn(
-                "The `organization` argument is deprecated and will be removed in v5 of Transformers. Set your "
+                "The `organization` argument is deprecated and Will be removed in v5 of Transformers Set your "
                 "organization directly in the `repo_id` passed instead (`repo_id={organization}/{model_id}`)."
             )
             if not repo_id.startswith(organization):
@@ -897,7 +897,7 @@ class PushToHubMixin:
         Examples:
 
         ```python
-        from transformers import {object_class}
+        from transformers_471 import {object_class}
 
         {object} = {object_class}.from_pretrained("google-bert/bert-base-cased")
 
@@ -915,7 +915,7 @@ class PushToHubMixin:
         )  # TODO: This is only used for testing and should be removed once save_jinja_files becomes the default
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -929,7 +929,7 @@ class PushToHubMixin:
             # Should use `repo_id` instead of `repo_path_or_name`. When using `repo_path_or_name`, we try to infer
             # repo_id from the folder path, if it exists.
             warnings.warn(
-                "The `repo_path_or_name` argument is deprecated and will be removed in v5 of Transformers. Use "
+                "The `repo_path_or_name` argument is deprecated and Will be removed in v5 of Transformers Use "
                 "`repo_id` instead.",
                 FutureWarning,
             )
@@ -1056,7 +1056,7 @@ def get_checkpoint_shard_files(
     use_auth_token = deprecated_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:

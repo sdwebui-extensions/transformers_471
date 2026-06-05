@@ -2081,7 +2081,7 @@ class EsmForProteinFolding(EsmPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, EsmForProteinFolding
+        >>> from transformers_471 import AutoTokenizer, EsmForProteinFolding
 
         >>> model = EsmForProteinFolding.from_pretrained("facebook/esmfold_v1")
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")

@@ -267,7 +267,7 @@ class DPTViTPatchEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.vit.modeling_vit.eager_attention_forward
+# Copied from transformers_471.models.vit.modeling_vit.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -298,7 +298,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfAttention with ViT->DPT
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfAttention with ViT->DPT
 class DPTSelfAttention(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -351,7 +351,7 @@ class DPTSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfOutput with ViTConfig->DPTConfig, ViTSelfOutput->DPTViTSelfOutput
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfOutput with ViTConfig->DPTConfig, ViTSelfOutput->DPTViTSelfOutput
 class DPTViTSelfOutput(nn.Module):
     """
     The residual connection is defined in ViTLayer instead of here (as is the case with other models), due to the
@@ -369,7 +369,7 @@ class DPTViTSelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTAttention with ViTConfig->DPTConfig, ViTSelfAttention->DPTSelfAttention, ViTSelfOutput->DPTViTSelfOutput
+# Copied from transformers_471.models.vit.modeling_vit.ViTAttention with ViTConfig->DPTConfig, ViTSelfAttention->DPTSelfAttention, ViTSelfOutput->DPTViTSelfOutput
 class DPTViTAttention(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -401,7 +401,7 @@ class DPTViTAttention(nn.Module):
         return output
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTIntermediate with ViTConfig->DPTConfig, ViTIntermediate->DPTViTIntermediate
+# Copied from transformers_471.models.vit.modeling_vit.ViTIntermediate with ViTConfig->DPTConfig, ViTIntermediate->DPTViTIntermediate
 class DPTViTIntermediate(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -417,7 +417,7 @@ class DPTViTIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTOutput with ViTConfig->DPTConfig, ViTOutput->DPTViTOutput
+# Copied from transformers_471.models.vit.modeling_vit.ViTOutput with ViTConfig->DPTConfig, ViTOutput->DPTViTOutput
 class DPTViTOutput(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -431,7 +431,7 @@ class DPTViTOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTLayer with ViTConfig->DPTConfig, ViTAttention->DPTViTAttention, ViTIntermediate->DPTViTIntermediate, ViTOutput->DPTViTOutput, ViTLayer->DPTViTLayer
+# Copied from transformers_471.models.vit.modeling_vit.ViTLayer with ViTConfig->DPTConfig, ViTAttention->DPTViTAttention, ViTIntermediate->DPTViTIntermediate, ViTOutput->DPTViTOutput, ViTLayer->DPTViTLayer
 class DPTViTLayer(GradientCheckpointingLayer):
     """This corresponds to the Block class in the timm implementation."""
 
@@ -462,7 +462,7 @@ class DPTViTLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.dinov2.modeling_dinov2.Dinov2Encoder with Dinov2Config->DPTConfig, Dinov2->DPTViT
+# Copied from transformers_471.models.dinov2.modeling_dinov2.Dinov2Encoder with Dinov2Config->DPTConfig, Dinov2->DPTViT
 class DPTViTEncoder(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -846,7 +846,7 @@ class DPTModel(DPTPreTrainedModel):
         )
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTPooler with ViTConfig->DPTConfig, ViTPooler->DPTViTPooler
+# Copied from transformers_471.models.vit.modeling_vit.ViTPooler with ViTConfig->DPTConfig, ViTPooler->DPTViTPooler
 class DPTViTPooler(nn.Module):
     def __init__(self, config: DPTConfig):
         super().__init__()
@@ -1000,7 +1000,7 @@ class DPTForDepthEstimation(DPTPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, DPTForDepthEstimation
+        >>> from transformers_471 import AutoImageProcessor, DPTForDepthEstimation
         >>> import torch
         >>> import numpy as np
         >>> from PIL import Image
@@ -1151,7 +1151,7 @@ class DPTForSemanticSegmentation(DPTPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, DPTForSemanticSegmentation
+        >>> from transformers_471 import AutoImageProcessor, DPTForSemanticSegmentation
         >>> from PIL import Image
         >>> import requests
 

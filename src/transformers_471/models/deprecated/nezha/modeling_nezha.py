@@ -1056,7 +1056,7 @@ class NezhaForPreTraining(NezhaPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, NezhaForPreTraining
+        >>> from transformers_471 import AutoTokenizer, NezhaForPreTraining
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("sijunhe/nezha-cn-base")
@@ -1251,7 +1251,7 @@ class NezhaForNextSentencePrediction(NezhaPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, NezhaForNextSentencePrediction
+        >>> from transformers_471 import AutoTokenizer, NezhaForNextSentencePrediction
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("sijunhe/nezha-cn-base")

@@ -75,7 +75,7 @@ class GPTSanJapaneseTokenizer(PreTrainedTokenizer):
     Example:
 
     ```python
-    >>> from transformers import GPTSanJapaneseTokenizer
+    >>> from transformers_471 import GPTSanJapaneseTokenizer
 
     >>> tokenizer = GPTSanJapaneseTokenizer.from_pretrained("Tanrei/GPTSAN-japanese")
     >>> # You can confirm both 慶応 and 慶應 are encoded to 17750
@@ -90,7 +90,7 @@ class GPTSanJapaneseTokenizer(PreTrainedTokenizer):
     Example for Prefix-LM:
 
     ```python
-    >>> from transformers import GPTSanJapaneseTokenizer
+    >>> from transformers_471 import GPTSanJapaneseTokenizer
 
     >>> tokenizer = GPTSanJapaneseTokenizer.from_pretrained("Tanrei/GPTSAN-japanese")
     >>> tokenizer("実は慶応(慶應)大学出身", prefix_text="吾輩は猫である🐯。")["input_ids"]
@@ -104,7 +104,7 @@ class GPTSanJapaneseTokenizer(PreTrainedTokenizer):
     Example for batch encode:
 
     ```python
-    >>> from transformers import GPTSanJapaneseTokenizer
+    >>> from transformers_471 import GPTSanJapaneseTokenizer
 
     >>> tokenizer = GPTSanJapaneseTokenizer.from_pretrained("Tanrei/GPTSAN-japanese")
     >>> tokenizer([["武田信玄", "は、"], ["織田信長", "の配下の、"]], padding=True)["input_ids"]
@@ -277,7 +277,7 @@ class GPTSanJapaneseTokenizer(PreTrainedTokenizer):
 
         Example:
         ```python
-        >>> from transformers import GPTSanJapaneseTokenizer
+        >>> from transformers_471 import GPTSanJapaneseTokenizer
 
         >>> tokenizer = GPTSanJapaneseTokenizer.from_pretrained("Tanrei/GPTSAN-japanese")
         >>> x_token = tokenizer("ｱｲｳｴ")

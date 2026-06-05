@@ -122,7 +122,7 @@ def align_loss(similarity: torch.Tensor) -> torch.Tensor:
     return (caption_loss + image_loss) / 2.0
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.round_filters with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.round_filters with EfficientNet->AlignVision
 def round_filters(config: AlignVisionConfig, num_channels: int):
     r"""
     Round number of filters based on depth multiplier.
@@ -138,7 +138,7 @@ def round_filters(config: AlignVisionConfig, num_channels: int):
     return int(new_dim)
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.correct_pad
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.correct_pad
 def correct_pad(kernel_size: Union[int, tuple], adjust: bool = True):
     r"""
     Utility function to get the tuple padding value for the depthwise convolution.
@@ -159,7 +159,7 @@ def correct_pad(kernel_size: Union[int, tuple], adjust: bool = True):
         return (correct[1], correct[1], correct[0], correct[0])
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.EfficientNetEmbeddings with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.EfficientNetEmbeddings with EfficientNet->AlignVision
 class AlignVisionEmbeddings(nn.Module):
     r"""
     A module that corresponds to the stem module of the original work.
@@ -185,7 +185,7 @@ class AlignVisionEmbeddings(nn.Module):
         return features
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.EfficientNetDepthwiseConv2d with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.EfficientNetDepthwiseConv2d with EfficientNet->AlignVision
 class AlignVisionDepthwiseConv2d(nn.Conv2d):
     def __init__(
         self,
@@ -212,7 +212,7 @@ class AlignVisionDepthwiseConv2d(nn.Conv2d):
         )
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.EfficientNetExpansionLayer with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.EfficientNetExpansionLayer with EfficientNet->AlignVision
 class AlignVisionExpansionLayer(nn.Module):
     r"""
     This corresponds to the expansion phase of each block in the original implementation.
@@ -239,7 +239,7 @@ class AlignVisionExpansionLayer(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.EfficientNetDepthwiseLayer with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.EfficientNetDepthwiseLayer with EfficientNet->AlignVision
 class AlignVisionDepthwiseLayer(nn.Module):
     r"""
     This corresponds to the depthwise convolution phase of each block in the original implementation.
@@ -279,7 +279,7 @@ class AlignVisionDepthwiseLayer(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.efficientnet.modeling_efficientnet.EfficientNetSqueezeExciteLayer with EfficientNet->AlignVision
+# Copied from transformers_471.models.efficientnet.modeling_efficientnet.EfficientNetSqueezeExciteLayer with EfficientNet->AlignVision
 class AlignVisionSqueezeExciteLayer(nn.Module):
     r"""
     This corresponds to the Squeeze and Excitement phase of each block in the original implementation.
@@ -655,7 +655,7 @@ class AlignTextSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->AlignText
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->AlignText
 class AlignTextSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -715,7 +715,7 @@ class AlignTextAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->AlignText
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->AlignText
 class AlignTextIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -731,7 +731,7 @@ class AlignTextIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->AlignText
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->AlignText
 class AlignTextOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -835,7 +835,7 @@ class AlignTextEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler with Bert -> AlignText
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler with Bert -> AlignText
 class AlignTextPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -927,7 +927,7 @@ class AlignTextModel(AlignPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, AlignTextModel
+        >>> from transformers_471 import AutoTokenizer, AlignTextModel
 
         >>> model = AlignTextModel.from_pretrained("kakaobrain/align-base")
         >>> tokenizer = AutoTokenizer.from_pretrained("kakaobrain/align-base")
@@ -1049,7 +1049,7 @@ class AlignVisionModel(AlignPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, AlignVisionModel
+        >>> from transformers_471 import AutoProcessor, AlignVisionModel
 
         >>> model = AlignVisionModel.from_pretrained("kakaobrain/align-base")
         >>> processor = AutoProcessor.from_pretrained("kakaobrain/align-base")
@@ -1144,7 +1144,7 @@ class AlignModel(AlignPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, AlignModel
+        >>> from transformers_471 import AutoTokenizer, AlignModel
 
         >>> model = AlignModel.from_pretrained("kakaobrain/align-base")
         >>> tokenizer = AutoTokenizer.from_pretrained("kakaobrain/align-base")
@@ -1178,8 +1178,8 @@ class AlignModel(AlignPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, AlignModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AlignModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = AlignModel.from_pretrained("kakaobrain/align-base")
         >>> processor = AutoProcessor.from_pretrained("kakaobrain/align-base")
@@ -1219,8 +1219,8 @@ class AlignModel(AlignPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, AlignModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AlignModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = AlignModel.from_pretrained("kakaobrain/align-base")
         >>> processor = AutoProcessor.from_pretrained("kakaobrain/align-base")

@@ -62,7 +62,7 @@ class Blip2VisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Blip2VisionConfig, Blip2VisionModel
+    >>> from transformers_471 import Blip2VisionConfig, Blip2VisionModel
 
     >>> # Initializing a Blip2VisionConfig with Salesforce/blip2-opt-2.7b style configuration
     >>> configuration = Blip2VisionConfig()
@@ -162,7 +162,7 @@ class Blip2QFormerConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import Blip2QFormerConfig, Blip2QFormerModel
+    >>> from transformers_471 import Blip2QFormerConfig, Blip2QFormerModel
 
     >>> # Initializing a BLIP-2 Salesforce/blip2-opt-2.7b style configuration
     >>> configuration = Blip2QFormerConfig()
@@ -245,7 +245,7 @@ class Blip2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     Blip2VisionConfig,
     ...     Blip2QFormerConfig,
     ...     OPTConfig,

@@ -105,7 +105,7 @@ class TokenClassificationPipeline(ChunkPipeline):
     Example:
 
     ```python
-    >>> from transformers import pipeline
+    >>> from transformers_471 import pipeline
 
     >>> token_classifier = pipeline(model="Jean-Baptiste/camembert-ner", aggregation_strategy="simple")
     >>> sentence = "Je m'appelle jean-baptiste et je vis à montréal"

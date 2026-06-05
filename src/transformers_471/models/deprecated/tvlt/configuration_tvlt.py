@@ -95,7 +95,7 @@ class TvltConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import TvltConfig, TvltModel
+    >>> from transformers_471 import TvltConfig, TvltModel
 
     >>> # # Initializing a TVLT ZinengTang/tvlt-base style configuration
     >>> configuration = TvltConfig()

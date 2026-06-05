@@ -132,7 +132,7 @@ class OmDetTurboConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import OmDetTurboConfig, OmDetTurboForObjectDetection
+    >>> from transformers_471 import OmDetTurboConfig, OmDetTurboForObjectDetection
 
     >>> # Initializing a OmDet-Turbo omlab/omdet-turbo-swin-tiny-hf style configuration
     >>> configuration = OmDetTurboConfig()

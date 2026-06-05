@@ -17,8 +17,8 @@ import json
 import os
 import unittest
 
-from transformers.models.biogpt.tokenization_biogpt import VOCAB_FILES_NAMES, BioGptTokenizer
-from transformers.testing_utils import require_sacremoses, slow
+from transformers_471.models.biogpt.tokenization_biogpt import VOCAB_FILES_NAMES, BioGptTokenizer
+from transformers_471.testing_utils import require_sacremoses, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

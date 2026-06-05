@@ -50,7 +50,7 @@ if is_flash_attn_available():
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
+# Copied from transformers_471.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
 def load_balancing_loss_func(
     gate_logits: Union[torch.Tensor, tuple[torch.Tensor], None],
     num_experts: Optional[int] = None,
@@ -365,7 +365,7 @@ class JetMoeMoA(nn.Module):
         raise NotImplementedError("This module doesn't support call and forward.")
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRMSNorm with Llama->JetMoe
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRMSNorm with Llama->JetMoe
 class JetMoeRMSNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -386,7 +386,7 @@ class JetMoeRMSNorm(nn.Module):
         return f"{tuple(self.weight.shape)}, eps={self.variance_epsilon}"
 
 
-# Copied from transformers.models.gemma.modeling_gemma.GemmaRotaryEmbedding with Gemma->JetMoe
+# Copied from transformers_471.models.gemma.modeling_gemma.GemmaRotaryEmbedding with Gemma->JetMoe
 class JetMoeRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -423,7 +423,7 @@ class JetMoeRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -431,7 +431,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -978,7 +978,7 @@ class JetMoeModel(JetMoePreTrainedModel):
             router_logits=all_router_logits,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1048,7 +1048,7 @@ class JetMoeModel(JetMoePreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,

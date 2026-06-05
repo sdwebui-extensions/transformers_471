@@ -19,16 +19,16 @@ import unittest
 
 import torch
 
-from transformers import GemmaTokenizer
-from transformers.models.colpali.processing_colpali import ColPaliProcessor
-from transformers.testing_utils import get_tests_dir, require_torch, require_vision
-from transformers.utils import is_vision_available
+from transformers_471 import GemmaTokenizer
+from transformers_471.models.colpali.processing_colpali import ColPaliProcessor
+from transformers_471.testing_utils import get_tests_dir, require_torch, require_vision
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import (
+    from transformers_471 import (
         ColPaliProcessor,
         PaliGemmaProcessor,
         SiglipImageProcessor,

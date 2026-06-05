@@ -20,17 +20,17 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 
-from transformers import PreTrainedModel
-from transformers.activations import ACT2CLS
-from transformers.modeling_outputs import (
+from transformers_471 import PreTrainedModel
+from transformers_471.activations import ACT2CLS
+from transformers_471.modeling_outputs import (
     BackboneOutput,
     BaseModelOutputWithNoAttention,
     BaseModelOutputWithPoolingAndNoAttention,
     ImageClassifierOutputWithNoAttention,
 )
-from transformers.models.textnet.configuration_textnet import TextNetConfig
-from transformers.utils import logging
-from transformers.utils.backbone_utils import BackboneMixin
+from transformers_471.models.textnet.configuration_textnet import TextNetConfig
+from transformers_471.utils import logging
+from transformers_471.utils.backbone_utils import BackboneMixin
 
 from ...utils import auto_docstring
 
@@ -309,7 +309,7 @@ class TextNetForImageClassification(TextNetPreTrainedModel):
         ```python
         >>> import torch
         >>> import requests
-        >>> from transformers import TextNetForImageClassification, TextNetImageProcessor
+        >>> from transformers_471 import TextNetForImageClassification, TextNetImageProcessor
         >>> from PIL import Image
 
         >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
@@ -372,7 +372,7 @@ class TextNetBackbone(TextNetPreTrainedModel, BackboneMixin):
         >>> import torch
         >>> import requests
         >>> from PIL import Image
-        >>> from transformers import AutoImageProcessor, AutoBackbone
+        >>> from transformers_471 import AutoImageProcessor, AutoBackbone
 
         >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
         >>> image = Image.open(requests.get(url, stream=True).raw)

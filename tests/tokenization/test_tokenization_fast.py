@@ -19,8 +19,8 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import AutoTokenizer, LlamaTokenizerFast, PreTrainedTokenizerFast
-from transformers.testing_utils import require_tokenizers
+from transformers_471 import AutoTokenizer, LlamaTokenizerFast, PreTrainedTokenizerFast
+from transformers_471.testing_utils import require_tokenizers
 
 from ..test_tokenization_common import TokenizerTesterMixin
 

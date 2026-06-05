@@ -291,7 +291,7 @@ class BltConfig(PretrainedConfig):
                 Dictionary containing the RoPE scaling configuration.
 
     ```python
-    >>> from transformers import BltModel, BltConfig
+    >>> from transformers_471 import BltModel, BltConfig
 
     >>> # Initializing a Blt configuration
     >>> configuration = BltConfig()

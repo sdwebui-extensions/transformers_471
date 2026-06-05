@@ -51,7 +51,7 @@ class DeepseekVLHybridConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import DeepseekVLHybridConfig, DeepseekVLHybridModel
+    >>> from transformers_471 import DeepseekVLHybridConfig, DeepseekVLHybridModel
 
     >>> # Initializing a DeepseekVLHybrid deepseek-community/deepseek-vl-7b-chat style configuration
     >>> configuration = DeepseekVLHybridConfig()

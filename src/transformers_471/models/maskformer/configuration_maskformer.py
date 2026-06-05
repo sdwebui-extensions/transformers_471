@@ -88,7 +88,7 @@ class MaskFormerConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import MaskFormerConfig, MaskFormerModel
+    >>> from transformers_471 import MaskFormerConfig, MaskFormerModel
 
     >>> # Initializing a MaskFormer facebook/maskformer-swin-base-ade configuration
     >>> configuration = MaskFormerConfig()

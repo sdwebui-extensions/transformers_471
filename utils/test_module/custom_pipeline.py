@@ -1,6 +1,6 @@
 import numpy as np
 
-from transformers import Pipeline
+from transformers_471 import Pipeline
 
 
 def softmax(outputs):

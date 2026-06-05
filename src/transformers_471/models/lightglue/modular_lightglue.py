@@ -89,7 +89,7 @@ class LightGlueConfig(PretrainedConfig):
 
     Examples:
         ```python
-        >>> from transformers import LightGlueConfig, LightGlueForKeypointMatching
+        >>> from transformers_471 import LightGlueConfig, LightGlueForKeypointMatching
 
         >>> # Initializing a LightGlue style configuration
         >>> configuration = LightGlueConfig()
@@ -225,7 +225,7 @@ class LightGlueImageProcessor(SuperGlueImageProcessor):
     ) -> list[dict[str, torch.Tensor]]:
         return super().post_process_keypoint_matching(outputs, target_sizes, threshold)
 
-    # Copied from transformers.models.efficientloftr.image_processing_efficientloftr.EfficientLoFTRImageProcessor.visualize_keypoint_matching with EfficientLoFTR->LightGlue
+    # Copied from transformers_471.models.efficientloftr.image_processing_efficientloftr.EfficientLoFTRImageProcessor.visualize_keypoint_matching with EfficientLoFTR->LightGlue
     def visualize_keypoint_matching(
         self,
         images: ImageInput,
@@ -280,7 +280,7 @@ class LightGlueImageProcessor(SuperGlueImageProcessor):
             results.append(plot_image_pil)
         return results
 
-    # Copied from transformers.models.efficientloftr.image_processing_efficientloftr.EfficientLoFTRImageProcessor._get_color
+    # Copied from transformers_471.models.efficientloftr.image_processing_efficientloftr.EfficientLoFTRImageProcessor._get_color
     def _get_color(self, score):
         """Maps a score to a color."""
         r = int(255 * (1 - score))

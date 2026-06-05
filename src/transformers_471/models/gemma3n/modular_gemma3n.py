@@ -193,7 +193,7 @@ class Gemma3nTextConfig(Gemma2Config, PretrainedConfig):
             sparse with a sparsity factor of 0.95 and the rest are dense.
 
     ```python
-    >>> from transformers import Gemma3nTextModel, Gemma3nTextConfig
+    >>> from transformers_471 import Gemma3nTextModel, Gemma3nTextConfig
 
     >>> # Initializing a Gemma3nText gemma3n_text-E4B style configuration
     >>> configuration = Gemma3nTextConfig()
@@ -387,7 +387,7 @@ class Gemma3nAudioConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Gemma3nAudioConfig, Gemma3nAudioEncoder
+    >>> from transformers_471 import Gemma3nAudioConfig, Gemma3nAudioEncoder
 
     >>> # Initializing a Gemma3nAudioEncoder gemma3n_audio-E4B-style configuration
     >>> configuration = Gemma3nAudioConfig()
@@ -485,7 +485,7 @@ class Gemma3nVisionConfig(TimmWrapperConfig):
 
     Example:
     ```python
-    >>> from transformers import Gemma3nVisionConfig, TimmWrapper
+    >>> from transformers_471 import Gemma3nVisionConfig, TimmWrapper
 
     >>> # Initializing a TimmWrapper gemma3n_vision-E4B-style configuration
     >>> configuration = Gemma3nVisionConfig()
@@ -564,7 +564,7 @@ class Gemma3nConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Gemma3nForConditionalGeneration, Gemma3nConfig, Gemma3nTextConfig
+    >>> from transformers_471 import Gemma3nForConditionalGeneration, Gemma3nConfig, Gemma3nTextConfig
 
     >>> # Initializing a MobileNet vision config, which is loaded from TIMM
     >>> vision_config = Gemma3nVisionConfig()
@@ -2342,7 +2342,7 @@ class Gemma3nModel(PaliGemmaModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Gemma3nForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Gemma3nForConditionalGeneration
 
         >>> model = Gemma3nForConditionalGeneration.from_pretrained("google/gemma3n2-3b-mix-224")
         >>> processor = AutoProcessor.from_pretrained("google/gemma3n2-3b-mix-224")
@@ -2527,7 +2527,7 @@ class Gemma3nForConditionalGeneration(PaliGemmaForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Gemma3ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Gemma3ForConditionalGeneration
 
         >>> model = Gemma3ForConditionalGeneration.from_pretrained("google/gemma-3-4b-it")
         >>> processor = AutoProcessor.from_pretrained("google/gemma-3-4b-it")

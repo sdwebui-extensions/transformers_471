@@ -133,7 +133,7 @@ def get_video_processor_config(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -165,7 +165,7 @@ def get_video_processor_config(
     video_processor_config = get_video_processor_config("FacebookAI/xlm-roberta-base")
 
     # Save a pretrained video processor locally and you can reload its config
-    from transformers import AutoVideoProcessor
+    from transformers_471 import AutoVideoProcessor
 
     video_processor = AutoVideoProcessor.from_pretrained("llava-hf/llava-onevision-qwen2-0.5b-ov-hf")
     video_processor.save_pretrained("video-processor-test")
@@ -174,7 +174,7 @@ def get_video_processor_config(
     use_auth_token = kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -248,7 +248,7 @@ class AutoVideoProcessor:
                 they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -282,7 +282,7 @@ class AutoVideoProcessor:
         Examples:
 
         ```python
-        >>> from transformers import AutoVideoProcessor
+        >>> from transformers_471 import AutoVideoProcessor
 
         >>> # Download video processor from huggingface.co and cache.
         >>> video_processor = AutoVideoProcessor.from_pretrained("llava-hf/llava-onevision-qwen2-0.5b-ov-hf")
@@ -293,7 +293,7 @@ class AutoVideoProcessor:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

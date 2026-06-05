@@ -398,7 +398,7 @@ class VitsPosteriorEncoder(nn.Module):
         return sampled, mean, log_stddev
 
 
-# Copied from transformers.models.speecht5.modeling_speecht5.HifiGanResidualBlock
+# Copied from transformers_471.models.speecht5.modeling_speecht5.HifiGanResidualBlock
 class HifiGanResidualBlock(nn.Module):
     def __init__(self, channels, kernel_size=3, dilation=(1, 3, 5), leaky_relu_slope=0.1):
         super().__init__()
@@ -1296,7 +1296,7 @@ class VitsModel(VitsPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import VitsTokenizer, VitsModel, set_seed
+        >>> from transformers_471 import VitsTokenizer, VitsModel, set_seed
         >>> import torch
 
         >>> tokenizer = VitsTokenizer.from_pretrained("facebook/mms-tts-eng")

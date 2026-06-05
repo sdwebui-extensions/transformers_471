@@ -865,7 +865,7 @@ class NatBackbone(NatPreTrainedModel, BackboneMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoBackbone
+        >>> from transformers_471 import AutoImageProcessor, AutoBackbone
         >>> import torch
         >>> from PIL import Image
         >>> import requests

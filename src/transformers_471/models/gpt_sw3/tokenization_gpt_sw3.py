@@ -31,7 +31,7 @@ class GPTSw3Tokenizer(PreTrainedTokenizer):
 
     Example usage:
     ```python
-    >>> from transformers import GPTSw3Tokenizer
+    >>> from transformers_471 import GPTSw3Tokenizer
 
     >>> tokenizer = GPTSw3Tokenizer.from_pretrained("AI-Sweden-Models/gpt-sw3-126m")
     >>> tokenizer("Svenska är kul!")["input_ids"]
@@ -150,13 +150,13 @@ class GPTSw3Tokenizer(PreTrainedTokenizer):
             **kwargs,
         )
 
-    # Copied from transformers.models.albert.tokenization_albert.AlbertTokenizer.__getstate__
+    # Copied from transformers_471.models.albert.tokenization_albert.AlbertTokenizer.__getstate__
     def __getstate__(self):
         state = self.__dict__.copy()
         state["sp_model"] = None
         return state
 
-    # Copied from transformers.models.albert.tokenization_albert.AlbertTokenizer.__setstate__
+    # Copied from transformers_471.models.albert.tokenization_albert.AlbertTokenizer.__setstate__
     def __setstate__(self, d):
         self.__dict__ = d
 
@@ -168,7 +168,7 @@ class GPTSw3Tokenizer(PreTrainedTokenizer):
         self.sp_model.Load(self.vocab_file)
 
     @property
-    # Copied from transformers.models.albert.tokenization_albert.AlbertTokenizer.vocab_size
+    # Copied from transformers_471.models.albert.tokenization_albert.AlbertTokenizer.vocab_size
     def vocab_size(self) -> int:
         return len(self.sp_model)
 
@@ -226,13 +226,13 @@ class GPTSw3Tokenizer(PreTrainedTokenizer):
 
         return out_string
 
-    # Copied from transformers.models.albert.tokenization_albert.AlbertTokenizer.get_vocab
+    # Copied from transformers_471.models.albert.tokenization_albert.AlbertTokenizer.get_vocab
     def get_vocab(self) -> dict[str, int]:
         vocab = {self.convert_ids_to_tokens(i): i for i in range(self.vocab_size)}
         vocab.update(self.added_tokens_encoder)
         return vocab
 
-    # Copied from transformers.models.albert.tokenization_albert.AlbertTokenizer.save_vocabulary
+    # Copied from transformers_471.models.albert.tokenization_albert.AlbertTokenizer.save_vocabulary
     def save_vocabulary(self, save_directory: str, filename_prefix: Optional[str] = None) -> tuple[str]:
         if not os.path.isdir(save_directory):
             logger.error(f"Vocabulary path ({save_directory}) should be a directory")

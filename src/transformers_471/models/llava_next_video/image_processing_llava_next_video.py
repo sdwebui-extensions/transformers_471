@@ -124,7 +124,7 @@ class LlavaNextVideoImageProcessor(BaseImageProcessor):
         self.image_std = image_std if image_std is not None else OPENAI_CLIP_STD
         self.do_convert_rgb = do_convert_rgb
 
-    # Copied from transformers.models.clip.image_processing_clip.CLIPImageProcessor.resize with CLIP->LLaVa
+    # Copied from transformers_471.models.clip.image_processing_clip.CLIPImageProcessor.resize with CLIP->LLaVa
     def resize(
         self,
         image: np.ndarray,

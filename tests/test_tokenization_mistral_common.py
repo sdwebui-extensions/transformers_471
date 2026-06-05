@@ -19,12 +19,12 @@ import unittest
 import numpy as np
 import torch
 
-from transformers.image_utils import load_image
-from transformers.models.auto.tokenization_auto import AutoTokenizer
-from transformers.testing_utils import require_mistral_common
-from transformers.tokenization_mistral_common import MistralCommonTokenizer
-from transformers.tokenization_utils_base import BatchEncoding, TruncationStrategy
-from transformers.utils import PaddingStrategy, is_mistral_common_available
+from transformers_471.image_utils import load_image
+from transformers_471.models.auto.tokenization_auto import AutoTokenizer
+from transformers_471.testing_utils import require_mistral_common
+from transformers_471.tokenization_mistral_common import MistralCommonTokenizer
+from transformers_471.tokenization_utils_base import BatchEncoding, TruncationStrategy
+from transformers_471.utils import PaddingStrategy, is_mistral_common_available
 
 
 if is_mistral_common_available():

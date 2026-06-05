@@ -19,9 +19,9 @@ import unittest
 
 from huggingface_hub import hf_hub_download
 
-from transformers import is_torch_available
-from transformers.testing_utils import is_flaky, require_torch, slow, torch_device
-from transformers.utils import check_torch_load_is_safe
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import is_flaky, require_torch, slow, torch_device
+from transformers_471.utils import check_torch_load_is_safe
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import ModelTesterMixin, floats_tensor, ids_tensor
@@ -33,8 +33,8 @@ TOLERANCE = 1e-4
 if is_torch_available():
     import torch
 
-    from transformers import AutoformerConfig, AutoformerForPrediction, AutoformerModel
-    from transformers.models.autoformer.modeling_autoformer import AutoformerDecoder, AutoformerEncoder
+    from transformers_471 import AutoformerConfig, AutoformerForPrediction, AutoformerModel
+    from transformers_471.models.autoformer.modeling_autoformer import AutoformerDecoder, AutoformerEncoder
 
 
 @require_torch

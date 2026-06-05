@@ -284,7 +284,7 @@ class TFRagPreTrainedModel(TFPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import RagRetriever, TFRagModel
+        >>> from transformers_471 import RagRetriever, TFRagModel
 
         >>> # initialize a RAG from two pretrained models.
         >>> model = TFRagModel.from_pretrained_question_encoder_generator(
@@ -572,7 +572,7 @@ class TFRagModel(TFRagPreTrainedModel):
                         Example:
 
                         ```python
-                        >>> from transformers import AutoTokenizer, RagRetriever, TFRagModel
+                        >>> from transformers_471 import AutoTokenizer, RagRetriever, TFRagModel
                         >>> import torch
         from ...utils.deprecation import deprecate_kwarg
         from ...utils.deprecation import deprecate_kwarg
@@ -898,7 +898,7 @@ class TFRagTokenForGeneration(TFRagPreTrainedModel, TFCausalLanguageModelingLoss
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, RagRetriever, TFRagTokenForGeneration
+        >>> from transformers_471 import AutoTokenizer, RagRetriever, TFRagTokenForGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/rag-token-nq")
         >>> retriever = RagRetriever.from_pretrained(
@@ -1411,7 +1411,7 @@ class TFRagSequenceForGeneration(TFRagPreTrainedModel, TFCausalLanguageModelingL
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RagRetriever, TFRagSequenceForGeneration
+        >>> from transformers_471 import AutoTokenizer, RagRetriever, TFRagSequenceForGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/rag-sequence-nq")
         >>> retriever = RagRetriever.from_pretrained(

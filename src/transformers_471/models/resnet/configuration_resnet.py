@@ -70,7 +70,7 @@ class ResNetConfig(BackboneConfigMixin, PretrainedConfig):
 
     Example:
     ```python
-    >>> from transformers import ResNetConfig, ResNetModel
+    >>> from transformers_471 import ResNetConfig, ResNetModel
 
     >>> # Initializing a ResNet resnet-50 style configuration
     >>> configuration = ResNetConfig()

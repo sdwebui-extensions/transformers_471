@@ -1347,7 +1347,7 @@ class TFFunnelForPreTraining(TFFunnelPreTrainedModel):
                         Examples:
 
                         ```python
-                        >>> from transformers import AutoTokenizer, TFFunnelForPreTraining
+                        >>> from transformers_471 import AutoTokenizer, TFFunnelForPreTraining
                         >>> import torch
         from ...utils.deprecation import deprecate_kwarg
         from ...utils.deprecation import deprecate_kwarg

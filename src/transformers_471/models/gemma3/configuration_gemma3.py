@@ -139,7 +139,7 @@ class Gemma3TextConfig(PretrainedConfig):
             text tokens instead of using a causal mask. This does not change behavior for vision tokens.
 
     ```python
-    >>> from transformers import Gemma3TextModel, Gemma3TextConfig
+    >>> from transformers_471 import Gemma3TextModel, Gemma3TextConfig
     >>> # Initializing a Gemma3Text gemma3_text-7b style configuration
     >>> configuration = Gemma3TextConfig()
     >>> # Initializing a model from the gemma3_text-7b style configuration
@@ -274,7 +274,7 @@ class Gemma3Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Gemma3ForConditionalGeneration, Gemma3Config, SiglipVisionConfig, Gemma3TextConfig
+    >>> from transformers_471 import Gemma3ForConditionalGeneration, Gemma3Config, SiglipVisionConfig, Gemma3TextConfig
 
     >>> # Initializing a Siglip-like vision config
     >>> vision_config = SiglipVisionConfig()

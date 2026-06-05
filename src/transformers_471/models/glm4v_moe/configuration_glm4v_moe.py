@@ -66,7 +66,7 @@ class Glm4vMoeVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Glm4vMoeVisionConfig, Glm4vMoeVisionModel
+    >>> from transformers_471 import Glm4vMoeVisionConfig, Glm4vMoeVisionModel
 
     >>> # Initializing a Glm4vMoeVisionConfig GLM-4.1V-9B style configuration
     >>> configuration = Glm4vMoeVisionConfig()
@@ -208,7 +208,7 @@ class Glm4vMoeTextConfig(PretrainedConfig):
             Whether to normalize the topk probabilities.
 
     ```python
-    >>> from transformers import Glm4vMoeTextModel, Glm4vMoeConfig
+    >>> from transformers_471 import Glm4vMoeTextModel, Glm4vMoeConfig
 
     >>> # Initializing a GLM-4.5V style configuration
     >>> configuration = Glm4vMoeConfig()
@@ -334,7 +334,7 @@ class Glm4vMoeConfig(PretrainedConfig):
             The video end token index to encode the end of video.
 
     ```python
-    >>> from transformers import Glm4vMoeForConditionalGeneration, Glm4vMoeConfig
+    >>> from transformers_471 import Glm4vMoeForConditionalGeneration, Glm4vMoeConfig
 
     >>> # Initializing a GLM-4.5V style configuration
     >>> configuration = Glm4vMoeConfig()

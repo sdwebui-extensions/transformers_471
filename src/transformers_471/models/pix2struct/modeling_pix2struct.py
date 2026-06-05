@@ -57,7 +57,7 @@ logger = logging.get_logger(__name__)
 # General docstring
 
 
-# Adapted from transformers.models.t5.modeling_t5.T5LayerNorm with T5->Pix2Struct
+# Adapted from transformers_471.models.t5.modeling_t5.T5LayerNorm with T5->Pix2Struct
 class Pix2StructLayerNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -230,7 +230,7 @@ class Pix2StructVisionAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5DenseGatedActDense with T5DenseGatedActDense->Pix2StructVisionMlp,T5Config->Pix2StructVisionConfig,config.d_model->config.hidden_size,dropout_rate->dropout_rate
+# Copied from transformers_471.models.t5.modeling_t5.T5DenseGatedActDense with T5DenseGatedActDense->Pix2StructVisionMlp,T5Config->Pix2StructVisionConfig,config.d_model->config.hidden_size,dropout_rate->dropout_rate
 class Pix2StructVisionMlp(nn.Module):
     def __init__(self, config: Pix2StructVisionConfig):
         super().__init__()
@@ -443,7 +443,7 @@ class Pix2StructPreTrainedModel(PreTrainedModel):
             if module.padding_idx is not None:
                 module.weight.data[module.padding_idx].zero_()
 
-    # Copied from transformers.models.t5.modeling_t5.T5PreTrainedModel._shift_right with T5->Pix2Struct
+    # Copied from transformers_471.models.t5.modeling_t5.T5PreTrainedModel._shift_right with T5->Pix2Struct
     def _shift_right(self, input_ids):
         decoder_start_token_id = self.config.decoder_start_token_id
         pad_token_id = self.config.pad_token_id
@@ -523,7 +523,7 @@ class Pix2StructVisionModel(Pix2StructPreTrainedModel):
         ```python
         >>> import requests
         >>> from PIL import Image
-        >>> from transformers import AutoProcessor, Pix2StructVisionModel
+        >>> from transformers_471 import AutoProcessor, Pix2StructVisionModel
 
         >>> image_processor = AutoProcessor.from_pretrained("google/pix2struct-textcaps-base")
         >>> model = Pix2StructVisionModel.from_pretrained("google/pix2struct-textcaps-base")
@@ -584,7 +584,7 @@ class Pix2StructVisionModel(Pix2StructPreTrainedModel):
         )
 
 
-# Copied from transformers.models.t5.modeling_t5.T5DenseGatedActDense with T5->Pix2StructText,d_model->hidden_size
+# Copied from transformers_471.models.t5.modeling_t5.T5DenseGatedActDense with T5->Pix2StructText,d_model->hidden_size
 class Pix2StructTextDenseGatedActDense(nn.Module):
     def __init__(self, config: Pix2StructTextConfig):
         super().__init__()
@@ -622,7 +622,7 @@ class Pix2StructTextLayerFF(nn.Module):
         self.layer_norm = Pix2StructLayerNorm(config.hidden_size, eps=config.layer_norm_epsilon)
         self.dropout = nn.Dropout(config.dropout_rate)
 
-    # Copied from transformers.models.t5.modeling_t5.T5LayerFF.forward
+    # Copied from transformers_471.models.t5.modeling_t5.T5LayerFF.forward
     def forward(self, hidden_states):
         forwarded_states = self.layer_norm(hidden_states)
         forwarded_states = self.DenseReluDense(forwarded_states)
@@ -663,7 +663,7 @@ class Pix2StructTextAttention(nn.Module):
         self.gradient_checkpointing = False
 
     @staticmethod
-    # Copied from transformers.models.t5.modeling_t5.T5Attention._relative_position_bucket
+    # Copied from transformers_471.models.t5.modeling_t5.T5Attention._relative_position_bucket
     def _relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
         """
         Adapted from Mesh Tensorflow:
@@ -711,7 +711,7 @@ class Pix2StructTextAttention(nn.Module):
         relative_buckets += torch.where(is_small, relative_position, relative_position_if_large)
         return relative_buckets
 
-    # Adapted from transformers.models.t5.modeling_t5.T5Attention.compute_bias
+    # Adapted from transformers_471.models.t5.modeling_t5.T5Attention.compute_bias
     def compute_bias(self, query_length, key_length, device=None, cache_position=None):
         """Compute binned relative position bias"""
         if device is None:
@@ -732,7 +732,7 @@ class Pix2StructTextAttention(nn.Module):
         values = values.permute([2, 0, 1]).unsqueeze(0)  # shape (1, num_heads, query_length, key_length)
         return values
 
-    # Adapted from transformers.models.t5.modeling_t5.T5Attention.forward
+    # Adapted from transformers_471.models.t5.modeling_t5.T5Attention.forward
     @deprecate_kwarg("past_key_value", new_name="past_key_values", version="4.58")
     def forward(
         self,
@@ -845,7 +845,7 @@ class Pix2StructTextAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerSelfAttention with T5LayerNorm->Pix2StructLayerNorm,T5Attention->Pix2StructTextAttention,T5LayerSelfAttention->Pix2StructTextLayerSelfAttention,self.SelfAttention->self.attention,config.d_model->config.hidden_size
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerSelfAttention with T5LayerNorm->Pix2StructLayerNorm,T5Attention->Pix2StructTextAttention,T5LayerSelfAttention->Pix2StructTextLayerSelfAttention,self.SelfAttention->self.attention,config.d_model->config.hidden_size
 class Pix2StructTextLayerSelfAttention(nn.Module):
     def __init__(self, config, has_relative_attention_bias=False, layer_idx: Optional[int] = None):
         super().__init__()
@@ -883,7 +883,7 @@ class Pix2StructTextLayerSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerCrossAttention with T5LayerNorm->Pix2StructLayerNorm,T5Attention->Pix2StructTextAttention,T5LayerCrossAttention->Pix2StructTextLayerCrossAttention,self.EncDecAttention->self.attention,config.d_model->config.hidden_size
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerCrossAttention with T5LayerNorm->Pix2StructLayerNorm,T5Attention->Pix2StructTextAttention,T5LayerCrossAttention->Pix2StructTextLayerCrossAttention,self.EncDecAttention->self.attention,config.d_model->config.hidden_size
 class Pix2StructTextLayerCrossAttention(nn.Module):
     def __init__(self, config, layer_idx: Optional[int] = None):
         super().__init__()
@@ -1085,7 +1085,7 @@ class Pix2StructTextModel(Pix2StructPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoProcessor, Pix2StructTextModel
+        >>> from transformers_471 import AutoProcessor, Pix2StructTextModel
 
         >>> processor = AutoProcessor.from_pretrained("google/pix2struct-textcaps-base")
         >>> model = Pix2StructTextModel.from_pretrained("google/pix2struct-textcaps-base")
@@ -1261,7 +1261,7 @@ class Pix2StructTextModel(Pix2StructPreTrainedModel):
             cross_attentions=all_cross_attentions,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1331,7 +1331,7 @@ class Pix2StructTextModel(Pix2StructPreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1488,7 +1488,7 @@ class Pix2StructForConditionalGeneration(Pix2StructPreTrainedModel, GenerationMi
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Pix2StructForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Pix2StructForConditionalGeneration
 
         >>> processor = AutoProcessor.from_pretrained("google/pix2struct-textcaps-base")
         >>> model = Pix2StructForConditionalGeneration.from_pretrained("google/pix2struct-textcaps-base")
@@ -1519,7 +1519,7 @@ class Pix2StructForConditionalGeneration(Pix2StructPreTrainedModel, GenerationMi
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Pix2StructForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Pix2StructForConditionalGeneration
 
         >>> processor = AutoProcessor.from_pretrained("google/pix2struct-base")
         >>> model = Pix2StructForConditionalGeneration.from_pretrained("google/pix2struct-base")

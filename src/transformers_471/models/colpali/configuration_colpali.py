@@ -50,7 +50,7 @@ class ColPaliConfig(PretrainedConfig):
     Example:
 
     ```python
-    from transformers.models.colpali import ColPaliConfig, ColPaliForRetrieval
+    from transformers_471.models.colpali import ColPaliConfig, ColPaliForRetrieval
 
     config = ColPaliConfig()
     model = ColPaliForRetrieval(config)

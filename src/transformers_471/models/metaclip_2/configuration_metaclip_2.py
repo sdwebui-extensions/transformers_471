@@ -61,7 +61,7 @@ class MetaClip2TextConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MetaClip2TextConfig, MetaClip2TextModel
+    >>> from transformers_471 import MetaClip2TextConfig, MetaClip2TextModel
 
     >>> # Initializing a MetaClip2TextConfig with facebook/metaclip-2-worldwide-huge-quickgelu style configuration
     >>> configuration = MetaClip2TextConfig()
@@ -156,7 +156,7 @@ class MetaClip2VisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MetaClip2VisionConfig, MetaClip2VisionModel
+    >>> from transformers_471 import MetaClip2VisionConfig, MetaClip2VisionModel
 
     >>> # Initializing a MetaClip2VisionConfig with facebook/metaclip-2-worldwide-huge-quickgelu style configuration
     >>> configuration = MetaClip2VisionConfig()
@@ -230,7 +230,7 @@ class MetaClip2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MetaClip2Config, MetaClip2Model
+    >>> from transformers_471 import MetaClip2Config, MetaClip2Model
 
     >>> # Initializing a MetaClip2Config with facebook/metaclip-2-worldwide-huge-quickgelu style configuration
     >>> configuration = MetaClip2Config()
@@ -242,7 +242,7 @@ class MetaClip2Config(PretrainedConfig):
     >>> configuration = model.config
 
     >>> # We can also initialize a MetaClip2Config from a MetaClip2TextConfig and a MetaClip2VisionConfig
-    >>> from transformers import MetaClip2TextConfig, MetaClip2VisionConfig
+    >>> from transformers_471 import MetaClip2TextConfig, MetaClip2VisionConfig
 
     >>> # Initializing a MetaClip2Text and MetaClip2Vision configuration
     >>> config_text = MetaClip2TextConfig()

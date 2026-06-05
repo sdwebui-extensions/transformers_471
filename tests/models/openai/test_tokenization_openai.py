@@ -17,9 +17,9 @@ import json
 import os
 import unittest
 
-from transformers import OpenAIGPTTokenizer, OpenAIGPTTokenizerFast
-from transformers.models.openai.tokenization_openai import VOCAB_FILES_NAMES
-from transformers.testing_utils import require_ftfy, require_spacy, require_tokenizers
+from transformers_471 import OpenAIGPTTokenizer, OpenAIGPTTokenizerFast
+from transformers_471.models.openai.tokenization_openai import VOCAB_FILES_NAMES
+from transformers_471.testing_utils import require_ftfy, require_spacy, require_tokenizers
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

@@ -317,7 +317,7 @@ class UperNetForSemanticSegmentation(UperNetPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, UperNetForSemanticSegmentation
+        >>> from transformers_471 import AutoImageProcessor, UperNetForSemanticSegmentation
         >>> from PIL import Image
         >>> from huggingface_hub import hf_hub_download
 

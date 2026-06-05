@@ -3,7 +3,7 @@ from typing import Optional, Union
 import torch
 import torch.nn as nn
 
-from transformers.models.ijepa.configuration_ijepa import IJepaConfig
+from transformers_471.models.ijepa.configuration_ijepa import IJepaConfig
 
 from ...modeling_outputs import BaseModelOutputWithPooling, ImageClassifierOutput
 from ...processing_utils import Unpack

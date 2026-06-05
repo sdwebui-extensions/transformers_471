@@ -81,7 +81,7 @@ class ImageGPTConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import ImageGPTConfig, ImageGPTModel
+    >>> from transformers_471 import ImageGPTConfig, ImageGPTModel
 
     >>> # Initializing a ImageGPT configuration
     >>> configuration = ImageGPTConfig()

@@ -609,7 +609,7 @@ class FlexOlmoForCausalLM(FlexOlmoPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, FlexOlmoForCausalLM
+        >>> from transformers_471 import AutoTokenizer, FlexOlmoForCausalLM
 
         >>> model = FlexOlmoForCausalLM.from_pretrained("allenai/FlexOlmo-1B-7B-0924")
         >>> tokenizer = AutoTokenizer.from_pretrained("allenai/FlexOlmo-1B-7B-0924")

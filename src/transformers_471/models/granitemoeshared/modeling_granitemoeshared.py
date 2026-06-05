@@ -345,7 +345,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# copied from transformers.models.granite.modeling_granite.GraniteAttention with Granite->GraniteMoeShared
+# copied from transformers_471.models.granite.modeling_granite.GraniteAttention with Granite->GraniteMoeShared
 # no longer copied after attention refactors
 class GraniteMoeSharedAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
@@ -972,7 +972,7 @@ class GraniteMoeSharedForCausalLM(GraniteMoeSharedPreTrainedModel, GenerationMix
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GraniteMoeSharedForCausalLM
+        >>> from transformers_471 import AutoTokenizer, GraniteMoeSharedForCausalLM
 
         >>> model = GraniteMoeSharedForCausalLM.from_pretrained("ibm/PowerMoE-3b")
         >>> tokenizer = AutoTokenizer.from_pretrained("ibm/PowerMoE-3b")

@@ -94,7 +94,7 @@ class RealmConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import RealmConfig, RealmEmbedder
+    >>> from transformers_471 import RealmConfig, RealmEmbedder
 
     >>> # Initializing a REALM realm-cc-news-pretrained-* style configuration
     >>> configuration = RealmConfig()

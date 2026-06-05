@@ -90,7 +90,7 @@ class MinistralConfig(MistralConfig, PretrainedConfig):
             Attention pattern for each layer.
 
     ```python
-    >>> from transformers import MinistralModel, MinistralConfig
+    >>> from transformers_471 import MinistralModel, MinistralConfig
 
     >>> # Initializing a Ministral 8B style configuration
     >>> configuration = MinistralConfig()

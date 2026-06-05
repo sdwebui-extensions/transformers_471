@@ -17,8 +17,8 @@ import unittest
 from unittest.mock import patch
 
 import transformers.commands.transformers_cli as cli
-from transformers.commands.chat import ChatArguments, ChatCommand
-from transformers.testing_utils import CaptureStd
+from transformers_471.commands.chat import ChatArguments, ChatCommand
+from transformers_471.testing_utils import CaptureStd
 
 
 class ChatCLITest(unittest.TestCase):

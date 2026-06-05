@@ -1172,7 +1172,7 @@ class UniSpeechForPreTraining(UniSpeechPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, UniSpeechForPreTraining
+        >>> from transformers_471 import AutoFeatureExtractor, UniSpeechForPreTraining
 
         >>> feature_extractor = AutoFeatureExtractor.from_pretrained("microsoft/unispeech-large-1500h-cv")
         >>> model = UniSpeechForPreTraining.from_pretrained("microsoft/unispeech-large-1500h-cv")

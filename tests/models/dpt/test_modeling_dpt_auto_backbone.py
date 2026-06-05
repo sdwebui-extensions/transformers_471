@@ -15,10 +15,10 @@
 
 import unittest
 
-from transformers import Dinov2Config, DPTConfig
-from transformers.file_utils import is_torch_available, is_vision_available
-from transformers.testing_utils import Expectations, require_torch, require_vision, slow, torch_device
-from transformers.utils.import_utils import get_torch_major_and_minor_version
+from transformers_471 import Dinov2Config, DPTConfig
+from transformers_471.file_utils import is_torch_available, is_vision_available
+from transformers_471.testing_utils import Expectations, require_torch, require_vision, slow, torch_device
+from transformers_471.utils.import_utils import get_torch_major_and_minor_version
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import ModelTesterMixin, floats_tensor, ids_tensor
@@ -28,14 +28,14 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import DPTForDepthEstimation
-    from transformers.models.auto.modeling_auto import MODEL_MAPPING_NAMES
+    from transformers_471 import DPTForDepthEstimation
+    from transformers_471.models.auto.modeling_auto import MODEL_MAPPING_NAMES
 
 
 if is_vision_available():
     from PIL import Image
 
-    from transformers import DPTImageProcessor
+    from transformers_471 import DPTImageProcessor
 
 
 class DPTModelTester:

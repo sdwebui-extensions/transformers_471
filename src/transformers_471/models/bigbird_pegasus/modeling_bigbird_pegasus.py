@@ -94,7 +94,7 @@ class BigBirdPegasusLearnedPositionalEmbedding(nn.Embedding):
         return super().forward(position_ids)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->BigBirdPegasus
+# Copied from transformers_471.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->BigBirdPegasus
 class BigBirdPegasusScaledWordEmbedding(nn.Embedding):
     """
     This module overrides nn.Embeddings' forward by multiplying with embeddings scale.
@@ -108,7 +108,7 @@ class BigBirdPegasusScaledWordEmbedding(nn.Embedding):
         return super().forward(input_ids) * self.embed_scale
 
 
-# Copied from transformers.models.big_bird.modeling_big_bird.BigBirdSelfAttention with BigBird->BigBirdPegasus
+# Copied from transformers_471.models.big_bird.modeling_big_bird.BigBirdSelfAttention with BigBird->BigBirdPegasus
 class BigBirdPegasusSelfAttention(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -204,7 +204,7 @@ class BigBirdPegasusSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.big_bird.modeling_big_bird.BigBirdBlockSparseAttention with BigBird->BigBirdPegasus
+# Copied from transformers_471.models.big_bird.modeling_big_bird.BigBirdBlockSparseAttention with BigBird->BigBirdPegasus
 class BigBirdPegasusBlockSparseAttention(nn.Module):
     def __init__(self, config, seed=None):
         super().__init__()
@@ -1174,7 +1174,7 @@ class BigBirdPegasusEncoderAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -1205,7 +1205,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartAttention with BartConfig->BigBirdPegasusConfig, Bart->BigBirdPegasusDecoder
+# Copied from transformers_471.models.bart.modeling_bart.BartAttention with BartConfig->BigBirdPegasusConfig, Bart->BigBirdPegasusDecoder
 class BigBirdPegasusDecoderAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -1453,7 +1453,7 @@ class BigBirdPegasusDecoderLayer(GradientCheckpointingLayer):
         self.fc2 = nn.Linear(config.decoder_ffn_dim, self.embed_dim)
         self.final_layer_norm = nn.LayerNorm(self.embed_dim)
 
-    # Copied from transformers.models.mbart.modeling_mbart.MBartDecoderLayer.forward
+    # Copied from transformers_471.models.mbart.modeling_mbart.MBartDecoderLayer.forward
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -1537,7 +1537,7 @@ class BigBirdPegasusDecoderLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Copied from transformers.models.bart.modeling_bart.BartClassificationHead with Bart->BigBirdPegasus
+# Copied from transformers_471.models.bart.modeling_bart.BartClassificationHead with Bart->BigBirdPegasus
 class BigBirdPegasusClassificationHead(nn.Module):
     """Head for sentence-level classification tasks."""
 
@@ -1597,7 +1597,7 @@ class BigBirdPegasusPreTrainedModel(PreTrainedModel):
         }
         return dummy_inputs
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Optional[Union[torch.Tensor, "BlockMask"]],
@@ -1675,7 +1675,7 @@ class BigBirdPegasusPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1730,7 +1730,7 @@ class BigBirdPegasusPreTrainedModel(PreTrainedModel):
 
         return causal_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1990,7 +1990,7 @@ class BigBirdPegasusEncoder(BigBirdPegasusPreTrainedModel):
         for layer in self.layers:
             layer.set_attention_type(value)
 
-    @staticmethod  # Copied from transformers.models.big_bird.modeling_big_bird.BigBirdModel.create_masks_for_block_sparse_attn
+    @staticmethod  # Copied from transformers_471.models.big_bird.modeling_big_bird.BigBirdModel.create_masks_for_block_sparse_attn
     def create_masks_for_block_sparse_attn(attention_mask: torch.Tensor, block_size: int):
         batch_size, seq_length = attention_mask.size()
         if seq_length % block_size != 0:
@@ -2465,7 +2465,7 @@ class BigBirdPegasusModel(BigBirdPegasusPreTrainedModel):
     The BigBirdPegasus Model with a language modeling head. Can be used for summarization.
     """
 )
-# Copied from transformers.models.bart.modeling_bart.BartForConditionalGeneration with Bart->BigBirdPegasus, BART->BIGBIRD_PEGASUS
+# Copied from transformers_471.models.bart.modeling_bart.BartForConditionalGeneration with Bart->BigBirdPegasus, BART->BIGBIRD_PEGASUS
 class BigBirdPegasusForConditionalGeneration(BigBirdPegasusPreTrainedModel, GenerationMixin):
     base_model_prefix = "model"
     _tied_weights_keys = ["encoder.embed_tokens.weight", "decoder.embed_tokens.weight", "lm_head.weight"]
@@ -2553,7 +2553,7 @@ class BigBirdPegasusForConditionalGeneration(BigBirdPegasusPreTrainedModel, Gene
         Example summarization:
 
         ```python
-        >>> from transformers import AutoTokenizer, BigBirdPegasusForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, BigBirdPegasusForConditionalGeneration
 
         >>> model = BigBirdPegasusForConditionalGeneration.from_pretrained("google/bigbird-pegasus-large-arxiv")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/bigbird-pegasus-large-arxiv")
@@ -2893,7 +2893,7 @@ class BigBirdPegasusForQuestionAnswering(BigBirdPegasusPreTrainedModel):
         )
 
 
-# Copied from transformers.models.pegasus.modeling_pegasus.PegasusDecoderWrapper with Pegasus->BigBirdPegasus
+# Copied from transformers_471.models.pegasus.modeling_pegasus.PegasusDecoderWrapper with Pegasus->BigBirdPegasus
 class BigBirdPegasusDecoderWrapper(BigBirdPegasusPreTrainedModel):
     """
     This wrapper class is a helper class to correctly load pretrained checkpoints when the causal language model is
@@ -2966,7 +2966,7 @@ class BigBirdPegasusForCausalLM(BigBirdPegasusPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BigBirdPegasusForCausalLM
+        >>> from transformers_471 import AutoTokenizer, BigBirdPegasusForCausalLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/bigbird-pegasus-large-arxiv")
         >>> model = BigBirdPegasusForCausalLM.from_pretrained(

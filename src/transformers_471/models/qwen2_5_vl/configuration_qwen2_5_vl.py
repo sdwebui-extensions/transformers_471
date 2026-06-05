@@ -161,7 +161,7 @@ class Qwen2_5_VLTextConfig(PretrainedConfig):
                     Only used with 'llama3'. Scaling factor applied to high frequency components of the RoPE
 
     ```python
-    >>> from transformers import Qwen2_5_VLTextModel, Qwen2_5_VLConfig
+    >>> from transformers_471 import Qwen2_5_VLTextModel, Qwen2_5_VLConfig
 
     >>> # Initializing a Qwen2_5_VL style configuration
     >>> configuration = Qwen2_5_VLConfig()
@@ -287,7 +287,7 @@ class Qwen2_5_VLConfig(PretrainedConfig):
             The token index to denote end of vision input.
 
     ```python
-    >>> from transformers import Qwen2_5_VLForConditionalGeneration, Qwen2_5_VLConfig
+    >>> from transformers_471 import Qwen2_5_VLForConditionalGeneration, Qwen2_5_VLConfig
 
     >>> # Initializing a Qwen2_5_VL style configuration
     >>> configuration = Qwen2_5_VLConfig()

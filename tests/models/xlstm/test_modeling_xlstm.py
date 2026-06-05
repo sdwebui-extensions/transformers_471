@@ -17,8 +17,8 @@ import unittest
 
 from parameterized import parameterized
 
-from transformers import AutoTokenizer, is_torch_available, xLSTMConfig
-from transformers.testing_utils import require_read_token, require_torch, require_torch_gpu, slow, torch_device
+from transformers_471 import AutoTokenizer, is_torch_available, xLSTMConfig
+from transformers_471.testing_utils import require_read_token, require_torch, require_torch_gpu, slow, torch_device
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -29,11 +29,11 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         xLSTMForCausalLM,
         xLSTMModel,
     )
-    from transformers.models.xlstm.modeling_xlstm import xLSTMBlock, xLSTMCache
+    from transformers_471.models.xlstm.modeling_xlstm import xLSTMBlock, xLSTMCache
 
 
 class xLSTMModelTester:

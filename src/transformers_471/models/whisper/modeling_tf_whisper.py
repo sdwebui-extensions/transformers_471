@@ -66,7 +66,7 @@ def sinusoidal_embedding_init(shape, dtype=tf.float32) -> tf.Tensor:
     return tf.cast(tf.concat([tf.sin(scaled_time), tf.cos(scaled_time)], axis=1), dtype)
 
 
-# Copied from transformers.models.bart.modeling_tf_bart.shift_tokens_right
+# Copied from transformers_471.models.bart.modeling_tf_bart.shift_tokens_right
 def shift_tokens_right(input_ids: tf.Tensor, pad_token_id: int, decoder_start_token_id: int):
     pad_token_id = tf.cast(pad_token_id, input_ids.dtype)
     decoder_start_token_id = tf.cast(decoder_start_token_id, input_ids.dtype)
@@ -91,7 +91,7 @@ def shift_tokens_right(input_ids: tf.Tensor, pad_token_id: int, decoder_start_to
     return shifted_input_ids
 
 
-# Copied from transformers.models.bart.modeling_tf_bart._make_causal_mask
+# Copied from transformers_471.models.bart.modeling_tf_bart._make_causal_mask
 def _make_causal_mask(input_ids_shape: tf.TensorShape, past_key_values_length: int = 0):
     """
     Make causal mask used for bi-directional self-attention.
@@ -109,7 +109,7 @@ def _make_causal_mask(input_ids_shape: tf.TensorShape, past_key_values_length: i
     return tf.tile(mask[None, None, :, :], (bsz, 1, 1, 1))
 
 
-# Copied from transformers.models.bart.modeling_tf_bart._expand_mask
+# Copied from transformers_471.models.bart.modeling_tf_bart._expand_mask
 def _expand_mask(mask: tf.Tensor, tgt_len: int | None = None):
     """
     Expands attention_mask from `[bsz, seq_len]` to `[bsz, 1, tgt_seq_len, src_seq_len]`.
@@ -184,11 +184,11 @@ class TFWhisperAttention(keras.layers.Layer):
         self.q_proj = keras.layers.Dense(embed_dim, use_bias=bias, name="q_proj")
         self.out_proj = keras.layers.Dense(embed_dim, use_bias=bias, name="out_proj")
 
-    # Copied from transformers.models.bart.modeling_tf_bart.TFBartAttention._shape with BART->whisper
+    # Copied from transformers_471.models.bart.modeling_tf_bart.TFBartAttention._shape with BART->whisper
     def _shape(self, tensor: tf.Tensor, seq_len: int, bsz: int):
         return tf.transpose(tf.reshape(tensor, (bsz, seq_len, self.num_heads, self.head_dim)), (0, 2, 1, 3))
 
-    # Copied from transformers.models.bart.modeling_tf_bart.TFBartAttention.call with BART->whisper
+    # Copied from transformers_471.models.bart.modeling_tf_bart.TFBartAttention.call with BART->whisper
     def call(
         self,
         hidden_states: tf.Tensor,
@@ -325,7 +325,7 @@ class TFWhisperAttention(keras.layers.Layer):
                 self.out_proj.build([None, None, self.embed_dim])
 
 
-# Copied from transformers.models.speech_to_text.modeling_tf_speech_to_text.TFSpeech2TextEncoderLayer with Speech2Text->Whisper
+# Copied from transformers_471.models.speech_to_text.modeling_tf_speech_to_text.TFSpeech2TextEncoderLayer with Speech2Text->Whisper
 class TFWhisperEncoderLayer(keras.layers.Layer):
     def __init__(self, config: WhisperConfig, **kwargs):
         super().__init__(**kwargs)
@@ -402,7 +402,7 @@ class TFWhisperEncoderLayer(keras.layers.Layer):
                 self.final_layer_norm.build([None, None, self.embed_dim])
 
 
-# Copied from transformers.models.speech_to_text.modeling_tf_speech_to_text.TFSpeech2TextDecoderLayer with Speech2Text->Whisper
+# Copied from transformers_471.models.speech_to_text.modeling_tf_speech_to_text.TFSpeech2TextDecoderLayer with Speech2Text->Whisper
 class TFWhisperDecoderLayer(keras.layers.Layer):
     def __init__(self, config: WhisperConfig, **kwargs):
         super().__init__(**kwargs)
@@ -1135,7 +1135,7 @@ class TFWhisperMainLayer(keras.layers.Layer):
 
          ```python
          >>> import tensorflow as tf
-         >>> from transformers import TFWhisperModel, AutoFeatureExtractor
+         >>> from transformers_471 import TFWhisperModel, AutoFeatureExtractor
          >>> from datasets import load_dataset
 
          >>> model = TFWhisperModel.from_pretrained("openai/whisper-base")
@@ -1271,7 +1271,7 @@ class TFWhisperModel(TFWhisperPreTrainedModel):
 
          ```python
          >>> import tensorflow as tf
-         >>> from transformers import TFWhisperModel, AutoFeatureExtractor
+         >>> from transformers_471 import TFWhisperModel, AutoFeatureExtractor
          >>> from datasets import load_dataset
 
          >>> model = TFWhisperModel.from_pretrained("openai/whisper-base")
@@ -1400,7 +1400,7 @@ class TFWhisperForConditionalGeneration(TFWhisperPreTrainedModel, TFCausalLangua
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoProcessor, TFWhisperForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, TFWhisperForConditionalGeneration
         >>> from datasets import load_dataset
 
         >>> processor = AutoProcessor.from_pretrained("openai/whisper-tiny.en")

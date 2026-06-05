@@ -130,7 +130,7 @@ def feature_extractor_class_from_name(class_name: str):
         if class_name in extractors:
             module_name = model_type_to_module_name(module_name)
 
-            module = importlib.import_module(f".{module_name}", "transformers.models")
+            module = importlib.import_module(f".{module_name}", "transformers_471.models")
             try:
                 return getattr(module, class_name)
             except AttributeError:
@@ -180,7 +180,7 @@ def get_feature_extractor_config(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -212,7 +212,7 @@ def get_feature_extractor_config(
     tokenizer_config = get_tokenizer_config("FacebookAI/xlm-roberta-base")
 
     # Save a pretrained tokenizer locally and you can reload its config
-    from transformers import AutoTokenizer
+    from transformers_471 import AutoTokenizer
 
     tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
     tokenizer.save_pretrained("tokenizer-test")
@@ -221,7 +221,7 @@ def get_feature_extractor_config(
     use_auth_token = kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -297,7 +297,7 @@ class AutoFeatureExtractor:
                 if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -331,7 +331,7 @@ class AutoFeatureExtractor:
         Examples:
 
         ```python
-        >>> from transformers import AutoFeatureExtractor
+        >>> from transformers_471 import AutoFeatureExtractor
 
         >>> # Download feature extractor from huggingface.co and cache.
         >>> feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base-960h")
@@ -342,7 +342,7 @@ class AutoFeatureExtractor:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

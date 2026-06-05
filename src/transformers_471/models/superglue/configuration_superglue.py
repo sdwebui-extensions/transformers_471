@@ -54,7 +54,7 @@ class SuperGlueConfig(PretrainedConfig):
 
     Examples:
         ```python
-        >>> from transformers import SuperGlueConfig, SuperGlueModel
+        >>> from transformers_471 import SuperGlueConfig, SuperGlueModel
 
         >>> # Initializing a SuperGlue superglue style configuration
         >>> configuration = SuperGlueConfig()

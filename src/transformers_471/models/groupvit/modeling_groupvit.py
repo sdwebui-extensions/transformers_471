@@ -40,7 +40,7 @@ def contrastive_loss(logits: torch.Tensor) -> torch.Tensor:
     return nn.functional.cross_entropy(logits, torch.arange(len(logits), device=logits.device))
 
 
-# Copied from transformers.models.clip.modeling_clip.clip_loss with clip->groupvit
+# Copied from transformers_471.models.clip.modeling_clip.clip_loss with clip->groupvit
 def groupvit_loss(similarity: torch.Tensor) -> torch.Tensor:
     caption_loss = contrastive_loss(similarity)
     image_loss = contrastive_loss(similarity.t())
@@ -415,7 +415,7 @@ class GroupViTVisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->GroupViT
+# Copied from transformers_471.models.clip.modeling_clip.CLIPTextEmbeddings with CLIP->GroupViT
 class GroupViTTextEmbeddings(nn.Module):
     def __init__(self, config: GroupViTTextConfig):
         super().__init__()
@@ -690,7 +690,7 @@ class GroupViTAttention(nn.Module):
         return attn_output, attn_weights_reshaped
 
 
-# Copied from transformers.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->GroupViT
+# Copied from transformers_471.models.altclip.modeling_altclip.AltCLIPEncoderLayer with AltCLIP->GroupViT
 class GroupViTEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: GroupViTConfig):
         super().__init__()
@@ -1048,7 +1048,7 @@ class GroupViTTextModel(GroupViTPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import CLIPTokenizer, GroupViTTextModel
+        >>> from transformers_471 import CLIPTokenizer, GroupViTTextModel
 
         >>> tokenizer = CLIPTokenizer.from_pretrained("nvidia/groupvit-gcc-yfcc")
         >>> model = GroupViTTextModel.from_pretrained("nvidia/groupvit-gcc-yfcc")
@@ -1149,7 +1149,7 @@ class GroupViTVisionModel(GroupViTPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, GroupViTVisionModel
+        >>> from transformers_471 import AutoProcessor, GroupViTVisionModel
 
         >>> processor = AutoProcessor.from_pretrained("nvidia/groupvit-gcc-yfcc")
         >>> model = GroupViTVisionModel.from_pretrained("nvidia/groupvit-gcc-yfcc")
@@ -1235,7 +1235,7 @@ class GroupViTModel(GroupViTPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import CLIPTokenizer, GroupViTModel
+        >>> from transformers_471 import CLIPTokenizer, GroupViTModel
 
         >>> model = GroupViTModel.from_pretrained("nvidia/groupvit-gcc-yfcc")
         >>> tokenizer = CLIPTokenizer.from_pretrained("nvidia/groupvit-gcc-yfcc")
@@ -1264,8 +1264,8 @@ class GroupViTModel(GroupViTPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, GroupViTModel
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, GroupViTModel
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = GroupViTModel.from_pretrained("nvidia/groupvit-gcc-yfcc")
         >>> processor = AutoProcessor.from_pretrained("nvidia/groupvit-gcc-yfcc")
@@ -1306,7 +1306,7 @@ class GroupViTModel(GroupViTPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, GroupViTModel
+        >>> from transformers_471 import AutoProcessor, GroupViTModel
 
         >>> model = GroupViTModel.from_pretrained("nvidia/groupvit-gcc-yfcc")
         >>> processor = AutoProcessor.from_pretrained("nvidia/groupvit-gcc-yfcc")

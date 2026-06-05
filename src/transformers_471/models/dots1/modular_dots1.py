@@ -88,7 +88,7 @@ class Dots1ForCausalLM(Qwen3ForCausalLM):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, Dots1ForCausalLM
+        >>> from transformers_471 import AutoTokenizer, Dots1ForCausalLM
 
         >>> model = Dots1ForCausalLM.from_pretrained("rednote-hilab/dots1.llm1.inst")
         >>> tokenizer = AutoTokenizer.from_pretrained("rednote-hilab/dots1.llm1.inst")

@@ -31,7 +31,7 @@ from typing import TYPE_CHECKING, Any, Optional, Union
 
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AlbertTokenizer,
     AlbertTokenizerFast,
     BertTokenizer,
@@ -48,7 +48,7 @@ from transformers import (
     is_torch_available,
     logging,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     check_json_file_has_correct_format,
     get_tests_dir,
     require_jinja,
@@ -58,7 +58,7 @@ from transformers.testing_utils import (
     run_test_in_subprocess,
     slow,
 )
-from transformers.tokenization_utils import AddedToken
+from transformers_471.tokenization_utils import AddedToken
 
 
 if is_torch_available():
@@ -67,7 +67,7 @@ if is_torch_available():
 
 
 if TYPE_CHECKING:
-    from transformers import PretrainedConfig, PreTrainedModel, TFPreTrainedModel
+    from transformers_471 import PretrainedConfig, PreTrainedModel, TFPreTrainedModel
 
 
 def use_cache_if_possible(func):
@@ -3053,7 +3053,7 @@ class TokenizerTesterMixin:
     def test_torch_encode_plus_sent_to_model(self):
         import torch
 
-        from transformers import MODEL_MAPPING, TOKENIZER_MAPPING
+        from transformers_471 import MODEL_MAPPING, TOKENIZER_MAPPING
 
         MODEL_TOKENIZER_MAPPING = merge_model_tokenizer_mappings(MODEL_MAPPING, TOKENIZER_MAPPING)
 
@@ -3102,7 +3102,7 @@ class TokenizerTesterMixin:
     @require_torch
     @slow
     def test_np_encode_plus_sent_to_model(self):
-        from transformers import MODEL_MAPPING, TOKENIZER_MAPPING
+        from transformers_471 import MODEL_MAPPING, TOKENIZER_MAPPING
 
         MODEL_TOKENIZER_MAPPING = merge_model_tokenizer_mappings(MODEL_MAPPING, TOKENIZER_MAPPING)
 

@@ -738,7 +738,7 @@ class Ovis2ForConditionalGeneration(Ovis2PreTrainedModel, GenerationMixin):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Ovis2ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Ovis2ForConditionalGeneration
 
         >>> model = Ovis2ForConditionalGeneration.from_pretrained("thisisiron/Ovis2-2B-hf")
         >>> processor = AutoProcessor.from_pretrained("thisisiron/Ovis2-2B-hf")

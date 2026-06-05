@@ -63,7 +63,7 @@ logger = logging.get_logger(__name__)
 _CONFIG_FOR_DOC = Kosmos2_5Config
 
 
-# Copied from transformers.models.kosmos2.modeling_kosmos2._expand_mask
+# Copied from transformers_471.models.kosmos2.modeling_kosmos2._expand_mask
 def _expand_mask(mask: torch.Tensor, dtype: torch.dtype, tgt_len: Optional[int] = None):
     """
     Expands attention_mask from `[bsz, seq_len]` to `[bsz, 1, tgt_seq_len, src_seq_len]`.
@@ -78,7 +78,7 @@ def _expand_mask(mask: torch.Tensor, dtype: torch.dtype, tgt_len: Optional[int] 
     return inverted_mask.masked_fill(inverted_mask.to(torch.bool), torch.finfo(dtype).min)
 
 
-# Copied from transformers.models.roberta.modeling_roberta.create_position_ids_from_input_ids
+# Copied from transformers_471.models.roberta.modeling_roberta.create_position_ids_from_input_ids
 def create_position_ids_from_input_ids(input_ids, padding_idx, past_key_values_length=0):
     """
     Replace non-padding symbols with their position numbers. Position numbers begin at padding_idx+1. Padding symbols
@@ -351,7 +351,7 @@ class Kosmos2_5ForConditionalGenerationModelOutput(ModelOutput):
         return tuple((self[k] if k != "vision_model_output" else getattr(self, k).to_tuple()) for k in self.keys())
 
 
-# Copied from transformers.models.pix2struct.modeling_pix2struct.Pix2StructLayerNorm with Pix2Struct->Kosmos2_5
+# Copied from transformers_471.models.pix2struct.modeling_pix2struct.Pix2StructLayerNorm with Pix2Struct->Kosmos2_5
 class Kosmos2_5LayerNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -410,7 +410,7 @@ class Kosmos2_5VisionEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.t5.modeling_t5.T5DenseGatedActDense with T5DenseGatedActDense->Pix2StructVisionMlp,T5Config->Pix2StructVisionConfig,config.d_model->config.hidden_size,dropout_rate->dropout_rate
+# Copied from transformers_471.models.t5.modeling_t5.T5DenseGatedActDense with T5DenseGatedActDense->Pix2StructVisionMlp,T5Config->Pix2StructVisionConfig,config.d_model->config.hidden_size,dropout_rate->dropout_rate
 class Kosmos2_5VisionMlp(nn.Module):
     def __init__(self, config: Kosmos2_5VisionConfig):
         super().__init__()
@@ -574,7 +574,7 @@ class Kosmos2_5VisionLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Adapted from transformers.models.pix2struct.modeling_pix2struct.Pix2StructVisionEncoder with Pix2Struct->Kosmos2_5
+# Adapted from transformers_471.models.pix2struct.modeling_pix2struct.Pix2StructVisionEncoder with Pix2Struct->Kosmos2_5
 class Kosmos2_5VisionEncoder(nn.Module):
     def __init__(self, config: Kosmos2_5VisionConfig) -> None:
         super().__init__()
@@ -627,11 +627,11 @@ class Kosmos2_5VisionEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.kosmos2.modeling_kosmos2.Kosmos2TextSinusoidalPositionalEmbedding with Kosmos2->Kosmos2_5
+# Copied from transformers_471.models.kosmos2.modeling_kosmos2.Kosmos2TextSinusoidalPositionalEmbedding with Kosmos2->Kosmos2_5
 class Kosmos2_5TextSinusoidalPositionalEmbedding(nn.Module):
     """This module produces sinusoidal positional embeddings of any length."""
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.__init__
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.__init__
     def __init__(self, num_positions: int, embedding_dim: int, padding_idx: Optional[int] = None):
         super().__init__()
         self.offset = 2
@@ -639,7 +639,7 @@ class Kosmos2_5TextSinusoidalPositionalEmbedding(nn.Module):
         self.padding_idx = padding_idx
         self.make_weights(num_positions + self.offset, embedding_dim, padding_idx)
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.make_weights
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.make_weights
     def make_weights(self, num_embeddings: int, embedding_dim: int, padding_idx: Optional[int] = None):
         emb_weights = self.get_embedding(num_embeddings, embedding_dim, padding_idx)
         if hasattr(self, "weights"):
@@ -649,7 +649,7 @@ class Kosmos2_5TextSinusoidalPositionalEmbedding(nn.Module):
         self.register_buffer("weights", emb_weights, persistent=False)
 
     @staticmethod
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.get_embedding
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.get_embedding
     def get_embedding(num_embeddings: int, embedding_dim: int, padding_idx: Optional[int] = None):
         """
         Build sinusoidal embeddings.
@@ -697,7 +697,7 @@ class Kosmos2_5TextSinusoidalPositionalEmbedding(nn.Module):
 
         return self.weights.index_select(0, position_ids.view(-1)).view(bsz, seq_len, self.weights.shape[-1]).detach()
 
-    # Copied from transformers.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.create_position_ids_from_inputs_embeds
+    # Copied from transformers_471.models.m2m_100.modeling_m2m_100.M2M100SinusoidalPositionalEmbedding.create_position_ids_from_inputs_embeds
     def create_position_ids_from_inputs_embeds(self, inputs_embeds, past_key_values_length):
         """
         We are provided embeddings directly. We cannot infer which are padded so just generate sequential position ids.
@@ -716,7 +716,7 @@ class Kosmos2_5TextSinusoidalPositionalEmbedding(nn.Module):
         return position_ids.unsqueeze(0).expand(input_shape).contiguous() + past_key_values_length
 
 
-# Copied from transformers.models.kosmos2.modeling_kosmos2.Kosmos2TextFFN with Kosmos2->Kosmos2_5
+# Copied from transformers_471.models.kosmos2.modeling_kosmos2.Kosmos2TextFFN with Kosmos2->Kosmos2_5
 class Kosmos2_5TextFFN(nn.Module):
     def __init__(self, config: Kosmos2_5TextConfig):
         super().__init__()
@@ -852,7 +852,7 @@ class Kosmos2_5TextBlock(GradientCheckpointingLayer):
         self.ffn = Kosmos2_5TextFFN(config)
         self.final_layer_norm = nn.LayerNorm(self.embed_dim, eps=config.layer_norm_eps)
 
-    # Adapted from transformers.models.kosmos2.modeling_kosmos2.Kosmos2TextBlock.forward
+    # Adapted from transformers_471.models.kosmos2.modeling_kosmos2.Kosmos2TextBlock.forward
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -893,7 +893,7 @@ class Kosmos2_5TextBlock(GradientCheckpointingLayer):
         return outputs
 
 
-# Adapted from transformers.models.kosmos2.modeling_kosmos2.Kosmos2TextTransformer with Kosmos2->Kosmos2_5
+# Adapted from transformers_471.models.kosmos2.modeling_kosmos2.Kosmos2TextTransformer with Kosmos2->Kosmos2_5
 class Kosmos2_5TextTransformer(nn.Module):
     """
     Transformer decoder consisting of `config.layers` layers. Each layer is a [`Kosmos2_5TextBlock`].
@@ -1251,7 +1251,7 @@ class Kosmos2_5PreTrainedModel(PreTrainedModel):
 class Kosmos2_5VisionModel(Kosmos2_5PreTrainedModel):
     config_class = Kosmos2_5VisionConfig
 
-    # Copied from transformers.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel.__init__ with Pix2Struct->Kosmos2_5
+    # Copied from transformers_471.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel.__init__ with Pix2Struct->Kosmos2_5
     def __init__(self, config: Kosmos2_5VisionConfig):
         super().__init__(config)
         self.config = config
@@ -1264,11 +1264,11 @@ class Kosmos2_5VisionModel(Kosmos2_5PreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel.get_input_embeddings
+    # Copied from transformers_471.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel.get_input_embeddings
     def get_input_embeddings(self):
         return self.embeddings.patch_projection
 
-    # Copied from transformers.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel._prune_heads
+    # Copied from transformers_471.models.pix2struct.modeling_pix2struct.Pix2StructVisionModel._prune_heads
     def _prune_heads(self, heads_to_prune: dict[int, list[int]]) -> None:
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base
@@ -1317,7 +1317,7 @@ class Kosmos2_5VisionModel(Kosmos2_5PreTrainedModel):
         )
 
 
-# Adapted from transformers.models.kosmos2.modeling_kosmos2.Kosmos2TextModel with KOSMOS2->KOSMOS2_5
+# Adapted from transformers_471.models.kosmos2.modeling_kosmos2.Kosmos2TextModel with KOSMOS2->KOSMOS2_5
 class Kosmos2_5TextModel(Kosmos2_5PreTrainedModel):
     config_class = Kosmos2_5TextConfig
 
@@ -1424,7 +1424,7 @@ class Kosmos2_5Model(Kosmos2_5PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Kosmos2_5Model
+        >>> from transformers_471 import AutoProcessor, Kosmos2_5Model
 
         >>> model = Kosmos2_5Model.from_pretrained("microsoft/kosmos2.5")
         >>> processor = AutoProcessor.from_pretrained("microsoft/kosmos2.5")
@@ -1724,7 +1724,7 @@ class Kosmos2_5ForConditionalGeneration(Kosmos2_5PreTrainedModel, GenerationMixi
         >>> from PIL import Image
         >>> import requests
         >>> import torch
-        >>> from transformers import AutoProcessor, Kosmos2_5ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Kosmos2_5ForConditionalGeneration
 
         >>> repo = "microsoft/kosmos-2.5"
         >>> device = "cuda:0"

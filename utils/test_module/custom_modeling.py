@@ -1,6 +1,6 @@
 import torch
 
-from transformers import PreTrainedModel
+from transformers_471 import PreTrainedModel
 
 from .custom_configuration import CustomConfig
 

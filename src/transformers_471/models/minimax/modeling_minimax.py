@@ -26,7 +26,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from transformers.utils.generic import check_model_inputs
+from transformers_471.utils.generic import check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache
@@ -849,7 +849,7 @@ class MiniMaxForCausalLM(MiniMaxPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MiniMaxForCausalLM
+        >>> from transformers_471 import AutoTokenizer, MiniMaxForCausalLM
 
         >>> model = MiniMaxForCausalLM.from_pretrained("MiniMaxAI/MiniMax-Text-01-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("MiniMaxAI/MiniMax-Text-01-hf")

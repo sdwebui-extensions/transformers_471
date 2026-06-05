@@ -516,7 +516,7 @@ class VaultGemmaForCausalLM(VaultGemmaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, VaultGemmaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, VaultGemmaForCausalLM
 
         >>> model = VaultGemmaForCausalLM.from_pretrained("google/gemma-2-9b")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/gemma-2-9b")

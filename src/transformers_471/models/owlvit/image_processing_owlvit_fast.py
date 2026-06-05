@@ -48,7 +48,7 @@ class OwlViTImageProcessorFast(BaseImageProcessorFast):
     do_convert_rgb = None
     model_input_names = ["pixel_values"]
 
-    # Copied from transformers.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process
+    # Copied from transformers_471.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process
     def post_process(self, outputs, target_sizes):
         """
         Converts the raw output of [`OwlViTForObjectDetection`] into final bounding boxes in (top_left_x, top_left_y,
@@ -95,7 +95,7 @@ class OwlViTImageProcessorFast(BaseImageProcessorFast):
 
         return results
 
-    # Copied from transformers.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process_object_detection
+    # Copied from transformers_471.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process_object_detection
     def post_process_object_detection(
         self,
         outputs: "OwlViTObjectDetectionOutput",
@@ -149,7 +149,7 @@ class OwlViTImageProcessorFast(BaseImageProcessorFast):
 
         return results
 
-    # Copied from transformers.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process_image_guided_detection
+    # Copied from transformers_471.models.owlvit.image_processing_owlvit.OwlViTImageProcessor.post_process_image_guided_detection
     def post_process_image_guided_detection(self, outputs, threshold=0.0, nms_threshold=0.3, target_sizes=None):
         """
         Converts the output of [`OwlViTForObjectDetection.image_guided_detection`] into the format expected by the COCO

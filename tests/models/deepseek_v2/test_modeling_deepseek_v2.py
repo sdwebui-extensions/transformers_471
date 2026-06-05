@@ -18,8 +18,8 @@ import unittest
 
 import pytest
 
-from transformers import BitsAndBytesConfig, Cache, is_torch_available
-from transformers.testing_utils import require_read_token, require_torch, require_torch_accelerator, slow, torch_device
+from transformers_471 import BitsAndBytesConfig, Cache, is_torch_available
+from transformers_471.testing_utils import require_read_token, require_torch, require_torch_accelerator, slow, torch_device
 
 from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 
@@ -27,8 +27,8 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import AutoTokenizer, DeepseekV2ForCausalLM, DeepseekV2ForSequenceClassification, DeepseekV2Model
-    from transformers.models.deepseek_v2.modeling_deepseek_v2 import DeepseekV2RotaryEmbedding
+    from transformers_471 import AutoTokenizer, DeepseekV2ForCausalLM, DeepseekV2ForSequenceClassification, DeepseekV2Model
+    from transformers_471.models.deepseek_v2.modeling_deepseek_v2 import DeepseekV2RotaryEmbedding
 
 
 class DeepseekV2ModelTester(CausalLMModelTester):

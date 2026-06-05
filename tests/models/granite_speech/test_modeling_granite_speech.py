@@ -19,18 +19,18 @@ import unittest
 
 import pytest
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     GraniteSpeechConfig,
     GraniteSpeechForConditionalGeneration,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_torch,
     slow,
     torch_device,
 )
-from transformers.utils import (
+from transformers_471.utils import (
     is_datasets_available,
     is_peft_available,
     is_torch_available,

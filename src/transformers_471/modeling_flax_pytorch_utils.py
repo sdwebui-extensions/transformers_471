@@ -23,7 +23,7 @@ import numpy as np
 from flax.serialization import from_bytes
 from flax.traverse_util import flatten_dict, unflatten_dict
 
-import transformers
+import transformers_471
 
 from . import is_safetensors_available, is_torch_available
 from .utils import check_torch_load_is_safe, logging
@@ -335,7 +335,7 @@ def load_flax_checkpoint_in_pytorch_model(model, flax_checkpoint_path):
     logger.info(f"Loading Flax weights from {flax_checkpoint_path}")
 
     # import correct flax class
-    flax_cls = getattr(transformers, "Flax" + model.__class__.__name__)
+    flax_cls = getattr(transformers_471, "Flax" + model.__class__.__name__)
 
     # load flax weight dict
     if flax_checkpoint_path.endswith(".safetensors"):

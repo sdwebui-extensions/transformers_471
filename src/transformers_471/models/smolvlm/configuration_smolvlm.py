@@ -66,8 +66,8 @@ class SmolVLMVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers.models.smolvlm.modeling_smolvlm import SmolVLMVisionTransformer
-    >>> from transformers.models.smolvlm.configuration_smolvlm import SmolVLMVisionConfig
+    >>> from transformers_471.models.smolvlm.modeling_smolvlm import SmolVLMVisionTransformer
+    >>> from transformers_471.models.smolvlm.configuration_smolvlm import SmolVLMVisionConfig
 
     >>> # Initializing a SmolVLMVisionConfig with google/siglip-so400m-patch14-384 style configuration
     >>> configuration = SmolVLMVisionConfig()
@@ -141,7 +141,7 @@ class SmolVLMConfig(PretrainedConfig):
 
     Example:
     ```python
-    >>> from transformers import SmolVLMModel, SmolVLMConfig
+    >>> from transformers_471 import SmolVLMModel, SmolVLMConfig
     >>> # Initializing configuration
     >>> configuration = SmolVLMConfig()
     >>> # Initializing a model from the configuration

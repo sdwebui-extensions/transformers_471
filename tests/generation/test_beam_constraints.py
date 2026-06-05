@@ -15,14 +15,14 @@
 
 import unittest
 
-from transformers import is_torch_available
-from transformers.testing_utils import require_torch
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import require_torch
 
 
 if is_torch_available():
     import torch
 
-    from transformers.generation import DisjunctiveConstraint
+    from transformers_471.generation import DisjunctiveConstraint
 
 
 @require_torch

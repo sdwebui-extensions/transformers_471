@@ -26,8 +26,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from transformers.models.qwen2_vl.configuration_qwen2_vl import Qwen2VLConfig, Qwen2VLTextConfig
-from transformers.models.qwen2_vl.modeling_qwen2_vl import (
+from transformers_471.models.qwen2_vl.configuration_qwen2_vl import Qwen2VLConfig, Qwen2VLTextConfig
+from transformers_471.models.qwen2_vl.modeling_qwen2_vl import (
     PatchEmbed,
     PatchMerger,
     Qwen2RMSNorm,
@@ -40,7 +40,7 @@ from transformers.models.qwen2_vl.modeling_qwen2_vl import (
     VisionAttention,
     VisionRotaryEmbedding,
 )
-from transformers.models.qwen2_vl.processing_qwen2_vl import Qwen2VLImagesKwargs, Qwen2VLProcessor
+from transformers_471.models.qwen2_vl.processing_qwen2_vl import Qwen2VLImagesKwargs, Qwen2VLProcessor
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache
@@ -698,7 +698,7 @@ class Qwen2_5_VLForConditionalGeneration(Qwen2VLForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 
         >>> model = Qwen2_5_VLForConditionalGeneration.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
         >>> processor = AutoProcessor.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")

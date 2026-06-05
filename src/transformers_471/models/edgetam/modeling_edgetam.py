@@ -29,7 +29,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
 
-from transformers.utils.generic import OutputRecorder, TransformersKwargs, check_model_inputs
+from transformers_471.utils.generic import OutputRecorder, TransformersKwargs, check_model_inputs
 
 from ...activations import ACT2FN
 from ...modeling_outputs import BaseModelOutput
@@ -48,7 +48,7 @@ from .configuration_edgetam import (
 
 # fix this in modular
 if True:
-    from transformers.models.timm_wrapper.modeling_timm_wrapper import TimmWrapperModel
+    from transformers_471.models.timm_wrapper.modeling_timm_wrapper import TimmWrapperModel
 
 
 class EdgeTamLayerNorm(nn.LayerNorm):
@@ -1102,7 +1102,7 @@ class EdgeTamModel(EdgeTamPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoModel, AutoProcessor
+        >>> from transformers_471 import AutoModel, AutoProcessor
 
         >>> model = AutoModel.from_pretrained("danelcsb/edgetam.1_hiera_tiny")
         >>> processor = AutoProcessor.from_pretrained("danelcsb/edgetam.1_hiera_tiny")

@@ -19,11 +19,11 @@ from typing import Optional, Union
 import torch
 from torch import nn
 
-from transformers import PreTrainedModel
-from transformers.modeling_outputs import (
+from transformers_471 import PreTrainedModel
+from transformers_471.modeling_outputs import (
     BaseModelOutputWithNoAttention,
 )
-from transformers.models.superpoint.configuration_superpoint import SuperPointConfig
+from transformers_471.models.superpoint.configuration_superpoint import SuperPointConfig
 
 from ...utils import (
     ModelOutput,
@@ -394,7 +394,7 @@ class SuperPointForKeypointDetection(SuperPointPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, SuperPointForKeypointDetection
+        >>> from transformers_471 import AutoImageProcessor, SuperPointForKeypointDetection
         >>> import torch
         >>> from PIL import Image
         >>> import requests

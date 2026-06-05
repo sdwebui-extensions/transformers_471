@@ -171,7 +171,7 @@ class RTDetrV2Config(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import RTDetrV2Config, RTDetrV2Model
+    >>> from transformers_471 import RTDetrV2Config, RTDetrV2Model
 
     >>> # Initializing a RT-DETR configuration
     >>> configuration = RTDetrV2Config()

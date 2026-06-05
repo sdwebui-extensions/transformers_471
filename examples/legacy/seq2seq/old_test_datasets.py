@@ -22,9 +22,9 @@ from parameterized import parameterized
 from save_len_file import save_len_file
 from torch.utils.data import DataLoader
 
-from transformers import AutoTokenizer
-from transformers.models.mbart.modeling_mbart import shift_tokens_right
-from transformers.testing_utils import TestCasePlus, slow
+from transformers_471 import AutoTokenizer
+from transformers_471.models.mbart.modeling_mbart import shift_tokens_right
+from transformers_471.testing_utils import TestCasePlus, slow
 from utils import FAIRSEQ_AVAILABLE, DistributedSortishSampler, LegacySeq2SeqDataset, Seq2SeqDataset
 
 

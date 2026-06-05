@@ -89,7 +89,7 @@ class LEDLearnedPositionalEmbedding(nn.Embedding):
         return super().forward(positions)
 
 
-# Copied from transformers.models.longformer.modeling_longformer.LongformerSelfAttention with Longformer->LEDEncoder
+# Copied from transformers_471.models.longformer.modeling_longformer.LongformerSelfAttention with Longformer->LEDEncoder
 class LEDEncoderSelfAttention(nn.Module):
     def __init__(self, config, layer_id):
         super().__init__()
@@ -1142,7 +1142,7 @@ class LEDPreTrainedModel(PreTrainedModel):
     Base class for LEDEncoder's outputs, with potential hidden states, local and global attentions.
     """
 )
-# Copied from transformers.models.longformer.modeling_longformer.LongformerBaseModelOutput with Longformer->LEDEncoder
+# Copied from transformers_471.models.longformer.modeling_longformer.LongformerBaseModelOutput with Longformer->LEDEncoder
 class LEDEncoderBaseModelOutput(ModelOutput):
     r"""
     attentions (`tuple(torch.FloatTensor)`, *optional*, returned when `output_attentions=True` is passed or when `config.output_attentions=True`):
@@ -2110,7 +2110,7 @@ class LEDForConditionalGeneration(LEDPreTrainedModel, GenerationMixin):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, LEDForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, LEDForConditionalGeneration
 
         >>> model = LEDForConditionalGeneration.from_pretrained("allenai/led-large-16384-arxiv")
         >>> tokenizer = AutoTokenizer.from_pretrained("allenai/led-large-16384-arxiv")
@@ -2145,7 +2145,7 @@ class LEDForConditionalGeneration(LEDPreTrainedModel, GenerationMixin):
         Example Conditional generation :
 
         ```python
-        >>> from transformers import AutoTokenizer, LEDForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, LEDForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("allenai/led-base-16384")
         >>> TXT = "My friends are <mask> but they eat too many carbs."

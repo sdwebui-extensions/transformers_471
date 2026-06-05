@@ -20,16 +20,16 @@ import unittest
 
 import pytest
 
-from transformers import CLIPTokenizer, CLIPTokenizerFast
-from transformers.models.clip.tokenization_clip import VOCAB_FILES_NAMES
-from transformers.testing_utils import require_vision
-from transformers.utils import IMAGE_PROCESSOR_NAME, is_vision_available
+from transformers_471 import CLIPTokenizer, CLIPTokenizerFast
+from transformers_471.models.clip.tokenization_clip import VOCAB_FILES_NAMES
+from transformers_471.testing_utils import require_vision
+from transformers_471.utils import IMAGE_PROCESSOR_NAME, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import CLIPSegProcessor, ViTImageProcessor
+    from transformers_471 import CLIPSegProcessor, ViTImageProcessor
 
 
 @require_vision

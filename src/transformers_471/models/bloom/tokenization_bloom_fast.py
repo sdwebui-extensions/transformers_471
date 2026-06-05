@@ -36,7 +36,7 @@ class BloomTokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import BloomTokenizerFast
+    >>> from transformers_471 import BloomTokenizerFast
 
     >>> tokenizer = BloomTokenizerFast.from_pretrained("bigscience/bloom")
     >>> tokenizer("Hello world")["input_ids"]

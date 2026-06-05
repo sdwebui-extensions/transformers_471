@@ -9,7 +9,7 @@ from typing import Callable, Optional
 import torch
 from torch import nn
 
-from transformers.modeling_utils import AttentionInterface
+from transformers_471.modeling_utils import AttentionInterface
 
 from ...cache_utils import Cache
 from ...processing_utils import Unpack

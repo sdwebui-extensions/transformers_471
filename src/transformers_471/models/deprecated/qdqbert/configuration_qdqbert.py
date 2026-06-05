@@ -69,7 +69,7 @@ class QDQBertConfig(PretrainedConfig):
     Examples:
 
     ```python
-    >>> from transformers import QDQBertModel, QDQBertConfig
+    >>> from transformers_471 import QDQBertModel, QDQBertConfig
 
     >>> # Initializing a QDQBERT google-bert/bert-base-uncased style configuration
     >>> configuration = QDQBertConfig()

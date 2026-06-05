@@ -136,7 +136,7 @@ class ApertusConfig(LlamaConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import ApertusModel, ApertusConfig
+    >>> from transformers_471 import ApertusModel, ApertusConfig
 
     >>> # Initializing a Apertus-8B style configuration
     >>> configuration = ApertusConfig()
@@ -342,7 +342,7 @@ class ApertusForCausalLM(LlamaForCausalLM):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ApertusForCausalLM
+        >>> from transformers_471 import AutoTokenizer, ApertusForCausalLM
 
         >>> model = ApertusForCausalLM.from_pretrained("swiss-ai/Apertus-8B")
         >>> tokenizer = AutoTokenizer.from_pretrained("swiss-ai/Apertus-8B")

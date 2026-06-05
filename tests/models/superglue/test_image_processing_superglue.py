@@ -15,8 +15,8 @@ import unittest
 
 from parameterized import parameterized
 
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_image_processing_common import (
     ImageProcessingTestMixin,
@@ -28,10 +28,10 @@ if is_torch_available():
     import numpy as np
     import torch
 
-    from transformers.models.superglue.modeling_superglue import KeypointMatchingOutput
+    from transformers_471.models.superglue.modeling_superglue import KeypointMatchingOutput
 
 if is_vision_available():
-    from transformers import SuperGlueImageProcessor
+    from transformers_471 import SuperGlueImageProcessor
 
 
 def random_array(size):

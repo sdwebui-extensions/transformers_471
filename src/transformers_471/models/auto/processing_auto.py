@@ -226,7 +226,7 @@ class AutoProcessor:
                 if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -260,7 +260,7 @@ class AutoProcessor:
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor
+        >>> from transformers_471 import AutoProcessor
 
         >>> # Download processor from huggingface.co and cache.
         >>> processor = AutoProcessor.from_pretrained("facebook/wav2vec2-base-960h")
@@ -271,7 +271,7 @@ class AutoProcessor:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

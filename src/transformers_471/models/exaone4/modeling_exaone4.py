@@ -25,7 +25,7 @@ from typing import Callable, Optional, Union
 import torch
 from torch import nn
 
-from transformers.utils.generic import check_model_inputs
+from transformers_471.utils.generic import check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache
@@ -464,7 +464,7 @@ class Exaone4ForCausalLM(Exaone4PreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoModelForCausalLM, AutoTokenizer
+        >>> from transformers_471 import AutoModelForCausalLM, AutoTokenizer
         >>> model = AutoModelForCausalLM.from_pretrained("LGAI-EXAONE/EXAONE-4.0-32B")
         >>> tokenizer = AutoTokenizer.from_pretrained("LGAI-EXAONE/EXAONE-4.0-32B")
 

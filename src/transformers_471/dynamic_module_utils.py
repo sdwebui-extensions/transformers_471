@@ -189,7 +189,7 @@ def get_imports(filename: Union[str, os.PathLike]) -> list[str]:
         content = f.read()
     imported_modules = set()
 
-    import transformers.utils
+    import transformers_471.utils
 
     def recursive_look_for_imports(node):
         if isinstance(node, ast.Try):
@@ -202,7 +202,7 @@ def get_imports(filename: Union[str, os.PathLike]) -> list[str]:
                     if (
                         check_function.endswith("available")
                         and check_function.startswith("is_flash_attn")
-                        or hasattr(transformers.utils.import_utils, check_function)
+                        or hasattr(transformers_471.utils.import_utils, check_function)
                     ):
                         # Don't recurse into "if flash_attn_available()" or any "if library_available" blocks
                         # that appears in `transformers.utils.import_utils` and ignore imports in them
@@ -350,7 +350,7 @@ def get_cached_module_file(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -378,7 +378,7 @@ def get_cached_module_file(
     use_auth_token = deprecated_kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -541,7 +541,7 @@ def get_class_from_dynamic_module(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -584,7 +584,7 @@ def get_class_from_dynamic_module(
     use_auth_token = kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:

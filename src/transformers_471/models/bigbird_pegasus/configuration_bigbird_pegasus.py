@@ -97,7 +97,7 @@ class BigBirdPegasusConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import BigBirdPegasusConfig, BigBirdPegasusModel
+    >>> from transformers_471 import BigBirdPegasusConfig, BigBirdPegasusModel
 
     >>> # Initializing a BigBirdPegasus bigbird-pegasus-base style configuration
     >>> configuration = BigBirdPegasusConfig()
@@ -186,7 +186,7 @@ class BigBirdPegasusConfig(PretrainedConfig):
         )
 
 
-# Copied from transformers.models.bart.configuration_bart.BartOnnxConfig
+# Copied from transformers_471.models.bart.configuration_bart.BartOnnxConfig
 class BigBirdPegasusOnnxConfig(OnnxSeq2SeqConfigWithPast):
     @property
     def inputs(self) -> Mapping[str, Mapping[int, str]]:

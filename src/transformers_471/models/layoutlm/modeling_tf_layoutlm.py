@@ -187,7 +187,7 @@ class TFLayoutLMEmbeddings(keras.layers.Layer):
         return final_embeddings
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->LayoutLM
 class TFLayoutLMSelfAttention(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -320,7 +320,7 @@ class TFLayoutLMSelfAttention(keras.layers.Layer):
                 self.value.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->LayoutLM
 class TFLayoutLMSelfOutput(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -351,7 +351,7 @@ class TFLayoutLMSelfOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertAttention with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertAttention with Bert->LayoutLM
 class TFLayoutLMAttention(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -403,7 +403,7 @@ class TFLayoutLMAttention(keras.layers.Layer):
                 self.dense_output.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->LayoutLM
 class TFLayoutLMIntermediate(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -433,7 +433,7 @@ class TFLayoutLMIntermediate(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertOutput with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertOutput with Bert->LayoutLM
 class TFLayoutLMOutput(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -464,7 +464,7 @@ class TFLayoutLMOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertLayer with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLayer with Bert->LayoutLM
 class TFLayoutLMLayer(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -568,7 +568,7 @@ class TFLayoutLMLayer(keras.layers.Layer):
                 self.crossattention.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertEncoder with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertEncoder with Bert->LayoutLM
 class TFLayoutLMEncoder(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -647,7 +647,7 @@ class TFLayoutLMEncoder(keras.layers.Layer):
                     layer.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPooler with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPooler with Bert->LayoutLM
 class TFLayoutLMPooler(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -677,7 +677,7 @@ class TFLayoutLMPooler(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPredictionHeadTransform with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPredictionHeadTransform with Bert->LayoutLM
 class TFLayoutLMPredictionHeadTransform(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, **kwargs):
         super().__init__(**kwargs)
@@ -715,7 +715,7 @@ class TFLayoutLMPredictionHeadTransform(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertLMPredictionHead with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLMPredictionHead with Bert->LayoutLM
 class TFLayoutLMLMPredictionHead(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, input_embeddings: keras.layers.Layer, **kwargs):
         super().__init__(**kwargs)
@@ -764,7 +764,7 @@ class TFLayoutLMLMPredictionHead(keras.layers.Layer):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertMLMHead with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMLMHead with Bert->LayoutLM
 class TFLayoutLMMLMHead(keras.layers.Layer):
     def __init__(self, config: LayoutLMConfig, input_embeddings: keras.layers.Layer, **kwargs):
         super().__init__(**kwargs)
@@ -1080,7 +1080,7 @@ class TFLayoutLMModel(TFLayoutLMPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TFLayoutLMModel
+        >>> from transformers_471 import AutoTokenizer, TFLayoutLMModel
         >>> import tensorflow as tf
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/layoutlm-base-uncased")
@@ -1191,7 +1191,7 @@ class TFLayoutLMForMaskedLM(TFLayoutLMPreTrainedModel, TFMaskedLanguageModelingL
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TFLayoutLMForMaskedLM
+        >>> from transformers_471 import AutoTokenizer, TFLayoutLMForMaskedLM
         >>> import tensorflow as tf
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/layoutlm-base-uncased")
@@ -1320,7 +1320,7 @@ class TFLayoutLMForSequenceClassification(TFLayoutLMPreTrainedModel, TFSequenceC
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TFLayoutLMForSequenceClassification
+        >>> from transformers_471 import AutoTokenizer, TFLayoutLMForSequenceClassification
         >>> import tensorflow as tf
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/layoutlm-base-uncased")
@@ -1455,7 +1455,7 @@ class TFLayoutLMForTokenClassification(TFLayoutLMPreTrainedModel, TFTokenClassif
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, TFLayoutLMForTokenClassification
+        >>> from transformers_471 import AutoTokenizer, TFLayoutLMForTokenClassification
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/layoutlm-base-uncased")
         >>> model = TFLayoutLMForTokenClassification.from_pretrained("microsoft/layoutlm-base-uncased")
@@ -1594,7 +1594,7 @@ class TFLayoutLMForQuestionAnswering(TFLayoutLMPreTrainedModel, TFQuestionAnswer
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import AutoTokenizer, TFLayoutLMForQuestionAnswering
+        >>> from transformers_471 import AutoTokenizer, TFLayoutLMForQuestionAnswering
         >>> from datasets import load_dataset
 
         >>> tokenizer = AutoTokenizer.from_pretrained("impira/layoutlm-document-qa", add_prefix_space=True)

@@ -57,7 +57,7 @@ if is_torch_flex_attn_available():
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bart.modeling_bart.shift_tokens_right
+# Copied from transformers_471.models.bart.modeling_bart.shift_tokens_right
 def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start_token_id: int):
     """
     Shift input ids one token to the right.
@@ -74,7 +74,7 @@ def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int, decoder_start
     return shifted_input_ids
 
 
-# Copied from transformers.models.blenderbot.modeling_blenderbot.BlenderbotLearnedPositionalEmbedding with Blenderbot->BlenderbotSmall
+# Copied from transformers_471.models.blenderbot.modeling_blenderbot.BlenderbotLearnedPositionalEmbedding with Blenderbot->BlenderbotSmall
 class BlenderbotSmallLearnedPositionalEmbedding(nn.Embedding):
     """
     This module learns positional embeddings up to a fixed maximum size.
@@ -95,7 +95,7 @@ class BlenderbotSmallLearnedPositionalEmbedding(nn.Embedding):
         return super().forward(position_ids)
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -126,7 +126,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartAttention with Bart->BlenderbotSmall
+# Copied from transformers_471.models.bart.modeling_bart.BartAttention with Bart->BlenderbotSmall
 class BlenderbotSmallAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -255,7 +255,7 @@ class BlenderbotSmallAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartEncoderLayer with Bart->BlenderbotSmall, BART->BLENDERBOT_SMALL
+# Copied from transformers_471.models.bart.modeling_bart.BartEncoderLayer with Bart->BlenderbotSmall, BART->BLENDERBOT_SMALL
 class BlenderbotSmallEncoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: BlenderbotSmallConfig, layer_idx: Optional[int] = None):
         super().__init__()
@@ -327,7 +327,7 @@ class BlenderbotSmallEncoderLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Copied from transformers.models.bart.modeling_bart.BartDecoderLayer with Bart->BlenderbotSmall, BART->BLENDERBOT_SMALL
+# Copied from transformers_471.models.bart.modeling_bart.BartDecoderLayer with Bart->BlenderbotSmall, BART->BLENDERBOT_SMALL
 class BlenderbotSmallDecoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: BlenderbotSmallConfig, layer_idx: Optional[int] = None):
         super().__init__()
@@ -481,7 +481,7 @@ class BlenderbotSmallPreTrainedModel(PreTrainedModel):
         }
         return dummy_inputs
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -504,7 +504,7 @@ class BlenderbotSmallPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Optional[Union[torch.Tensor, "BlockMask"]],
@@ -582,7 +582,7 @@ class BlenderbotSmallPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -637,7 +637,7 @@ class BlenderbotSmallPreTrainedModel(PreTrainedModel):
 
         return causal_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1170,7 +1170,7 @@ class BlenderbotSmallModel(BlenderbotSmallPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BlenderbotSmallModel
+        >>> from transformers_471 import AutoTokenizer, BlenderbotSmallModel
 
         >>> model = BlenderbotSmallModel.from_pretrained("facebook/blenderbot_small-90M")
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/blenderbot_small-90M")
@@ -1331,7 +1331,7 @@ class BlenderbotSmallForConditionalGeneration(BlenderbotSmallPreTrainedModel, Ge
         Example Conversation:
 
         ```python
-        >>> from transformers import AutoTokenizer, BlenderbotSmallForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, BlenderbotSmallForConditionalGeneration
 
         >>> mname = "facebook/blenderbot_small-90M"
         >>> model = BlenderbotSmallForConditionalGeneration.from_pretrained(mname)
@@ -1413,7 +1413,7 @@ class BlenderbotSmallForConditionalGeneration(BlenderbotSmallPreTrainedModel, Ge
         )
 
 
-# Copied from transformers.models.bart.modeling_bart.BartDecoderWrapper with Bart->BlenderbotSmall
+# Copied from transformers_471.models.bart.modeling_bart.BartDecoderWrapper with Bart->BlenderbotSmall
 class BlenderbotSmallDecoderWrapper(BlenderbotSmallPreTrainedModel):
     """
     This wrapper class is a helper class to correctly load pretrained checkpoints when the causal language model is
@@ -1428,7 +1428,7 @@ class BlenderbotSmallDecoderWrapper(BlenderbotSmallPreTrainedModel):
         return self.decoder(*args, **kwargs)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartForCausalLM with Bart->BlenderbotSmall, facebook/bart-base->facebook/blenderbot_small-90M
+# Copied from transformers_471.models.bart.modeling_bart.BartForCausalLM with Bart->BlenderbotSmall, facebook/bart-base->facebook/blenderbot_small-90M
 class BlenderbotSmallForCausalLM(BlenderbotSmallPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["lm_head.weight"]
 
@@ -1487,7 +1487,7 @@ class BlenderbotSmallForCausalLM(BlenderbotSmallPreTrainedModel, GenerationMixin
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BlenderbotSmallForCausalLM
+        >>> from transformers_471 import AutoTokenizer, BlenderbotSmallForCausalLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/blenderbot_small-90M")
         >>> model = BlenderbotSmallForCausalLM.from_pretrained("facebook/blenderbot_small-90M", add_cross_attention=False)

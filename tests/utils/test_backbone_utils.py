@@ -16,21 +16,21 @@ import unittest
 
 import pytest
 
-from transformers import DetrConfig, MaskFormerConfig, ResNetBackbone, ResNetConfig, TimmBackbone
-from transformers.testing_utils import require_torch, slow
-from transformers.utils.backbone_utils import (
+from transformers_471 import DetrConfig, MaskFormerConfig, ResNetBackbone, ResNetConfig, TimmBackbone
+from transformers_471.testing_utils import require_torch, slow
+from transformers_471.utils.backbone_utils import (
     BackboneMixin,
     get_aligned_output_features_output_indices,
     load_backbone,
     verify_out_features_out_indices,
 )
-from transformers.utils.import_utils import is_torch_available
+from transformers_471.utils.import_utils import is_torch_available
 
 
 if is_torch_available():
     import torch
 
-    from transformers import BertPreTrainedModel
+    from transformers_471 import BertPreTrainedModel
 
 
 class BackboneUtilsTester(unittest.TestCase):

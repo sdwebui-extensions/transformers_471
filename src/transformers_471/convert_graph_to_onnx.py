@@ -20,9 +20,9 @@ from typing import Optional
 
 from packaging.version import Version, parse
 
-from transformers.pipelines import Pipeline, pipeline
-from transformers.tokenization_utils import BatchEncoding
-from transformers.utils import ModelOutput, is_tf_available, is_torch_available
+from transformers_471.pipelines import Pipeline, pipeline
+from transformers_471.tokenization_utils import BatchEncoding
+from transformers_471.utils import ModelOutput, is_tf_available, is_torch_available
 
 
 # This is the minimal required version to

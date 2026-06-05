@@ -15,8 +15,8 @@
 import os
 import unittest
 
-from transformers.models.cpmant.tokenization_cpmant import VOCAB_FILES_NAMES, CpmAntTokenizer
-from transformers.testing_utils import require_rjieba, tooslow
+from transformers_471.models.cpmant.tokenization_cpmant import VOCAB_FILES_NAMES, CpmAntTokenizer
+from transformers_471.testing_utils import require_rjieba, tooslow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

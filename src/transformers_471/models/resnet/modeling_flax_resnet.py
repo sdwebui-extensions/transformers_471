@@ -587,7 +587,7 @@ FLAX_VISION_MODEL_DOCSTRING = """
     Examples:
 
     ```python
-    >>> from transformers import AutoImageProcessor, FlaxResNetModel
+    >>> from transformers_471 import AutoImageProcessor, FlaxResNetModel
     >>> from PIL import Image
     >>> import requests
 
@@ -674,7 +674,7 @@ FLAX_VISION_CLASSIF_DOCSTRING = """
     Example:
 
     ```python
-    >>> from transformers import AutoImageProcessor, FlaxResNetForImageClassification
+    >>> from transformers_471 import AutoImageProcessor, FlaxResNetForImageClassification
     >>> from PIL import Image
     >>> import jax
     >>> import requests

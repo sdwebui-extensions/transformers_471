@@ -17,8 +17,8 @@ import unittest
 
 from parameterized import parameterized
 
-from transformers import AutoTokenizer, GraniteMoeConfig, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, GraniteMoeConfig, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     Expectations,
     require_read_token,
     require_torch,
@@ -35,11 +35,11 @@ from ...test_modeling_common import ModelTesterMixin, ids_tensor
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         GraniteMoeForCausalLM,
         GraniteMoeModel,
     )
-    from transformers.models.granitemoe.modeling_granitemoe import (
+    from transformers_471.models.granitemoe.modeling_granitemoe import (
         GraniteMoeRotaryEmbedding,
     )
 

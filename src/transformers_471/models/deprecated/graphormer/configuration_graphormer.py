@@ -113,7 +113,7 @@ class GraphormerConfig(PretrainedConfig):
 
         Example:
             ```python
-            >>> from transformers import GraphormerForGraphClassification, GraphormerConfig
+            >>> from transformers_471 import GraphormerForGraphClassification, GraphormerConfig
 
             >>> # Initializing a Graphormer graphormer-base-pcqm4mv2 style configuration
             >>> configuration = GraphormerConfig()

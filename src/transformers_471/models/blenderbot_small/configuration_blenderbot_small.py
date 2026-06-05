@@ -89,7 +89,7 @@ class BlenderbotSmallConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import BlenderbotSmallConfig, BlenderbotSmallModel
+    >>> from transformers_471 import BlenderbotSmallConfig, BlenderbotSmallModel
 
     >>> # Initializing a BlenderbotSmall facebook/blenderbot_small-90M style configuration
     >>> configuration = BlenderbotSmallConfig()
@@ -164,7 +164,7 @@ class BlenderbotSmallConfig(PretrainedConfig):
         )
 
 
-# Copied from transformers.models.bart.configuration_bart.BartOnnxConfig
+# Copied from transformers_471.models.bart.configuration_bart.BartOnnxConfig
 class BlenderbotSmallOnnxConfig(OnnxSeq2SeqConfigWithPast):
     @property
     def inputs(self) -> Mapping[str, Mapping[int, str]]:

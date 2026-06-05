@@ -128,7 +128,7 @@ class LlamaConfig(PretrainedConfig):
             The attention head dimension. If None, it will default to hidden_size // num_attention_heads
 
     ```python
-    >>> from transformers import LlamaModel, LlamaConfig
+    >>> from transformers_471 import LlamaModel, LlamaConfig
 
     >>> # Initializing a LLaMA llama-7b style configuration
     >>> configuration = LlamaConfig()

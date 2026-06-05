@@ -15,9 +15,9 @@
 import gc
 import unittest
 
-from transformers import MODEL_FOR_MASKED_LM_MAPPING, TF_MODEL_FOR_MASKED_LM_MAPPING, FillMaskPipeline, pipeline
-from transformers.pipelines import PipelineException
-from transformers.testing_utils import (
+from transformers_471 import MODEL_FOR_MASKED_LM_MAPPING, TF_MODEL_FOR_MASKED_LM_MAPPING, FillMaskPipeline, pipeline
+from transformers_471.pipelines import PipelineException
+from transformers_471.testing_utils import (
     backend_empty_cache,
     is_pipeline_test,
     is_torch_available,

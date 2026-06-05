@@ -1,5 +1,5 @@
-from transformers.modeling_utils import AttentionInterface
-from transformers.models.llama.modeling_llama import LlamaAttention
+from transformers_471.modeling_utils import AttentionInterface
+from transformers_471.models.llama.modeling_llama import LlamaAttention
 
 
 def custom_flex(x, **kwargs):

@@ -32,7 +32,7 @@ import torch.nn.functional as F
 from torch import Tensor
 from tqdm import tqdm
 
-from transformers.utils.generic import OutputRecorder
+from transformers_471.utils.generic import OutputRecorder
 
 from ...activations import ACT2FN
 from ...modeling_flash_attention_utils import FlashAttentionKwargs

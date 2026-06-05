@@ -30,7 +30,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from transformers.utils.generic import check_model_inputs
+from transformers_471.utils.generic import check_model_inputs
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache
@@ -605,7 +605,7 @@ class MixtralForCausalLM(MixtralPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MixtralForCausalLM
+        >>> from transformers_471 import AutoTokenizer, MixtralForCausalLM
 
         >>> model = MixtralForCausalLM.from_pretrained("mistralai/Mixtral-8x7B-v0.1")
         >>> tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-v0.1")

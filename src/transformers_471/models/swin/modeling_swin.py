@@ -194,7 +194,7 @@ class SwinEmbeddings(nn.Module):
         self.patch_size = config.patch_size
         self.config = config
 
-    # Copied from transformers.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
+    # Copied from transformers_471.models.vit.modeling_vit.ViTEmbeddings.interpolate_pos_encoding
     def interpolate_pos_encoding(self, embeddings: torch.Tensor, height: int, width: int) -> torch.Tensor:
         """
         This method allows to interpolate the pre-trained position encodings, to be able to use the model on higher resolution
@@ -360,7 +360,7 @@ class SwinPatchMerging(nn.Module):
         return input_feature
 
 
-# Copied from transformers.models.beit.modeling_beit.drop_path
+# Copied from transformers_471.models.beit.modeling_beit.drop_path
 def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = False) -> torch.Tensor:
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -381,7 +381,7 @@ def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = Fals
     return output
 
 
-# Copied from transformers.models.beit.modeling_beit.BeitDropPath with Beit->Swin
+# Copied from transformers_471.models.beit.modeling_beit.BeitDropPath with Beit->Swin
 class SwinDropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
 
@@ -1019,7 +1019,7 @@ class SwinForMaskedImageModeling(SwinPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, SwinForMaskedImageModeling
+        >>> from transformers_471 import AutoImageProcessor, SwinForMaskedImageModeling
         >>> import torch
         >>> from PIL import Image
         >>> import requests
@@ -1205,7 +1205,7 @@ class SwinBackbone(SwinPreTrainedModel, BackboneMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoBackbone
+        >>> from transformers_471 import AutoImageProcessor, AutoBackbone
         >>> import torch
         >>> from PIL import Image
         >>> import requests

@@ -1462,7 +1462,7 @@ class TFSwinForMaskedImageModeling(TFSwinPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, TFSwinForMaskedImageModeling
+        >>> from transformers_471 import AutoImageProcessor, TFSwinForMaskedImageModeling
         >>> import tensorflow as tf
         >>> from PIL import Image
         >>> import requests

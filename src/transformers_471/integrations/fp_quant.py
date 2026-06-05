@@ -22,7 +22,7 @@ if is_fp_quant_available():
     from fp_quant import FPQuantConfig as FPQuantLinearConfig
     from fp_quant import FPQuantDtype
 
-from transformers.utils.quantization_config import FPQuantConfig
+from transformers_471.utils.quantization_config import FPQuantConfig
 
 
 def adapt_fp_quant_config(config: FPQuantConfig):

@@ -1866,7 +1866,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
                 exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -1932,7 +1932,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if token is not None:
@@ -2496,7 +2496,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:
@@ -2924,8 +2924,8 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
 
         if return_tensors in ("tf", "jax"):
             logger.warning_once(
-                "TensorFlow and JAX classes are deprecated and will be removed in Transformers v5. We "
-                "recommend migrating to PyTorch classes or pinning your version of Transformers."
+                "TensorFlow and JAX classes are deprecated and will be removed in transformers_471 v5. We "
+                "recommend migrating to PyTorch classes or pinning your version of transformers_471."
             )
         all_kwargs.update(kwargs)
         if text is None and text_target is None:
@@ -4032,7 +4032,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
         sequence-to-sequence models that need a slightly different processing for the labels.
         """
         warnings.warn(
-            "`as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your "
+            "`as_target_tokenizer` is deprecated and Will be removed in v5 of Transformers You can tokenize your "
             "labels by using the argument `text_target` of the regular `__call__` method (either in the same call as "
             "your input texts if you use the same keyword arguments, or in a separate call."
         )
@@ -4057,7 +4057,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
         if not isinstance(auto_class, str):
             auto_class = auto_class.__name__
 
-        import transformers.models.auto as auto_module
+        import transformers_471.models.auto as auto_module
 
         if not hasattr(auto_module, auto_class):
             raise ValueError(f"{auto_class} is not a valid auto class.")
@@ -4136,7 +4136,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
         """
         # docstyle-ignore
         formatted_warning = """
-`prepare_seq2seq_batch` is deprecated and will be removed in version 5 of HuggingFace Transformers. Use the regular
+`prepare_seq2seq_batch` is deprecated and will be removed in version 5 of HuggingFace transformers_471. Use the regular
 `__call__` method to prepare your inputs and targets.
 
 Here is a short example:
@@ -4189,7 +4189,7 @@ For a more complete example, see the implementation of `prepare_seq2seq_batch`.
 
 def get_fast_tokenizer_file(tokenization_files: list[str]) -> str:
     """
-    Get the tokenization file to use for this version of transformers.
+    Get the tokenization file to use for this version of transformers_471.
 
     Args:
         tokenization_files (`list[str]`): The list of available configuration files.

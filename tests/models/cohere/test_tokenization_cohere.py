@@ -15,8 +15,8 @@
 import copy
 import unittest
 
-from transformers import CohereTokenizerFast
-from transformers.testing_utils import (
+from transformers_471 import CohereTokenizerFast
+from transformers_471.testing_utils import (
     require_jinja,
     require_tokenizers,
     require_torch_multi_accelerator,

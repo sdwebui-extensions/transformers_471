@@ -388,7 +388,7 @@ class TapasSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class TapasSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -410,7 +410,7 @@ class TapasAttention(nn.Module):
         self.output = TapasSelfOutput(config)
         self.pruned_heads = set()
 
-    # Copied from transformers.models.bert.modeling_bert.BertAttention.prune_heads
+    # Copied from transformers_471.models.bert.modeling_bert.BertAttention.prune_heads
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -429,7 +429,7 @@ class TapasAttention(nn.Module):
         self.self.all_head_size = self.self.attention_head_size * self.self.num_attention_heads
         self.pruned_heads = self.pruned_heads.union(heads)
 
-    # Copied from transformers.models.bert.modeling_bert.BertAttention.forward
+    # Copied from transformers_471.models.bert.modeling_bert.BertAttention.forward
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -454,7 +454,7 @@ class TapasAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class TapasIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -470,7 +470,7 @@ class TapasIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class TapasOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -500,7 +500,7 @@ class TapasLayer(GradientCheckpointingLayer):
         self.intermediate = TapasIntermediate(config)
         self.output = TapasOutput(config)
 
-    # Copied from transformers.models.bert.modeling_bert.BertLayer.forward
+    # Copied from transformers_471.models.bert.modeling_bert.BertLayer.forward
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -549,7 +549,7 @@ class TapasLayer(GradientCheckpointingLayer):
 
         return outputs
 
-    # Copied from transformers.models.bert.modeling_bert.BertLayer.feed_forward_chunk
+    # Copied from transformers_471.models.bert.modeling_bert.BertLayer.feed_forward_chunk
     def feed_forward_chunk(self, attention_output):
         intermediate_output = self.intermediate(attention_output)
         layer_output = self.output(intermediate_output, attention_output)
@@ -619,7 +619,7 @@ class TapasEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class TapasPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -635,7 +635,7 @@ class TapasPooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->Tapas
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->Tapas
 class TapasPredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -653,7 +653,7 @@ class TapasPredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->Tapas
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->Tapas
 class TapasLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -677,7 +677,7 @@ class TapasLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Tapas
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->Tapas
 class TapasOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -695,7 +695,7 @@ class TapasPreTrainedModel(PreTrainedModel):
     supports_gradient_checkpointing = True
     _supports_param_buffer_assignment = False
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with Bert->Tapas
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with Bert->Tapas
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):
@@ -788,7 +788,7 @@ class TapasModel(TapasPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TapasModel
+        >>> from transformers_471 import AutoTokenizer, TapasModel
         >>> import pandas as pd
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/tapas-base")
@@ -940,7 +940,7 @@ class TapasForMaskedLM(TapasPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TapasForMaskedLM
+        >>> from transformers_471 import AutoTokenizer, TapasForMaskedLM
         >>> import pandas as pd
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/tapas-base")
@@ -1099,7 +1099,7 @@ class TapasForQuestionAnswering(TapasPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TapasForQuestionAnswering
+        >>> from transformers_471 import AutoTokenizer, TapasForQuestionAnswering
         >>> import pandas as pd
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/tapas-base-finetuned-wtq")
@@ -1404,7 +1404,7 @@ class TapasForSequenceClassification(TapasPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, TapasForSequenceClassification
+        >>> from transformers_471 import AutoTokenizer, TapasForSequenceClassification
         >>> import torch
         >>> import pandas as pd
 

@@ -18,15 +18,15 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, CLIPTokenizer, CLIPTokenizerFast
-from transformers.testing_utils import require_vision
-from transformers.utils import is_vision_available
+from transformers_471 import AutoTokenizer, CLIPTokenizer, CLIPTokenizerFast
+from transformers_471.testing_utils import require_vision
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import CLIPImageProcessor, CLIPProcessor
+    from transformers_471 import CLIPImageProcessor, CLIPProcessor
 
 
 TEST_MODEL_PATH = "openai/clip-vit-base-patch32"

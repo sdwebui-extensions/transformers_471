@@ -2,16 +2,16 @@ from collections import Counter
 
 import datasets
 
-import transformers
-from transformers.convert_slow_tokenizer import SLOW_TO_FAST_CONVERTERS
-from transformers.tokenization_utils_base import PreTrainedTokenizerBase
-from transformers.utils import logging
+import transformers_471
+from transformers_471.convert_slow_tokenizer import SLOW_TO_FAST_CONVERTERS
+from transformers_471.tokenization_utils_base import PreTrainedTokenizerBase
+from transformers_471.utils import logging
 
 
 logging.set_verbosity_info()
 
 TOKENIZER_CLASSES = {
-    name: (getattr(transformers, name), getattr(transformers, name + "Fast")) for name in SLOW_TO_FAST_CONVERTERS
+    name: (getattr(transformers_471, name), getattr(transformers_471, name + "Fast")) for name in SLOW_TO_FAST_CONVERTERS
 }
 
 dataset = datasets.load_dataset("facebook/xnli", split="test+validation")  # no-script

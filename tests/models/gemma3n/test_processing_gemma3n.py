@@ -19,14 +19,14 @@ import unittest
 import numpy as np
 from parameterized import parameterized
 
-from transformers import GemmaTokenizerFast, SiglipImageProcessorFast, is_speech_available
-from transformers.testing_utils import require_sentencepiece, require_torch, require_torchaudio, require_vision
+from transformers_471 import GemmaTokenizerFast, SiglipImageProcessorFast, is_speech_available
+from transformers_471.testing_utils import require_sentencepiece, require_torch, require_torchaudio, require_vision
 
 from .test_feature_extraction_gemma3n import floats_list
 
 
 if is_speech_available():
-    from transformers.models.gemma3n import Gemma3nAudioFeatureExtractor, Gemma3nProcessor
+    from transformers_471.models.gemma3n import Gemma3nAudioFeatureExtractor, Gemma3nProcessor
 
 
 # TODO: omni-modal processor can't run tests from `ProcessorTesterMixin`

@@ -90,7 +90,7 @@ class VaultGemmaConfig(PretrainedConfig):
             scaling factor when applying tanh softcapping on the attention scores.
 
     ```python
-    >>> from transformers import VaultGemmaModel, VaultGemmaConfig
+    >>> from transformers_471 import VaultGemmaModel, VaultGemmaConfig
     >>> # Initializing a VaultGemma vaultgemma-7b style configuration
     >>> configuration = VaultGemmaConfig()
     >>> # Initializing a model from the vaultgemma-7b style configuration

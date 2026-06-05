@@ -21,16 +21,16 @@ from tempfile import TemporaryDirectory
 import numpy as np
 import pytest
 
-from transformers.image_utils import load_image
-from transformers.models.auto.processing_auto import processor_class_from_name
-from transformers.testing_utils import (
+from transformers_471.image_utils import load_image
+from transformers_471.models.auto.processing_auto import processor_class_from_name
+from transformers_471.testing_utils import (
     get_tests_dir,
     require_sentencepiece,
     require_tokenizers,
     require_torch,
     require_vision,
 )
-from transformers.utils import is_vision_available
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin, url_to_local_path
 
@@ -38,7 +38,7 @@ from ...test_processing_common import ProcessorTesterMixin, url_to_local_path
 if is_vision_available():
     from PIL import Image
 
-    from transformers import (
+    from transformers_471 import (
         AutoProcessor,
         CLIPImageProcessor,
         Kosmos2Processor,

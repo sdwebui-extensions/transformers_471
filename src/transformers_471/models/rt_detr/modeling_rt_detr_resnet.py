@@ -33,7 +33,7 @@ from .configuration_rt_detr_resnet import RTDetrResNetConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.resnet.modeling_resnet.ResNetConvLayer -> RTDetrResNetConvLayer
+# Copied from transformers_471.models.resnet.modeling_resnet.ResNetConvLayer -> RTDetrResNetConvLayer
 class RTDetrResNetConvLayer(nn.Module):
     def __init__(
         self, in_channels: int, out_channels: int, kernel_size: int = 3, stride: int = 1, activation: str = "relu"
@@ -98,7 +98,7 @@ class RTDetrResNetEmbeddings(nn.Module):
         return embedding
 
 
-# Copied from transformers.models.resnet.modeling_resnet.ResNetShortCut -> RTDetrResNetChortCut
+# Copied from transformers_471.models.resnet.modeling_resnet.ResNetShortCut -> RTDetrResNetChortCut
 class RTDetrResNetShortCut(nn.Module):
     """
     ResNet shortcut, used to project the residual features to the correct size. If needed, it is also used to
@@ -252,7 +252,7 @@ class RTDetrResNetStage(nn.Module):
         return hidden_state
 
 
-# Copied from transformers.models.resnet.modeling_resnet.ResNetEncoder with ResNet->RTDetrResNet
+# Copied from transformers_471.models.resnet.modeling_resnet.ResNetEncoder with ResNet->RTDetrResNet
 class RTDetrResNetEncoder(nn.Module):
     def __init__(self, config: RTDetrResNetConfig):
         super().__init__()
@@ -295,7 +295,7 @@ class RTDetrResNetEncoder(nn.Module):
 
 
 @auto_docstring
-# Copied from transformers.models.resnet.modeling_resnet.ResNetPreTrainedModel with ResNet->RTDetrResNet
+# Copied from transformers_471.models.resnet.modeling_resnet.ResNetPreTrainedModel with ResNet->RTDetrResNet
 class RTDetrResNetPreTrainedModel(PreTrainedModel):
     config: RTDetrResNetConfig
     base_model_prefix = "resnet"
@@ -344,7 +344,7 @@ class RTDetrResNetBackbone(RTDetrResNetPreTrainedModel, BackboneMixin):
                         Examples:
 
                         ```python
-                        >>> from transformers import RTDetrResNetConfig, RTDetrResNetBackbone
+                        >>> from transformers_471 import RTDetrResNetConfig, RTDetrResNetBackbone
                         >>> import torch
         from ...utils.deprecation import deprecate_kwarg
         from ...utils.deprecation import deprecate_kwarg

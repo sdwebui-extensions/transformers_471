@@ -452,7 +452,7 @@ class GemmaForCausalLM(GemmaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GemmaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, GemmaForCausalLM
 
         >>> model = GemmaForCausalLM.from_pretrained("google/gemma-7b")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b")

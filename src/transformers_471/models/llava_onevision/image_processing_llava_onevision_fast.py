@@ -299,7 +299,7 @@ class LlavaOnevisionImageProcessorFast(BaseImageProcessorFast):
             tensor_type=return_tensors,
         )
 
-    # Copied from transformers.models.llava.image_processing_llava_fast.LlavaImageProcessorFast.pad_to_square
+    # Copied from transformers_471.models.llava.image_processing_llava_fast.LlavaImageProcessorFast.pad_to_square
     def pad_to_square(
         self,
         images: "torch.Tensor",

@@ -458,7 +458,7 @@ class Aimv2VisionModel(Aimv2PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Siglip2VisionModel
+        >>> from transformers_471 import AutoProcessor, Siglip2VisionModel
 
         >>> model = Aimv2VisionModel.from_pretrained("apple/aimv2-large-patch14-native")
         >>> processor = AutoProcessor.from_pretrained("apple/aimv2-large-patch14-native")
@@ -616,7 +616,7 @@ class Aimv2Model(Aimv2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, Aimv2Model
+        >>> from transformers_471 import AutoTokenizer, Aimv2Model
 
         >>> model = Aimv2Model.from_pretrained("openai/aimv2-vit-base-patch32")
         >>> tokenizer = AutoTokenizer.from_pretrained("openai/aimv2-vit-base-patch32")
@@ -652,8 +652,8 @@ class Aimv2Model(Aimv2PreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoProcessor, Aimv2Model
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, Aimv2Model
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = Aimv2Model.from_pretrained("openai/aimv2-vit-base-patch32")
         >>> processor = AutoProcessor.from_pretrained("openai/aimv2-vit-base-patch32")
@@ -690,7 +690,7 @@ class Aimv2Model(Aimv2PreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Aimv2Model
+        >>> from transformers_471 import AutoProcessor, Aimv2Model
 
         >>> model = Aimv2Model.from_pretrained("apple/aimv2-large-patch14-224-lit")
         >>> processor = AutoProcessor.from_pretrained("apple/aimv2-large-patch14-224-lit")

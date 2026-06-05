@@ -144,7 +144,7 @@ class Cohere2Config(PretrainedConfig):
             Attention pattern for each layer.
 
     ```python
-    >>> from transformers import Cohere2Model, Cohere2Config
+    >>> from transformers_471 import Cohere2Model, Cohere2Config
 
     >>> # Initializing a Cohere Nextmodel configuration
     >>> configuration = Cohere2Config()

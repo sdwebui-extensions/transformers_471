@@ -25,7 +25,7 @@ from .loss_rt_detr import RTDetrHungarianMatcher, RTDetrLoss
 
 
 if is_vision_available():
-    from transformers.image_transforms import center_to_corners_format
+    from transformers_471.image_transforms import center_to_corners_format
 
 
 @torch.jit.unused

@@ -102,7 +102,7 @@ class Phi4MultimodalVisionConfig(SiglipVisionConfig):
     Example:
 
     ```python
-    >>> from transformers import Phi4MultimodalVisionConfig
+    >>> from transformers_471 import Phi4MultimodalVisionConfig
 
     >>> # Initializing a Phi4MultimodalVisionConfig with microsoft/Phi-4-multimodal-instruct style configuration
     >>> configuration = Phi4MultimodalVisionConfig()
@@ -208,7 +208,7 @@ class Phi4MultimodalAudioConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Phi4MultimodalAudioConfig
+    >>> from transformers_471 import Phi4MultimodalAudioConfig
 
     >>> # Initializing a Phi4MultimodalAudioConfig with microsoft/Phi-4-multimodal-instruct style configuration
     >>> configuration = Phi4MultimodalAudioConfig()
@@ -359,7 +359,7 @@ class Phi4MultimodalConfig(Phi3Config):
     Example:
 
     ```python
-    >>> from transformers import Phi4MultimodalModel, Phi4MultimodalConfig
+    >>> from transformers_471 import Phi4MultimodalModel, Phi4MultimodalConfig
 
     >>> # Initializing a Phi4Multimodal style configuration
     >>> configuration = Phi4MultimodalConfig.from_pretrained("microsoft/Phi-4-multimodal-instruct")
@@ -1622,7 +1622,7 @@ class Phi4MultimodalForCausalLM(Phi3ForCausalLM):
 
         Example:
         ```python
-        >>> from transformers import AutoTokenizer, Phi4MultimodalForCausalLM
+        >>> from transformers_471 import AutoTokenizer, Phi4MultimodalForCausalLM
         >>> model = Phi4MultimodalForCausalLM.from_pretrained("TBA")
         >>> tokenizer = AutoTokenizer.from_pretrained("TBA")
         >>> prompt = "This is an example script ."

@@ -761,7 +761,7 @@ class SquadFeatures:
     """
     Single squad example features to be fed to a model. Those features are model-specific and can be crafted from
     [`~data.processors.squad.SquadExample`] using the
-    :method:*~transformers.data.processors.squad.squad_convert_examples_to_features* method.
+    :method:*~transformers_471.data.processors.squad.squad_convert_examples_to_features* method.
 
     Args:
         input_ids: Indices of input sequence tokens in the vocabulary.

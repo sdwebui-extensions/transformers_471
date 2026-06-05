@@ -22,14 +22,14 @@ import warnings
 from huggingface_hub import HfFolder, create_pull_request
 from parameterized import parameterized
 
-from transformers import AutoConfig, GenerationConfig, WatermarkingConfig, is_torch_available
-from transformers import logging as transformers_logging
+from transformers_471 import AutoConfig, GenerationConfig, WatermarkingConfig, is_torch_available
+from transformers_471 import logging as transformers_logging
 
 
 if is_torch_available():
     import torch
 
-from transformers.generation import (
+from transformers_471.generation import (
     ClassifierFreeGuidanceLogitsProcessor,
     EncoderNoRepeatNGramLogitsProcessor,
     EncoderRepetitionPenaltyLogitsProcessor,
@@ -56,7 +56,7 @@ from transformers.generation import (
     UnbatchedClassifierFreeGuidanceLogitsProcessor,
     WatermarkLogitsProcessor,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     TOKEN,
     CaptureLogger,
     LoggingLevel,

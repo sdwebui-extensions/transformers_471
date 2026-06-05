@@ -161,7 +161,7 @@ class GotOcr2Config(PretrainedConfig):
             Padding token id.
 
     ```python
-    >>> from transformers import GotOcr2ForConditionalGeneration, GotOcr2Config
+    >>> from transformers_471 import GotOcr2ForConditionalGeneration, GotOcr2Config
 
     >>> # Initializing a GotOcr2 style configuration
     >>> configuration = GotOcr2Config()
@@ -408,7 +408,7 @@ class GotOcr2ForConditionalGeneration(LlavaForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, GotOcr2ForConditionalGeneration, TextStreamer
+        >>> from transformers_471 import AutoProcessor, GotOcr2ForConditionalGeneration, TextStreamer
 
         >>> model = GotOcr2ForConditionalGeneration.from_pretrained("stepfun-ai/GOT-OCR-2.0-hf").to("cuda")
         >>> processor = AutoProcessor.from_pretrained("stepfun-ai/GOT-OCR-2.0-hf")

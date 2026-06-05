@@ -516,7 +516,7 @@ class LukeSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class LukeSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -578,7 +578,7 @@ class LukeAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class LukeIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -594,7 +594,7 @@ class LukeIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class LukeOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -729,7 +729,7 @@ class LukeEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class LukePooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -881,7 +881,7 @@ class LukeModel(LukePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, LukeModel
+        >>> from transformers_471 import AutoTokenizer, LukeModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("studio-ousia/luke-base")
         >>> model = LukeModel.from_pretrained("studio-ousia/luke-base")
@@ -1043,7 +1043,7 @@ def create_position_ids_from_input_ids(input_ids, padding_idx):
     return incremental_indices.long() + padding_idx
 
 
-# Copied from transformers.models.roberta.modeling_roberta.RobertaLMHead
+# Copied from transformers_471.models.roberta.modeling_roberta.RobertaLMHead
 class LukeLMHead(nn.Module):
     """Roberta Head for masked language modeling."""
 
@@ -1291,7 +1291,7 @@ class LukeForEntityClassification(LukePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, LukeForEntityClassification
+        >>> from transformers_471 import AutoTokenizer, LukeForEntityClassification
 
         >>> tokenizer = AutoTokenizer.from_pretrained("studio-ousia/luke-large-finetuned-open-entity")
         >>> model = LukeForEntityClassification.from_pretrained("studio-ousia/luke-large-finetuned-open-entity")
@@ -1421,7 +1421,7 @@ class LukeForEntityPairClassification(LukePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, LukeForEntityPairClassification
+        >>> from transformers_471 import AutoTokenizer, LukeForEntityPairClassification
 
         >>> tokenizer = AutoTokenizer.from_pretrained("studio-ousia/luke-large-finetuned-tacred")
         >>> model = LukeForEntityPairClassification.from_pretrained("studio-ousia/luke-large-finetuned-tacred")
@@ -1562,7 +1562,7 @@ class LukeForEntitySpanClassification(LukePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, LukeForEntitySpanClassification
+        >>> from transformers_471 import AutoTokenizer, LukeForEntitySpanClassification
 
         >>> tokenizer = AutoTokenizer.from_pretrained("studio-ousia/luke-large-finetuned-conll-2003")
         >>> model = LukeForEntitySpanClassification.from_pretrained("studio-ousia/luke-large-finetuned-conll-2003")

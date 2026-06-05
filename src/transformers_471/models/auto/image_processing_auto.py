@@ -220,7 +220,7 @@ def get_image_processor_class_from_name(class_name: str):
         if class_name in extractors:
             module_name = model_type_to_module_name(module_name)
 
-            module = importlib.import_module(f".{module_name}", "transformers.models")
+            module = importlib.import_module(f".{module_name}", "transformers_471.models")
             try:
                 return getattr(module, class_name)
             except AttributeError:
@@ -271,7 +271,7 @@ def get_image_processor_config(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -303,7 +303,7 @@ def get_image_processor_config(
     image_processor_config = get_image_processor_config("FacebookAI/xlm-roberta-base")
 
     # Save a pretrained image processor locally and you can reload its config
-    from transformers import AutoTokenizer
+    from transformers_471 import AutoTokenizer
 
     image_processor = AutoImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
     image_processor.save_pretrained("image-processor-test")
@@ -312,7 +312,7 @@ def get_image_processor_config(
     use_auth_token = kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -396,7 +396,7 @@ class AutoImageProcessor:
                 they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -436,7 +436,7 @@ class AutoImageProcessor:
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor
+        >>> from transformers_471 import AutoImageProcessor
 
         >>> # Download image processor from huggingface.co and cache.
         >>> image_processor = AutoImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
@@ -447,7 +447,7 @@ class AutoImageProcessor:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

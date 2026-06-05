@@ -703,7 +703,7 @@ class DiffLlamaForCausalLM(DiffLlamaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, DiffLlamaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, DiffLlamaForCausalLM
 
         >>> model = DiffLlamaForCausalLM.from_pretrained("google/diffllama-7b")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/diffllama-7b")

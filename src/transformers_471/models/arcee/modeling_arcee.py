@@ -24,7 +24,7 @@ from typing import Callable, Optional, Union
 import torch
 from torch import nn
 
-from transformers.utils import auto_docstring
+from transformers_471.utils import auto_docstring
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache, DynamicCache
@@ -439,7 +439,7 @@ class ArceeForCausalLM(ArceePreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ArceeForCausalLM
+        >>> from transformers_471 import AutoTokenizer, ArceeForCausalLM
 
         >>> model = ArceeForCausalLM.from_pretrained("meta-arcee/Arcee-2-7b-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("meta-arcee/Arcee-2-7b-hf")

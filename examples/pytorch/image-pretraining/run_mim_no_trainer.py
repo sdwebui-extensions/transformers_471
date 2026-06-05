@@ -38,8 +38,8 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import Compose, Lambda, Normalize, RandomHorizontalFlip, RandomResizedCrop, ToTensor
 from tqdm.auto import tqdm
 
-import transformers
-from transformers import (
+import transformers_471
+from transformers_471 import (
     CONFIG_MAPPING,
     IMAGE_PROCESSOR_MAPPING,
     MODEL_FOR_MASKED_IMAGE_MODELING_MAPPING,
@@ -49,8 +49,8 @@ from transformers import (
     SchedulerType,
     get_scheduler,
 )
-from transformers.utils import check_min_version
-from transformers.utils.versions import require_version
+from transformers_471.utils import check_min_version
+from transformers_471.utils.versions import require_version
 
 
 """ Pre-training a 🤗 Transformers model for simple masked image modeling (SimMIM)
@@ -407,10 +407,10 @@ def main():
     logger.info(accelerator.state)
     if accelerator.is_local_main_process:
         datasets.utils.logging.set_verbosity_warning()
-        transformers.utils.logging.set_verbosity_info()
+        transformers_471.utils.logging.set_verbosity_info()
     else:
         datasets.utils.logging.set_verbosity_error()
-        transformers.utils.logging.set_verbosity_error()
+        transformers_471.utils.logging.set_verbosity_error()
 
     # If passed along, set the training seed now.
     if args.seed is not None:

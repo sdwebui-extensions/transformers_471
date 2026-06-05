@@ -36,7 +36,7 @@ VOCAB_FILES_NAMES = {"vocab_file": "vocab.txt", "spm_file": "spiece.model"}
 SPIECE_UNDERLINE = "▁"
 
 
-# Copied from transformers.models.bert.tokenization_bert.load_vocab
+# Copied from transformers_471.models.bert.tokenization_bert.load_vocab
 def load_vocab(vocab_file):
     """Loads a vocabulary file into a dictionary."""
     vocab = collections.OrderedDict()
@@ -48,7 +48,7 @@ def load_vocab(vocab_file):
     return vocab
 
 
-# Copied from transformers.models.bert.tokenization_bert.whitespace_tokenize
+# Copied from transformers_471.models.bert.tokenization_bert.whitespace_tokenize
 def whitespace_tokenize(text):
     """Runs basic whitespace cleaning and splitting on a piece of text."""
     text = text.strip()
@@ -254,7 +254,7 @@ class BertJapaneseTokenizer(PreTrainedTokenizer):
         out_string = " ".join(tokens).replace(" ##", "").strip()
         return out_string
 
-    # Copied from transformers.models.bert.tokenization_bert.BertTokenizer.build_inputs_with_special_tokens
+    # Copied from transformers_471.models.bert.tokenization_bert.BertTokenizer.build_inputs_with_special_tokens
     def build_inputs_with_special_tokens(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None
     ) -> list[int]:
@@ -280,7 +280,7 @@ class BertJapaneseTokenizer(PreTrainedTokenizer):
         sep = [self.sep_token_id]
         return cls + token_ids_0 + sep + token_ids_1 + sep
 
-    # Copied from transformers.models.bert.tokenization_bert.BertTokenizer.get_special_tokens_mask
+    # Copied from transformers_471.models.bert.tokenization_bert.BertTokenizer.get_special_tokens_mask
     def get_special_tokens_mask(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None, already_has_special_tokens: bool = False
     ) -> list[int]:
@@ -660,7 +660,7 @@ class CharacterTokenizer:
         return output_tokens
 
 
-# Copied from transformers.models.bert.tokenization_bert.BasicTokenizer
+# Copied from transformers_471.models.bert.tokenization_bert.BasicTokenizer
 class BasicTokenizer:
     """
     Constructs a BasicTokenizer that will run basic tokenization (punctuation splitting, lower casing, etc.).
@@ -822,7 +822,7 @@ class BasicTokenizer:
         return "".join(output)
 
 
-# Copied from transformers.models.bert.tokenization_bert.WordpieceTokenizer
+# Copied from transformers_471.models.bert.tokenization_bert.WordpieceTokenizer
 class WordpieceTokenizer:
     """Runs WordPiece tokenization."""
 

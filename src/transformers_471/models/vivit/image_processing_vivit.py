@@ -18,8 +18,8 @@ from typing import Optional, Union
 
 import numpy as np
 
-from transformers.utils import is_vision_available
-from transformers.utils.generic import TensorType
+from transformers_471.utils import is_vision_available
+from transformers_471.utils.generic import TensorType
 
 from ...image_processing_utils import BaseImageProcessor, BatchFeature, get_size_dict
 from ...image_transforms import (
@@ -183,7 +183,7 @@ class VivitImageProcessor(BaseImageProcessor):
             **kwargs,
         )
 
-    # Copied from transformers.models.efficientnet.image_processing_efficientnet.EfficientNetImageProcessor.rescale
+    # Copied from transformers_471.models.efficientnet.image_processing_efficientnet.EfficientNetImageProcessor.rescale
     def rescale(
         self,
         image: np.ndarray,

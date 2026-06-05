@@ -40,7 +40,7 @@ from .configuration_decision_transformer import DecisionTransformerConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.gpt2.modeling_gpt2.load_tf_weights_in_gpt2
+# Copied from transformers_471.models.gpt2.modeling_gpt2.load_tf_weights_in_gpt2
 def load_tf_weights_in_gpt2(model, config, gpt2_checkpoint_path):
     """Load tf checkpoints in a pytorch model"""
     try:
@@ -97,7 +97,7 @@ def load_tf_weights_in_gpt2(model, config, gpt2_checkpoint_path):
     return model
 
 
-# Copied from transformers.models.gpt2.modeling_gpt2.eager_attention_forward
+# Copied from transformers_471.models.gpt2.modeling_gpt2.eager_attention_forward
 def eager_attention_forward(module, query, key, value, attention_mask, head_mask=None, **kwargs):
     attn_weights = torch.matmul(query, key.transpose(-1, -2))
 
@@ -141,7 +141,7 @@ def eager_attention_forward(module, query, key, value, attention_mask, head_mask
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.gpt2.modeling_gpt2.GPT2Attention with GPT2->DecisionTransformerGPT2
+# Copied from transformers_471.models.gpt2.modeling_gpt2.GPT2Attention with GPT2->DecisionTransformerGPT2
 class DecisionTransformerGPT2Attention(nn.Module):
     def __init__(self, config, is_cross_attention=False, layer_idx=None):
         super().__init__()
@@ -350,7 +350,7 @@ class DecisionTransformerGPT2Attention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.gpt2.modeling_gpt2.GPT2MLP with GPT2->DecisionTransformerGPT2
+# Copied from transformers_471.models.gpt2.modeling_gpt2.GPT2MLP with GPT2->DecisionTransformerGPT2
 class DecisionTransformerGPT2MLP(nn.Module):
     def __init__(self, intermediate_size, config):
         super().__init__()
@@ -368,7 +368,7 @@ class DecisionTransformerGPT2MLP(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.gpt2.modeling_gpt2.GPT2Block with GPT2->DecisionTransformerGPT2
+# Copied from transformers_471.models.gpt2.modeling_gpt2.GPT2Block with GPT2->DecisionTransformerGPT2
 class DecisionTransformerGPT2Block(GradientCheckpointingLayer):
     # Ignore copy
     def __init__(self, config, layer_idx=None):
@@ -822,7 +822,7 @@ class DecisionTransformerModel(DecisionTransformerPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import DecisionTransformerModel
+        >>> from transformers_471 import DecisionTransformerModel
         >>> import torch
 
         >>> model = DecisionTransformerModel.from_pretrained("edbeeching/decision-transformer-gym-hopper-medium")

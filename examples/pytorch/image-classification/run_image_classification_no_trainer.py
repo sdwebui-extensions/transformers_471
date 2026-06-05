@@ -54,10 +54,10 @@ from torchvision.transforms import (
 )
 from tqdm.auto import tqdm
 
-import transformers
-from transformers import AutoConfig, AutoImageProcessor, AutoModelForImageClassification, SchedulerType, get_scheduler
-from transformers.utils import check_min_version
-from transformers.utils.versions import require_version
+import transformers_471
+from transformers_471 import AutoConfig, AutoImageProcessor, AutoModelForImageClassification, SchedulerType, get_scheduler
+from transformers_471.utils import check_min_version
+from transformers_471.utils.versions import require_version
 
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
@@ -255,10 +255,10 @@ def main():
     logger.info(accelerator.state, main_process_only=False)
     if accelerator.is_local_main_process:
         datasets.utils.logging.set_verbosity_warning()
-        transformers.utils.logging.set_verbosity_info()
+        transformers_471.utils.logging.set_verbosity_info()
     else:
         datasets.utils.logging.set_verbosity_error()
-        transformers.utils.logging.set_verbosity_error()
+        transformers_471.utils.logging.set_verbosity_error()
 
     # If passed along, set the training seed now.
     if args.seed is not None:

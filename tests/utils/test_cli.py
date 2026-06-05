@@ -17,7 +17,7 @@ import shutil
 import unittest
 from unittest.mock import patch
 
-from transformers.testing_utils import CaptureStd, require_torch
+from transformers_471.testing_utils import CaptureStd, require_torch
 
 
 class CLITest(unittest.TestCase):

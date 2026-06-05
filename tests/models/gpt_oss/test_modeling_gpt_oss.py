@@ -24,12 +24,12 @@ from pathlib import Path
 
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AutoModelForCausalLM,
     AutoTokenizer,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_read_token,
     require_torch,
@@ -44,7 +44,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         GptOssForCausalLM,
         GptOssForSequenceClassification,
         GptOssForTokenClassification,
@@ -111,8 +111,8 @@ def distributed_worker(quantized, model_size, kernels, attn_impl, mode):
     """This is the function that will be executed by torchrun workers."""
     import os
 
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    from transformers.testing_utils import torch_device
+    from transformers_471 import AutoModelForCausalLM, AutoTokenizer
+    from transformers_471.testing_utils import torch_device
 
     def generate_config_key(quantized, model, kernels, attn_impl, mode):
         """Generate a key for the restructured integration test results."""

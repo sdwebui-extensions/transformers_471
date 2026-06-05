@@ -48,7 +48,7 @@ class MBartTokenizer(PreTrainedTokenizer):
     Examples:
 
     ```python
-    >>> from transformers import MBartTokenizer
+    >>> from transformers_471 import MBartTokenizer
 
     >>> tokenizer = MBartTokenizer.from_pretrained("facebook/mbart-large-en-ro", src_lang="en_XX", tgt_lang="ro_RO")
     >>> example_english_phrase = " UN Chief Says There Is No Military Solution in Syria"

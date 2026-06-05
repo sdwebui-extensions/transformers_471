@@ -17,12 +17,12 @@ import unittest
 
 import pytest
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     AyaVisionConfig,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     get_device_properties,
@@ -43,7 +43,7 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AyaVisionForConditionalGeneration,
         AyaVisionModel,
     )

@@ -55,7 +55,7 @@ class TFGPT2Tokenizer(keras.layers.Layer):
         Examples:
 
         ```python
-        from transformers import AutoTokenizer, TFGPT2Tokenizer
+        from transformers_471 import AutoTokenizer, TFGPT2Tokenizer
 
         tokenizer = AutoTokenizer.from_pretrained("openai-community/gpt2")
         tf_tokenizer = TFGPT2Tokenizer.from_tokenizer(tokenizer)
@@ -75,7 +75,7 @@ class TFGPT2Tokenizer(keras.layers.Layer):
         Examples:
 
         ```python
-        from transformers import TFGPT2Tokenizer
+        from transformers_471 import TFGPT2Tokenizer
 
         tf_tokenizer = TFGPT2Tokenizer.from_pretrained("openai-community/gpt2")
         ```

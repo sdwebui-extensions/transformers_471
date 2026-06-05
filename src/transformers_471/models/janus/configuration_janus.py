@@ -234,7 +234,7 @@ class JanusConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import JanusForConditionalGeneration, JanusConfig, JanusVisionConfig, JanusVQVAEConfig, LlamaConfig
+    >>> from transformers_471 import JanusForConditionalGeneration, JanusConfig, JanusVisionConfig, JanusVQVAEConfig, LlamaConfig
 
     >>> # Initializing a Janus vision config
     >>> vision_config = JanusVisionConfig()

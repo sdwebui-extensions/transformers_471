@@ -24,7 +24,7 @@ import torch.nn.functional as F
 import torch.utils.checkpoint
 from torch import nn
 
-from transformers.models.blip.image_processing_blip import BlipImageProcessor
+from transformers_471.models.blip.image_processing_blip import BlipImageProcessor
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache
@@ -293,7 +293,7 @@ class JanusConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import JanusForConditionalGeneration, JanusConfig, JanusVisionConfig, JanusVQVAEConfig, LlamaConfig
+    >>> from transformers_471 import JanusForConditionalGeneration, JanusConfig, JanusVisionConfig, JanusVQVAEConfig, LlamaConfig
 
     >>> # Initializing a Janus vision config
     >>> vision_config = JanusVisionConfig()

@@ -20,10 +20,10 @@ from packaging import version
 from parameterized import parameterized
 from pytest import mark
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, DynamicCache, is_torch_available, pipeline
-from transformers.cache_utils import DynamicLayer, DynamicSlidingWindowLayer
-from transformers.generation.configuration_utils import GenerationConfig
-from transformers.testing_utils import (
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer, DynamicCache, is_torch_available, pipeline
+from transformers_471.cache_utils import DynamicLayer, DynamicSlidingWindowLayer
+from transformers_471.generation.configuration_utils import GenerationConfig
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     is_flash_attn_2_available,
@@ -44,7 +44,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         Gemma2ForCausalLM,
         Gemma2ForSequenceClassification,
         Gemma2ForTokenClassification,
@@ -212,7 +212,7 @@ class Gemma2IntegrationTest(unittest.TestCase):
         if version.parse(torch.__version__) < version.parse("2.5.0"):
             self.skipTest(reason="This test requires torch >= 2.5 to run.")
 
-        from transformers.integrations.executorch import (
+        from transformers_471.integrations.executorch import (
             TorchExportableModuleWithStaticCache,
         )
 
@@ -266,7 +266,7 @@ class Gemma2IntegrationTest(unittest.TestCase):
         max_new_tokens = max_generation_length - prompt_token_ids.shape[-1]
 
         # Static Cache + export
-        from transformers.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
+        from transformers_471.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
 
         exportable_module = TorchExportableModuleForDecoderOnlyLM(model)
         exported_program = exportable_module.export(
@@ -284,8 +284,8 @@ class Gemma2IntegrationTest(unittest.TestCase):
     @require_large_cpu_ram
     @pytest.mark.torch_export_test
     def test_export_hybrid_cache(self):
-        from transformers.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
-        from transformers.pytorch_utils import is_torch_greater_or_equal
+        from transformers_471.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
+        from transformers_471.pytorch_utils import is_torch_greater_or_equal
 
         if not is_torch_greater_or_equal("2.6.0"):
             self.skipTest(reason="This test requires torch >= 2.6 to run.")

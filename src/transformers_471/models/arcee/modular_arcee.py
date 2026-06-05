@@ -14,7 +14,7 @@
 # limitations under the License.
 """PyTorch Arcee model."""
 
-from transformers.utils import auto_docstring, logging
+from transformers_471.utils import auto_docstring, logging
 
 from ..llama.configuration_llama import LlamaConfig
 from ..llama.modeling_llama import (
@@ -115,7 +115,7 @@ class ArceeConfig(LlamaConfig):
             The attention head dimension. If None, it will default to hidden_size // num_attention_heads
 
     ```python
-    >>> from transformers import ArceeModel, ArceeConfig
+    >>> from transformers_471 import ArceeModel, ArceeConfig
 
     >>> # Initializing an Arcee AFM-4.5B-Base style configuration
     >>> configuration = ArceeConfig()

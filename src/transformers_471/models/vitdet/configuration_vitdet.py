@@ -86,7 +86,7 @@ class VitDetConfig(BackboneConfigMixin, PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import VitDetConfig, VitDetModel
+    >>> from transformers_471 import VitDetConfig, VitDetModel
 
     >>> # Initializing a VitDet configuration
     >>> configuration = VitDetConfig()

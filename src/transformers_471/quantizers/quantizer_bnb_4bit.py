@@ -234,13 +234,13 @@ class Bnb4BitHfQuantizer(HfQuantizer):
 
             module._parameters[tensor_name] = new_value
 
-    # Copied from transformers.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer.adjust_max_memory
+    # Copied from transformers_471.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer.adjust_max_memory
     def adjust_max_memory(self, max_memory: dict[str, Union[int, str]]) -> dict[str, Union[int, str]]:
         # need more space for buffers that are created during quantization
         max_memory = {key: val * 0.90 for key, val in max_memory.items()}
         return max_memory
 
-    # Copied from transformers.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer.update_dtype
+    # Copied from transformers_471.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer.update_dtype
     def update_dtype(self, dtype: "torch.dtype") -> "torch.dtype":
         if dtype is None:
             # We force the `dtype` to be float16, this is a requirement from `bitsandbytes`
@@ -273,7 +273,7 @@ class Bnb4BitHfQuantizer(HfQuantizer):
             )
         return device_map
 
-    # Copied from transformers.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer._process_model_before_weight_loading
+    # Copied from transformers_471.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer._process_model_before_weight_loading
     def _process_model_before_weight_loading(
         self,
         model: "PreTrainedModel",
@@ -307,7 +307,7 @@ class Bnb4BitHfQuantizer(HfQuantizer):
 
         model.config.quantization_config = self.quantization_config
 
-    # Copied from transformers.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer._process_model_after_weight_loading with 8bit->4bit
+    # Copied from transformers_471.quantizers.quantizer_bnb_8bit.Bnb8BitHfQuantizer._process_model_after_weight_loading with 8bit->4bit
     def _process_model_after_weight_loading(self, model: "PreTrainedModel", **kwargs):
         model.is_loaded_in_4bit = True
         model.is_4bit_serializable = self.is_serializable()

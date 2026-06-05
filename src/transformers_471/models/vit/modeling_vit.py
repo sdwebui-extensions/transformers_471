@@ -552,7 +552,7 @@ class ViTForMaskedImageModeling(ViTPreTrainedModel):
 
         Examples:
         ```python
-        >>> from transformers import AutoImageProcessor, ViTForMaskedImageModeling
+        >>> from transformers_471 import AutoImageProcessor, ViTForMaskedImageModeling
         >>> import torch
         >>> from PIL import Image
         >>> import requests

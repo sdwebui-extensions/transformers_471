@@ -43,7 +43,7 @@ class Qwen2TokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import Qwen2TokenizerFast
+    >>> from transformers_471 import Qwen2TokenizerFast
 
     >>> tokenizer = Qwen2TokenizerFast.from_pretrained("Qwen/Qwen-tokenizer")
     >>> tokenizer("Hello world")["input_ids"]
@@ -128,7 +128,7 @@ class Qwen2TokenizerFast(PreTrainedTokenizerFast):
             **kwargs,
         )
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast.save_vocabulary
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast.save_vocabulary
     def save_vocabulary(self, save_directory: str, filename_prefix: Optional[str] = None) -> tuple[str]:
         files = self._tokenizer.model.save(save_directory, name=filename_prefix)
         return tuple(files)

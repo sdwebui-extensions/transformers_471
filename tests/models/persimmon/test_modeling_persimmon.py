@@ -16,8 +16,8 @@
 import gc
 import unittest
 
-from transformers import is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import (
     backend_empty_cache,
     require_bitsandbytes,
     require_torch,
@@ -31,7 +31,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AutoTokenizer,
         PersimmonForCausalLM,
         PersimmonForSequenceClassification,

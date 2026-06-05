@@ -421,7 +421,7 @@ class TvpAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->Tvp
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->Tvp
 class TvpIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -532,7 +532,7 @@ class TvpEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler with Bert->Tvp
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler with Bert->Tvp
 class TvpPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -766,7 +766,7 @@ class TvpModel(TvpPreTrainedModel):
         Examples:
         ```python
         >>> import torch
-        >>> from transformers import AutoConfig, AutoTokenizer, TvpModel
+        >>> from transformers_471 import AutoConfig, AutoTokenizer, TvpModel
 
         >>> model = TvpModel.from_pretrained("Jiqing/tiny-random-tvp")
 
@@ -872,7 +872,7 @@ class TvpForVideoGrounding(TvpPreTrainedModel):
         Examples:
         ```python
         >>> import torch
-        >>> from transformers import AutoConfig, AutoTokenizer, TvpForVideoGrounding
+        >>> from transformers_471 import AutoConfig, AutoTokenizer, TvpForVideoGrounding
 
         >>> model = TvpForVideoGrounding.from_pretrained("Jiqing/tiny-random-tvp")
 

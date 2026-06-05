@@ -18,8 +18,8 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, is_torch_available, set_seed
-from transformers.testing_utils import (
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer, is_torch_available, set_seed
+from transformers_471.testing_utils import (
     Expectations,
     require_bitsandbytes,
     require_read_token,
@@ -33,7 +33,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import RecurrentGemmaForCausalLM, RecurrentGemmaModel
+    from transformers_471 import RecurrentGemmaForCausalLM, RecurrentGemmaModel
 
 from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 

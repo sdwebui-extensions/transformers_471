@@ -20,14 +20,14 @@ import unittest
 import numpy as np
 import requests
 
-from transformers import (
+from transformers_471 import (
     CONFIG_MAPPING,
     InstructBlipConfig,
     InstructBlipProcessor,
     InstructBlipQFormerConfig,
     InstructBlipVisionConfig,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_accelerate,
@@ -37,7 +37,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -53,7 +53,7 @@ if is_torch_available():
     import torch
     from torch import nn
 
-    from transformers import InstructBlipForConditionalGeneration, InstructBlipModel, InstructBlipVisionModel
+    from transformers_471 import InstructBlipForConditionalGeneration, InstructBlipModel, InstructBlipVisionModel
 
 
 if is_vision_available():

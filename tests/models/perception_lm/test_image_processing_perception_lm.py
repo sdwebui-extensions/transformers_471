@@ -16,9 +16,9 @@ import unittest
 
 import numpy as np
 
-from transformers.image_utils import IMAGENET_STANDARD_MEAN, IMAGENET_STANDARD_STD
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_torchvision_available, is_vision_available
+from transformers_471.image_utils import IMAGENET_STANDARD_MEAN, IMAGENET_STANDARD_STD
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_torchvision_available, is_vision_available
 
 from ...test_image_processing_common import ImageProcessingTestMixin, prepare_image_inputs
 
@@ -30,7 +30,7 @@ if is_vision_available():
     from PIL import Image
 
     if is_torchvision_available():
-        from transformers import PerceptionLMImageProcessorFast
+        from transformers_471 import PerceptionLMImageProcessorFast
 
 
 class PerceptionLMImageProcessingTester:

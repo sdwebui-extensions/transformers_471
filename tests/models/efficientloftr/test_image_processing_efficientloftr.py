@@ -22,26 +22,26 @@ from tests.models.superglue.test_image_processing_superglue import (
     SuperGlueImageProcessingTest,
     SuperGlueImageProcessingTester,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     require_torch,
     require_torch_accelerator,
     require_vision,
     slow,
     torch_device,
 )
-from transformers.utils import is_torch_available, is_torchvision_available, is_vision_available
+from transformers_471.utils import is_torch_available, is_torchvision_available, is_vision_available
 
 
 if is_torch_available():
     import torch
 
-    from transformers.models.efficientloftr.modeling_efficientloftr import KeypointMatchingOutput
+    from transformers_471.models.efficientloftr.modeling_efficientloftr import KeypointMatchingOutput
 
 if is_vision_available():
-    from transformers import EfficientLoFTRImageProcessor
+    from transformers_471 import EfficientLoFTRImageProcessor
 
     if is_torchvision_available():
-        from transformers import EfficientLoFTRImageProcessorFast
+        from transformers_471 import EfficientLoFTRImageProcessorFast
 
 
 def random_array(size):

@@ -30,14 +30,14 @@ from typing import Optional
 import yaml
 from huggingface_hub import AsyncInferenceClient, ChatCompletionStreamOutput
 
-from transformers import (
+from transformers_471 import (
     AutoTokenizer,
     GenerationConfig,
     PreTrainedTokenizer,
 )
-from transformers.commands import BaseTransformersCLICommand
-from transformers.commands.serving import ServeArguments, ServeCommand
-from transformers.utils import is_rich_available, is_torch_available
+from transformers_471.commands import BaseTransformersCLICommand
+from transformers_471.commands.serving import ServeArguments, ServeCommand
+from transformers_471.utils import is_rich_available, is_torch_available
 
 
 try:
@@ -57,7 +57,7 @@ if is_rich_available():
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AutoModelForCausalLM,
         BitsAndBytesConfig,
     )

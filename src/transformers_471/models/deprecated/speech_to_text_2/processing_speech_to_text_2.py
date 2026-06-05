@@ -91,7 +91,7 @@ class Speech2Text2Processor(ProcessorMixin):
         Speech2Text2.
         """
         warnings.warn(
-            "`as_target_processor` is deprecated and will be removed in v5 of Transformers. You can process your "
+            "`as_target_processor` is deprecated and Will be removed in v5 of Transformers You can process your "
             "labels by using the argument `text` of the regular `__call__` method (either in the same call as "
             "your audio inputs, or in a separate call."
         )

@@ -39,7 +39,7 @@ if is_flash_attn_available():
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
+# Copied from transformers_471.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
 def load_balancing_loss_func(
     gate_logits: Union[torch.Tensor, tuple[torch.Tensor], None],
     num_experts: Optional[int] = None,
@@ -146,7 +146,7 @@ class OlmoeRMSNorm(nn.Module):
         return f"{tuple(self.weight.shape)}, eps={self.variance_epsilon}"
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Olmoe
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Olmoe
 class OlmoeRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -183,7 +183,7 @@ class OlmoeRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -191,7 +191,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -219,7 +219,7 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     return q_embed, k_embed
 
 
-# Copied from transformers.models.olmo.modeling_olmo.OlmoMLP with Olmo->Olmoe
+# Copied from transformers_471.models.olmo.modeling_olmo.OlmoMLP with Olmo->Olmoe
 class OlmoeMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -236,7 +236,7 @@ class OlmoeMLP(nn.Module):
         return down_proj
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -1019,7 +1019,7 @@ class OlmoeForCausalLM(OlmoePreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, OlmoeForCausalLM
+        >>> from transformers_471 import AutoTokenizer, OlmoeForCausalLM
 
         >>> model = OlmoeForCausalLM.from_pretrained("allenai/OLMoE-1B-7B-0924")
         >>> tokenizer = AutoTokenizer.from_pretrained("allenai/OLMoE-1B-7B-0924")

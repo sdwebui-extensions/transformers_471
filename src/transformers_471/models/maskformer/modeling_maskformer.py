@@ -61,7 +61,7 @@ logger = logging.get_logger(__name__)
     gone through a layernorm. This is useful when training the model with auxiliary decoding losses.
     """
 )
-# Copied from transformers.models.detr.modeling_detr.DetrDecoderOutput
+# Copied from transformers_471.models.detr.modeling_detr.DetrDecoderOutput
 class DetrDecoderOutput(BaseModelOutputWithCrossAttentions):
     r"""
     cross_attentions (`tuple(torch.FloatTensor)`, *optional*, returned when `output_attentions=True` and `config.add_cross_attention=True` is passed or when `config.output_attentions=True`):
@@ -386,7 +386,7 @@ def pair_wise_sigmoid_focal_loss(inputs: Tensor, labels: Tensor, alpha: float = 
     return loss / height_and_width
 
 
-# Copied from transformers.models.detr.modeling_detr.DetrAttention
+# Copied from transformers_471.models.detr.modeling_detr.DetrAttention
 class DetrAttention(nn.Module):
     """
     Multi-headed attention from 'Attention Is All You Need' paper.
@@ -520,7 +520,7 @@ class DetrAttention(nn.Module):
         return attn_output, attn_weights_reshaped
 
 
-# Copied from transformers.models.detr.modeling_detr.DetrDecoderLayer
+# Copied from transformers_471.models.detr.modeling_detr.DetrDecoderLayer
 class DetrDecoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: DetrConfig):
         super().__init__()
@@ -1499,7 +1499,7 @@ class MaskFormerModel(MaskFormerPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, MaskFormerModel
+        >>> from transformers_471 import AutoImageProcessor, MaskFormerModel
         >>> from PIL import Image
         >>> import requests
 
@@ -1680,7 +1680,7 @@ class MaskFormerForInstanceSegmentation(MaskFormerPreTrainedModel):
         Semantic segmentation example:
 
         ```python
-        >>> from transformers import AutoImageProcessor, MaskFormerForInstanceSegmentation
+        >>> from transformers_471 import AutoImageProcessor, MaskFormerForInstanceSegmentation
         >>> from PIL import Image
         >>> import requests
 
@@ -1713,7 +1713,7 @@ class MaskFormerForInstanceSegmentation(MaskFormerPreTrainedModel):
         Panoptic segmentation example:
 
         ```python
-        >>> from transformers import AutoImageProcessor, MaskFormerForInstanceSegmentation
+        >>> from transformers_471 import AutoImageProcessor, MaskFormerForInstanceSegmentation
         >>> from PIL import Image
         >>> import requests
 

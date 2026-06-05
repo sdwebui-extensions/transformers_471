@@ -17,14 +17,14 @@ import unittest
 
 from huggingface_hub import hf_hub_download
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     PerceptionLMConfig,
     PerceptionLMForConditionalGeneration,
     PerceptionLMModel,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_bitsandbytes,
     require_read_token,

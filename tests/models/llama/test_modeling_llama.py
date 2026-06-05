@@ -18,9 +18,9 @@ import unittest
 import pytest
 from packaging import version
 
-from transformers import AutoTokenizer, StaticCache, is_torch_available
-from transformers.generation.configuration_utils import GenerationConfig
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, StaticCache, is_torch_available
+from transformers_471.generation.configuration_utils import GenerationConfig
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_read_token,
@@ -37,7 +37,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         LlamaForCausalLM,
         LlamaForQuestionAnswering,
         LlamaForSequenceClassification,
@@ -289,7 +289,7 @@ class LlamaIntegrationTest(unittest.TestCase):
         if version.parse(torch.__version__) < version.parse("2.4.0"):
             self.skipTest(reason="This test requires torch >= 2.4 to run.")
 
-        from transformers.integrations.executorch import (
+        from transformers_471.integrations.executorch import (
             TorchExportableModuleWithStaticCache,
         )
 
@@ -336,7 +336,7 @@ class LlamaIntegrationTest(unittest.TestCase):
             max_new_tokens = max_generation_length - prompt_token_ids.shape[-1]
 
             # Static Cache + export
-            from transformers.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
+            from transformers_471.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
 
             exportable_module = TorchExportableModuleForDecoderOnlyLM(model)
             exported_program = exportable_module.export(

@@ -77,7 +77,7 @@ class VisualBertConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import VisualBertConfig, VisualBertModel
+    >>> from transformers_471 import VisualBertConfig, VisualBertModel
 
     >>> # Initializing a VisualBERT visualbert-vqa-coco-pre style configuration
     >>> configuration = VisualBertConfig.from_pretrained("uclanlp/visualbert-vqa-coco-pre")

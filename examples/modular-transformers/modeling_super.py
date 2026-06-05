@@ -9,7 +9,7 @@ from typing import Callable, Optional, Union
 import torch
 from torch import nn
 
-from transformers.modeling_outputs import CausalLMOutputWithPast
+from transformers_471.modeling_outputs import CausalLMOutputWithPast
 
 from ...activations import ACT2FN
 from ...cache_utils import Cache

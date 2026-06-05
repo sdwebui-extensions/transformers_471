@@ -19,14 +19,14 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import is_speech_available, is_torch_available
-from transformers.models.speecht5 import SpeechT5Tokenizer
-from transformers.testing_utils import get_tests_dir, require_speech, require_torch
-from transformers.utils import FEATURE_EXTRACTOR_NAME
+from transformers_471 import is_speech_available, is_torch_available
+from transformers_471.models.speecht5 import SpeechT5Tokenizer
+from transformers_471.testing_utils import get_tests_dir, require_speech, require_torch
+from transformers_471.utils import FEATURE_EXTRACTOR_NAME
 
 
 if is_speech_available() and is_torch_available():
-    from transformers import SpeechT5FeatureExtractor, SpeechT5Processor
+    from transformers_471 import SpeechT5FeatureExtractor, SpeechT5Processor
 
     from .test_feature_extraction_speecht5 import floats_list
 

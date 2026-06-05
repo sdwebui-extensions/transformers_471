@@ -15,8 +15,8 @@ import unittest
 
 from packaging import version
 
-from transformers import AutoTokenizer, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, is_torch_available
+from transformers_471.testing_utils import (
     require_torch,
     slow,
 )
@@ -27,7 +27,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         ModernBertDecoderForCausalLM,
         ModernBertDecoderForSequenceClassification,
         ModernBertDecoderModel,

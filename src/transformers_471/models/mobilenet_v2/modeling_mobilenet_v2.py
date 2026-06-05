@@ -717,7 +717,7 @@ class MobileNetV2ForSemanticSegmentation(MobileNetV2PreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, MobileNetV2ForSemanticSegmentation
+        >>> from transformers_471 import AutoImageProcessor, MobileNetV2ForSemanticSegmentation
         >>> from PIL import Image
         >>> import requests
 

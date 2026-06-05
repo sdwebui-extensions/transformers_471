@@ -26,7 +26,7 @@ except (ModuleNotFoundError, ImportError):
     if parse(keras.__version__).major > 2:
         raise ValueError(
             "Your currently installed version of Keras is Keras 3, but this is not yet supported in "
-            "Transformers. Please install the backwards-compatible tf-keras package with "
+            "transformers_471. Please install the backwards-compatible tf-keras package with "
             "`pip install tf-keras`."
         )
 

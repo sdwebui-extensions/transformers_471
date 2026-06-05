@@ -17,11 +17,11 @@ import json
 import os
 import unittest
 
-from transformers.models.gpt_neox_japanese.tokenization_gpt_neox_japanese import (
+from transformers_471.models.gpt_neox_japanese.tokenization_gpt_neox_japanese import (
     VOCAB_FILES_NAMES,
     GPTNeoXJapaneseTokenizer,
 )
-from transformers.testing_utils import require_tokenizers, slow
+from transformers_471.testing_utils import require_tokenizers, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

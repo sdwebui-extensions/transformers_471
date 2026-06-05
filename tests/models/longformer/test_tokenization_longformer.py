@@ -18,9 +18,9 @@ import json
 import os
 import unittest
 
-from transformers import AddedToken, LongformerTokenizer, LongformerTokenizerFast
-from transformers.models.longformer.tokenization_longformer import VOCAB_FILES_NAMES
-from transformers.testing_utils import require_tokenizers, slow
+from transformers_471 import AddedToken, LongformerTokenizer, LongformerTokenizerFast
+from transformers_471.models.longformer.tokenization_longformer import VOCAB_FILES_NAMES
+from transformers_471.testing_utils import require_tokenizers, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

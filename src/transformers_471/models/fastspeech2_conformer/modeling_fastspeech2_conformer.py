@@ -194,7 +194,7 @@ class FastSpeech2ConformerDurationPredictor(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.speecht5.modeling_speecht5.SpeechT5BatchNormConvLayer
+# Copied from transformers_471.models.speecht5.modeling_speecht5.SpeechT5BatchNormConvLayer
 class FastSpeech2ConformerBatchNormConvLayer(nn.Module):
     def __init__(self, config, layer_id=0):
         super().__init__()
@@ -1127,7 +1127,7 @@ class FastSpeech2ConformerModel(FastSpeech2ConformerPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import (
+        >>> from transformers_471 import (
         ...     FastSpeech2ConformerTokenizer,
         ...     FastSpeech2ConformerModel,
         ...     FastSpeech2ConformerHifiGan,
@@ -1282,7 +1282,7 @@ class FastSpeech2ConformerModel(FastSpeech2ConformerPreTrainedModel):
         )
 
 
-# Copied from transformers.models.speecht5.modeling_speecht5.HifiGanResidualBlock
+# Copied from transformers_471.models.speecht5.modeling_speecht5.HifiGanResidualBlock
 class HifiGanResidualBlock(nn.Module):
     def __init__(self, channels, kernel_size=3, dilation=(1, 3, 5), leaky_relu_slope=0.1):
         super().__init__()
@@ -1350,7 +1350,7 @@ class HifiGanResidualBlock(nn.Module):
     HiFi-GAN vocoder.
     """
 )
-# Copied from transformers.models.speecht5.modeling_speecht5.SpeechT5HifiGan with SpeechT5->FastSpeech2Conformer
+# Copied from transformers_471.models.speecht5.modeling_speecht5.SpeechT5HifiGan with SpeechT5->FastSpeech2Conformer
 class FastSpeech2ConformerHifiGan(PreTrainedModel):
     config: FastSpeech2ConformerHifiGanConfig
     main_input_name = "spectrogram"
@@ -1523,7 +1523,7 @@ class FastSpeech2ConformerWithHifiGan(PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import (
+        >>> from transformers_471 import (
         ...     FastSpeech2ConformerTokenizer,
         ...     FastSpeech2ConformerWithHifiGan,
         ... )

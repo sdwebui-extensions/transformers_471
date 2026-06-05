@@ -14,8 +14,8 @@
 
 import unittest
 
-from transformers import DebertaV2Tokenizer, DebertaV2TokenizerFast
-from transformers.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
+from transformers_471 import DebertaV2Tokenizer, DebertaV2TokenizerFast
+from transformers_471.testing_utils import get_tests_dir, require_sentencepiece, require_tokenizers, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

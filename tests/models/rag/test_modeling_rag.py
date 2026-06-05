@@ -24,11 +24,11 @@ from unittest.mock import patch
 import numpy as np
 import requests
 
-from transformers import BartTokenizer, T5Tokenizer
-from transformers.models.bert.tokenization_bert import VOCAB_FILES_NAMES as DPR_VOCAB_FILES_NAMES
-from transformers.models.dpr.tokenization_dpr import DPRContextEncoderTokenizer, DPRQuestionEncoderTokenizer
-from transformers.models.roberta.tokenization_roberta import VOCAB_FILES_NAMES as BART_VOCAB_FILES_NAMES
-from transformers.testing_utils import (
+from transformers_471 import BartTokenizer, T5Tokenizer
+from transformers_471.models.bert.tokenization_bert import VOCAB_FILES_NAMES as DPR_VOCAB_FILES_NAMES
+from transformers_471.models.dpr.tokenization_dpr import DPRContextEncoderTokenizer, DPRQuestionEncoderTokenizer
+from transformers_471.models.roberta.tokenization_roberta import VOCAB_FILES_NAMES as BART_VOCAB_FILES_NAMES
+from transformers_471.testing_utils import (
     cleanup,
     get_tests_dir,
     require_sentencepiece,
@@ -38,7 +38,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import is_datasets_available, is_faiss_available, is_torch_available
+from transformers_471.utils import is_datasets_available, is_faiss_available, is_torch_available
 
 from ..bart.test_modeling_bart import BartModelTester
 from ..dpr.test_modeling_dpr import DPRModelTester
@@ -53,7 +53,7 @@ if is_torch_available() and is_datasets_available() and is_faiss_available():
     import torch
     from datasets import Dataset, load_dataset
 
-    from transformers import (
+    from transformers_471 import (
         AutoConfig,
         AutoModel,
         AutoModelForSeq2SeqLM,
@@ -65,7 +65,7 @@ if is_torch_available() and is_datasets_available() and is_faiss_available():
         RagTokenForGeneration,
         RagTokenizer,
     )
-    from transformers.modeling_outputs import BaseModelOutput
+    from transformers_471.modeling_outputs import BaseModelOutput
 
 
 def _assert_tensors_equal(a, b, atol=1e-12, prefix=""):

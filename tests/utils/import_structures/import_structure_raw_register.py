@@ -14,7 +14,7 @@
 
 # fmt: off
 
-from transformers.utils.import_utils import requires
+from transformers_471.utils.import_utils import requires
 
 
 @requires()

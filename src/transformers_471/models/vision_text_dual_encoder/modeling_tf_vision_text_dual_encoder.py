@@ -153,7 +153,7 @@ VISION_TEXT_DUAL_ENCODER_INPUTS_DOCSTRING = r"""
 """
 
 
-# Copied from transformers.models.clip.modeling_tf_clip.contrastive_loss
+# Copied from transformers_471.models.clip.modeling_tf_clip.contrastive_loss
 def contrastive_loss(logits: tf.Tensor) -> tf.Tensor:
     return tf.math.reduce_mean(
         keras.metrics.sparse_categorical_crossentropy(
@@ -162,7 +162,7 @@ def contrastive_loss(logits: tf.Tensor) -> tf.Tensor:
     )
 
 
-# Copied from transformers.models.clip.modeling_tf_clip.clip_loss
+# Copied from transformers_471.models.clip.modeling_tf_clip.clip_loss
 def clip_loss(similarity: tf.Tensor) -> tf.Tensor:
     caption_loss = contrastive_loss(similarity)
     image_loss = contrastive_loss(tf.transpose(similarity))
@@ -276,7 +276,7 @@ class TFVisionTextDualEncoderModel(TFPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import TFVisionTextDualEncoderModel, AutoTokenizer
+        >>> from transformers_471 import TFVisionTextDualEncoderModel, AutoTokenizer
 
         >>> model = TFVisionTextDualEncoderModel.from_pretrained("clip-italian/clip-italian", from_pt=True)
         >>> tokenizer = AutoTokenizer.from_pretrained("clip-italian/clip-italian")
@@ -317,7 +317,7 @@ class TFVisionTextDualEncoderModel(TFPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import TFVisionTextDualEncoderModel, AutoImageProcessor
+        >>> from transformers_471 import TFVisionTextDualEncoderModel, AutoImageProcessor
 
         >>> model = TFVisionTextDualEncoderModel.from_pretrained("clip-italian/clip-italian", from_pt=True)
         >>> image_processor = AutoImageProcessor.from_pretrained("google/vit-base-patch16-224")
@@ -365,7 +365,7 @@ class TFVisionTextDualEncoderModel(TFPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import (
+        >>> from transformers_471 import (
         ...     TFVisionTextDualEncoderModel,
         ...     VisionTextDualEncoderProcessor,
         ...     AutoImageProcessor,
@@ -505,7 +505,7 @@ class TFVisionTextDualEncoderModel(TFPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import TFVisionTextDualEncoderModel
+        >>> from transformers_471 import TFVisionTextDualEncoderModel
 
         >>> # initialize a model from pretrained ViT and BERT models. Note that the projection layers will be randomly initialized.
         >>> model = TFVisionTextDualEncoderModel.from_vision_text_pretrained(

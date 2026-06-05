@@ -1,4 +1,4 @@
-from transformers import PretrainedConfig
+from transformers_471 import PretrainedConfig
 
 
 class CustomConfig(PretrainedConfig):

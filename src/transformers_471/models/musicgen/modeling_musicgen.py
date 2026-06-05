@@ -153,7 +153,7 @@ class MusicgenSinusoidalPositionalEmbedding(nn.Module):
         return self.weights.index_select(0, position_ids.view(-1)).detach()
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -1550,7 +1550,7 @@ class MusicgenForConditionalGeneration(MusicgenPreTrainedModel, GenerationMixin)
         Example:
 
         ```python
-        >>> from transformers import MusicgenForConditionalGeneration
+        >>> from transformers_471 import MusicgenForConditionalGeneration
 
         >>> # initialize a musicgen model from a t5 text encoder, encodec audio encoder, and musicgen decoder
         >>> model = MusicgenForConditionalGeneration.from_sub_models_pretrained(
@@ -1745,7 +1745,7 @@ class MusicgenForConditionalGeneration(MusicgenPreTrainedModel, GenerationMixin)
 
         Examples:
         ```python
-        >>> from transformers import AutoProcessor, MusicgenForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, MusicgenForConditionalGeneration
         >>> import torch
 
         >>> processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
@@ -2429,7 +2429,7 @@ class MusicgenForConditionalGeneration(MusicgenPreTrainedModel, GenerationMixin)
 
         Example:
         ```python
-        >>> from transformers import MusicgenForConditionalGeneration
+        >>> from transformers_471 import MusicgenForConditionalGeneration
 
         >>> model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-small")
 

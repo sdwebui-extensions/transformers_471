@@ -121,7 +121,7 @@ class MobileViTImageProcessor(BaseImageProcessor):
         self.do_flip_channel_order = do_flip_channel_order
         self.do_reduce_labels = do_reduce_labels
 
-    # Copied from transformers.models.mobilenet_v1.image_processing_mobilenet_v1.MobileNetV1ImageProcessor.resize with PILImageResampling.BICUBIC->PILImageResampling.BILINEAR
+    # Copied from transformers_471.models.mobilenet_v1.image_processing_mobilenet_v1.MobileNetV1ImageProcessor.resize with PILImageResampling.BICUBIC->PILImageResampling.BILINEAR
     def resize(
         self,
         image: np.ndarray,
@@ -190,7 +190,7 @@ class MobileViTImageProcessor(BaseImageProcessor):
         """
         return flip_channel_order(image, data_format=data_format, input_data_format=input_data_format)
 
-    # Copied from transformers.models.beit.image_processing_beit.BeitImageProcessor.reduce_label
+    # Copied from transformers_471.models.beit.image_processing_beit.BeitImageProcessor.reduce_label
     def reduce_label(self, label: ImageInput) -> np.ndarray:
         label = to_numpy_array(label)
         # Avoid using underflow conversion
@@ -470,7 +470,7 @@ class MobileViTImageProcessor(BaseImageProcessor):
 
         return BatchFeature(data=data, tensor_type=return_tensors)
 
-    # Copied from transformers.models.beit.image_processing_beit.BeitImageProcessor.post_process_semantic_segmentation with Beit->MobileViT
+    # Copied from transformers_471.models.beit.image_processing_beit.BeitImageProcessor.post_process_semantic_segmentation with Beit->MobileViT
     def post_process_semantic_segmentation(self, outputs, target_sizes: Optional[list[tuple]] = None):
         """
         Converts the output of [`MobileViTForSemanticSegmentation`] into semantic segmentation maps. Only supports PyTorch.

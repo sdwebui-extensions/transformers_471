@@ -192,7 +192,7 @@ class MoshiUnconditionalInput(ModelOutput):
     attention_mask: Optional[torch.LongTensor] = None
 
 
-# Copied from transformers.models.gemma.modeling_gemma.GemmaRMSNorm with Gemma->Moshi
+# Copied from transformers_471.models.gemma.modeling_gemma.GemmaRMSNorm with Gemma->Moshi
 class MoshiRMSNorm(nn.Module):
     def __init__(self, dim: int, eps: float = 1e-6):
         super().__init__()
@@ -269,7 +269,7 @@ class MoshiLinear(nn.Module):
             return self.linear(x)
 
 
-# Copied from transformers.models.mistral.modeling_mistral.MistralRotaryEmbedding with Mistral->Moshi
+# Copied from transformers_471.models.mistral.modeling_mistral.MistralRotaryEmbedding with Mistral->Moshi
 class MoshiRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -306,7 +306,7 @@ class MoshiRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -314,7 +314,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -367,7 +367,7 @@ class MoshiGatingMLP(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -494,7 +494,7 @@ class MoshiAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.gemma.modeling_gemma.GemmaFlashAttention2 with Gemma->Moshi
+# NO LONGER EXIST Copied from transformers_471.models.gemma.modeling_gemma.GemmaFlashAttention2 with Gemma->Moshi
 # TODO cyril: modular
 class MoshiFlashAttention2(MoshiAttention):
     """
@@ -617,7 +617,7 @@ class MoshiFlashAttention2(MoshiAttention):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.gemma.modeling_gemma.GemmaSdpaAttention with Gemma->Moshi
+# NO LONGER EXIST Copied from transformers_471.models.gemma.modeling_gemma.GemmaSdpaAttention with Gemma->Moshi
 # TODO cyril: modular
 class MoshiSdpaAttention(MoshiAttention):
     """
@@ -1039,7 +1039,7 @@ class MoshiDepthDecoder(MoshiPreTrainedModel, GenerationMixin):
             attentions=all_self_attns,
         )
 
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Moshi
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Moshi
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1122,7 +1122,7 @@ class MoshiDepthDecoder(MoshiPreTrainedModel, GenerationMixin):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->MoshiDepth
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->MoshiDepth
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1304,7 +1304,7 @@ class MoshiModel(MoshiPreTrainedModel):
             attentions=all_self_attns,
         )
 
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Moshi
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Moshi
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1387,7 +1387,7 @@ class MoshiModel(MoshiPreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->Moshi
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->Moshi
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1466,7 +1466,7 @@ class MoshiModel(MoshiPreTrainedModel):
 class MoshiForCausalLM(MoshiPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["model.embed_tokens.weight", "lm_head.weight"]
 
-    # Copied from transformers.models.gemma.modeling_gemma.GemmaForCausalLM.__init__ with Gemma->Moshi
+    # Copied from transformers_471.models.gemma.modeling_gemma.GemmaForCausalLM.__init__ with Gemma->Moshi
     def __init__(self, config):
         super().__init__(config)
         self.model = MoshiModel(config)
@@ -1502,7 +1502,7 @@ class MoshiForCausalLM(MoshiPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MoshiForCausalLM
+        >>> from transformers_471 import AutoTokenizer, MoshiForCausalLM
 
         >>> model = MoshiForCausalLM.from_pretrained("kmhf/hf-moshiko")
         >>> tokenizer = AutoTokenizer.from_pretrained("kmhf/hf-moshiko")
@@ -1656,7 +1656,7 @@ class MoshiForConditionalGeneration(MoshiPreTrainedModel, GenerationMixin):
 
         Examples:
         ```python
-        >>> from transformers import MoshiForConditionalGeneration
+        >>> from transformers_471 import MoshiForConditionalGeneration
         >>> import torch
 
         >>> model = MoshiForConditionalGeneration.from_pretrained("kmhf/hf-moshiko")
@@ -2325,7 +2325,7 @@ class MoshiForConditionalGeneration(MoshiPreTrainedModel, GenerationMixin):
         self.depth_decoder._requires_grad = False
 
     @staticmethod
-    # Copied from transformers.models.musicgen.modeling_musicgen.MusicgenForCausalLM.apply_delay_pattern_mask
+    # Copied from transformers_471.models.musicgen.modeling_musicgen.MusicgenForCausalLM.apply_delay_pattern_mask
     def apply_delay_pattern_mask(input_ids, decoder_pad_token_mask):
         """Apply a delay pattern mask to the decoder input ids, only preserving predictions where
         the mask is set to -1, and otherwise setting to the value detailed in the mask."""
@@ -2393,7 +2393,7 @@ class MoshiForConditionalGeneration(MoshiPreTrainedModel, GenerationMixin):
 
         Example:
         ```python
-        >>> from transformers import MoshiForConditionalGeneration
+        >>> from transformers_471 import MoshiForConditionalGeneration
 
         >>> model = MoshiForConditionalGeneration.from_pretrained("kmhf/hf-moshiko-pytorch-bf16")
 

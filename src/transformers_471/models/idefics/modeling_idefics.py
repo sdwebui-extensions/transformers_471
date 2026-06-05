@@ -451,7 +451,7 @@ class IdeficsMLP(nn.Module):
         return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
 
 
-# Copied from transformers.models.siglip.modeling_siglip.eager_attention_forward
+# Copied from transformers_471.models.siglip.modeling_siglip.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -1179,7 +1179,7 @@ class IdeficsForVisionText2Text(IdeficsPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoProcessor, IdeficsForVisionText2Text
+        >>> from transformers_471 import AutoProcessor, IdeficsForVisionText2Text
 
         >>> model = IdeficsForVisionText2Text.from_pretrained("HuggingFaceM4/idefics-9b")
         >>> processor = AutoProcessor.from_pretrained("HuggingFaceM4/idefics-9b")

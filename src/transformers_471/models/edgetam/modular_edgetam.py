@@ -20,8 +20,8 @@ import torch
 import torch.nn as nn
 import torch.utils.checkpoint
 
-from transformers.models.sam2.configuration_sam2 import Sam2Config, Sam2MaskDecoderConfig, Sam2PromptEncoderConfig
-from transformers.models.sam2.modeling_sam2 import (
+from transformers_471.models.sam2.configuration_sam2 import Sam2Config, Sam2MaskDecoderConfig, Sam2PromptEncoderConfig
+from transformers_471.models.sam2.modeling_sam2 import (
     Sam2Attention,
     Sam2FeedForward,
     Sam2LayerNorm,
@@ -31,7 +31,7 @@ from transformers.models.sam2.modeling_sam2 import (
     Sam2VisionEncoderOutput,
     Sam2VisionModel,
 )
-from transformers.utils.generic import TransformersKwargs, check_model_inputs
+from transformers_471.utils.generic import TransformersKwargs, check_model_inputs
 
 from ...configuration_utils import PretrainedConfig
 from ...processing_utils import Unpack
@@ -43,7 +43,7 @@ from ..auto import CONFIG_MAPPING, AutoConfig
 
 # fix this in modular
 if True:
-    from transformers.models.timm_wrapper.modeling_timm_wrapper import TimmWrapperModel
+    from transformers_471.models.timm_wrapper.modeling_timm_wrapper import TimmWrapperModel
 
 
 class EdgeTamVisionConfig(PretrainedConfig):

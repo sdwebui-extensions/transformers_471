@@ -405,7 +405,7 @@ def _compute_global_attention_mask(input_ids_shape, sep_token_indices, before_se
     return attention_mask
 
 
-# Copied from transformers.models.roberta.modeling_tf_roberta.TFRobertaLMHead with Roberta->Longformer
+# Copied from transformers_471.models.roberta.modeling_tf_roberta.TFRobertaLMHead with Roberta->Longformer
 class TFLongformerLMHead(keras.layers.Layer):
     """Longformer Head for masked language modeling."""
 
@@ -572,7 +572,7 @@ class TFLongformerEmbeddings(keras.layers.Layer):
         return final_embeddings
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->Longformer
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->Longformer
 class TFLongformerIntermediate(keras.layers.Layer):
     def __init__(self, config: LongformerConfig, **kwargs):
         super().__init__(**kwargs)
@@ -602,7 +602,7 @@ class TFLongformerIntermediate(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertOutput with Bert->Longformer
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertOutput with Bert->Longformer
 class TFLongformerOutput(keras.layers.Layer):
     def __init__(self, config: LongformerConfig, **kwargs):
         super().__init__(**kwargs)
@@ -633,7 +633,7 @@ class TFLongformerOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPooler with Bert->Longformer
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPooler with Bert->Longformer
 class TFLongformerPooler(keras.layers.Layer):
     def __init__(self, config: LongformerConfig, **kwargs):
         super().__init__(**kwargs)
@@ -663,7 +663,7 @@ class TFLongformerPooler(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->Longformer
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->Longformer
 class TFLongformerSelfOutput(keras.layers.Layer):
     def __init__(self, config: LongformerConfig, **kwargs):
         super().__init__(**kwargs)

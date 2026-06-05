@@ -18,8 +18,8 @@ from typing import Optional, Union
 
 import numpy as np
 
-from transformers.processing_utils import ImagesKwargs, ProcessingKwargs, ProcessorMixin, TextKwargs, Unpack
-from transformers.tokenization_utils_base import PreTokenizedInput, TextInput
+from transformers_471.processing_utils import ImagesKwargs, ProcessingKwargs, ProcessorMixin, TextKwargs, Unpack
+from transformers_471.tokenization_utils_base import PreTokenizedInput, TextInput
 
 from ...image_processing_utils import BatchFeature
 from ...image_utils import ImageInput

@@ -169,7 +169,7 @@ class TFRobertaEmbeddings(keras.layers.Layer):
         return final_embeddings
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertPooler with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertPooler with Bert->Roberta
 class TFRobertaPooler(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -199,7 +199,7 @@ class TFRobertaPooler(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfAttention with Bert->Roberta
 class TFRobertaSelfAttention(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -332,7 +332,7 @@ class TFRobertaSelfAttention(keras.layers.Layer):
                 self.value.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertSelfOutput with Bert->Roberta
 class TFRobertaSelfOutput(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -363,7 +363,7 @@ class TFRobertaSelfOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertAttention with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertAttention with Bert->Roberta
 class TFRobertaAttention(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -415,7 +415,7 @@ class TFRobertaAttention(keras.layers.Layer):
                 self.dense_output.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertIntermediate with Bert->Roberta
 class TFRobertaIntermediate(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -445,7 +445,7 @@ class TFRobertaIntermediate(keras.layers.Layer):
                 self.dense.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertOutput with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertOutput with Bert->Roberta
 class TFRobertaOutput(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -476,7 +476,7 @@ class TFRobertaOutput(keras.layers.Layer):
                 self.LayerNorm.build([None, None, self.config.hidden_size])
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertLayer with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLayer with Bert->Roberta
 class TFRobertaLayer(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -580,7 +580,7 @@ class TFRobertaLayer(keras.layers.Layer):
                 self.crossattention.build(None)
 
 
-# Copied from transformers.models.bert.modeling_tf_bert.TFBertEncoder with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_tf_bert.TFBertEncoder with Bert->Roberta
 class TFRobertaEncoder(keras.layers.Layer):
     def __init__(self, config: RobertaConfig, **kwargs):
         super().__init__(**kwargs)
@@ -679,16 +679,16 @@ class TFRobertaMainLayer(keras.layers.Layer):
         # The embeddings must be the last declaration in order to follow the weights order
         self.embeddings = TFRobertaEmbeddings(config, name="embeddings")
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer.get_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer.get_input_embeddings
     def get_input_embeddings(self) -> keras.layers.Layer:
         return self.embeddings
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer.set_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer.set_input_embeddings
     def set_input_embeddings(self, value: tf.Variable):
         self.embeddings.weight = value
         self.embeddings.vocab_size = shape_list(value)[0]
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer._prune_heads
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer._prune_heads
     def _prune_heads(self, heads_to_prune):
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base
@@ -697,7 +697,7 @@ class TFRobertaMainLayer(keras.layers.Layer):
         raise NotImplementedError
 
     @unpack_inputs
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer.call
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer.call
     def call(
         self,
         input_ids: TFModelInputType | None = None,
@@ -1228,7 +1228,7 @@ class TFRobertaForCausalLM(TFRobertaPreTrainedModel, TFCausalLanguageModelingLos
         warnings.warn("The method get_prefix_bias_name is deprecated. Please use `get_bias` instead.", FutureWarning)
         return self.name + "/" + self.lm_head.name
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertLMHeadModel.prepare_inputs_for_generation
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertLMHeadModel.prepare_inputs_for_generation
     def prepare_inputs_for_generation(self, input_ids, past_key_values=None, attention_mask=None, **model_kwargs):
         input_shape = input_ids.shape
         # if model is used as a decoder in encoder-decoder model, the decoder attention mask is created on the fly

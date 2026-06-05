@@ -841,7 +841,7 @@ class TFLayoutLMv3MainLayer(keras.layers.Layer):
     def set_input_embeddings(self, value: tf.Variable):
         self.embeddings.word_embeddings.weight = value
 
-    # Copied from transformers.models.bert.modeling_tf_bert.TFBertMainLayer._prune_heads
+    # Copied from transformers_471.models.bert.modeling_tf_bert.TFBertMainLayer._prune_heads
     def _prune_heads(self, heads_to_prune):
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base
@@ -894,7 +894,7 @@ class TFLayoutLMv3MainLayer(keras.layers.Layer):
         return embeddings
 
     def get_extended_attention_mask(self, attention_mask: tf.Tensor) -> tf.Tensor:
-        # Adapted from transformers.modelling_utils.ModuleUtilsMixin.get_extended_attention_mask
+        # Adapted from transformers_471.modelling_utils.ModuleUtilsMixin.get_extended_attention_mask
 
         n_dims = len(attention_mask.shape)
 
@@ -1274,7 +1274,7 @@ class TFLayoutLMv3Model(TFLayoutLMv3PreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, TFAutoModel
+        >>> from transformers_471 import AutoProcessor, TFAutoModel
         >>> from datasets import load_dataset
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/layoutlmv3-base", apply_ocr=False)
@@ -1416,7 +1416,7 @@ class TFLayoutLMv3ForSequenceClassification(TFLayoutLMv3PreTrainedModel, TFSeque
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, TFAutoModelForSequenceClassification
+        >>> from transformers_471 import AutoProcessor, TFAutoModelForSequenceClassification
         >>> from datasets import load_dataset
         >>> import tensorflow as tf
 
@@ -1544,7 +1544,7 @@ class TFLayoutLMv3ForTokenClassification(TFLayoutLMv3PreTrainedModel, TFTokenCla
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, TFAutoModelForTokenClassification
+        >>> from transformers_471 import AutoProcessor, TFAutoModelForTokenClassification
         >>> from datasets import load_dataset
 
         >>> processor = AutoProcessor.from_pretrained("microsoft/layoutlmv3-base", apply_ocr=False)
@@ -1680,7 +1680,7 @@ class TFLayoutLMv3ForQuestionAnswering(TFLayoutLMv3PreTrainedModel, TFQuestionAn
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, TFAutoModelForQuestionAnswering
+        >>> from transformers_471 import AutoProcessor, TFAutoModelForQuestionAnswering
         >>> from datasets import load_dataset
         >>> import tensorflow as tf
 

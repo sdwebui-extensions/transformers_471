@@ -119,7 +119,7 @@ class ApertusConfig(PretrainedConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import ApertusModel, ApertusConfig
+    >>> from transformers_471 import ApertusModel, ApertusConfig
 
     >>> # Initializing a Apertus-8B style configuration
     >>> configuration = ApertusConfig()

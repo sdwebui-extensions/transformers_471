@@ -242,7 +242,7 @@ class BlipTextSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert -> BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert -> BlipText
 class BlipTextSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -308,7 +308,7 @@ class BlipTextAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert -> BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert -> BlipText
 class BlipTextIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -324,7 +324,7 @@ class BlipTextIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert -> BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert -> BlipText
 class BlipTextOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -498,7 +498,7 @@ class BlipTextEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler with Bert->BlipText
 class BlipTextPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -514,7 +514,7 @@ class BlipTextPooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->BlipText
 class BlipTextPredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -532,7 +532,7 @@ class BlipTextPredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->BlipText
 class BlipTextLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -556,7 +556,7 @@ class BlipTextLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->BlipText
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->BlipText
 class BlipTextOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -617,7 +617,7 @@ class BlipTextModel(BlipTextPreTrainedModel):
     def set_input_embeddings(self, value):
         self.embeddings.word_embeddings = value
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel._prune_heads
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel._prune_heads
     def _prune_heads(self, heads_to_prune):
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base

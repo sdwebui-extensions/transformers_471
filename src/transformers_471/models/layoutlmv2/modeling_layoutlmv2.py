@@ -226,7 +226,7 @@ class LayoutLMv2SelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->LayoutLMv2
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->LayoutLMv2
 class LayoutLMv2Intermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -242,7 +242,7 @@ class LayoutLMv2Intermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->LayoutLM
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->LayoutLM
 class LayoutLMv2Output(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -737,7 +737,7 @@ class LayoutLMv2Model(LayoutLMv2PreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoProcessor, LayoutLMv2Model, set_seed
+        >>> from transformers_471 import AutoProcessor, LayoutLMv2Model, set_seed
         >>> from PIL import Image
         >>> import torch
         >>> from datasets import load_dataset
@@ -930,7 +930,7 @@ class LayoutLMv2ForSequenceClassification(LayoutLMv2PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoProcessor, LayoutLMv2ForSequenceClassification, set_seed
+        >>> from transformers_471 import AutoProcessor, LayoutLMv2ForSequenceClassification, set_seed
         >>> from PIL import Image
         >>> import torch
         >>> from datasets import load_dataset
@@ -1133,7 +1133,7 @@ class LayoutLMv2ForTokenClassification(LayoutLMv2PreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoProcessor, LayoutLMv2ForTokenClassification, set_seed
+        >>> from transformers_471 import AutoProcessor, LayoutLMv2ForTokenClassification, set_seed
         >>> from PIL import Image
         >>> from datasets import load_dataset
 
@@ -1287,7 +1287,7 @@ class LayoutLMv2ForQuestionAnswering(LayoutLMv2PreTrainedModel):
         a prediction of what it thinks the answer is (the span of the answer within the texts parsed from the image).
 
         ```python
-        >>> from transformers import AutoProcessor, LayoutLMv2ForQuestionAnswering, set_seed
+        >>> from transformers_471 import AutoProcessor, LayoutLMv2ForQuestionAnswering, set_seed
         >>> import torch
         >>> from PIL import Image
         >>> from datasets import load_dataset

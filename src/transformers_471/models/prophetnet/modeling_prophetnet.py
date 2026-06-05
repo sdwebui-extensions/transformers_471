@@ -1058,7 +1058,7 @@ class ProphetNetEncoder(ProphetNetPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ProphetNetEncoder
+        >>> from transformers_471 import AutoTokenizer, ProphetNetEncoder
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/prophetnet-large-uncased")
@@ -1201,7 +1201,7 @@ class ProphetNetDecoder(ProphetNetPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ProphetNetDecoder
+        >>> from transformers_471 import AutoTokenizer, ProphetNetDecoder
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/prophetnet-large-uncased")
@@ -1550,7 +1550,7 @@ class ProphetNetModel(ProphetNetPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ProphetNetModel
+        >>> from transformers_471 import AutoTokenizer, ProphetNetModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/prophetnet-large-uncased")
         >>> model = ProphetNetModel.from_pretrained("microsoft/prophetnet-large-uncased")
@@ -1691,7 +1691,7 @@ class ProphetNetForConditionalGeneration(ProphetNetPreTrainedModel, GenerationMi
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ProphetNetForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, ProphetNetForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/prophetnet-large-uncased")
         >>> model = ProphetNetForConditionalGeneration.from_pretrained("microsoft/prophetnet-large-uncased")
@@ -1879,7 +1879,7 @@ class ProphetNetForCausalLM(ProphetNetPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ProphetNetForCausalLM
+        >>> from transformers_471 import AutoTokenizer, ProphetNetForCausalLM
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/prophetnet-large-uncased")
@@ -1891,7 +1891,7 @@ class ProphetNetForCausalLM(ProphetNetPreTrainedModel, GenerationMixin):
         >>> logits = outputs.logits
 
         >>> # Model can also be used with EncoderDecoder framework
-        >>> from transformers import BertTokenizer, EncoderDecoderModel, AutoTokenizer
+        >>> from transformers_471 import BertTokenizer, EncoderDecoderModel, AutoTokenizer
         >>> import torch
 
         >>> tokenizer_enc = BertTokenizer.from_pretrained("google-bert/bert-large-uncased")

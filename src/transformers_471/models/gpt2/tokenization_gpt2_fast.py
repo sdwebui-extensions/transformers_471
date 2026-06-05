@@ -36,7 +36,7 @@ class GPT2TokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import GPT2TokenizerFast
+    >>> from transformers_471 import GPT2TokenizerFast
 
     >>> tokenizer = GPT2TokenizerFast.from_pretrained("openai-community/gpt2")
     >>> tokenizer("Hello world")["input_ids"]

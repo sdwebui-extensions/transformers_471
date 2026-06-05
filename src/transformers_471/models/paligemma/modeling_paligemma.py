@@ -145,11 +145,11 @@ class PaliGemmaModel(PaliGemmaPreTrainedModel):
         self.text_config_dtype = self.config.get_text_config().dtype or self.dtype
         self.post_init()
 
-    # Copied from transformers.models.llava.modeling_llava.LlavaModel.get_input_embeddings with Llava->PaliGemma
+    # Copied from transformers_471.models.llava.modeling_llava.LlavaModel.get_input_embeddings with Llava->PaliGemma
     def get_input_embeddings(self):
         return self.language_model.get_input_embeddings()
 
-    # Copied from transformers.models.llava.modeling_llava.LlavaModel.set_input_embeddings with Llava->PaliGemma
+    # Copied from transformers_471.models.llava.modeling_llava.LlavaModel.set_input_embeddings with Llava->PaliGemma
     def set_input_embeddings(self, value):
         self.language_model.set_input_embeddings(value)
 
@@ -298,7 +298,7 @@ class PaliGemmaModel(PaliGemmaPreTrainedModel):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, PaliGemmaForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, PaliGemmaForConditionalGeneration
 
         >>> model = PaliGemmaForConditionalGeneration.from_pretrained("google/paligemma2-3b-mix-224")
         >>> processor = AutoProcessor.from_pretrained("google/paligemma2-3b-mix-224")
@@ -459,7 +459,7 @@ class PaliGemmaForConditionalGeneration(PaliGemmaPreTrainedModel, GenerationMixi
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, PaliGemmaForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, PaliGemmaForConditionalGeneration
 
         >>> model = PaliGemmaForConditionalGeneration.from_pretrained("google/paligemma2-3b-mix-224")
         >>> processor = AutoProcessor.from_pretrained("google/paligemma2-3b-mix-224")
@@ -566,7 +566,7 @@ class PaliGemmaForConditionalGeneration(PaliGemmaPreTrainedModel, GenerationMixi
         return model_inputs
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,

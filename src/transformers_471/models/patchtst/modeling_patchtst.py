@@ -34,7 +34,7 @@ from .configuration_patchtst import PatchTSTConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -65,7 +65,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.wav2vec2.modeling_wav2vec2.Wav2Vec2Attention with Wav2Vec2->PatchTST
+# Copied from transformers_471.models.wav2vec2.modeling_wav2vec2.Wav2Vec2Attention with Wav2Vec2->PatchTST
 class PatchTSTAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -883,7 +883,7 @@ class SamplePatchTSTOutput(ModelOutput):
     sequences: Optional[torch.FloatTensor] = None
 
 
-# Copied from transformers.models.time_series_transformer.modeling_time_series_transformer.nll
+# Copied from transformers_471.models.time_series_transformer.modeling_time_series_transformer.nll
 def nll(input: torch.distributions.Distribution, target: torch.Tensor) -> torch.Tensor:
     """
     Computes the negative log likelihood loss from input distribution with respect to target.
@@ -891,7 +891,7 @@ def nll(input: torch.distributions.Distribution, target: torch.Tensor) -> torch.
     return -input.log_prob(target)
 
 
-# Copied from transformers.models.time_series_transformer.modeling_time_series_transformer.weighted_average
+# Copied from transformers_471.models.time_series_transformer.modeling_time_series_transformer.weighted_average
 def weighted_average(input_tensor: torch.Tensor, weights: Optional[torch.Tensor] = None, dim=None) -> torch.Tensor:
     """
     Computes the weighted average of a given tensor across a given `dim`, masking values associated with weight zero,
@@ -916,7 +916,7 @@ def weighted_average(input_tensor: torch.Tensor, weights: Optional[torch.Tensor]
         return input_tensor.mean(dim=dim)
 
 
-# Copied from transformers.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesStdScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
+# Copied from transformers_471.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesStdScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
 class PatchTSTStdScaler(nn.Module):
     """
     Standardize features by calculating the mean and scaling along the first dimension, and then normalizes it by
@@ -952,7 +952,7 @@ class PatchTSTStdScaler(nn.Module):
         return (data - loc) / scale, loc, scale
 
 
-# Copied from transformers.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesMeanScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
+# Copied from transformers_471.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesMeanScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
 class PatchTSTMeanScaler(nn.Module):
     """
     Computes a scaling factor as the weighted average absolute value along the first dimension, and scales the data
@@ -1007,7 +1007,7 @@ class PatchTSTMeanScaler(nn.Module):
         return scaled_data, torch.zeros_like(scale), scale
 
 
-# Copied from transformers.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesNOPScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
+# Copied from transformers_471.models.time_series_transformer.modeling_time_series_transformer.TimeSeriesNOPScaler with TimeSeriesTransformer->PatchTST,TimeSeries->PatchTST
 class PatchTSTNOPScaler(nn.Module):
     """
     Assigns a scaling factor equal to 1 along the first dimension, and therefore applies no scaling to the input data.
@@ -1119,7 +1119,7 @@ class PatchTSTModel(PatchTSTPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import PatchTSTModel
+        >>> from transformers_471 import PatchTSTModel
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/etth1-hourly-batch", filename="train-batch.pt", repo_type="dataset"
@@ -1253,7 +1253,7 @@ class PatchTSTForPretraining(PatchTSTPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import PatchTSTConfig, PatchTSTForPretraining
+        >>> from transformers_471 import PatchTSTConfig, PatchTSTForPretraining
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/etth1-hourly-batch", filename="train-batch.pt", repo_type="dataset"
@@ -1402,7 +1402,7 @@ class PatchTSTForClassification(PatchTSTPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import PatchTSTConfig, PatchTSTForClassification
+        >>> from transformers_471 import PatchTSTConfig, PatchTSTForClassification
 
         >>> # classification task with two input channel2 and 3 classes
         >>> config = PatchTSTConfig(
@@ -1622,7 +1622,7 @@ class PatchTSTForPrediction(PatchTSTPreTrainedModel):
         ```python
         >>> from huggingface_hub import hf_hub_download
         >>> import torch
-        >>> from transformers import PatchTSTConfig, PatchTSTForPrediction
+        >>> from transformers_471 import PatchTSTConfig, PatchTSTForPrediction
 
         >>> file = hf_hub_download(
         ...     repo_id="hf-internal-testing/etth1-hourly-batch", filename="train-batch.pt", repo_type="dataset"
@@ -1856,7 +1856,7 @@ class PatchTSTForRegression(PatchTSTPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import PatchTSTConfig, PatchTSTForRegression
+        >>> from transformers_471 import PatchTSTConfig, PatchTSTForRegression
 
         >>> # Regression task with 6 input channels and regress 2 targets
         >>> model = PatchTSTForRegression.from_pretrained("namctin/patchtst_etth1_regression")

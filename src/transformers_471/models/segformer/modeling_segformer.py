@@ -59,7 +59,7 @@ class SegFormerImageClassifierOutput(ImageClassifierOutput):
     attentions: Optional[tuple[torch.FloatTensor]] = None
 
 
-# Copied from transformers.models.beit.modeling_beit.drop_path
+# Copied from transformers_471.models.beit.modeling_beit.drop_path
 def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = False) -> torch.Tensor:
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -80,7 +80,7 @@ def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = Fals
     return output
 
 
-# Copied from transformers.models.convnext.modeling_convnext.ConvNextDropPath with ConvNext->Segformer
+# Copied from transformers_471.models.convnext.modeling_convnext.ConvNextDropPath with ConvNext->Segformer
 class SegformerDropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
 
@@ -684,7 +684,7 @@ class SegformerForSemanticSegmentation(SegformerPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, SegformerForSemanticSegmentation
+        >>> from transformers_471 import AutoImageProcessor, SegformerForSemanticSegmentation
         >>> from PIL import Image
         >>> import requests
 

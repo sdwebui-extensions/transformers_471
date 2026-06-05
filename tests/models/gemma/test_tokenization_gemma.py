@@ -18,13 +18,13 @@ import unittest
 
 from datasets import load_dataset
 
-from transformers import (
+from transformers_471 import (
     AddedToken,
     GemmaTokenizer,
     GemmaTokenizerFast,
 )
-from transformers.convert_slow_tokenizer import convert_slow_tokenizer
-from transformers.testing_utils import (
+from transformers_471.convert_slow_tokenizer import convert_slow_tokenizer
+from transformers_471.testing_utils import (
     get_tests_dir,
     nested_simplify,
     require_jinja,

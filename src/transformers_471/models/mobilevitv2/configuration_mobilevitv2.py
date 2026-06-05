@@ -82,7 +82,7 @@ class MobileViTV2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MobileViTV2Config, MobileViTV2Model
+    >>> from transformers_471 import MobileViTV2Config, MobileViTV2Model
 
     >>> # Initializing a mobilevitv2-small style configuration
     >>> configuration = MobileViTV2Config()

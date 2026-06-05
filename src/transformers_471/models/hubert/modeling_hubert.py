@@ -949,7 +949,7 @@ class HubertModel(HubertPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoProcessor, HubertModel
+        >>> from transformers_471 import AutoProcessor, HubertModel
         >>> from datasets import load_dataset
 
         >>> processor = AutoProcessor.from_pretrained("facebook/hubert-large-ls960-ft")

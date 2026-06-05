@@ -17,9 +17,9 @@ import unittest
 
 import pytest
 
-from transformers import is_torch_available
-from transformers.cache_utils import Cache
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available
+from transformers_471.cache_utils import Cache
+from transformers_471.testing_utils import (
     Expectations,
     require_torch,
     require_torch_accelerator,
@@ -31,7 +31,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         MiniMaxForCausalLM,
         MiniMaxForQuestionAnswering,
         MiniMaxForSequenceClassification,

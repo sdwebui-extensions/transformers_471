@@ -646,7 +646,7 @@ class GptOssForCausalLM(GptOssPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GptOssForCausalLM
+        >>> from transformers_471 import AutoTokenizer, GptOssForCausalLM
 
         >>> model = GptOssForCausalLM.from_pretrained("mistralai/GptOss-8x7B-v0.1")
         >>> tokenizer = AutoTokenizer.from_pretrained("mistralai/GptOss-8x7B-v0.1")

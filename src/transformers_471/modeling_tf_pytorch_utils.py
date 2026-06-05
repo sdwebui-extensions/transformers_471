@@ -513,7 +513,7 @@ def load_tf2_checkpoint_in_pytorch_model(
         )
         raise
 
-    import transformers
+    import transformers_471
 
     from .modeling_tf_utils import load_tf_weights
 
@@ -521,7 +521,7 @@ def load_tf2_checkpoint_in_pytorch_model(
 
     # Instantiate and load the associated TF 2.0 model
     tf_model_class_name = "TF" + pt_model.__class__.__name__  # Add "TF" at the beginning
-    tf_model_class = getattr(transformers, tf_model_class_name)
+    tf_model_class = getattr(transformers_471, tf_model_class_name)
     tf_model = tf_model_class(pt_model.config)
 
     if tf_inputs is None:

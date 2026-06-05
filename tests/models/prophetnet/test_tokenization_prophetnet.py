@@ -16,16 +16,16 @@
 import os
 import unittest
 
-from transformers import BatchEncoding
-from transformers.models.bert.tokenization_bert import (
+from transformers_471 import BatchEncoding
+from transformers_471.models.bert.tokenization_bert import (
     BasicTokenizer,
     WordpieceTokenizer,
     _is_control,
     _is_punctuation,
     _is_whitespace,
 )
-from transformers.models.prophetnet.tokenization_prophetnet import VOCAB_FILES_NAMES, ProphetNetTokenizer
-from transformers.testing_utils import require_torch, slow
+from transformers_471.models.prophetnet.tokenization_prophetnet import VOCAB_FILES_NAMES, ProphetNetTokenizer
+from transformers_471.testing_utils import require_torch, slow
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

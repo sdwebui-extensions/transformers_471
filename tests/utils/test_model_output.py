@@ -19,9 +19,9 @@ from typing import Optional
 
 import pytest
 
-from transformers import AlbertForMaskedLM
-from transformers.testing_utils import require_torch
-from transformers.utils import ModelOutput, is_torch_available
+from transformers_471 import AlbertForMaskedLM
+from transformers_471.testing_utils import require_torch
+from transformers_471.utils import ModelOutput, is_torch_available
 
 
 if is_torch_available():

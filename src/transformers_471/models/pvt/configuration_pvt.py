@@ -82,7 +82,7 @@ class PvtConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import PvtModel, PvtConfig
+    >>> from transformers_471 import PvtModel, PvtConfig
 
     >>> # Initializing a PVT Xrenya/pvt-tiny-224 style configuration
     >>> configuration = PvtConfig()

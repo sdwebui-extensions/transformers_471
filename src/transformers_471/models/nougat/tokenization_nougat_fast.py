@@ -23,9 +23,9 @@ from typing import Optional, Union
 
 import numpy as np
 
-from transformers.tokenization_utils_base import INIT_TOKENIZER_DOCSTRING
-from transformers.tokenization_utils_fast import PreTrainedTokenizerFast
-from transformers.utils import add_end_docstrings
+from transformers_471.tokenization_utils_base import INIT_TOKENIZER_DOCSTRING
+from transformers_471.tokenization_utils_fast import PreTrainedTokenizerFast
+from transformers_471.utils import add_end_docstrings
 
 from ...utils import is_levenshtein_available, is_nltk_available, logging, requires_backends
 

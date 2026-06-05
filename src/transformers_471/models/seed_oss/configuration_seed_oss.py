@@ -13,8 +13,8 @@
 # limitations under the License.
 """SeedOss model configuration"""
 
-from transformers.configuration_utils import PretrainedConfig
-from transformers.modeling_rope_utils import rope_config_validation
+from transformers_471.configuration_utils import PretrainedConfig
+from transformers_471.modeling_rope_utils import rope_config_validation
 
 
 class SeedOssConfig(PretrainedConfig):
@@ -124,7 +124,7 @@ class SeedOssConfig(PretrainedConfig):
             The attention head dimension.
 
     ```python
-    >>> from transformers import SeedOssModel, SeedOssConfig
+    >>> from transformers_471 import SeedOssModel, SeedOssConfig
 
     >>> # Initializing a SeedOss-36b style configuration
     >>> configuration = SeedOssConfig()

@@ -412,7 +412,7 @@ class CsmGenerationMixin(GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import CsmProcessor, CsmForConditionalGeneration
+        >>> from transformers_471 import CsmProcessor, CsmForConditionalGeneration
         >>> from datasets import load_dataset, Audio
 
         >>> model_id = "sesame/csm-1b"

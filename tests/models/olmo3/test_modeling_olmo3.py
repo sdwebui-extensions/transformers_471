@@ -20,10 +20,10 @@ import pytest
 from packaging import version
 from parameterized import parameterized
 
-from transformers import is_torch_available, set_seed
-from transformers.generation.configuration_utils import GenerationConfig
-from transformers.models.auto.tokenization_auto import AutoTokenizer
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available, set_seed
+from transformers_471.generation.configuration_utils import GenerationConfig
+from transformers_471.models.auto.tokenization_auto import AutoTokenizer
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_torch,
@@ -38,11 +38,11 @@ from ...test_modeling_common import ids_tensor
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         Olmo3ForCausalLM,
         Olmo3Model,
     )
-    from transformers.models.olmo3.modeling_olmo3 import Olmo3RotaryEmbedding
+    from transformers_471.models.olmo3.modeling_olmo3 import Olmo3RotaryEmbedding
 
 
 class Olmo3ModelTester(CausalLMModelTester):
@@ -235,7 +235,7 @@ class Olmo3IntegrationTest(unittest.TestCase):
         if version.parse(torch.__version__) < version.parse("2.4.0"):
             self.skipTest(reason="This test requires torch >= 2.4 to run.")
 
-        from transformers.integrations.executorch import (
+        from transformers_471.integrations.executorch import (
             TorchExportableModuleWithStaticCache,
             convert_and_export_with_cache,
         )

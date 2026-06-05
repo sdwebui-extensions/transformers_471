@@ -19,12 +19,12 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     PaliGemmaConfig,
     PaliGemmaForConditionalGeneration,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     require_torch,
     torch_device,
 )

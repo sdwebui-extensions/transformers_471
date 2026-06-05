@@ -74,7 +74,7 @@ class Owlv2Processor(ProcessorMixin):
     def __init__(self, image_processor, tokenizer, **kwargs):
         super().__init__(image_processor, tokenizer)
 
-    # Copied from transformers.models.owlvit.processing_owlvit.OwlViTProcessor.__call__ with OwlViT->Owlv2
+    # Copied from transformers_471.models.owlvit.processing_owlvit.OwlViTProcessor.__call__ with OwlViT->Owlv2
     def __call__(
         self,
         images: Optional[ImageInput] = None,
@@ -192,7 +192,7 @@ class Owlv2Processor(ProcessorMixin):
 
         return BatchFeature(data=data, tensor_type=return_tensors)
 
-    # Copied from transformers.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_object_detection with OwlViT->Owlv2
+    # Copied from transformers_471.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_object_detection with OwlViT->Owlv2
     def post_process_object_detection(self, *args, **kwargs):
         """
         This method forwards all its arguments to [`Owlv2ImageProcessor.post_process_object_detection`]. Please refer
@@ -205,7 +205,7 @@ class Owlv2Processor(ProcessorMixin):
         )
         return self.image_processor.post_process_object_detection(*args, **kwargs)
 
-    # Copied from transformers.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_grounded_object_detection with OwlViT->Owlv2
+    # Copied from transformers_471.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_grounded_object_detection with OwlViT->Owlv2
     def post_process_grounded_object_detection(
         self,
         outputs: "Owlv2ObjectDetectionOutput",
@@ -254,7 +254,7 @@ class Owlv2Processor(ProcessorMixin):
 
         return output
 
-    # Copied from transformers.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_image_guided_detection with OwlViT->Owlv2
+    # Copied from transformers_471.models.owlvit.processing_owlvit.OwlViTProcessor.post_process_image_guided_detection with OwlViT->Owlv2
     def post_process_image_guided_detection(
         self,
         outputs: "Owlv2ImageGuidedObjectDetectionOutput",

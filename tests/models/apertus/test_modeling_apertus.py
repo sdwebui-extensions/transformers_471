@@ -20,8 +20,8 @@
 
 import unittest
 
-from transformers import is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import is_torch_available
+from transformers_471.testing_utils import (
     require_read_token,
     require_torch,
     require_torch_accelerator,
@@ -32,7 +32,7 @@ from ...causal_lm_tester import CausalLMModelTest, CausalLMModelTester
 
 
 if is_torch_available():
-    from transformers import (
+    from transformers_471 import (
         ApertusForCausalLM,
         ApertusForTokenClassification,
         ApertusModel,

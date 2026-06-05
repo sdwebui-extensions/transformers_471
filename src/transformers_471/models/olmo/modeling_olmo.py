@@ -420,7 +420,7 @@ class OlmoForCausalLM(OlmoPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, OlmoForCausalLM
+        >>> from transformers_471 import AutoTokenizer, OlmoForCausalLM
 
         >>> model = OlmoForCausalLM.from_pretrained("meta-olmo/Olmo-2-7b-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("meta-olmo/Olmo-2-7b-hf")

@@ -17,7 +17,7 @@ import json
 import os
 import unittest
 
-from transformers import ClvpTokenizer
+from transformers_471 import ClvpTokenizer
 
 from ...test_tokenization_common import TokenizerTesterMixin, slow
 
@@ -70,20 +70,20 @@ class ClvpTokenizationTest(TokenizerTesterMixin, unittest.TestCase):
         with open(cls.merges_file, "w", encoding="utf-8") as fp:
             fp.write("\n".join(merges))
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.get_tokenizer with GPT2->Clvp
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.get_tokenizer with GPT2->Clvp
     @classmethod
     def get_tokenizer(cls, pretrained_name=None, **kwargs):
         kwargs.update(cls.special_tokens_map)
         pretrained_name = pretrained_name or cls.tmpdirname
         return ClvpTokenizer.from_pretrained(pretrained_name, **kwargs)
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.get_input_output_texts
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.get_input_output_texts
     def get_input_output_texts(self, tokenizer):
         input_text = "lower newer"
         output_text = "lower[SPACE]newer"
         return input_text, output_text
 
-    # Copied from transformers.tests.models.layoutxlm.test_tokenization_layoutxlm.LayoutXLMTokenizationTest.test_add_special_tokens
+    # Copied from transformers_471.tests.models.layoutxlm.test_tokenization_layoutxlm.LayoutXLMTokenizationTest.test_add_special_tokens
     def test_add_special_tokens(self):
         tokenizers: list[ClvpTokenizer] = self.get_tokenizers(do_lower_case=False)
         for tokenizer in tokenizers:
@@ -100,7 +100,7 @@ class ClvpTokenizationTest(TokenizerTesterMixin, unittest.TestCase):
                 decoded = tokenizer.decode(encoded_special_token, skip_special_tokens=True)
                 self.assertTrue(special_token not in decoded)
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_rust_and_python_full_tokenizers
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_rust_and_python_full_tokenizers
     def test_rust_and_python_full_tokenizers(self):
         if not self.test_rust_tokenizer:
             self.skipTest(reason="test_rust_tokenizer is set to False")
@@ -131,7 +131,7 @@ class ClvpTokenizationTest(TokenizerTesterMixin, unittest.TestCase):
         input_bpe_tokens = [14, 15, 10, 9, 3, 2, 15, 19]
         self.assertListEqual(rust_tokenizer.convert_tokens_to_ids(input_tokens), input_bpe_tokens)
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_padding
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_padding
     def test_padding(self, max_length=15):
         for tokenizer, pretrained_name, kwargs in self.tokenizers_list:
             with self.subTest(f"{tokenizer.__class__.__name__} ({pretrained_name})"):
@@ -176,7 +176,7 @@ class ClvpTokenizationTest(TokenizerTesterMixin, unittest.TestCase):
                     padding="max_length",
                 )
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_padding_if_pad_token_set_slow
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_padding_if_pad_token_set_slow
     def test_padding_if_pad_token_set_slow(self):
         tokenizer = ClvpTokenizer.from_pretrained(self.tmpdirname, pad_token="<pad>")
 
@@ -228,7 +228,7 @@ class ClvpTokenizationTest(TokenizerTesterMixin, unittest.TestCase):
         self.assertTrue(pad_token_id in out_p2["input_ids"][1])
         self.assertTrue(0 in out_p2["attention_mask"][1])
 
-    # Copied from transformers.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_special_tokens_mask_input_pairs_and_bos_token
+    # Copied from transformers_471.tests.models.gpt2.test_tokenization_gpt2.GPT2TokenizationTest.test_special_tokens_mask_input_pairs_and_bos_token
     def test_special_tokens_mask_input_pairs_and_bos_token(self):
         # TODO: change to self.get_tokenizers() when the fast version is implemented
         tokenizers = [self.get_tokenizer(do_lower_case=False, add_bos_token=True)]

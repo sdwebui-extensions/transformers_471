@@ -17,16 +17,16 @@ import unittest
 
 import numpy as np
 
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     require_torch,
     require_torchvision,
     require_vision,
 )
-from transformers.utils import is_tf_available, is_torch_available, is_vision_available
+from transformers_471.utils import is_tf_available, is_torch_available, is_vision_available
 
 
 if is_vision_available():
-    from transformers import AutoProcessor, Sam2ImageProcessorFast, Sam2Processor
+    from transformers_471 import AutoProcessor, Sam2ImageProcessorFast, Sam2Processor
 
 if is_torch_available():
     import torch

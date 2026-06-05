@@ -81,7 +81,7 @@ def shift_tokens_right(input_ids: torch.Tensor, pad_token_id: int):
     return prev_output_tokens
 
 
-# Copied from transformers.models.bart.modeling_bart.BartLearnedPositionalEmbedding with Bart->MBart
+# Copied from transformers_471.models.bart.modeling_bart.BartLearnedPositionalEmbedding with Bart->MBart
 class MBartLearnedPositionalEmbedding(nn.Embedding):
     """
     This module learns positional embeddings up to a fixed maximum size.
@@ -109,7 +109,7 @@ class MBartLearnedPositionalEmbedding(nn.Embedding):
         return super().forward(position_ids + self.offset)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->MBart
+# Copied from transformers_471.models.bart.modeling_bart.BartScaledWordEmbedding with Bart->MBart
 class MBartScaledWordEmbedding(nn.Embedding):
     """
     This module overrides nn.Embeddings' forward by multiplying with embeddings scale.
@@ -123,7 +123,7 @@ class MBartScaledWordEmbedding(nn.Embedding):
         return super().forward(input_ids) * self.embed_scale
 
 
-# Copied from transformers.models.bart.modeling_bart.eager_attention_forward
+# Copied from transformers_471.models.bart.modeling_bart.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -154,7 +154,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.bart.modeling_bart.BartAttention with Bart->MBart
+# Copied from transformers_471.models.bart.modeling_bart.BartAttention with Bart->MBart
 class MBartAttention(nn.Module):
     """Multi-headed attention from 'Attention Is All You Need' paper"""
 
@@ -462,7 +462,7 @@ class MBartDecoderLayer(GradientCheckpointingLayer):
         return outputs
 
 
-# Copied from transformers.models.bart.modeling_bart.BartClassificationHead with Bart->MBart
+# Copied from transformers_471.models.bart.modeling_bart.BartClassificationHead with Bart->MBart
 class MBartClassificationHead(nn.Module):
     """Head for sentence-level classification tasks."""
 
@@ -523,7 +523,7 @@ class MBartPreTrainedModel(PreTrainedModel):
         }
         return dummy_inputs
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_full_mask
     def _update_full_mask(
         self,
         attention_mask: Union[torch.Tensor, None],
@@ -546,7 +546,7 @@ class MBartPreTrainedModel(PreTrainedModel):
 
         return attention_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Optional[Union[torch.Tensor, "BlockMask"]],
@@ -624,7 +624,7 @@ class MBartPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -679,7 +679,7 @@ class MBartPreTrainedModel(PreTrainedModel):
 
         return causal_mask
 
-    # Copied from transformers.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
+    # Copied from transformers_471.models.bart.modeling_bart.BartPreTrainedModel._update_cross_attn_mask
     def _update_cross_attn_mask(
         self,
         encoder_hidden_states: Union[torch.Tensor, None],
@@ -1391,7 +1391,7 @@ class MBartForConditionalGeneration(MBartPreTrainedModel, GenerationMixin):
         Example Translation:
 
         ```python
-        >>> from transformers import AutoTokenizer, MBartForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, MBartForConditionalGeneration
 
         >>> model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-en-ro")
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/mbart-large-en-ro")
@@ -1408,7 +1408,7 @@ class MBartForConditionalGeneration(MBartPreTrainedModel, GenerationMixin):
         Mask filling example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MBartForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, MBartForConditionalGeneration
 
         >>> model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-cc25")
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/mbart-large-cc25")
@@ -1504,7 +1504,7 @@ class MBartForSequenceClassification(MBartPreTrainedModel):
         self.post_init()
 
     @auto_docstring
-    # Copied from transformers.models.bart.modeling_bart.BartForSequenceClassification.forward
+    # Copied from transformers_471.models.bart.modeling_bart.BartForSequenceClassification.forward
     def forward(
         self,
         input_ids: Optional[torch.LongTensor] = None,
@@ -1650,7 +1650,7 @@ class MBartForQuestionAnswering(MBartPreTrainedModel):
         self.post_init()
 
     @auto_docstring
-    # Copied from transformers.models.bart.modeling_bart.BartForQuestionAnswering.forward
+    # Copied from transformers_471.models.bart.modeling_bart.BartForQuestionAnswering.forward
     def forward(
         self,
         input_ids: Optional[torch.Tensor] = None,
@@ -1767,7 +1767,7 @@ class MBartForQuestionAnswering(MBartPreTrainedModel):
         )
 
 
-# Copied from transformers.models.bart.modeling_bart.BartDecoderWrapper with Bart->MBart
+# Copied from transformers_471.models.bart.modeling_bart.BartDecoderWrapper with Bart->MBart
 class MBartDecoderWrapper(MBartPreTrainedModel):
     """
     This wrapper class is a helper class to correctly load pretrained checkpoints when the causal language model is
@@ -1782,7 +1782,7 @@ class MBartDecoderWrapper(MBartPreTrainedModel):
         return self.decoder(*args, **kwargs)
 
 
-# Copied from transformers.models.bart.modeling_bart.BartForCausalLM with Bart->MBart, facebook/bart-base->facebook/mbart-large-cc25
+# Copied from transformers_471.models.bart.modeling_bart.BartForCausalLM with Bart->MBart, facebook/bart-base->facebook/mbart-large-cc25
 class MBartForCausalLM(MBartPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["lm_head.weight"]
 
@@ -1841,7 +1841,7 @@ class MBartForCausalLM(MBartPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MBartForCausalLM
+        >>> from transformers_471 import AutoTokenizer, MBartForCausalLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/mbart-large-cc25")
         >>> model = MBartForCausalLM.from_pretrained("facebook/mbart-large-cc25", add_cross_attention=False)

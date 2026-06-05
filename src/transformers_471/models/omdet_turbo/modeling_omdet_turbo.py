@@ -157,7 +157,7 @@ class OmDetTurboObjectDetectionOutput(ModelOutput):
 
 
 @use_kernel_forward_from_hub("MultiScaleDeformableAttention")
-# Copied from transformers.models.deformable_detr.modeling_deformable_detr.MultiScaleDeformableAttention
+# Copied from transformers_471.models.deformable_detr.modeling_deformable_detr.MultiScaleDeformableAttention
 class MultiScaleDeformableAttention(nn.Module):
     def forward(
         self,
@@ -291,7 +291,7 @@ class OmDetTurboVisionBackbone(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.deformable_detr.modeling_deformable_detr.DeformableDetrMultiscaleDeformableAttention with DeformableDetr->OmDetTurbo, Deformable DETR->OmDet-Turbo
+# Copied from transformers_471.models.deformable_detr.modeling_deformable_detr.DeformableDetrMultiscaleDeformableAttention with DeformableDetr->OmDetTurbo, Deformable DETR->OmDet-Turbo
 class OmDetTurboMultiscaleDeformableAttention(nn.Module):
     """
     Multiscale deformable attention as proposed in Deformable DETR.
@@ -403,7 +403,7 @@ class OmDetTurboMultiscaleDeformableAttention(nn.Module):
         return output, attention_weights
 
 
-# Copied from transformers.models.rt_detr.modeling_rt_detr.RTDetrConvNormLayer with RTDetr->OmDetTurbo
+# Copied from transformers_471.models.rt_detr.modeling_rt_detr.RTDetrConvNormLayer with RTDetr->OmDetTurbo
 class OmDetTurboConvNormLayer(nn.Module):
     def __init__(self, config, in_channels, out_channels, kernel_size, stride, padding=None, activation=None):
         super().__init__()
@@ -425,7 +425,7 @@ class OmDetTurboConvNormLayer(nn.Module):
         return hidden_state
 
 
-# Copied from transformers.models.rt_detr.modeling_rt_detr.RTDetrRepVggBlock with RTDetr->OmDetTurbo, activation_function->csp_activation
+# Copied from transformers_471.models.rt_detr.modeling_rt_detr.RTDetrRepVggBlock with RTDetr->OmDetTurbo, activation_function->csp_activation
 class OmDetTurboRepVggBlock(nn.Module):
     """
     RepVGG architecture block introduced by the work "RepVGG: Making VGG-style ConvNets Great Again".
@@ -445,7 +445,7 @@ class OmDetTurboRepVggBlock(nn.Module):
         return self.activation(y)
 
 
-# Copied from transformers.models.rt_detr.modeling_rt_detr.RTDetrCSPRepLayer with RTDetr->OmDetTurbo, activation_function->csp_activation
+# Copied from transformers_471.models.rt_detr.modeling_rt_detr.RTDetrCSPRepLayer with RTDetr->OmDetTurbo, activation_function->csp_activation
 class OmDetTurboCSPRepLayer(nn.Module):
     """
     Cross Stage Partial (CSP) network layer with RepVGG blocks.
@@ -1535,7 +1535,7 @@ class OmDetTurboForObjectDetection(OmDetTurboPreTrainedModel):
         >>> import requests
         >>> from PIL import Image
 
-        >>> from transformers import AutoProcessor, OmDetTurboForObjectDetection
+        >>> from transformers_471 import AutoProcessor, OmDetTurboForObjectDetection
 
         >>> processor = AutoProcessor.from_pretrained("omlab/omdet-turbo-swin-tiny-hf")
         >>> model = OmDetTurboForObjectDetection.from_pretrained("omlab/omdet-turbo-swin-tiny-hf")

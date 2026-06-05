@@ -243,7 +243,7 @@ class QuestionAnsweringPipeline(ChunkPipeline):
     Example:
 
     ```python
-    >>> from transformers import pipeline
+    >>> from transformers_471 import pipeline
 
     >>> oracle = pipeline(model="deepset/roberta-base-squad2")
     >>> oracle(question="Where do I live?", context="My name is Wolfgang and I live in Berlin")

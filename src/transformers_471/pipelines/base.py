@@ -896,7 +896,7 @@ SUPPORTED_PEFT_TASKS = {
 }
 
 if is_torch_available():
-    from transformers.pipelines.pt_utils import (
+    from transformers_471.pipelines.pt_utils import (
         PipelineChunkIterator,
         PipelineDataset,
         PipelineIterator,
@@ -1139,7 +1139,7 @@ class Pipeline(_ScikitCompat, PushToHubMixin):
 
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

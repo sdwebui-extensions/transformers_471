@@ -282,8 +282,8 @@ def get_json_schema(func: Callable) -> dict:
     support them, like so:
 
     ```python
-    >>> from transformers import AutoTokenizer
-    >>> from transformers.utils import get_json_schema
+    >>> from transformers_471 import AutoTokenizer
+    >>> from transformers_471.utils import get_json_schema
     >>>
     >>> def multiply(x: float, y: float):
     >>>    '''

@@ -431,7 +431,7 @@ class GPTNeoXForCausalLM(GPTNeoXPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, GPTNeoXForCausalLM, GPTNeoXConfig
+        >>> from transformers_471 import AutoTokenizer, GPTNeoXForCausalLM, GPTNeoXConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neox-20b")

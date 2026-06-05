@@ -155,7 +155,7 @@ class MusicgenConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import (
+    >>> from transformers_471 import (
     ...     MusicgenConfig,
     ...     MusicgenDecoderConfig,
     ...     T5Config,

@@ -24,10 +24,10 @@ from huggingface_hub import AsyncInferenceClient, ChatCompletionStreamOutput
 from parameterized import parameterized
 
 import transformers.commands.transformers_cli as cli
-from transformers import GenerationConfig
-from transformers.commands.serving import Modality, ServeArguments, ServeCommand
-from transformers.testing_utils import CaptureStd, require_openai, slow
-from transformers.utils.import_utils import is_openai_available
+from transformers_471 import GenerationConfig
+from transformers_471.commands.serving import Modality, ServeArguments, ServeCommand
+from transformers_471.testing_utils import CaptureStd, require_openai, slow
+from transformers_471.utils.import_utils import is_openai_available
 
 
 if is_openai_available():

@@ -19,7 +19,7 @@ import unittest
 import requests
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     AutoTokenizer,
     LlavaConfig,
@@ -28,7 +28,7 @@ from transformers import (
     is_torch_available,
     is_vision_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     Expectations,
     cleanup,
     require_bitsandbytes,

@@ -1309,7 +1309,7 @@ class xLSTMCache:
     Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, xLSTMForCausalLM, xLSTMCache
+        >>> from transformers_471 import AutoTokenizer, xLSTMForCausalLM, xLSTMCache
 
         >>> model = xLSTMForCausalLM.from_pretrained("NX-AI/xLSTM-7b")
         >>> tokenizer = xLSTMTokenizer.from_pretrained("NX-AI/xLSTM-7b")

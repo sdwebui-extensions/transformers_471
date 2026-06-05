@@ -48,7 +48,7 @@ class CodeGenTokenizerFast(PreTrainedTokenizerFast):
     be encoded differently whether it is at the beginning of the sentence (without space) or not:
 
     ```python
-    >>> from transformers import CodeGenTokenizerFast
+    >>> from transformers_471 import CodeGenTokenizerFast
 
     >>> tokenizer = CodeGenTokenizerFast.from_pretrained("Salesforce/codegen-350M-mono")
     >>> tokenizer("Hello world")["input_ids"]

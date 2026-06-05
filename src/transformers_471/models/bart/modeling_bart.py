@@ -623,7 +623,7 @@ class BartPreTrainedModel(PreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1420,7 +1420,7 @@ class BartForConditionalGeneration(BartPreTrainedModel, GenerationMixin):
         Example summarization:
 
         ```python
-        >>> from transformers import AutoTokenizer, BartForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, BartForConditionalGeneration
 
         >>> model = BartForConditionalGeneration.from_pretrained("facebook/bart-large-cnn")
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
@@ -1441,7 +1441,7 @@ class BartForConditionalGeneration(BartPreTrainedModel, GenerationMixin):
         Mask filling example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BartForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, BartForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/bart-base")
         >>> model = BartForConditionalGeneration.from_pretrained("facebook/bart-base")
@@ -1878,7 +1878,7 @@ class BartForCausalLM(BartPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, BartForCausalLM
+        >>> from transformers_471 import AutoTokenizer, BartForCausalLM
 
         >>> tokenizer = AutoTokenizer.from_pretrained("facebook/bart-base")
         >>> model = BartForCausalLM.from_pretrained("facebook/bart-base", add_cross_attention=False)

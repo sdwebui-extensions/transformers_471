@@ -43,7 +43,7 @@ from .configuration_chameleon import ChameleonConfig, ChameleonVQVAEConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRMSNorm with Llama->Chameleon
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRMSNorm with Llama->Chameleon
 class ChameleonRMSNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -64,7 +64,7 @@ class ChameleonRMSNorm(nn.Module):
         return f"{tuple(self.weight.shape)}, eps={self.variance_epsilon}"
 
 
-# copied from transformers.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Chameleon
+# copied from transformers_471.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Chameleon
 # TODO(joao): add me back asap :)
 class ChameleonRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
@@ -130,7 +130,7 @@ class ChameleonDynamicNTKScalingRotaryEmbedding(ChameleonRotaryEmbedding):
         return cos, sin
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -138,7 +138,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -166,7 +166,7 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     return q_embed, k_embed
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaMLP with Llama->Chameleon
+# Copied from transformers_471.models.llama.modeling_llama.LlamaMLP with Llama->Chameleon
 class ChameleonMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -202,7 +202,7 @@ class ChameleonLayerNorm(nn.LayerNorm):
         return hidden_states
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -215,7 +215,7 @@ def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     return hidden_states.reshape(batch, num_key_value_heads * n_rep, slen, head_dim)
 
 
-# Copied from transformers.models.llama.modeling_llama.eager_attention_forward
+# Copied from transformers_471.models.llama.modeling_llama.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -282,7 +282,7 @@ class ChameleonAttention(nn.Module):
         self.k_norm = ChameleonLayerNorm((self.num_key_value_heads, self.head_dim))
         self._init_rope()
 
-    # copied from transformers.models.llama.modeling_llama.LlamaAttention._init_rope with Llama->Chameleon
+    # copied from transformers_471.models.llama.modeling_llama.LlamaAttention._init_rope with Llama->Chameleon
     # TODO(joao): add me back asap :)
     def _init_rope(self):
         if self.config.rope_scaling is None:
@@ -368,7 +368,7 @@ class ChameleonAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# copied from transformers.models.llama.modeling_llama.LlamaDecoderLayer with Llama->Chameleon, LLAMA->CHAMELEON
+# copied from transformers_471.models.llama.modeling_llama.LlamaDecoderLayer with Llama->Chameleon, LLAMA->CHAMELEON
 class ChameleonDecoderLayer(GradientCheckpointingLayer):
     def __init__(self, config: ChameleonConfig, layer_idx: int):
         super().__init__()
@@ -1075,7 +1075,7 @@ class ChameleonForConditionalGeneration(ChameleonPreTrainedModel, GenerationMixi
         Example:
 
         ```python
-        >>> from transformers import ChameleonProcessor, ChameleonForConditionalGeneration
+        >>> from transformers_471 import ChameleonProcessor, ChameleonForConditionalGeneration
         >>> import torch
         >>> import requests
         >>> from PIL import Image

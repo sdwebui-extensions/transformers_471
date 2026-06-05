@@ -4,7 +4,7 @@ import json
 
 from ltp import LTP
 
-from transformers import BertTokenizer
+from transformers_471 import BertTokenizer
 
 
 def _is_chinese_char(cp):

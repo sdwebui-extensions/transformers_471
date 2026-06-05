@@ -98,7 +98,7 @@ class PixtralRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -133,7 +133,7 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     return q_embed, k_embed
 
 
-# Copied from transformers.models.siglip.modeling_siglip.eager_attention_forward
+# Copied from transformers_471.models.siglip.modeling_siglip.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -230,7 +230,7 @@ class PixtralAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# Copied from transformers.models.mistral.modeling_mistral.MistralMLP with Mistral->Pixtral
+# Copied from transformers_471.models.mistral.modeling_mistral.MistralMLP with Mistral->Pixtral
 class PixtralMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -247,7 +247,7 @@ class PixtralMLP(nn.Module):
         return down_proj
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRMSNorm with Llama->Pixtral
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRMSNorm with Llama->Pixtral
 class PixtralRMSNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """

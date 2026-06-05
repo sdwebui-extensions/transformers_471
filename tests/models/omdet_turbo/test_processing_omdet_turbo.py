@@ -19,9 +19,9 @@ import unittest
 
 import pytest
 
-from transformers import AutoProcessor, CLIPTokenizerFast, OmDetTurboProcessor
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import AutoProcessor, CLIPTokenizerFast, OmDetTurboProcessor
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
@@ -32,10 +32,10 @@ IMAGE_STD = [58.395, 57.12, 57.375]
 if is_torch_available():
     import torch
 
-    from transformers.models.omdet_turbo.modeling_omdet_turbo import OmDetTurboObjectDetectionOutput
+    from transformers_471.models.omdet_turbo.modeling_omdet_turbo import OmDetTurboObjectDetectionOutput
 
 if is_vision_available():
-    from transformers import DetrImageProcessor
+    from transformers_471 import DetrImageProcessor
 
 
 @require_torch

@@ -21,8 +21,8 @@ from typing import Optional
 
 from torch.utils.data import Dataset
 
-from transformers import Seq2SeqTrainer, is_torch_xla_available
-from transformers.trainer_utils import PredictionOutput, speed_metrics
+from transformers_471 import Seq2SeqTrainer, is_torch_xla_available
+from transformers_471.trainer_utils import PredictionOutput, speed_metrics
 
 
 if is_torch_xla_available():

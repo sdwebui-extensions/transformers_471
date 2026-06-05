@@ -15,8 +15,8 @@
 import os
 import unittest
 
-from transformers.models.bartpho.tokenization_bartpho import VOCAB_FILES_NAMES, BartphoTokenizer
-from transformers.testing_utils import get_tests_dir
+from transformers_471.models.bartpho.tokenization_bartpho import VOCAB_FILES_NAMES, BartphoTokenizer
+from transformers_471.testing_utils import get_tests_dir
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

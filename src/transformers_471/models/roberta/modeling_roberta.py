@@ -52,7 +52,7 @@ class RobertaEmbeddings(nn.Module):
     Same as BertEmbeddings with a tiny tweak for positional embeddings indexing.
     """
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.__init__
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.__init__
     def __init__(self, config):
         super().__init__()
         self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)
@@ -136,7 +136,7 @@ class RobertaEmbeddings(nn.Module):
         return position_ids.unsqueeze(0).expand(input_shape)
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfAttention with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfAttention with Bert->Roberta
 class RobertaSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -270,7 +270,7 @@ class RobertaSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSdpaSelfAttention with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_bert.BertSdpaSelfAttention with Bert->Roberta
 class RobertaSdpaSelfAttention(RobertaSelfAttention):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__(config, position_embedding_type=position_embedding_type, layer_idx=layer_idx)
@@ -375,7 +375,7 @@ class RobertaSdpaSelfAttention(RobertaSelfAttention):
         return attn_output, None
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class RobertaSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -396,7 +396,7 @@ ROBERTA_SELF_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.bert.modeling_bert.BertAttention with Bert->Roberta,BERT->ROBERTA
+# Copied from transformers_471.models.bert.modeling_bert.BertAttention with Bert->Roberta,BERT->ROBERTA
 class RobertaAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -451,7 +451,7 @@ class RobertaAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class RobertaIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -467,7 +467,7 @@ class RobertaIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class RobertaOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -482,7 +482,7 @@ class RobertaOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLayer with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_bert.BertLayer with Bert->Roberta
 class RobertaLayer(GradientCheckpointingLayer):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -553,7 +553,7 @@ class RobertaLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertEncoder with Bert->Roberta
+# Copied from transformers_471.models.bert.modeling_bert.BertEncoder with Bert->Roberta
 class RobertaEncoder(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -644,7 +644,7 @@ class RobertaEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler
 class RobertaPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -668,7 +668,7 @@ class RobertaPreTrainedModel(PreTrainedModel):
     _no_split_modules = ["RobertaEmbeddings", "RobertaSelfAttention", "RobertaSdpaSelfAttention"]
     _supports_sdpa = True
 
-    # Copied from transformers.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->RobertaLMHead
+    # Copied from transformers_471.models.bert.modeling_bert.BertPreTrainedModel._init_weights with BertLMPredictionHead->RobertaLMHead
     def _init_weights(self, module):
         """Initialize the weights"""
         if isinstance(module, nn.Linear):
@@ -700,7 +700,7 @@ class RobertaPreTrainedModel(PreTrainedModel):
     `add_cross_attention` set to `True`; an `encoder_hidden_states` is then expected as an input to the forward pass.
     """
 )
-# Copied from transformers.models.bert.modeling_bert.BertModel with Bert->Roberta, BERT->ROBERTA
+# Copied from transformers_471.models.bert.modeling_bert.BertModel with Bert->Roberta, BERT->ROBERTA
 class RobertaModel(RobertaPreTrainedModel):
     _no_split_modules = ["RobertaEmbeddings", "RobertaLayer"]
 
@@ -951,7 +951,7 @@ class RobertaForCausalLM(RobertaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RobertaForCausalLM, AutoConfig
+        >>> from transformers_471 import AutoTokenizer, RobertaForCausalLM, AutoConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-base")

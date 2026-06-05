@@ -1356,7 +1356,7 @@ class XLMForQuestionAnswering(XLMPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, XLMForQuestionAnswering
+        >>> from transformers_471 import AutoTokenizer, XLMForQuestionAnswering
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("FacebookAI/xlm-mlm-en-2048")

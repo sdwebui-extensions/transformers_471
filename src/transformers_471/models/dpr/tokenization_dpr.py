@@ -214,7 +214,7 @@ class CustomDPRReaderTokenizerMixin:
         Examples:
 
         ```python
-        >>> from transformers import DPRReader, DPRReaderTokenizer
+        >>> from transformers_471 import DPRReader, DPRReaderTokenizer
 
         >>> tokenizer = DPRReaderTokenizer.from_pretrained("facebook/dpr-reader-single-nq-base")
         >>> model = DPRReader.from_pretrained("facebook/dpr-reader-single-nq-base")

@@ -55,7 +55,7 @@ _prepare_4d_causal_attention_mask = torch.fx.wrap(_prepare_4d_causal_attention_m
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
+# Copied from transformers_471.models.qwen2_moe.modeling_qwen2_moe.load_balancing_loss_func
 def load_balancing_loss_func(
     gate_logits: Union[torch.Tensor, tuple[torch.Tensor], None],
     num_experts: Optional[int] = None,
@@ -175,7 +175,7 @@ class PhimoeRotaryEmbedding(nn.Module):
         return (emb.cos() * mscale).to(x.dtype), (emb.sin() * mscale).to(x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -211,7 +211,7 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids, unsqueeze_dim=1):
     return q_embed, k_embed
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -521,7 +521,7 @@ PHIMOE_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.mixtral.modeling_mixtral.MixtralBlockSparseTop2MLP with Mixtral->Phimoe
+# Copied from transformers_471.models.mixtral.modeling_mixtral.MixtralBlockSparseTop2MLP with Mixtral->Phimoe
 class PhimoeBlockSparseTop2MLP(nn.Module):
     def __init__(self, config: PhimoeConfig):
         super().__init__()
@@ -1230,7 +1230,7 @@ class PhimoeForCausalLM(PhimoePreTrainedModel, GenerationMixin):
 
         Example:
         ```python
-        >>> from transformers import AutoTokenizer, PhimoeForCausalLM
+        >>> from transformers_471 import AutoTokenizer, PhimoeForCausalLM
         >>> model = PhimoeForCausalLM.from_pretrained("microsoft/Phi-3.5-MoE-instruct")
         >>> tokenizer = AutoTokenizer.from_pretrained("microsoft/Phi-3.5-MoE-instruct")
         >>> prompt = "Hey, are you conscious? Can you talk to me?"
@@ -1302,7 +1302,7 @@ class PhimoeForCausalLM(PhimoePreTrainedModel, GenerationMixin):
             router_logits=outputs.router_logits,
         )
 
-    # Copied from transformers.models.phi3.modeling_phi3.Phi3ForCausalLM.prepare_inputs_for_generation
+    # Copied from transformers_471.models.phi3.modeling_phi3.Phi3ForCausalLM.prepare_inputs_for_generation
     def prepare_inputs_for_generation(
         self,
         input_ids,

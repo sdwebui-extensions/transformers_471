@@ -20,8 +20,8 @@ import unittest
 
 import pytest
 
-from transformers import AutoTokenizer, GenerationConfig, is_torch_available
-from transformers.testing_utils import (
+from transformers_471 import AutoTokenizer, GenerationConfig, is_torch_available
+from transformers_471.testing_utils import (
     backend_empty_cache,
     cleanup,
     require_bitsandbytes,
@@ -36,7 +36,7 @@ from transformers.testing_utils import (
 if is_torch_available():
     import torch
 
-    from transformers import (
+    from transformers_471 import (
         AutoModelForCausalLM,
         MinistralForCausalLM,
         MinistralForQuestionAnswering,
@@ -170,12 +170,12 @@ class MinistralIntegrationTest(unittest.TestCase):
     @pytest.mark.torch_export_test
     def test_export_text_with_hybrid_cache(self):
         # TODO: Exportability is not working
-        from transformers.testing_utils import is_torch_greater_or_equal
+        from transformers_471.testing_utils import is_torch_greater_or_equal
 
         if not is_torch_greater_or_equal("2.6.0"):
             self.skipTest(reason="This test requires torch >= 2.6 to run.")
 
-        from transformers.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
+        from transformers_471.integrations.executorch import TorchExportableModuleForDecoderOnlyLM
 
         model_id = "Mistralai/Ministral-8B-Instruct-2410"
         model = MinistralForCausalLM.from_pretrained(

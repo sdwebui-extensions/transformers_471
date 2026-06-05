@@ -275,8 +275,8 @@ class Lfm2VlForConditionalGeneration(LlavaForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, AutoModelForImageTextToText
-        >>> from transformers.image_utils import load_image
+        >>> from transformers_471 import AutoProcessor, AutoModelForImageTextToText
+        >>> from transformers_471.image_utils import load_image
 
         >>> model = AutoModelForImageTextToText.from_pretrained(
         ...     "LiquidAI/LFM2-VL-1.6B",

@@ -1049,7 +1049,7 @@ class _LazyConfigMapping(OrderedDict[str, type[PretrainedConfig]]):
         value = self._mapping[key]
         module_name = model_type_to_module_name(key)
         if module_name not in self._modules:
-            self._modules[module_name] = importlib.import_module(f".{module_name}", "transformers.models")
+            self._modules[module_name] = importlib.import_module(f".{module_name}", "transformers_471.models")
         if hasattr(self._modules[module_name], value):
             return getattr(self._modules[module_name], value)
 
@@ -1105,7 +1105,7 @@ class _LazyLoadAllMappings(OrderedDict[str, str]):
 
         for model_type, map_name in self._mapping.items():
             module_name = model_type_to_module_name(model_type)
-            module = importlib.import_module(f".{module_name}", "transformers.models")
+            module = importlib.import_module(f".{module_name}", "transformers_471.models")
             mapping = getattr(module, map_name)
             self._data.update(mapping)
 
@@ -1257,7 +1257,7 @@ class AutoConfig:
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -1283,7 +1283,7 @@ class AutoConfig:
         Examples:
 
         ```python
-        >>> from transformers import AutoConfig
+        >>> from transformers_471 import AutoConfig
 
         >>> # Download configuration from huggingface.co and cache.
         >>> config = AutoConfig.from_pretrained("google-bert/bert-base-uncased")
@@ -1315,7 +1315,7 @@ class AutoConfig:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

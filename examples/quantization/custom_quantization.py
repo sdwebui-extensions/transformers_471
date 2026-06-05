@@ -3,9 +3,9 @@ from typing import Any
 
 import torch
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers.quantizers import HfQuantizer, register_quantization_config, register_quantizer
-from transformers.utils.quantization_config import QuantizationConfigMixin
+from transformers_471 import AutoModelForCausalLM, AutoTokenizer
+from transformers_471.quantizers import HfQuantizer, register_quantization_config, register_quantizer
+from transformers_471.utils.quantization_config import QuantizationConfigMixin
 
 
 @register_quantization_config("custom")

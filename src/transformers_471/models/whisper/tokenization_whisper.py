@@ -41,7 +41,7 @@ MAX_MODEL_INPUT_SIZES = {
 }
 
 
-# Copied from transformers.models.gpt2.tokenization_gpt2.bytes_to_unicode
+# Copied from transformers_471.models.gpt2.tokenization_gpt2.bytes_to_unicode
 def bytes_to_unicode():
     """
     Returns list of utf-8 byte and a mapping to unicode strings. We specifically avoids mapping to whitespace/control
@@ -69,7 +69,7 @@ def bytes_to_unicode():
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.gpt2.tokenization_gpt2.get_pairs
+# Copied from transformers_471.models.gpt2.tokenization_gpt2.get_pairs
 def get_pairs(word):
     """
     Return set of symbol pairs in a word.
@@ -334,7 +334,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
         vocab.update(self.added_tokens_encoder)
         return vocab
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2.GPT2Tokenizer.bpe with GPT2 -> Whisper
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2.GPT2Tokenizer.bpe with GPT2 -> Whisper
     def bpe(self, token):
         if token in self.cache:
             return self.cache[token]
@@ -437,7 +437,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
             bos_sequence.append(notimestamps_token_id)
         return bos_sequence
 
-    # Copied from transformers.models.speech_to_text.tokenization_speech_to_text.Speech2TextTokenizer.build_inputs_with_special_tokens
+    # Copied from transformers_471.models.speech_to_text.tokenization_speech_to_text.Speech2TextTokenizer.build_inputs_with_special_tokens
     def build_inputs_with_special_tokens(self, token_ids_0, token_ids_1=None) -> list[int]:
         """Build model inputs from a sequence by appending eos_token_id."""
         if token_ids_1 is None:
@@ -445,7 +445,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
         # We don't expect to process pairs, but leave the pair logic for API consistency
         return self.prefix_tokens + token_ids_0 + token_ids_1 + [self.eos_token_id]
 
-    # Copied from transformers.models.speech_to_text.tokenization_speech_to_text.Speech2TextTokenizer.get_special_tokens_mask
+    # Copied from transformers_471.models.speech_to_text.tokenization_speech_to_text.Speech2TextTokenizer.get_special_tokens_mask
     def get_special_tokens_mask(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None, already_has_special_tokens: bool = False
     ) -> list[int]:
@@ -476,7 +476,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
             return prefix_ones + ([0] * len(token_ids_0)) + suffix_ones
         return prefix_ones + ([0] * len(token_ids_0)) + ([0] * len(token_ids_1)) + suffix_ones
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2.GPT2Tokenizer._tokenize with GPT2 -> Whisper
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2.GPT2Tokenizer._tokenize with GPT2 -> Whisper
     def _tokenize(self, text):
         """Tokenize a string."""
         bpe_tokens = []
@@ -487,7 +487,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
             bpe_tokens.extend(bpe_token for bpe_token in self.bpe(token).split(" "))
         return bpe_tokens
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2.GPT2Tokenizer._convert_token_to_id with GPT2 -> Whisper
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2.GPT2Tokenizer._convert_token_to_id with GPT2 -> Whisper
     def _convert_token_to_id(self, token):
         """Converts a token (str) in an id using the vocab."""
         return self.encoder.get(token, self.encoder.get(self.unk_token))
@@ -501,14 +501,14 @@ class WhisperTokenizer(PreTrainedTokenizer):
 
     def _normalize(self, text):
         warnings.warn(
-            "The private method `_normalize` is deprecated and will be removed in v5 of Transformers."
+            "The private method `_normalize` is deprecated and Will be removed in v5 of Transformers"
             "You can normalize an input string using the Whisper English normalizer using the `normalize` method."
         )
         return self.normalize(text)
 
     def _basic_normalize(self, text, remove_diacritics=False):
         warnings.warn(
-            "The private method `_basic_normalize` is deprecated and will be removed in v5 of Transformers."
+            "The private method `_basic_normalize` is deprecated and Will be removed in v5 of Transformers"
             "You can normalize an input string using the Whisper basic normalizer using the `basic_normalize` method."
         )
         return self.basic_normalize(text, remove_diacritics=remove_diacritics)
@@ -791,7 +791,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
         else:
             return text
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2.GPT2Tokenizer.convert_tokens_to_string with GPT2 -> Whisper
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2.GPT2Tokenizer.convert_tokens_to_string with GPT2 -> Whisper
     def convert_tokens_to_string(self, tokens):
         """Converts a sequence of tokens (string) in a single string."""
         text = "".join(tokens)
@@ -836,7 +836,7 @@ class WhisperTokenizer(PreTrainedTokenizer):
 
         return vocab_file, merge_file, normalizer_file
 
-    # Copied from transformers.models.gpt2.tokenization_gpt2.GPT2Tokenizer.prepare_for_tokenization with GPT2 -> Whisper
+    # Copied from transformers_471.models.gpt2.tokenization_gpt2.GPT2Tokenizer.prepare_for_tokenization with GPT2 -> Whisper
     def prepare_for_tokenization(self, text, is_split_into_words=False, **kwargs):
         add_prefix_space = kwargs.pop("add_prefix_space", self.add_prefix_space)
         if is_split_into_words or add_prefix_space:

@@ -16,8 +16,8 @@
 
 from typing import Union
 
-from transformers.configuration_utils import PretrainedConfig
-from transformers.utils import logging
+from transformers_471.configuration_utils import PretrainedConfig
+from transformers_471.utils import logging
 
 
 logger = logging.get_logger(__name__)

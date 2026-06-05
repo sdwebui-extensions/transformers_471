@@ -20,20 +20,20 @@ import unittest
 import pytest
 from parameterized import parameterized
 
-from transformers import (
+from transformers_471 import (
     AutoProcessor,
     CsmConfig,
     CsmForConditionalGeneration,
     is_torch_available,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     cleanup,
     require_read_token,
     require_torch_accelerator,
     slow,
     torch_device,
 )
-from transformers.utils.import_utils import is_datasets_available
+from transformers_471.utils.import_utils import is_datasets_available
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester

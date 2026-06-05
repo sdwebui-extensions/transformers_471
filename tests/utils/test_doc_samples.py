@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Union
 
 import transformers
-from transformers.testing_utils import require_torch, slow
+from transformers_471.testing_utils import require_torch, slow
 
 
 logger = logging.getLogger()

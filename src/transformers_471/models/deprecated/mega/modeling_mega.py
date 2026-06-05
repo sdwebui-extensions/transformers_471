@@ -1309,7 +1309,7 @@ class MegaBlock(nn.Module):
         return outs
 
 
-# copied from transformers.models.roberta.modeling_roberta.RobertaPooler with Roberta->Mega
+# copied from transformers_471.models.roberta.modeling_roberta.RobertaPooler with Roberta->Mega
 class MegaPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -1711,7 +1711,7 @@ class MegaForCausalLM(MegaPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, MegaForCausalLM, AutoConfig
+        >>> from transformers_471 import AutoTokenizer, MegaForCausalLM, AutoConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("mnaylor/mega-base-wikitext")
@@ -2146,7 +2146,7 @@ class MegaForTokenClassification(MegaPreTrainedModel):
         )
 
 
-# copied from transformers.models.roberta.modeling_roberta.RobertaClassificationHead with Roberta->Mega
+# copied from transformers_471.models.roberta.modeling_roberta.RobertaClassificationHead with Roberta->Mega
 class MegaClassificationHead(nn.Module):
     """Head for sentence-level classification tasks."""
 

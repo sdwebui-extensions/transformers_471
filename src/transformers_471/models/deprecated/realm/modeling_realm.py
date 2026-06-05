@@ -1161,7 +1161,7 @@ class RealmEmbedder(RealmPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RealmEmbedder
+        >>> from transformers_471 import AutoTokenizer, RealmEmbedder
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/realm-cc-news-pretrained-embedder")
@@ -1275,7 +1275,7 @@ class RealmScorer(RealmPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, RealmScorer
+        >>> from transformers_471 import AutoTokenizer, RealmScorer
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/realm-cc-news-pretrained-scorer")
         >>> model = RealmScorer.from_pretrained("google/realm-cc-news-pretrained-scorer", num_candidates=2)
@@ -1419,7 +1419,7 @@ class RealmKnowledgeAugEncoder(RealmPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import AutoTokenizer, RealmKnowledgeAugEncoder
+        >>> from transformers_471 import AutoTokenizer, RealmKnowledgeAugEncoder
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/realm-cc-news-pretrained-encoder")
         >>> model = RealmKnowledgeAugEncoder.from_pretrained(
@@ -1759,7 +1759,7 @@ class RealmForOpenQA(RealmPreTrainedModel):
 
         ```python
         >>> import torch
-        >>> from transformers import RealmForOpenQA, RealmRetriever, AutoTokenizer
+        >>> from transformers_471 import RealmForOpenQA, RealmRetriever, AutoTokenizer
 
         >>> retriever = RealmRetriever.from_pretrained("google/realm-orqa-nq-openqa")
         >>> tokenizer = AutoTokenizer.from_pretrained("google/realm-orqa-nq-openqa")

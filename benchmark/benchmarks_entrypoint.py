@@ -321,7 +321,7 @@ def parse_arguments() -> tuple[str, str, str, str, bool, str]:
     """
     Parse command line arguments for the benchmarking CLI.
     """
-    parser = argparse.ArgumentParser(description="CLI for benchmarking the huggingface/transformers.")
+    parser = argparse.ArgumentParser(description="CLI for benchmarking the huggingface/transformers_471.")
 
     parser.add_argument(
         "repository",

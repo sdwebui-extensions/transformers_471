@@ -75,7 +75,7 @@ class ParakeetEncoderConfig(PretrainedConfig):
 
     Example:
         ```python
-        >>> from transformers import ParakeetEncoderModel, ParakeetEncoderConfig
+        >>> from transformers_471 import ParakeetEncoderModel, ParakeetEncoderConfig
 
         >>> # Initializing a `ParakeetEncoder` configuration
         >>> configuration = ParakeetEncoderConfig()
@@ -175,7 +175,7 @@ class ParakeetCTCConfig(PretrainedConfig):
 
     Example:
         ```python
-        >>> from transformers import ParakeetForCTC, ParakeetCTCConfig
+        >>> from transformers_471 import ParakeetForCTC, ParakeetCTCConfig
 
         >>> # Initializing a Parakeet configuration
         >>> configuration = ParakeetCTCConfig()

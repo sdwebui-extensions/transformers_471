@@ -90,7 +90,7 @@ class MBartConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MBartConfig, MBartModel
+    >>> from transformers_471 import MBartConfig, MBartModel
 
     >>> # Initializing a MBART facebook/mbart-large-cc25 style configuration
     >>> configuration = MBartConfig()
@@ -164,7 +164,7 @@ class MBartConfig(PretrainedConfig):
         )
 
 
-# Copied from transformers.models.bart.configuration_bart.BartOnnxConfig with Bart->MBart
+# Copied from transformers_471.models.bart.configuration_bart.BartOnnxConfig with Bart->MBart
 class MBartOnnxConfig(OnnxSeq2SeqConfigWithPast):
     @property
     def inputs(self) -> Mapping[str, Mapping[int, str]]:

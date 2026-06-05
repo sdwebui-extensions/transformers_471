@@ -129,7 +129,7 @@ class Exaone4Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Exaone4Model, Exaone4Config
+    >>> from transformers_471 import Exaone4Model, Exaone4Config
 
     >>> # Initializing a EXAONE configuration
     >>> configuration = Exaone4Config()

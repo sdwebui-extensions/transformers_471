@@ -16,9 +16,9 @@
 import unittest
 from functools import cached_property
 
-from transformers import RegNetConfig
-from transformers.file_utils import is_torch_available, is_vision_available
-from transformers.testing_utils import Expectations, is_flaky, require_torch, require_vision, slow, torch_device
+from transformers_471 import RegNetConfig
+from transformers_471.file_utils import is_torch_available, is_vision_available
+from transformers_471.testing_utils import Expectations, is_flaky, require_torch, require_vision, slow, torch_device
 
 from ...test_configuration_common import ConfigTester
 from ...test_modeling_common import ModelTesterMixin, floats_tensor, ids_tensor
@@ -28,13 +28,13 @@ from ...test_pipeline_mixin import PipelineTesterMixin
 if is_torch_available():
     import torch
 
-    from transformers import RegNetForImageClassification, RegNetModel
+    from transformers_471 import RegNetForImageClassification, RegNetModel
 
 
 if is_vision_available():
     from PIL import Image
 
-    from transformers import AutoImageProcessor
+    from transformers_471 import AutoImageProcessor
 
 
 class RegNetModelTester:

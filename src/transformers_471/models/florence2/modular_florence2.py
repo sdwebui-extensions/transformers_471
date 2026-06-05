@@ -95,7 +95,7 @@ class Florence2VisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Florence2VisionConfig, Florence2VisionModel
+    >>> from transformers_471 import Florence2VisionConfig, Florence2VisionModel
 
     >>> # Initializing a Florence2 Vision style configuration
     >>> configuration = Florence2VisionConfig()
@@ -177,7 +177,7 @@ class Florence2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Florence2ForConditionalGeneration, Florence2Config, CLIPVisionConfig, BartConfig
+    >>> from transformers_471 import Florence2ForConditionalGeneration, Florence2Config, CLIPVisionConfig, BartConfig
 
     >>> # Initializing a clip-like vision config
     >>> vision_config = CLIPVisionConfig()
@@ -1681,7 +1681,7 @@ class Florence2ForConditionalGeneration(LlavaForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Florence2ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Florence2ForConditionalGeneration
 
         >>> model = Florence2ForConditionalGeneration.from_pretrained("microsoft/Florence-2-large")
         >>> processor = AutoProcessor.from_pretrained("microsoft/Florence-2-large")

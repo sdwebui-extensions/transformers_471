@@ -22,7 +22,7 @@ from huggingface_hub import hf_hub_download
 from packaging import version
 from torch import nn
 
-from transformers import (
+from transformers_471 import (
     AutoModelForCausalLM,
     AutoModelForSequenceClassification,
     AutoTokenizer,
@@ -32,7 +32,7 @@ from transformers import (
     TrainingArguments,
     logging,
 )
-from transformers.testing_utils import (
+from transformers_471.testing_utils import (
     CaptureLogger,
     require_bitsandbytes,
     require_peft,
@@ -41,7 +41,7 @@ from transformers.testing_utils import (
     slow,
     torch_device,
 )
-from transformers.utils import check_torch_load_is_safe, is_torch_available
+from transformers_471.utils import check_torch_load_is_safe, is_torch_available
 
 
 if is_torch_available():
@@ -605,7 +605,7 @@ class PeftIntegrationTester(unittest.TestCase, PeftTesterMixin):
         """
         Simple test that tests the basic usage of PEFT model + pipeline
         """
-        from transformers import pipeline
+        from transformers_471 import pipeline
 
         for adapter_id, base_model_id in zip(self.peft_test_model_ids, self.transformers_test_model_ids):
             peft_pipe = pipeline("text-generation", adapter_id)
@@ -907,7 +907,7 @@ class PeftIntegrationTester(unittest.TestCase, PeftTesterMixin):
         """
         from peft import PeftModel
 
-        from transformers import pipeline
+        from transformers_471 import pipeline
 
         ADAPTER_PATH = "peft-internal-testing/tiny-OPTForCausalLM-lora"
         BASE_PATH = "hf-internal-testing/tiny-random-OPTForCausalLM"

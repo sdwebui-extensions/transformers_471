@@ -1,6 +1,6 @@
 import re
 
-from transformers.pipelines import SUPPORTED_TASKS, Pipeline
+from transformers_471.pipelines import SUPPORTED_TASKS, Pipeline
 
 
 HEADER = """

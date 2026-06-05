@@ -703,7 +703,7 @@ class OpenLlamaForCausalLM(OpenLlamaPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, OpenLlamaForCausalLM
+        >>> from transformers_471 import AutoTokenizer, OpenLlamaForCausalLM
 
         >>> model = OpenLlamaForCausalLM.from_pretrained("openlm-research/open_llama_7b")
         >>> tokenizer = AutoTokenizer.from_pretrained("openlm-research/open_llama_7b")

@@ -79,7 +79,7 @@ class OwlViTTextConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import OwlViTTextConfig, OwlViTTextModel
+    >>> from transformers_471 import OwlViTTextConfig, OwlViTTextModel
 
     >>> # Initializing a OwlViTTextModel with google/owlvit-base-patch32 style configuration
     >>> configuration = OwlViTTextConfig()
@@ -168,7 +168,7 @@ class OwlViTVisionConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import OwlViTVisionConfig, OwlViTVisionModel
+    >>> from transformers_471 import OwlViTVisionConfig, OwlViTVisionModel
 
     >>> # Initializing a OwlViTVisionModel with google/owlvit-base-patch32 style configuration
     >>> configuration = OwlViTVisionConfig()

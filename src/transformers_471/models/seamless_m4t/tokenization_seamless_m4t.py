@@ -55,7 +55,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
     Examples:
 
     ```python
-    >>> from transformers import SeamlessM4TTokenizer
+    >>> from transformers_471 import SeamlessM4TTokenizer
 
     >>> tokenizer = SeamlessM4TTokenizer.from_pretrained(
     ...     "facebook/hf-seamless-m4t-medium", src_lang="eng", tgt_lang="fra"
@@ -187,14 +187,14 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
         self.set_src_lang_special_tokens(self._src_lang)
         self.set_tgt_lang_special_tokens(self._tgt_lang)
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.__getstate__
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.__getstate__
     def __getstate__(self):
         state = self.__dict__.copy()
         state["sp_model"] = None
         state["sp_model_proto"] = self.sp_model.serialized_model_proto()
         return state
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.__setstate__
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.__setstate__
     def __setstate__(self, d):
         self.__dict__ = d
 
@@ -283,7 +283,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
         return BatchEncoding(output, tensor_type=kwargs.get("return_tensors"))
 
     @property
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.src_lang
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.src_lang
     def src_lang(self) -> str:
         return self._src_lang
 
@@ -307,7 +307,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
             self._tgt_lang = new_tgt_lang
         self.set_tgt_lang_special_tokens(self._tgt_lang)
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.get_special_tokens_mask
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.get_special_tokens_mask
     def get_special_tokens_mask(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None, already_has_special_tokens: bool = False
     ) -> list[int]:
@@ -338,7 +338,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
             return prefix_ones + ([0] * len(token_ids_0)) + suffix_ones
         return prefix_ones + ([0] * len(token_ids_0)) + ([0] * len(token_ids_1)) + suffix_ones
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.build_inputs_with_special_tokens
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.build_inputs_with_special_tokens
     def build_inputs_with_special_tokens(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None
     ) -> list[int]:
@@ -366,7 +366,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
         # We don't expect to process pairs, but leave the pair logic for API consistency
         return self.prefix_tokens + token_ids_0 + token_ids_1 + self.suffix_tokens
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.create_token_type_ids_from_sequences
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.create_token_type_ids_from_sequences
     def create_token_type_ids_from_sequences(
         self, token_ids_0: list[int], token_ids_1: Optional[list[int]] = None
     ) -> list[int]:
@@ -417,7 +417,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
     def unk_token_length(self):
         return len(self.sp_model.encode(str(self.unk_token)))
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer.get_spm_processor
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer.get_spm_processor
     def get_spm_processor(self, from_slow=False):
         tokenizer = spm.SentencePieceProcessor(**self.sp_model_kwargs)
         if self.legacy or from_slow:  # no dependency on protobuf
@@ -435,7 +435,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
             tokenizer.LoadFromSerializedProto(sp_model)
         return tokenizer
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer.tokenize
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer.tokenize
     def tokenize(self, text: "TextInput", **kwargs) -> list[str]:
         """
         Converts a string to a list of tokens. If `self.legacy` is set to `False`, a prefix token is added unless the
@@ -454,7 +454,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
             tokens = tokens[1:]
         return tokens
 
-    # Copied from transformers.models.t5.tokenization_t5.T5Tokenizer._tokenize
+    # Copied from transformers_471.models.t5.tokenization_t5.T5Tokenizer._tokenize
     def _tokenize(self, text, **kwargs):
         """
         Returns a tokenized string.
@@ -493,7 +493,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
         out_string = "".join(tokens).replace(SPIECE_UNDERLINE, " ").strip()
         return out_string
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.save_vocabulary
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.save_vocabulary
     def save_vocabulary(self, save_directory: str, filename_prefix: Optional[str] = None) -> tuple[str]:
         if not os.path.isdir(save_directory):
             logger.error(f"Vocabulary path ({save_directory}) should be a directory")
@@ -511,7 +511,7 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
 
         return (out_vocab_file,)
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer.prepare_seq2seq_batch with eng_Latn->eng, fra_Latn->fra
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer.prepare_seq2seq_batch with eng_Latn->eng, fra_Latn->fra
     def prepare_seq2seq_batch(
         self,
         src_texts: list[str],
@@ -524,11 +524,11 @@ class SeamlessM4TTokenizer(PreTrainedTokenizer):
         self.tgt_lang = tgt_lang
         return super().prepare_seq2seq_batch(src_texts, tgt_texts, **kwargs)
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer._switch_to_input_mode
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer._switch_to_input_mode
     def _switch_to_input_mode(self):
         return self.set_src_lang_special_tokens(self.src_lang)
 
-    # Copied from transformers.models.nllb.tokenization_nllb.NllbTokenizer._switch_to_target_mode
+    # Copied from transformers_471.models.nllb.tokenization_nllb.NllbTokenizer._switch_to_target_mode
     def _switch_to_target_mode(self):
         return self.set_tgt_lang_special_tokens(self.tgt_lang)
 

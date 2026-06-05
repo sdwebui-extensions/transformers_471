@@ -216,7 +216,7 @@ class SwitchTransformersTop1Router(nn.Module):
         return expert_index, router_probs, router_logits
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerNorm with T5->SwitchTransformers
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerNorm with T5->SwitchTransformers
 class SwitchTransformersLayerNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -242,7 +242,7 @@ class SwitchTransformersLayerNorm(nn.Module):
         return self.weight * hidden_states
 
 
-# Copied from transformers.models.t5.modeling_t5.T5DenseActDense with T5->SwitchTransformers
+# Copied from transformers_471.models.t5.modeling_t5.T5DenseActDense with T5->SwitchTransformers
 class SwitchTransformersDenseActDense(nn.Module):
     def __init__(self, config: SwitchTransformersConfig):
         super().__init__()
@@ -356,7 +356,7 @@ class SwitchTransformersLayerFF(nn.Module):
         return output
 
 
-# Copied from transformers.models.t5.modeling_t5.T5Attention with T5->SwitchTransformers
+# Copied from transformers_471.models.t5.modeling_t5.T5Attention with T5->SwitchTransformers
 class SwitchTransformersAttention(nn.Module):
     def __init__(
         self,
@@ -590,7 +590,7 @@ class SwitchTransformersAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerSelfAttention with T5->SwitchTransformers
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerSelfAttention with T5->SwitchTransformers
 class SwitchTransformersLayerSelfAttention(nn.Module):
     def __init__(self, config, has_relative_attention_bias=False, layer_idx: Optional[int] = None):
         super().__init__()
@@ -628,7 +628,7 @@ class SwitchTransformersLayerSelfAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.t5.modeling_t5.T5LayerCrossAttention with T5->SwitchTransformers
+# Copied from transformers_471.models.t5.modeling_t5.T5LayerCrossAttention with T5->SwitchTransformers
 class SwitchTransformersLayerCrossAttention(nn.Module):
     def __init__(self, config, layer_idx: Optional[int] = None):
         super().__init__()
@@ -1086,7 +1086,7 @@ class SwitchTransformersStack(SwitchTransformersPreTrainedModel):
             router_probs=all_router_probs,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -1156,7 +1156,7 @@ class SwitchTransformersStack(SwitchTransformersPreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1336,7 +1336,7 @@ class SwitchTransformersModel(SwitchTransformersPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, SwitchTransformersModel
+        >>> from transformers_471 import AutoTokenizer, SwitchTransformersModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/switch-base-8")
         >>> model = SwitchTransformersModel.from_pretrained("google/switch-base-8")
@@ -1553,7 +1553,7 @@ class SwitchTransformersForConditionalGeneration(SwitchTransformersPreTrainedMod
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer, SwitchTransformersForConditionalGeneration
+        >>> from transformers_471 import AutoTokenizer, SwitchTransformersForConditionalGeneration
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/switch-base-8")
         >>> model = SwitchTransformersForConditionalGeneration.from_pretrained("google/switch-base-8")
@@ -1784,7 +1784,7 @@ class SwitchTransformersEncoderModel(SwitchTransformersPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, SwitchTransformersEncoderModel
+        >>> from transformers_471 import AutoTokenizer, SwitchTransformersEncoderModel
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/switch-base-8")
         >>> model = SwitchTransformersEncoderModel.from_pretrained("google/switch-base-8")

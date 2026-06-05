@@ -21,7 +21,7 @@ import warnings
 from collections import OrderedDict
 from typing import Any, Optional, Union
 
-from transformers.utils.import_utils import is_mistral_common_available
+from transformers_471.utils.import_utils import is_mistral_common_available
 
 from ...configuration_utils import PretrainedConfig
 from ...dynamic_module_utils import get_class_from_dynamic_module, resolve_trust_remote_code
@@ -850,7 +850,7 @@ def get_tokenizer_config(
             exist.
         resume_download:
             Deprecated and ignored. All downloads are now resumed by default when possible.
-            Will be removed in v5 of Transformers.
+            Will be removed in v5 of Transformers
         proxies (`dict[str, str]`, *optional*):
             A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
             'http://hostname': 'foo.bar:4012'}.` The proxies are used on each request.
@@ -885,7 +885,7 @@ def get_tokenizer_config(
     tokenizer_config = get_tokenizer_config("FacebookAI/xlm-roberta-base")
 
     # Save a pretrained tokenizer locally and you can reload its config
-    from transformers import AutoTokenizer
+    from transformers_471 import AutoTokenizer
 
     tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
     tokenizer.save_pretrained("tokenizer-test")
@@ -894,7 +894,7 @@ def get_tokenizer_config(
     use_auth_token = kwargs.pop("use_auth_token", None)
     if use_auth_token is not None:
         warnings.warn(
-            "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+            "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
             FutureWarning,
         )
         if token is not None:
@@ -977,7 +977,7 @@ class AutoTokenizer:
                 cached versions if they exist.
             resume_download:
                 Deprecated and ignored. All downloads are now resumed by default when possible.
-                Will be removed in v5 of Transformers.
+                Will be removed in v5 of Transformers
             proxies (`dict[str, str]`, *optional*):
                 A dictionary of proxy servers to use by protocol or endpoint, e.g., `{'http': 'foo.bar:3128',
                 'http://hostname': 'foo.bar:4012'}`. The proxies are used on each request.
@@ -1006,7 +1006,7 @@ class AutoTokenizer:
         Examples:
 
         ```python
-        >>> from transformers import AutoTokenizer
+        >>> from transformers_471 import AutoTokenizer
 
         >>> # Download vocabulary from huggingface.co and cache.
         >>> tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-uncased")
@@ -1023,7 +1023,7 @@ class AutoTokenizer:
         use_auth_token = kwargs.pop("use_auth_token", None)
         if use_auth_token is not None:
             warnings.warn(
-                "The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.",
+                "The `use_auth_token` argument is deprecated and Will be removed in v5 of Transformers Please use `token` instead.",
                 FutureWarning,
             )
             if kwargs.get("token") is not None:

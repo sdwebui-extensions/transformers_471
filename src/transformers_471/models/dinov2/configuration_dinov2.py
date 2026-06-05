@@ -94,7 +94,7 @@ class Dinov2Config(BackboneConfigMixin, PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Dinov2Config, Dinov2Model
+    >>> from transformers_471 import Dinov2Config, Dinov2Model
 
     >>> # Initializing a Dinov2 dinov2-base-patch16-224 style configuration
     >>> configuration = Dinov2Config()

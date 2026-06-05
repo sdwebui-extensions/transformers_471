@@ -421,7 +421,7 @@ class UdopTokenizerFast(PreTrainedTokenizerFast):
                 **kwargs,
             )
 
-    # Copied from transformers.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast.tokenize
+    # Copied from transformers_471.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast.tokenize
     def tokenize(self, text: str, pair: Optional[str] = None, add_special_tokens: bool = False, **kwargs) -> list[str]:
         batched_input = [(text, pair)] if pair else [text]
 
@@ -864,7 +864,7 @@ class UdopTokenizerFast(PreTrainedTokenizerFast):
             **kwargs,
         )
 
-    # Copied from transformers.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast._pad
+    # Copied from transformers_471.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast._pad
     def _pad(
         self,
         encoded_inputs: Union[dict[str, EncodedInput], BatchEncoding],
@@ -1003,7 +1003,7 @@ class UdopTokenizerFast(PreTrainedTokenizerFast):
             return len(token_ids_0 + sep) * [0]
         return len(token_ids_0 + sep + token_ids_1 + sep) * [0]
 
-    # Copied from transformers.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast.save_vocabulary
+    # Copied from transformers_471.models.layoutxlm.tokenization_layoutxlm_fast.LayoutXLMTokenizerFast.save_vocabulary
     def save_vocabulary(self, save_directory: str, filename_prefix: Optional[str] = None) -> tuple[str]:
         if not self.can_save_slow_tokenizer:
             raise ValueError(

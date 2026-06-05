@@ -87,7 +87,7 @@ class NemotronLayerNorm1P(nn.LayerNorm):
             return F.layer_norm(*args)
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRotaryEmbedding with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRotaryEmbedding with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
 class NemotronRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -126,7 +126,7 @@ class NemotronRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -181,7 +181,7 @@ class NemotronMLP(nn.Module):
         return self.down_proj(self.act_fn(self.up_proj(x)))
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -281,7 +281,7 @@ class NemotronAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.llama.modeling_llama.LlamaFlashAttention2 with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+# NO LONGER EXIST Copied from transformers_471.models.llama.modeling_llama.LlamaFlashAttention2 with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
 # TODO cyril: modular
 class NemotronFlashAttention2(NemotronAttention):
     """
@@ -402,7 +402,7 @@ class NemotronFlashAttention2(NemotronAttention):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.llama.modeling_llama.LlamaSdpaAttention with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+# NO LONGER EXIST Copied from transformers_471.models.llama.modeling_llama.LlamaSdpaAttention with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
 # TODO cyril: modular
 class NemotronSdpaAttention(NemotronAttention):
     """
@@ -502,7 +502,7 @@ NEMOTRON_ATTENTION_CLASSES = {
 }
 
 
-# copied from transformers.models.llama.modeling_llama.LlamaDecoderLayer with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+# copied from transformers_471.models.llama.modeling_llama.LlamaDecoderLayer with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
 # no longer copied after attention refactors
 class NemotronDecoderLayer(GradientCheckpointingLayer):
     # Ignore copy
@@ -728,7 +728,7 @@ class NemotronModel(NemotronPreTrainedModel):
             attentions=all_self_attns,
         )
 
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._update_causal_mask
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -798,7 +798,7 @@ class NemotronModel(NemotronPreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
+    # Copied from transformers_471.models.gptj.modeling_gptj.GPTJModel._prepare_4d_causal_attention_mask_with_cache_position
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -854,7 +854,7 @@ class NemotronModel(NemotronPreTrainedModel):
         return causal_mask
 
 
-# TODO: re-enable check: Copied from transformers.models.llama.modeling_llama.LlamaForCausalLM with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
+# TODO: re-enable check: Copied from transformers_471.models.llama.modeling_llama.LlamaForCausalLM with LLAMA->NEMOTRON,Llama->Nemotron,llama->nemotron
 class NemotronForCausalLM(NemotronPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["lm_head.weight"]
 
@@ -893,7 +893,7 @@ class NemotronForCausalLM(NemotronPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, NemotronForCausalLM
+        >>> from transformers_471 import AutoTokenizer, NemotronForCausalLM
 
         >>> model = NemotronForCausalLM.from_pretrained("nvidia/nemotron-3-8b-base-4k-hf")
         >>> tokenizer = AutoTokenizer.from_pretrained("nvidia/nemotron-3-8b-base-4k-hf")

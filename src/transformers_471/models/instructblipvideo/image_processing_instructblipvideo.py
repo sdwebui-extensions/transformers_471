@@ -43,7 +43,7 @@ logger = logging.get_logger(__name__)
 
 
 # TODO (raushan): processor can be removed after v5 release. Kept for backwards compatibility
-# Copied from transformers.models.blip.image_processing_blip.BlipImageProcessor with Blip->InstructBlipVideo, BLIP->InstructBLIPVideo
+# Copied from transformers_471.models.blip.image_processing_blip.BlipImageProcessor with Blip->InstructBlipVideo, BLIP->InstructBLIPVideo
 class InstructBlipVideoImageProcessor(BaseImageProcessor):
     r"""
     Constructs a InstructBLIPVideo image processor.
@@ -108,7 +108,7 @@ class InstructBlipVideoImageProcessor(BaseImageProcessor):
         self.image_std = image_std if image_std is not None else OPENAI_CLIP_STD
         self.do_convert_rgb = do_convert_rgb
 
-    # Copied from transformers.models.vit.image_processing_vit.ViTImageProcessor.resize with PILImageResampling.BILINEAR->PILImageResampling.BICUBIC
+    # Copied from transformers_471.models.vit.image_processing_vit.ViTImageProcessor.resize with PILImageResampling.BILINEAR->PILImageResampling.BICUBIC
     def resize(
         self,
         image: np.ndarray,

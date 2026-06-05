@@ -15,9 +15,9 @@
 import copy
 import unittest
 
-from transformers import NougatTokenizerFast
-from transformers.models.nougat.tokenization_nougat_fast import markdown_compatible, normalize_list_like_lines
-from transformers.testing_utils import require_levenshtein, require_nltk, require_tokenizers
+from transformers_471 import NougatTokenizerFast
+from transformers_471.models.nougat.tokenization_nougat_fast import markdown_compatible, normalize_list_like_lines
+from transformers_471.testing_utils import require_levenshtein, require_nltk, require_tokenizers
 
 from ...test_tokenization_common import TokenizerTesterMixin
 

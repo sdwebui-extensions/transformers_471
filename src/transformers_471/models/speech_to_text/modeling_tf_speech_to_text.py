@@ -57,7 +57,7 @@ _CHECKPOINT_FOR_DOC = "facebook/s2t-small-librispeech-asr"
 LARGE_NEGATIVE = -1e8
 
 
-# Copied from transformers.models.bart.modeling_tf_bart.shift_tokens_right
+# Copied from transformers_471.models.bart.modeling_tf_bart.shift_tokens_right
 def shift_tokens_right(input_ids: tf.Tensor, pad_token_id: int, decoder_start_token_id: int):
     pad_token_id = tf.cast(pad_token_id, input_ids.dtype)
     decoder_start_token_id = tf.cast(decoder_start_token_id, input_ids.dtype)
@@ -82,7 +82,7 @@ def shift_tokens_right(input_ids: tf.Tensor, pad_token_id: int, decoder_start_to
     return shifted_input_ids
 
 
-# Copied from transformers.models.bart.modeling_tf_bart._make_causal_mask
+# Copied from transformers_471.models.bart.modeling_tf_bart._make_causal_mask
 def _make_causal_mask(input_ids_shape: tf.TensorShape, past_key_values_length: int = 0):
     """
     Make causal mask used for bi-directional self-attention.
@@ -100,7 +100,7 @@ def _make_causal_mask(input_ids_shape: tf.TensorShape, past_key_values_length: i
     return tf.tile(mask[None, None, :, :], (bsz, 1, 1, 1))
 
 
-# Copied from transformers.models.bart.modeling_tf_bart._expand_mask
+# Copied from transformers_471.models.bart.modeling_tf_bart._expand_mask
 def _expand_mask(mask: tf.Tensor, tgt_len: int | None = None):
     """
     Expands attention_mask from `[bsz, seq_len]` to `[bsz, 1, tgt_seq_len, src_seq_len]`.
@@ -228,7 +228,7 @@ class TFSpeech2TextSinusoidalPositionalEmbedding(keras.layers.Layer):
         return tf.cast(incremental_indices, dtype=tf.int64) + padding_idx
 
 
-# Copied from transformers.models.bart.modeling_tf_bart.TFBartAttention with Bart->Speech2Text
+# Copied from transformers_471.models.bart.modeling_tf_bart.TFBartAttention with Bart->Speech2Text
 class TFSpeech2TextAttention(keras.layers.Layer):
     """Multi-headed attention from "Attention Is All You Need"""
 
@@ -1463,7 +1463,7 @@ class TFSpeech2TextForConditionalGeneration(TFSpeech2TextPreTrainedModel, TFCaus
 
         ```python
         >>> import tensorflow as tf
-        >>> from transformers import Speech2TextProcessor, TFSpeech2TextForConditionalGeneration
+        >>> from transformers_471 import Speech2TextProcessor, TFSpeech2TextForConditionalGeneration
         >>> from datasets import load_dataset
 
         >>> model = TFSpeech2TextForConditionalGeneration.from_pretrained(

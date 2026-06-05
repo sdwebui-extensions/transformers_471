@@ -31,7 +31,7 @@ if is_scipy_available():
 
 
 if is_vision_available():
-    from transformers.image_transforms import center_to_corners_format
+    from transformers_471.image_transforms import center_to_corners_format
 
 
 # different for RT-DETR: not slicing the last element like in DETR one

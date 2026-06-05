@@ -78,7 +78,7 @@ class BitNetConfig(PretrainedConfig):
             The dropout ratio for the attention probabilities.
 
     ```python
-    >>> from transformers import BitNetModel, BitNetConfig
+    >>> from transformers_471 import BitNetModel, BitNetConfig
 
     >>> # Initializing a BitNet style configuration
     >>> configuration = BitNetConfig()

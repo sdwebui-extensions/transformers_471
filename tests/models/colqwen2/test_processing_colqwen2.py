@@ -20,16 +20,16 @@ import unittest
 
 import torch
 
-from transformers import AutoProcessor, Qwen2VLProcessor
-from transformers.models.colqwen2.processing_colqwen2 import ColQwen2Processor
-from transformers.testing_utils import get_tests_dir, require_torch, require_vision
-from transformers.utils import is_vision_available
+from transformers_471 import AutoProcessor, Qwen2VLProcessor
+from transformers_471.models.colqwen2.processing_colqwen2 import ColQwen2Processor
+from transformers_471.testing_utils import get_tests_dir, require_torch, require_vision
+from transformers_471.utils import is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
 
 if is_vision_available():
-    from transformers import (
+    from transformers_471 import (
         ColQwen2Processor,
     )
 

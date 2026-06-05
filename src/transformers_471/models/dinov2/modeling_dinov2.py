@@ -149,7 +149,7 @@ class Dinov2PatchEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.vit.modeling_vit.eager_attention_forward
+# Copied from transformers_471.models.vit.modeling_vit.eager_attention_forward
 def eager_attention_forward(
     module: nn.Module,
     query: torch.Tensor,
@@ -180,7 +180,7 @@ def eager_attention_forward(
     return attn_output, attn_weights
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfAttention with ViT->Dinov2
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfAttention with ViT->Dinov2
 class Dinov2SelfAttention(nn.Module):
     def __init__(self, config: Dinov2Config):
         super().__init__()
@@ -233,7 +233,7 @@ class Dinov2SelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTSelfOutput with ViT->Dinov2
+# Copied from transformers_471.models.vit.modeling_vit.ViTSelfOutput with ViT->Dinov2
 class Dinov2SelfOutput(nn.Module):
     """
     The residual connection is defined in Dinov2Layer instead of here (as is the case with other models), due to the
@@ -251,7 +251,7 @@ class Dinov2SelfOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.vit.modeling_vit.ViTAttention with ViT->Dinov2
+# Copied from transformers_471.models.vit.modeling_vit.ViTAttention with ViT->Dinov2
 class Dinov2Attention(nn.Module):
     def __init__(self, config: Dinov2Config):
         super().__init__()
@@ -292,7 +292,7 @@ class Dinov2LayerScale(nn.Module):
         return hidden_state * self.lambda1
 
 
-# Copied from transformers.models.beit.modeling_beit.drop_path
+# Copied from transformers_471.models.beit.modeling_beit.drop_path
 def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = False) -> torch.Tensor:
     """
     Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).
@@ -313,7 +313,7 @@ def drop_path(input: torch.Tensor, drop_prob: float = 0.0, training: bool = Fals
     return output
 
 
-# Copied from transformers.models.beit.modeling_beit.BeitDropPath
+# Copied from transformers_471.models.beit.modeling_beit.BeitDropPath
 class Dinov2DropPath(nn.Module):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
 
@@ -633,7 +633,7 @@ class Dinov2Backbone(Dinov2PreTrainedModel, BackboneMixin):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoBackbone
+        >>> from transformers_471 import AutoImageProcessor, AutoBackbone
         >>> import torch
         >>> from PIL import Image
         >>> import requests

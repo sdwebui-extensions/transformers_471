@@ -28,7 +28,7 @@ from git import Repo
 from huggingface_hub import HfApi
 from tqdm import tqdm
 
-from transformers.models.auto.configuration_auto import DEPRECATED_MODELS, MODEL_NAMES_MAPPING
+from transformers_471.models.auto.configuration_auto import DEPRECATED_MODELS, MODEL_NAMES_MAPPING
 
 
 api = HfApi()

@@ -85,7 +85,7 @@ class M2M100Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import M2M100Config, M2M100Model
+    >>> from transformers_471 import M2M100Config, M2M100Model
 
     >>> # Initializing a M2M100 facebook/m2m100_418M style configuration
     >>> configuration = M2M100Config()
@@ -209,7 +209,7 @@ class M2M100OnnxConfig(OnnxSeq2SeqConfigWithPast):
         common_inputs = dict(tokenizer(dummy_input, return_tensors=framework))
         return common_inputs
 
-    # Copied from transformers.models.bart.configuration_bart.BartOnnxConfig._generate_dummy_inputs_for_default_and_seq2seq_lm
+    # Copied from transformers_471.models.bart.configuration_bart.BartOnnxConfig._generate_dummy_inputs_for_default_and_seq2seq_lm
     def _generate_dummy_inputs_for_default_and_seq2seq_lm(
         self,
         tokenizer: PreTrainedTokenizer,

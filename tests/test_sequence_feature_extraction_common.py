@@ -15,8 +15,8 @@
 
 import numpy as np
 
-from transformers import BatchFeature
-from transformers.testing_utils import require_torch
+from transformers_471 import BatchFeature
+from transformers_471.testing_utils import require_torch
 
 from .test_feature_extraction_common import FeatureExtractionSavingTestMixin
 

@@ -271,7 +271,7 @@ class Mistral3ForConditionalGeneration(LlavaForConditionalGeneration):
         ```python
         >>> from PIL import Image
         >>> import requests
-        >>> from transformers import AutoProcessor, Mistral3ForConditionalGeneration
+        >>> from transformers_471 import AutoProcessor, Mistral3ForConditionalGeneration
 
         >>> model = Mistral3ForConditionalGeneration.from_pretrained("mistralai/Mistral-Small-3.1-24B-Instruct-2503")
         >>> processor = AutoProcessor.from_pretrained("mistralai/Mistral-Small-3.1-24B-Instruct-2503")

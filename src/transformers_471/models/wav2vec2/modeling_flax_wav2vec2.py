@@ -1063,7 +1063,7 @@ FLAX_WAV2VEC2_MODEL_DOCSTRING = """
     Example:
 
     ```python
-    >>> from transformers import AutoProcessor, FlaxWav2Vec2Model
+    >>> from transformers_471 import AutoProcessor, FlaxWav2Vec2Model
     >>> from datasets import load_dataset
 
     >>> processor = AutoProcessor.from_pretrained("facebook/wav2vec2-large-lv60")
@@ -1180,7 +1180,7 @@ FLAX_WAV2VEC2_FOR_CTC_DOCSTRING = """
 
     ```python
     >>> import jax.numpy as jnp
-    >>> from transformers import AutoProcessor, FlaxWav2Vec2ForCTC
+    >>> from transformers_471 import AutoProcessor, FlaxWav2Vec2ForCTC
     >>> from datasets import load_dataset
 
     >>> processor = AutoProcessor.from_pretrained("facebook/wav2vec2-large-960h-lv60")
@@ -1378,8 +1378,8 @@ FLAX_WAV2VEC2_FOR_PRETRAINING_DOCSTRING = """
     >>> import optax
     >>> import numpy as np
     >>> import jax.numpy as jnp
-    >>> from transformers import AutoFeatureExtractor, FlaxWav2Vec2ForPreTraining
-    >>> from transformers.models.wav2vec2.modeling_flax_wav2vec2 import _compute_mask_indices
+    >>> from transformers_471 import AutoFeatureExtractor, FlaxWav2Vec2ForPreTraining
+    >>> from transformers_471.models.wav2vec2.modeling_flax_wav2vec2 import _compute_mask_indices
     >>> from datasets import load_dataset
 
     >>> feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-large-lv60")

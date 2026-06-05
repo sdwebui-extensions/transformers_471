@@ -15,9 +15,9 @@ import shutil
 import tempfile
 import unittest
 
-from transformers import AutoProcessor, BartTokenizerFast, Florence2Processor
-from transformers.testing_utils import require_torch, require_vision
-from transformers.utils import is_torch_available, is_vision_available
+from transformers_471 import AutoProcessor, BartTokenizerFast, Florence2Processor
+from transformers_471.testing_utils import require_torch, require_vision
+from transformers_471.utils import is_torch_available, is_vision_available
 
 from ...test_processing_common import ProcessorTesterMixin
 
@@ -26,7 +26,7 @@ if is_torch_available():
     import torch
 
 if is_vision_available():
-    from transformers import CLIPImageProcessor
+    from transformers_471 import CLIPImageProcessor
 
 
 @require_torch

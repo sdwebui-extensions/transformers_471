@@ -53,7 +53,7 @@ class TimmWrapperConfig(PretrainedConfig):
 
     Example:
     ```python
-    >>> from transformers import TimmWrapperModel
+    >>> from transformers_471 import TimmWrapperModel
 
     >>> # Initializing a timm model
     >>> model = TimmWrapperModel.from_pretrained("timm/resnet18.a1_in1k")

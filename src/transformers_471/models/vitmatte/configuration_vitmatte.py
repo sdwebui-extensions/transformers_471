@@ -65,7 +65,7 @@ class VitMatteConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import VitMatteConfig, VitMatteForImageMatting
+    >>> from transformers_471 import VitMatteConfig, VitMatteForImageMatting
 
     >>> # Initializing a ViTMatte hustvl/vitmatte-small-composition-1k style configuration
     >>> configuration = VitMatteConfig()

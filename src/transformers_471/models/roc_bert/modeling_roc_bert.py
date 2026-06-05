@@ -46,7 +46,7 @@ from .configuration_roc_bert import RoCBertConfig
 logger = logging.get_logger(__name__)
 
 
-# Copied from transformers.models.bert.modeling_bert.load_tf_weights_in_bert with bert->roc_bert
+# Copied from transformers_471.models.bert.modeling_bert.load_tf_weights_in_bert with bert->roc_bert
 def load_tf_weights_in_roc_bert(model, config, tf_checkpoint_path):
     """Load tf checkpoints in a pytorch model."""
     try:
@@ -251,7 +251,7 @@ class RoCBertEmbeddings(nn.Module):
             return embedding_in
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfAttention with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfAttention with Bert->RoCBert
 class RoCBertSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -385,7 +385,7 @@ class RoCBertSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput with Bert->RoCBert
 class RoCBertSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -405,7 +405,7 @@ ROC_BERT_SELF_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.bert.modeling_bert.BertAttention with Bert->RoCBert,BERT->ROC_BERT
+# Copied from transformers_471.models.bert.modeling_bert.BertAttention with Bert->RoCBert,BERT->ROC_BERT
 class RoCBertAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -460,7 +460,7 @@ class RoCBertAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate with Bert->RoCBert
 class RoCBertIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -476,7 +476,7 @@ class RoCBertIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput with Bert->RoCBert
 class RoCBertOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -491,7 +491,7 @@ class RoCBertOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLayer with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertLayer with Bert->RoCBert
 class RoCBertLayer(GradientCheckpointingLayer):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -562,7 +562,7 @@ class RoCBertLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertEncoder with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertEncoder with Bert->RoCBert
 class RoCBertEncoder(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -653,7 +653,7 @@ class RoCBertEncoder(nn.Module):
         )
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPooler with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertPooler with Bert->RoCBert
 class RoCBertPooler(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -669,7 +669,7 @@ class RoCBertPooler(nn.Module):
         return pooled_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertPredictionHeadTransform with Bert->RoCBert
 class RoCBertPredictionHeadTransform(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -687,7 +687,7 @@ class RoCBertPredictionHeadTransform(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLMPredictionHead with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertLMPredictionHead with Bert->RoCBert
 class RoCBertLMPredictionHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -711,7 +711,7 @@ class RoCBertLMPredictionHead(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOnlyMLMHead with Bert->RoCBert
+# Copied from transformers_471.models.bert.modeling_bert.BertOnlyMLMHead with Bert->RoCBert
 class RoCBertOnlyMLMHead(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -762,7 +762,7 @@ class RoCBertPreTrainedModel(PreTrainedModel):
     """
 )
 class RoCBertModel(RoCBertPreTrainedModel):
-    # Copied from transformers.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->RoCBert
+    # Copied from transformers_471.models.clap.modeling_clap.ClapTextModel.__init__ with ClapText->RoCBert
     def __init__(self, config, add_pooling_layer=True):
         r"""
         add_pooling_layer (bool, *optional*, defaults to `True`):
@@ -779,11 +779,11 @@ class RoCBertModel(RoCBertPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel.get_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel.get_input_embeddings
     def get_input_embeddings(self):
         return self.embeddings.word_embeddings
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel.set_input_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel.set_input_embeddings
     def set_input_embeddings(self, value):
         self.embeddings.word_embeddings = value
 
@@ -799,7 +799,7 @@ class RoCBertModel(RoCBertPreTrainedModel):
     def set_shape_embeddings(self, value):
         self.embeddings.shape_embed = value
 
-    # Copied from transformers.models.bert.modeling_bert.BertModel._prune_heads
+    # Copied from transformers_471.models.bert.modeling_bert.BertModel._prune_heads
     def _prune_heads(self, heads_to_prune):
         """
         Prunes heads of the model. heads_to_prune: dict of {layer_num: list of heads to prune in this layer} See base
@@ -962,11 +962,11 @@ class RoCBertForPreTraining(RoCBertPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertForPreTraining.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForPreTraining.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertForPreTraining.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForPreTraining.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -1053,7 +1053,7 @@ class RoCBertForPreTraining(RoCBertPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RoCBertForPreTraining
+        >>> from transformers_471 import AutoTokenizer, RoCBertForPreTraining
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("weiweishi/roc-bert-base-zh")
@@ -1159,7 +1159,7 @@ class RoCBertForPreTraining(RoCBertPreTrainedModel):
 class RoCBertForMaskedLM(RoCBertPreTrainedModel):
     _tied_weights_keys = ["cls.predictions.decoder.weight", "cls.predictions.decoder.bias"]
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.__init__ with Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.__init__ with Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
 
@@ -1175,11 +1175,11 @@ class RoCBertForMaskedLM(RoCBertPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertForMaskedLM.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMaskedLM.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -1224,7 +1224,7 @@ class RoCBertForMaskedLM(RoCBertPreTrainedModel):
 
         Example:
         ```python
-        >>> from transformers import AutoTokenizer, RoCBertForMaskedLM
+        >>> from transformers_471 import AutoTokenizer, RoCBertForMaskedLM
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("weiweishi/roc-bert-base-zh")
@@ -1316,7 +1316,7 @@ class RoCBertForMaskedLM(RoCBertPreTrainedModel):
 class RoCBertForCausalLM(RoCBertPreTrainedModel, GenerationMixin):
     _tied_weights_keys = ["cls.predictions.decoder.weight", "cls.predictions.decoder.bias"]
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.__init__ with BertLMHeadModel->RoCBertForCausalLM,Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.__init__ with BertLMHeadModel->RoCBertForCausalLM,Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
 
@@ -1329,11 +1329,11 @@ class RoCBertForCausalLM(RoCBertPreTrainedModel, GenerationMixin):
         # Initialize weights and apply final processing
         self.post_init()
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.get_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.get_output_embeddings
     def get_output_embeddings(self):
         return self.cls.predictions.decoder
 
-    # Copied from transformers.models.bert.modeling_bert.BertLMHeadModel.set_output_embeddings
+    # Copied from transformers_471.models.bert.modeling_bert.BertLMHeadModel.set_output_embeddings
     def set_output_embeddings(self, new_embeddings):
         self.cls.predictions.decoder = new_embeddings
         self.cls.predictions.bias = new_embeddings.bias
@@ -1382,7 +1382,7 @@ class RoCBertForCausalLM(RoCBertPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, RoCBertForCausalLM, RoCBertConfig
+        >>> from transformers_471 import AutoTokenizer, RoCBertForCausalLM, RoCBertConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("weiweishi/roc-bert-base-zh")
@@ -1491,7 +1491,7 @@ class RoCBertForCausalLM(RoCBertPreTrainedModel, GenerationMixin):
     """
 )
 class RoCBertForSequenceClassification(RoCBertPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForSequenceClassification.__init__ with Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertForSequenceClassification.__init__ with Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -1600,7 +1600,7 @@ class RoCBertForSequenceClassification(RoCBertPreTrainedModel):
 
 @auto_docstring
 class RoCBertForMultipleChoice(RoCBertPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForMultipleChoice.__init__ with Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertForMultipleChoice.__init__ with Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
 
@@ -1732,7 +1732,7 @@ class RoCBertForMultipleChoice(RoCBertPreTrainedModel):
 
 @auto_docstring
 class RoCBertForTokenClassification(RoCBertPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForTokenClassification.__init__ with Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertForTokenClassification.__init__ with Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
@@ -1821,7 +1821,7 @@ class RoCBertForTokenClassification(RoCBertPreTrainedModel):
 
 @auto_docstring
 class RoCBertForQuestionAnswering(RoCBertPreTrainedModel):
-    # Copied from transformers.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with Bert->RoCBert,bert->roc_bert
+    # Copied from transformers_471.models.bert.modeling_bert.BertForQuestionAnswering.__init__ with Bert->RoCBert,bert->roc_bert
     def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels

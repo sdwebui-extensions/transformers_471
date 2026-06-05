@@ -152,7 +152,7 @@ class ElectraEmbeddings(nn.Module):
             "token_type_ids", torch.zeros(self.position_ids.size(), dtype=torch.long), persistent=False
         )
 
-    # Copied from transformers.models.bert.modeling_bert.BertEmbeddings.forward
+    # Copied from transformers_471.models.bert.modeling_bert.BertEmbeddings.forward
     def forward(
         self,
         input_ids: Optional[torch.LongTensor] = None,
@@ -195,7 +195,7 @@ class ElectraEmbeddings(nn.Module):
         return embeddings
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfAttention with Bert->Electra
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfAttention with Bert->Electra
 class ElectraSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -329,7 +329,7 @@ class ElectraSelfAttention(nn.Module):
         return context_layer, attention_probs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertSelfOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertSelfOutput
 class ElectraSelfOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -349,7 +349,7 @@ ELECTRA_SELF_ATTENTION_CLASSES = {
 }
 
 
-# Copied from transformers.models.bert.modeling_bert.BertAttention with Bert->Electra,BERT->ELECTRA
+# Copied from transformers_471.models.bert.modeling_bert.BertAttention with Bert->Electra,BERT->ELECTRA
 class ElectraAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None, layer_idx=None):
         super().__init__()
@@ -404,7 +404,7 @@ class ElectraAttention(nn.Module):
         return outputs
 
 
-# Copied from transformers.models.bert.modeling_bert.BertIntermediate
+# Copied from transformers_471.models.bert.modeling_bert.BertIntermediate
 class ElectraIntermediate(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -420,7 +420,7 @@ class ElectraIntermediate(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertOutput
+# Copied from transformers_471.models.bert.modeling_bert.BertOutput
 class ElectraOutput(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -435,7 +435,7 @@ class ElectraOutput(nn.Module):
         return hidden_states
 
 
-# Copied from transformers.models.bert.modeling_bert.BertLayer with Bert->Electra
+# Copied from transformers_471.models.bert.modeling_bert.BertLayer with Bert->Electra
 class ElectraLayer(GradientCheckpointingLayer):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -506,7 +506,7 @@ class ElectraLayer(GradientCheckpointingLayer):
         return layer_output
 
 
-# Copied from transformers.models.bert.modeling_bert.BertEncoder with Bert->Electra
+# Copied from transformers_471.models.bert.modeling_bert.BertEncoder with Bert->Electra
 class ElectraEncoder(nn.Module):
     def __init__(self, config, layer_idx=None):
         super().__init__()
@@ -825,7 +825,7 @@ class ElectraClassificationHead(nn.Module):
         return x
 
 
-# Copied from transformers.models.xlm.modeling_xlm.XLMSequenceSummary with XLM->Electra
+# Copied from transformers_471.models.xlm.modeling_xlm.XLMSequenceSummary with XLM->Electra
 class ElectraSequenceSummary(nn.Module):
     r"""
     Compute a single vector summary of a sequence hidden states.
@@ -1055,7 +1055,7 @@ class ElectraForPreTraining(ElectraPreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import ElectraForPreTraining, AutoTokenizer
+        >>> from transformers_471 import ElectraForPreTraining, AutoTokenizer
         >>> import torch
 
         >>> discriminator = ElectraForPreTraining.from_pretrained("google/electra-base-discriminator")
@@ -1513,7 +1513,7 @@ class ElectraForCausalLM(ElectraPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, ElectraForCausalLM, ElectraConfig
+        >>> from transformers_471 import AutoTokenizer, ElectraForCausalLM, ElectraConfig
         >>> import torch
 
         >>> tokenizer = AutoTokenizer.from_pretrained("google/electra-base-generator")

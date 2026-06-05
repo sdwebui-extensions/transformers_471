@@ -223,7 +223,7 @@ class Kosmos2Config(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import Kosmos2Config, Kosmos2Model
+    >>> from transformers_471 import Kosmos2Config, Kosmos2Model
 
     >>> # Initializing a Kosmos-2 kosmos-2-patch14-224 style configuration
     >>> configuration = Kosmos2Config()

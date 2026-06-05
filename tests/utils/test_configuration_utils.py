@@ -24,9 +24,9 @@ from pathlib import Path
 from huggingface_hub import HfFolder
 from requests.exceptions import HTTPError
 
-from transformers import AutoConfig, BertConfig, Florence2Config, GPT2Config
-from transformers.configuration_utils import PretrainedConfig
-from transformers.testing_utils import TOKEN, TemporaryHubRepo, is_staging_test, require_torch
+from transformers_471 import AutoConfig, BertConfig, Florence2Config, GPT2Config
+from transformers_471.configuration_utils import PretrainedConfig
+from transformers_471.testing_utils import TOKEN, TemporaryHubRepo, is_staging_test, require_torch
 
 
 sys.path.append(str(Path(__file__).parent.parent.parent / "utils"))

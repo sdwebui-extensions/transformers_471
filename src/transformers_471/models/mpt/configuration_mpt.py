@@ -155,7 +155,7 @@ class MptConfig(PretrainedConfig):
     Example:
 
     ```python
-    >>> from transformers import MptConfig, MptModel
+    >>> from transformers_471 import MptConfig, MptModel
 
     >>> # Initializing a Mpt configuration
     >>> configuration = MptConfig()

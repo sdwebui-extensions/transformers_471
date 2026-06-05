@@ -145,7 +145,7 @@ def load_balancing_loss_func(
     return overall_loss * num_experts
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRMSNorm with Llama->Qwen2Moe
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRMSNorm with Llama->Qwen2Moe
 class Qwen2MoeRMSNorm(nn.Module):
     def __init__(self, hidden_size, eps=1e-6):
         """
@@ -166,7 +166,7 @@ class Qwen2MoeRMSNorm(nn.Module):
         return f"{tuple(self.weight.shape)}, eps={self.variance_epsilon}"
 
 
-# Copied from transformers.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Qwen2Moe
+# Copied from transformers_471.models.llama.modeling_llama.LlamaRotaryEmbedding with Llama->Qwen2Moe
 class Qwen2MoeRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
 
@@ -203,7 +203,7 @@ class Qwen2MoeRotaryEmbedding(nn.Module):
         return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)
 
 
-# Copied from transformers.models.llama.modeling_llama.rotate_half
+# Copied from transformers_471.models.llama.modeling_llama.rotate_half
 def rotate_half(x):
     """Rotates half the hidden dims of the input."""
     x1 = x[..., : x.shape[-1] // 2]
@@ -211,7 +211,7 @@ def rotate_half(x):
     return torch.cat((-x2, x1), dim=-1)
 
 
-# Copied from transformers.models.llama.modeling_llama.apply_rotary_pos_emb
+# Copied from transformers_471.models.llama.modeling_llama.apply_rotary_pos_emb
 def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     """Applies Rotary Position Embedding to the query and key tensors.
 
@@ -239,7 +239,7 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     return q_embed, k_embed
 
 
-# Modified from transformers.models.mistral.modeling_mistral.MistralMLP with Mistral->Qwen2Moe
+# Modified from transformers_471.models.mistral.modeling_mistral.MistralMLP with Mistral->Qwen2Moe
 class Qwen2MoeMLP(nn.Module):
     def __init__(self, config, intermediate_size=None):
         super().__init__()
@@ -255,7 +255,7 @@ class Qwen2MoeMLP(nn.Module):
         return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
 
 
-# Copied from transformers.models.llama.modeling_llama.repeat_kv
+# Copied from transformers_471.models.llama.modeling_llama.repeat_kv
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
     This is the equivalent of torch.repeat_interleave(x, dim=1, repeats=n_rep). The hidden states go from (batch,
@@ -268,7 +268,7 @@ def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     return hidden_states.reshape(batch, num_key_value_heads * n_rep, slen, head_dim)
 
 
-# copied from transformers.models.qwen2.modeling_qwen2.Qwen2Attention with Qwen2->Qwen2Moe
+# copied from transformers_471.models.qwen2.modeling_qwen2.Qwen2Attention with Qwen2->Qwen2Moe
 # no longer copied after attention refactors
 class Qwen2MoeAttention(nn.Module):
     """
@@ -370,7 +370,7 @@ class Qwen2MoeAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.qwen2.modeling_qwen2.Qwen2FlashAttention2 with Qwen2->Qwen2Moe
+# NO LONGER EXIST Copied from transformers_471.models.qwen2.modeling_qwen2.Qwen2FlashAttention2 with Qwen2->Qwen2Moe
 # TODO cyril: modular
 class Qwen2MoeFlashAttention2(Qwen2MoeAttention):
     """
@@ -487,7 +487,7 @@ class Qwen2MoeFlashAttention2(Qwen2MoeAttention):
         return attn_output, attn_weights
 
 
-# NO LONGER EXIST Copied from transformers.models.qwen2.modeling_qwen2.Qwen2SdpaAttention with Qwen2->Qwen2Moe
+# NO LONGER EXIST Copied from transformers_471.models.qwen2.modeling_qwen2.Qwen2SdpaAttention with Qwen2->Qwen2Moe
 # TODO cyril: modular
 class Qwen2MoeSdpaAttention(Qwen2MoeAttention):
     """
@@ -888,7 +888,7 @@ class Qwen2MoeModel(Qwen2MoePreTrainedModel):
             router_logits=all_router_logits,
         )
 
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Qwen2Moe
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._update_causal_mask with Phimoe->Qwen2Moe
     def _update_causal_mask(
         self,
         attention_mask: Union[torch.Tensor, "BlockMask"],
@@ -971,7 +971,7 @@ class Qwen2MoeModel(Qwen2MoePreTrainedModel):
         return causal_mask
 
     @staticmethod
-    # Copied from transformers.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->Qwen2Moe
+    # Copied from transformers_471.models.phimoe.modeling_phimoe.PhimoeModel._prepare_4d_causal_attention_mask_with_cache_position with Phimoe->Qwen2Moe
     def _prepare_4d_causal_attention_mask_with_cache_position(
         attention_mask: torch.Tensor,
         sequence_length: int,
@@ -1086,7 +1086,7 @@ class Qwen2MoeForCausalLM(Qwen2MoePreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import AutoTokenizer, Qwen2MoeForCausalLM
+        >>> from transformers_471 import AutoTokenizer, Qwen2MoeForCausalLM
 
         >>> model = Qwen2MoeForCausalLM.from_pretrained(PATH_TO_CONVERTED_WEIGHTS)
         >>> tokenizer = AutoTokenizer.from_pretrained(PATH_TO_CONVERTED_TOKENIZER)

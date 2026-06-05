@@ -18,16 +18,16 @@ import pickle
 import tempfile
 import unittest
 
-from transformers import MT5Config, is_torch_available
-from transformers.models.auto.modeling_auto import MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING_NAMES
-from transformers.testing_utils import (
+from transformers_471 import MT5Config, is_torch_available
+from transformers_471.models.auto.modeling_auto import MODEL_FOR_SEQUENCE_CLASSIFICATION_MAPPING_NAMES
+from transformers_471.testing_utils import (
     require_sentencepiece,
     require_tokenizers,
     require_torch,
     slow,
     torch_device,
 )
-from transformers.utils.fx import symbolic_trace
+from transformers_471.utils.fx import symbolic_trace
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -39,7 +39,7 @@ if is_torch_available():
     import torch
     import torch.nn.functional as F
 
-    from transformers import (
+    from transformers_471 import (
         AutoModelForSeq2SeqLM,
         AutoTokenizer,
         MT5EncoderModel,

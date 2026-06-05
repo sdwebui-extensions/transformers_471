@@ -24,9 +24,9 @@ import torch
 from huggingface_hub import split_torch_state_dict_into_shards
 from packaging import version
 
-from transformers import AutoTokenizer, GPT2Config
-from transformers.modeling_utils import WEIGHTS_INDEX_NAME, WEIGHTS_NAME
-from transformers.utils import check_torch_load_is_safe
+from transformers_471 import AutoTokenizer, GPT2Config
+from transformers_471.modeling_utils import WEIGHTS_INDEX_NAME, WEIGHTS_NAME
+from transformers_471.utils import check_torch_load_is_safe
 
 
 def add_checkpointing_args(parser):

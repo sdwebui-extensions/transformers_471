@@ -292,7 +292,7 @@ class EvollaSaProtProteinEncoder(EvollaSaProtPreTrainedModel):
             # show warning only if it won't be shown in `create_extended_attention_mask_for_decoder`
             if device is not None:
                 warnings.warn(
-                    "The `device` argument is deprecated and will be removed in v5 of Transformers.", FutureWarning
+                    "The `device` argument is deprecated and Will be removed in v5 of Transformers", FutureWarning
                 )
         # We can provide a self-attention mask of dimensions [batch_size, from_seq_length, to_seq_length]
         # ourselves in which case we just need to make it broadcastable to all heads.
@@ -974,7 +974,7 @@ class EvollaForProteinText2Text(EvollaPreTrainedModel, GenerationMixin):
         Example:
 
         ```python
-        >>> from transformers import EvollaProcessor, EvollaForProteinText2Text
+        >>> from transformers_471 import EvollaProcessor, EvollaForProteinText2Text
         >>> model = EvollaForProteinText2Text.from_pretrained("westlake/Evolla-10B-hf")
         >>> processor = EvollaProcessor.from_pretrained("westlake/Evolla-10B-hf")
 

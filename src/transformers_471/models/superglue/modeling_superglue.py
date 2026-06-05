@@ -20,8 +20,8 @@ from typing import Optional, Union
 import torch
 from torch import nn
 
-from transformers import PreTrainedModel
-from transformers.models.superglue.configuration_superglue import SuperGlueConfig
+from transformers_471 import PreTrainedModel
+from transformers_471.models.superglue.configuration_superglue import SuperGlueConfig
 
 from ...pytorch_utils import find_pruneable_heads_and_indices, prune_linear_layer
 from ...utils import ModelOutput, auto_docstring, logging
@@ -734,7 +734,7 @@ class SuperGlueForKeypointMatching(SuperGluePreTrainedModel):
         Examples:
 
         ```python
-        >>> from transformers import AutoImageProcessor, AutoModel
+        >>> from transformers_471 import AutoImageProcessor, AutoModel
         >>> import torch
         >>> from PIL import Image
         >>> import requests

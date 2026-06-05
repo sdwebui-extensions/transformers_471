@@ -18,9 +18,9 @@ import tempfile
 import unittest
 from functools import cached_property
 
-from transformers import LongT5Config, is_torch_available
-from transformers.models.auto import get_values
-from transformers.testing_utils import require_sentencepiece, require_tokenizers, require_torch, slow, torch_device
+from transformers_471 import LongT5Config, is_torch_available
+from transformers_471.models.auto import get_values
+from transformers_471.testing_utils import require_sentencepiece, require_tokenizers, require_torch, slow, torch_device
 
 from ...generation.test_utils import GenerationTesterMixin
 from ...test_configuration_common import ConfigTester
@@ -32,7 +32,7 @@ if is_torch_available():
     import torch
     import torch.nn.functional as F
 
-    from transformers import (
+    from transformers_471 import (
         MODEL_FOR_QUESTION_ANSWERING_MAPPING,
         AutoTokenizer,
         LongT5EncoderModel,

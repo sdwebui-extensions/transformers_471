@@ -27,9 +27,9 @@ from unittest.mock import patch
 
 import yaml
 
-from transformers import HfArgumentParser, TrainingArguments
-from transformers.hf_argparser import make_choice_type_function, string_to_bool
-from transformers.testing_utils import require_torch
+from transformers_471 import HfArgumentParser, TrainingArguments
+from transformers_471.hf_argparser import make_choice_type_function, string_to_bool
+from transformers_471.testing_utils import require_torch
 
 
 # Since Python 3.10, we can use the builtin `|` operator for Union types
